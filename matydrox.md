@@ -614,3 +614,225 @@ Consulta bibliográfica: 14 de noviembre de 2026. Se indican los tipos de eviden
 - **[R11] Equipo Mars Climate Database.** [Documentación del acceso web](https://www-mars.lmd.jussieu.fr/mars/info_web/) y [descripción de MCD 6.1, 2022](https://meetingorganizer.copernicus.org/EPSC2022/EPSC2022-786.html). Modelos, variables y escenarios; registrar la versión realmente utilizada al generar una salida.
 - **[R12] Equipo LMD.** [Climatologies of the Martian Atmospheric Dust Optical Depth](https://www-mars.lmd.jussieu.fr/mars/dust_climatology/). Productos de opacidad y normalizaciones; acceso identificado, sin extracción espacial en esta revisión.
 - **[R13] Courville et al. (2026).** *Subsurface Water Ice Mapping on Mars: A Probabilistic Approach*. Planetary Science Journal, 7, 183. [DOI: 10.3847/PSJ/ae8904](https://doi.org/10.3847/PSJ/ae8904); [registro institucional USGS](https://pubs.usgs.gov/publication/70279509). Publicación registrada el 31 de julio de 2026. Marco probabilístico posterior a los productos citados en la sección 7; no se recalcularon los valores anteriores.
+
+---
+
+## AP-1: caracterización para buscar análogos terrestres
+
+**Proyecto:** NASA Space Apps 2026 · **Responsable:** línea Marte, Matías  
+**Fecha:** 14 de noviembre de 2026 · **Referencia:** Arcadia–Amazonis  
+**Estado:** ficha documental que cubre todas las dimensiones del XMind. No equivale a una caracterización instrumental completa: los campos sin respaldo local se mantienen explícitamente abiertos.
+
+### 1. Identidad, delimitación e interés
+
+AP-1 es un candidato de aterrizaje estudiado en la transición entre Arcadia y Amazonis septentrional, sobre una unidad sinuosa interpretada como relacionada con hielo. Su interés combina terreno relativamente poco accidentado e indicios de hielo subsuperficial. La evaluación publicada favorece su seguridad relativa entre los candidatos analizados; no certifica una base futura ni elimina riesgos. [1, 4]
+
+| Campo | Valor y alcance |
+|---|---|
+| Coordenada nominal | 39,8° N; 202,1° E, equivalente a −157,9° |
+| Elevación publicada | Aproximadamente −3,9 km respecto al geoide MOLA [4] |
+| Unidad geomorfológica | Unidad sinuosa; no asumir que toda su extensión comparte iguales propiedades [1] |
+| Área caracterizada en el artículo | Huella de la imagen HiRISE; no una elipse de aterrizaje |
+| Límite operativo para comparar análogos | Aún debe definirse; el punto nominal no delimita un área |
+| Finalidad de esta ficha | Referencia para ensayos de terreno, hielo y operaciones; no diseño de una base |
+
+### 2. Observaciones identificadas y trazabilidad
+
+Se verificaron las fichas oficiales del par estéreo de NASA/MRO/HiRISE. Los centros de imagen difieren ligeramente del punto nominal: no son coordenadas alternativas del sitio. [2, 3]
+
+| Metadato | ESP_052424_2200 | ESP_052490_2200 |
+|---|---|---|
+| Fecha de adquisición | 2 octubre 2017 | 7 octubre 2017 |
+| Hora local marciana | 14:49 | 14:59 |
+| Centro | 39,806° N; 202,080° E | 39,809° N; 202,081° E |
+| Escala original | 30,0 cm/píxel | 31,8 cm/píxel |
+| Escala proyectada | 25 cm/píxel | 25 cm/píxel |
+| Longitud solar Ls | 68,7° | 70,9° |
+| Estación | Primavera boreal | Primavera boreal |
+| Incidencia solar | 39° | 41° |
+| Emisión | 2,0° | 20,6° |
+
+El remuestreo a 25 cm no crea resolución nueva. Dos escenas vespertinas de primavera no describen el ciclo diario o anual. Los colores de HiRISE no sustituyen una identificación mineralógica espectral.
+
+Luzzi et al. procesaron datos EDR con ISIS y Ames Stereo Pipeline, ajustaron la topografía usando MOLA o HRSC según disponibilidad y elaboraron cartografía geomorfológica. Sus resultados publicados se reutilizan aquí: no se recalcularon sus DEM ni se descargaron los JP2 completos en esta entrega. [1, pp. 5–6]
+
+### 3. Relieve superficial, pendiente y movilidad
+
+| Propiedad | Resultado para el área AP-1 | Interpretación y límite |
+|---|---|---|
+| Desnivel máximo | 31 m en la huella HiRISE [1, p. 5] | No es pendiente ni rugosidad a escala de rueda |
+| Polígonos | Diámetro modal 11,7 m; desviación estándar 3,3 m [1, p. 15] | Moda y dispersión; no rango mínimo–máximo |
+| Cráteres expandidos | Identificados | Relieve relacionado con modificación posterior al impacto |
+| Cráteres expandidos invertidos | Identificados | Inversión del relieve; exige examinar crestas y depresiones |
+| Formas semejantes a pingos | Identificadas | Clasificación morfológica; no prueba de agua líquida actual |
+| Terreno «brain coral» | Identificado | Superficie de crestas y surcos; su parecido no demuestra un mecanismo único |
+| Crestas arqueadas | Identificadas | Elementos relevantes para recorridos y contraste de procesos |
+| Pendiente, percentiles y escala de cálculo | Sin estadística local homogénea incorporada | No convertir 31 m de desnivel en grados |
+| Abundancia y altura de bloques | Sin inventario cuantitativo incorporado | No interpretar «relativamente seguro» como ausencia de obstáculos |
+
+Presencias: tabla 2 de [1]. Las alturas poligonales del documento regional proceden de una muestra conjunta de los tres sitios; no se importan como distribución exclusiva de AP-1.
+
+**Consecuencia para análogos:** interesa una combinación de llanura y microrelieve poligonal, no únicamente un paisaje plano. La pendiente, rugosidad y obstáculos deben compararse a escalas equivalentes.
+
+### 4. Materiales, mineralogía y geología
+
+AP-1 pertenece a una unidad cuya interpretación regional incluye hielo enterrado y cobertura detrítica. La cartografía local documenta formas y relaciones espaciales, no una composición química completa. [1]
+
+| Pregunta del XMind | Resultado defendible |
+|---|---|
+| ¿Basaltos y materiales volcánicos? | Hay contexto volcánico regional, pero no se identificó aquí una composición basáltica cuantitativa de la cobertura de AP-1 |
+| ¿Arcillas? | Sin identificación local confirmada en los productos revisados |
+| ¿Sulfatos, sales o percloratos? | Sin especies, concentraciones o mapas locales verificados |
+| ¿Granulometría? | No se dispone de distribución medida de tamaños; las inferencias térmicas regionales no la sustituyen |
+| ¿Canales y deltas? | No se estableció un sistema fluvial-deltaico local en esta ficha; no confundir una unidad sinuosa interpretada como glacial con un cauce |
+| ¿Dunas y formas eólicas? | No se incorporó un inventario local de dimensiones, migración y actividad |
+| ¿Terreno poligonal? | Sí, con tamaño modal cuantificado; interpretación asociada a contracción térmica y evolución de terreno con hielo |
+| ¿Alteración y secuencia temporal? | Las formas indican una historia de modificación; no hay una edad absoluta única verificada para toda el área |
+
+«Sin identificación» describe nuestra evidencia, no una ausencia demostrada. Se necesitan productos espectrales con cobertura verificada, calidad suficiente y análisis de bandas antes de seleccionar un análogo mineralógico.
+
+### 5. Agua, hielo, sales y cantidad
+
+La evidencia local más desarrollada es geomorfológica. La exposición de hielo en un impacto cercano aporta evidencia adicional, pero ocurre aproximadamente a 23 km de AP-1. [1]
+
+| Variable | Evidencia | Lo que no demuestra |
+|---|---|---|
+| Presencia de procesos relacionados con hielo | Polígonos y otras formas descritas | Contenido actual en cada punto |
+| Profundidad de unos 8–12 cm inferida mediante polígonos | Estimación asociada a la formación del patrón | Profundidad actual confirmada bajo AP-1 |
+| Hielo expuesto a 50–60 cm bajo el borde máximo de un cráter cercano | Observación fuera del sitio nominal | Profundidad previa al impacto ni una perforación en AP-1 |
+| Espesor de hielo | No cuantificado de manera local concluyente aquí | No adoptar automáticamente los 30–80 m regionales |
+| Pureza, porosidad y continuidad | No medidas directamente bajo AP-1 en esta revisión | No derivarlas del índice SWIM |
+| Agua líquida actual | No establecida | La presencia de hielo no basta |
+| Agua antigua | Interpretación de procesos criogénicos; no prueba de un lago local | No convertir cualquier forma degradada en evidencia de agua líquida |
+| Sales y salmueras | Sin caracterización local | No atribuir a AP-1 resultados de Phoenix |
+
+Valores de AP-1 transcritos de la tabla 3 de [1]:
+
+| Índice SWIM | Valor |
+|---|---:|
+| Combinado 0–1 m | 0,20 |
+| Geomorfología | 0,63 |
+| Neutrones | 0,29 |
+| Potencia radar superficial | 0 |
+| Térmico | 0 |
+| Propiedades dieléctricas estimadas | 0,10 |
+
+Son índices de consistencia, no probabilidades ni fracciones de hielo. Un cero no prueba ausencia de hielo. La versión y método deben conservarse al comparar con productos posteriores.
+
+En el ZIP SWIM aportado, el píxel regional del punto AP-1 tiene valor 1 en cráteres expandidos, manto dependiente de latitud y terreno texturado; valor 0 en terreno festoneado y cráteres aterrazados. La inspección previa encontró píxeles de unos 3 km: no son inventarios de objetos individuales ni porcentajes de cobertura.
+
+### 6. Temperatura, iluminación y ambiente
+
+| Campo solicitado | Estado específico de AP-1 | Información necesaria |
+|---|---|---|
+| Temperatura del suelo durante el día | Sin serie extraída | Temperatura de superficie, hora local, fecha y calidad |
+| Temperatura del aire | Sin serie local incorporada | Altura sobre suelo y método de observación/modelado |
+| Ciclo diario | No reconstruido | Muestreo de horas o modelo validado |
+| Ciclo estacional | No reconstruido | Ls y años marcianos; separar variación interanual |
+| Temperatura subsuperficial | No medida aquí | Profundidad y propiedades térmicas de las capas |
+| Iluminación | Geometría solar conocida en las dos escenas [2, 3] | Modelo de horizonte para duración estacional y sombras |
+| Inercia térmica | No se extrajo un valor exclusivo de AP-1 | Producto térmico y estadística dentro del polígono |
+| Radiación ionizante | Sin dosis local verificada | Modelo de transporte, profundidad, atmósfera y actividad solar |
+| UV | Sin flujo local verificado | Espectro, hora, polvo y geometría solar |
+
+No se importan como medidas de AP-1 los intervalos térmicos de las unidades regionales. Para cubrir cuantitativamente el ambiente se requieren MCS/THEMIS o salidas de un modelo como MCD, etiquetadas como modeladas. Esta entrega no ejecutó MCD; no presenta números simulados como si fueran observaciones.
+
+### 7. Atmósfera, viento y polvo
+
+El contexto de Marte es una atmósfera tenue dominada por CO₂. La presión media planetaria no es una medida de AP-1. Su elevación debe entrar en cualquier estimación local. [8]
+
+Se ha documentado actividad eólica y de polvo en Arcadia–Amazonis, pero no se ha obtenido aquí una climatología específica del polígono AP-1. Por tanto:
+
+- **Presión:** sin rango local y estacional validado en esta ficha.
+- **Composición:** contexto marciano; sin medición química atmosférica local.
+- **Viento:** faltan velocidad, dirección, altura y distribución de ráfagas.
+- **Tormentas:** no se asigna frecuencia anual a partir de ejemplos regionales.
+- **Polvo suspendido:** falta serie de opacidad con longitud de onda y fechas.
+- **Polvo depositado:** sin tasa local de acumulación o retirada sobre equipos.
+
+La comparación terrestre no debe usar únicamente velocidad del viento: la interacción con partículas depende también de densidad atmosférica, gravedad, tamaño de grano y cohesión. Esta es una limitación física de la analogía, no un motivo para descartar ensayos de navegación o mantenimiento en campo.
+
+### 8. Actividad geológica, erosión, cuevas y subsuelo
+
+La cartografía sustenta estudiar contracción térmica, evolución de formas relacionadas con hielo, impactos y posible pérdida por sublimación. La interpretación de una forma antigua no prueba que el proceso siga activo a la misma tasa. [1]
+
+No se establecieron para AP-1 erupciones actuales, flujo de lava activo, cuevas accesibles o tubos de lava. Tampoco se cuantificaron tasas actuales de erosión, sublimación o movimiento del terreno. Para demostrar cambio se necesitan imágenes repetidas registradas entre sí, con diferencias de iluminación controladas. El par estéreo de 2017 se usa principalmente para geometría, no como demostración de evolución.
+
+### 9. Mecánica del terreno y condiciones operativas
+
+No se dispone aquí de mediciones locales de cohesión, fricción, densidad aparente, resistencia portante, compactación, abrasividad o carga electrostática. La pendiente favorable no garantiza soporte ni perforabilidad.
+
+| Operación | Lo que aporta AP-1 | Límite para un ensayo análogo |
+|---|---|---|
+| Movilidad y navegación | Terreno poligonal, crestas, cráteres y bajo relieve general | Necesita estadísticas comparables de obstáculos y pendientes |
+| Prospección del hielo | Evidencia heterogénea y discrepancia de escalas | Útil para ensayar cómo combinar instrumentos, no para suponer un depósito uniforme |
+| Perforación/excavación | Objetivo plausible de investigar cobertura y hielo | No hay profundidad/resistencia local suficiente para fijar una especificación única |
+| Construcción | Interés en soporte y preparación de superficie | No existe validación geotécnica local en esta ficha |
+| Energía | Polvo, iluminación y temperatura son relevantes | No se calculó rendimiento fotovoltaico ni balance energético |
+| Comunicaciones y EVA | El terreno permite plantear recorridos | No se calcularon enlaces, cobertura orbital ni seguridad de EVA |
+| Factores humanos | Puede inspirar tareas y restricciones operativas | Aislamiento y confinamiento son propiedades del diseño de la misión terrestre |
+
+### 10. Astrobiología: cuatro preguntas separadas
+
+| Dimensión del XMind | Evaluación |
+|---|---|
+| Habitabilidad | Hielo por sí solo no prueba agua líquida disponible, energía o condiciones favorables para vida |
+| Preservación | El subsuelo es una hipótesis de interés; no se cuantificó preservación de orgánicos en AP-1 |
+| Detectabilidad | Dependerá de instrumento, profundidad, matriz y límite de detección; no está demostrada |
+| Origen biológico | No se identificó una biosignatura confirmada en la evidencia revisada |
+
+No se elige un sitio terrestre «con extremófilos» como equivalente de AP-1 sin definir qué hipótesis se quiere probar. Un análogo de proceso o de muestreo puede ser útil aunque no reproduzca habitabilidad marciana.
+
+### 11. Uso del terreno, permisos y localización terrestre
+
+Este campo del XMind corresponde al candidato terrestre, no al punto marciano. Para AP-1 se registra **no aplicable** en permisos de acceso terrestre, propietario, área protegida, servicios cercanos y temporada de visita. Se completará para cada análogo, sin confundir facilidad logística con fidelidad científica.
+
+### 12. Cómo se utilizan los repositorios aportados
+
+| Repositorio | Papel en esta ficha o etapa posterior | Estado de uso |
+|---|---|---|
+| NASA PDS / HiRISE | Productos y geometría orbital de AP-1 | Par exacto verificado [2, 3, 5] |
+| NASA PDS / ODE | Búsqueda cruzada de CRISM, CTX, SHARAD, MCS y HiRISE | Capacidades verificadas; no se verificó cobertura local de cada instrumento [5] |
+| ESA Mars Express / HRSC | Contexto topográfico y apoyo a DEM, según disponibilidad | Uso descrito en el artículo; sin identificador HRSC local confirmado [1, 6] |
+| ESA PSA | Archivo planetario complementario | Acceso web bloqueado en esta revisión; no se afirma descarga de datos |
+| NASA Earthdata / Worldview | Caracterización y exploración visual de candidatos terrestres | No son observaciones de AP-1 |
+| Copernicus Data Space | Datos Sentinel de candidatos terrestres | Función terrestre verificada [7] |
+| JAXA G-Portal | Observaciones terrestres para candidatos | Función terrestre verificada [7] |
+| CSA RADARSAT | Radar para candidatos terrestres | Recurso aportado; no utilizado para medir AP-1 |
+| LRO / Diviner | Referencias lunares | No corresponde al sitio marciano |
+
+No se necesita utilizar todas las agencias para cada sitio. Se necesita una fuente adecuada para cada variable, con cobertura, resolución y calidad verificadas.
+
+### 13. Perfil provisional para buscar análogos
+
+Esta es una propuesta derivada de la evidencia, no un ranking validado:
+
+**AP-1 representa principalmente un terreno de llanura con microrelieve poligonal y otras formas vinculadas a hielo subsuperficial, cuya profundidad y propiedades locales siguen siendo inciertas.**
+
+| Objetivo del ensayo | Qué buscar en la Tierra | Qué no exigir sin evidencia |
+|---|---|---|
+| Interpretar procesos criogénicos | Polígonos, terreno con hielo y documentación del mecanismo de formación | Que cualquier patrón poligonal tenga el mismo origen |
+| Navegar y muestrear | Geometría de obstáculos comparable, recorridos y cartografía detallada | Igual elevación absoluta respecto al nivel terrestre |
+| Detectar hielo enterrado | Cobertura superficial y hielo cuya profundidad pueda medirse de forma independiente | Hielo exactamente a 10 cm por una inferencia marciana histórica |
+| Ensayar excavación | Materiales y hielo caracterizados mecánicamente | Igualdad geotécnica aún no demostrada con AP-1 |
+| Trabajar con polvo | Partículas y tareas medibles | Reproducir al aire libre la dinámica atmosférica marciana completa |
+
+### 14. Estado final y trabajos que todavía hacen falta
+
+La ficha cubre todas las preguntas del XMind, pero **no todos sus parámetros pueden darse por caracterizados cuantitativamente**. El soporte más fuerte es topográfico, geomorfológico y documental sobre hielo.
+
+Para cerrar los campos restantes hacen falta: un polígono de análisis común; extracción de pendientes y obstáculos del DEM; consulta de cobertura espectral y análisis mineralógico; series térmicas; modelado atmosférico explícito; y, para propiedades geotécnicas profundas, evidencia que probablemente requiera nuevas mediciones. No se declara completado ese procesamiento.
+
+Corrección del XMind: las descripciones de Jezero y Oxia están intercambiadas. La referencia a Rosalind Franklin corresponde a Oxia Planum; Jezero es la referencia de Perseverance y del sistema fluvial-lacustre. Esta corrección no cambia la presente ficha de AP-1.
+
+### Fuentes
+
+1. **Luzzi et al., 2025.** *Geomorphological Evidence of Near-Surface Ice at Candidate Landing Sites in Northern Amazonis Planitia, Mars*. [DOI](https://doi.org/10.1029/2024JE008724). PDF aportado, 38 páginas; especialmente pp. 5–6, 15–19, 25–26 y 32–33. Fuente de mediciones y clasificaciones locales; no nuevas mediciones nuestras.
+2. **NASA/JPL-Caltech/UArizona, HiRISE.** [ESP_052424_2200](https://hirise.lpl.arizona.edu/ESP_052424_2200). Ficha oficial y enlaces a productos PDS.
+3. **NASA/JPL-Caltech/UArizona, HiRISE.** [ESP_052490_2200](https://hirise.lpl.arizona.edu/ESP_052490_2200). Ficha oficial y enlaces a productos PDS.
+4. **Golombek et al., 2021.** *SpaceX Starship Landing Sites on Mars*, LPSC 2420. [PDF](https://www.hou.usra.edu/meetings/lpsc2021/pdf/2420.pdf). Evaluación histórica de candidatos, tabla 1 y texto; no anuncio de una selección actual.
+5. **NASA PDS Geosciences.** [Datos MRO](https://pds-geosciences.wustl.edu/missions/mro/default.htm) y [ODE](https://ode.rsl.wustl.edu/). Catálogos; su disponibilidad no confirma por sí sola cobertura útil de AP-1.
+6. **ESA/DLR, HRSC.** [Documento de archivo HRSC](https://archives.esac.esa.int/psa/ftp/MARS-EXPRESS/HRSC/MEX-M-HRSC-4-REFDR-MAPPROJECT-EXT3-V4.0/DOCUMENT/HRSC_EAICD.PDF). Fuente de documentación del archivo; no un producto local extraído.
+7. **Portales terrestres:** [JAXA G-Portal](https://gportal.jaxa.jp/), [Copernicus Explore Data](https://dataspace.copernicus.eu/explore-data), [NASA Earthdata](https://search.earthdata.nasa.gov/) y [Worldview](https://worldview.earthdata.nasa.gov/). Los dos últimos fueron aportados por el equipo; no se extrajeron datos terrestres en esta ficha.
+8. **NASA/NSSDC.** [Mars Fact Sheet](https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html). Contexto planetario; no medición de AP-1.
+9. **Documento de continuidad:** `Arcadia_Amazonis_consolidacion_de_evidencia.md`, versión ampliada del 14/11/2026. Contiene la revisión regional y la inspección reproducible del ZIP SWIM aportado. Los resultados regionales no se transfieren automáticamente a AP-1.
