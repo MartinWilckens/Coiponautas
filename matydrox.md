@@ -1263,3 +1263,180 @@ Para cada candidato terrestre se necesitará: localización y límites; evidenci
 - **[D3]** ESA, [Copernicus Data Space](https://dataspace.copernicus.eu/explore-data/).
 - **[D4]** JAXA, [G-Portal](https://gportal.jaxa.jp/).
 - **[D5]** CSA, [RADARSAT-1](https://donnees-data.asc-csa.gc.ca/en/dataset/radarsat1) y [RCM](https://donnees-data.asc-csa.gc.ca/en/dataset/rcm).
+
+---
+
+## Paso 1 — Preguntas de exploración marciana que guiarán la búsqueda de análogos terrestres
+
+**NASA Space Apps Challenge 2026 · Línea Marte**  
+**Fecha:** 14 de noviembre de 2026  
+**Insumos:** investigación de Marte consolidada en el texto del repositorio aportado por Matías y [caracterización regional de Arcadia–Amazonis, Jezero, Gale y Oxia](#caracterización-de-regiones-de-marte-para-buscar-análogos-terrestres).  
+**Alcance:** definir preguntas y condiciones de comparación. Los lugares terrestres se identificarán y caracterizarán en el paso siguiente.
+
+### 1. Qué resultado debe producir esta etapa
+
+El desafío exige **encontrar y caracterizar una o más ubicaciones en la Tierra** que sirvan para preparar exploración lunar o marciana, utilizando datos abiertos y explicando utilidad y límites. Esta línea del equipo prepara la búsqueda de análogos **marcianos**. La caracterización de Marte nos dice *qué buscar*; el producto final tendrá que mostrar *dónde está en la Tierra* y qué pruebas respaldan la comparación.
+
+Por ello, cada pregunta de la tabla siguiente debe desembocar en una decisión verificable sobre un lugar terrestre. No se buscará un «Marte terrestre» genérico ni se asignará a una región marciana una única composición, temperatura o geología. Distinguiremos condiciones **actuales** de operaciones y procesos **antiguos** registrados en rocas.
+
+#### Estructura de cada pregunta
+
+1. **Qué queremos aprender o ensayar** para una misión.
+2. **Qué proceso o material marciano** es la referencia y en qué unidad de la región ocurre.
+3. **Qué propiedad observable** debe tener el candidato terrestre.
+4. **Cómo se demostraría** con imagen, dato geofísico, mapa, muestra o medición de campo.
+5. **Qué diferencia Tierra–Marte limita** las conclusiones.
+
+Un proceso puede ser comparable aunque temperatura y presión sean diferentes. Para algunos ensayos la presencia física de hielo es indispensable; para otros solo importa la geometría de un terreno y la logística de recorrerlo.
+
+### 2. Preguntas derivadas de Arcadia–Amazonis
+
+#### A1. Detección de hielo enterrado bajo una cobertura variable
+
+**Pregunta de misión:** ¿cómo detectar y delimitar hielo subsuperficial, distinguirlo de roca o suelo seco y estimar a qué profundidad empieza antes de perforar?
+
+**Por qué Arcadia:** existen exposiciones de hielo en localidades observadas, señales orbitales y morfologías compatibles con hielo, pero la continuidad, composición y profundidad varían o permanecen discutidas. Las interpretaciones de depósitos de decenas de metros por radar no equivalen a una medida del techo de hielo en cada sitio. Los polígonos son pistas, no perforaciones. [R1]
+
+| Papel del atributo | Qué debería ofrecer un sector terrestre | Verificación necesaria |
+|---|---|---|
+| **Esencial para este ensayo** | Material helado enterrado y cobertura superficial accesible | Perforación, exposición natural documentada o sondeo geofísico contrastado por campo |
+| **Esencial** | Espesor de cobertura y profundidad del techo del hielo en puntos georreferenciados | Perfiles o muestras; incertidumbre y variación lateral |
+| **Esencial** | Materiales con y sin hielo dentro de un área de ensayo | Controles negativos, para probar si el método genera falsos positivos |
+| **Valioso** | Polígonos, hundimientos o relieves criogénicos bien cartografiados | Geometría, origen y edad relativa comprobados |
+| **Valioso** | Granulometría, humedad, sales y propiedades dieléctricas de la cobertura | Muestreo y laboratorio en vez de inferencia visual |
+
+**Escalas a comparar:** decímetros a metros en perfiles verticales, metros a kilómetros para continuidad espacial. No fijamos «hielo a 10 cm» como requisito: en los estudios marcianos ese número depende de una interpretación de formación del terreno. **Límite terrestre:** agua líquida estacional, atmósfera densa y distinto régimen térmico pueden cambiar el mecanismo de formación y la respuesta instrumental.
+
+**Resultado que ofrecería el candidato:** un sitio donde ocultar a los operadores las posiciones conocidas del hielo, ejecutar radar u otros métodos y contrastar las predicciones con sondeos reales. Es una idea de ensayo futuro, no un experimento que este documento ya haya realizado.
+
+#### A2. Movilidad y operaciones sobre terreno poligonal
+
+**Pregunta de misión:** ¿cómo planear recorridos y seleccionar áreas de trabajo cuando una llanura a escala orbital contiene crestas, surcos, bloques y suelos de resistencia variable?
+
+Aquí **el hielo no tiene que estar presente** si la tarea es exclusivamente cartografía y navegación sobre obstáculos; sí importa si se ensaya hundimiento o tracción en suelo helado. El candidato debe disponer de un polígono delimitado, modelo de elevación apropiado, inventario de obstáculos, pendiente calculada a longitudes de base especificadas y, para pruebas mecánicas, resistencia/compactación medidas. Los polígonos de las huellas HiRISE estudiadas en la transición Arcadia–Amazonis presentan tamaños modales del orden de 11–12 m; no constituyen un valor universal de Arcadia. [R1]
+
+**Comprobación decisiva:** un terreno parece liso en un píxel de decenas de metros, pero el recorrido de un rover encuentra obstáculos menores. Comparar mapas de distintas resoluciones y realizar un trayecto de prueba permite cuantificar esa pérdida de información. El entorno terrestre no reproduce por sí solo gravedad ni presión de Marte.
+
+#### A3. Interpretar formación y degradación del terreno con hielo
+
+**Pregunta científica:** ¿qué combinación de contracción térmica, sublimación, cubierta de sedimentos, impactos y posible flujo de hielo puede generar formas observadas en Arcadia?
+
+Se necesitan en la Tierra **formas y procesos documentados**, no únicamente polígonos parecidos. Un sitio fuerte tendrá historial de temperatura del suelo, mediciones de hielo y sedimento, cartografía multitemporal y estudios que expliquen el mecanismo. Si las formas son relictas, debe distinguirse el ambiente en que se formaron del clima actual. El candidato puede representar un mecanismo específico aunque no toda la historia de Arcadia.
+
+### 3. Preguntas derivadas de Jezero
+
+#### J1. Reconocer y muestrear un sistema río–delta–lago
+
+**Pregunta de misión:** ¿cómo identificar en imágenes y en terreno las facies de un antiguo delta, reconstruir la dirección del transporte y escoger muestras con contexto estratigráfico?
+
+Jezero contiene un delta occidental y evidencias de actividad fluvial/lacustre. El candidato terrestre debe tener una conexión geométrica verificable entre cuenca, entrada, depósitos y estratos, más sedimentos accesibles para validar lo que se interpretó desde imágenes. Se necesita cartografía de facies y tamaños de grano, no solo la vista aérea de una forma triangular. Una cuenca actual puede ayudar a entender deposición; otra antigua y expuesta puede servir mejor para ensayar preservación y muestreo. [R2]
+
+**Escalas:** cuenca y abanico en kilómetros, afloramientos en metros, láminas y granos en centímetros a micras. **Límite terrestre:** las tasas de agua, erosión, vegetación y actividad microbiana pueden ser muy diferentes.
+
+#### J2. Diferenciar roca ígnea, sedimento y alteración por fluidos
+
+**Pregunta de misión:** si un piso parece lacustre desde órbita, ¿cómo distinguir roca ígnea de sedimento y reconocer alteración acuosa posterior?
+
+Perseverance encontró rocas ígneas ricas en olivino y piroxenos en partes del piso; también hay minerales secundarios y materiales diferentes en el abanico y margen. [R2] Un análogo requiere afloramientos donde **roca original, contactos y minerales secundarios** estén medidos por petrografía/espectros/análisis químico. Son especialmente útiles exposiciones donde una clasificación hecha solo con imágenes pueda ponerse a prueba con muestras. Coincidencia de color o reflectancia, sin contexto, no demuestra el mismo origen.
+
+#### J3. Seleccionar muestras con posibilidad de conservar señales antiguas
+
+**Pregunta de misión:** ¿qué estratos y minerales ofrecen mejores condiciones de preservación y cómo evitar confundir una señal geológica o química con una biológica?
+
+Pueden compararse depósitos finos, carbonatos y materiales alterados con documentación de enterramiento, erosión y biología posterior. Deben incluirse controles abióticos y contaminación. La asociación mineral/orgánica descrita en Bright Angel es una **biosignatura potencial**, no vida confirmada. [R2] Un candidato no necesita tener vida ausente: debe permitir saber qué señales produjo la vida terrestre y cuáles pueden generarse sin ella.
+
+### 4. Preguntas derivadas de Gale
+
+#### G1. Reconstruir cambios de ambiente a partir de una secuencia
+
+**Pregunta de misión:** ¿cómo reconocer en un recorrido geológico cuándo un depósito registra lago, aportes fluviales, dunas o mantos de arena eólica?
+
+Gale proporciona estratos con facies lacustres y eólicas; estudios recientes muestran episodios húmedos dentro de tramos dominados por procesos eólicos. [R3] Un análogo debe ofrecer **contactos de unidades accesibles** y una sección descrita capa por capa: estructuras sedimentarias, composición, granulometría y relaciones de superposición. No basta juntar en un mismo mapa un lago y una duna separados sin una relación estratigráfica demostrable.
+
+#### G2. Separar sales depositadas originalmente de alteración posterior
+
+**Pregunta científica:** ¿las arcillas, sulfatos y cloruros registran el ambiente de depósito o fluidos que circularon después?
+
+Para ensayar la interpretación se buscan secciones con arcillas y sales **identificadas por estrato**, vetas o concreciones, análisis de roca hospedante y evidencia temporal relativa de diagénesis. Curiosity ha observado cambios mineralógicos y señales de fluidos salinos posteriores en la transición arcilla–sulfato. [R3] Un salar moderno puede representar formación de ciertas sales, pero por sí solo no reproduce esta sucesión estratigráfica.
+
+#### G3. Planear un recorrido y seleccionar perforaciones en estratos heterogéneos
+
+**Pregunta operativa:** ¿qué muestras aportan la mayor información al recorrer capas de distinta dureza, pendiente y accesibilidad?
+
+El candidato terrestre necesitará afloramientos conectados, rutas posibles, afloramientos de referencia y permisos para muestreo o perforación. El rendimiento se evaluaría por si las decisiones de ruta y muestreo capturan la transición geológica conocida, no por parecido fotográfico de una montaña. Temperatura y presión son límites físicos a controlar aparte.
+
+### 5. Preguntas derivadas de Oxia Planum
+
+#### O1. Identificar arcillas y entender su roca hospedante
+
+**Pregunta de misión:** ¿qué partes de una llanura con señal orbital de filosilicatos son afloramientos accesibles y qué proceso produjo las arcillas?
+
+Oxia posee extensas exposiciones cartografiadas de minerales arcillosos, pero el mapa orbital aún no se ha validado allí mediante un rover. [R4] Un candidato terrestre tendrá mapa espectral, **especies de arcilla identificadas con muestras** y descripción de la roca hospedante; debe permitir contrastar predicciones remotas con observación de campo. La presencia de arcilla no demuestra por sí sola un ambiente habitable.
+
+#### O2. Reconstruir antiguos depósitos aluviales mediante relieve y estratigrafía
+
+**Pregunta científica:** ¿cómo distinguir crestas sinuosas de origen fluvial y relacionarlas con unidades portadoras de arcillas?
+
+Una forma sinuosa aislada no basta. El candidato debe reunir geometría de canales o depósitos, perfiles topográficos, estructura sedimentaria y mineralogía que sustenten la interpretación. En Oxia se han interpretado crestas como restos de antiguos sistemas aluviales; no es un origen asignable por igual a todas sus unidades. [R4]
+
+#### O3. Ensayar selección de muestras bajo cobertura
+
+**Pregunta de misión:** ¿puede una campaña que combina mapas, observación de superficie y perforación encontrar materiales menos alterados o contaminados bajo la cubierta?
+
+Hacen falta variaciones conocidas de espesor y composición de cubierta, testigos o exposiciones a profundidades medidas, y controles de contaminación. Los **hasta 2 m** del taladro de Rosalind Franklin son una capacidad planificada, no una profundidad marciana universal a igualar. [R4] La analogía debe evaluar rendimiento de un método de búsqueda y muestreo, no suponer que la profundidad garantice la preservación.
+
+### 6. Preguntas que cruzan varias regiones
+
+| Pregunta transversal | Regiones donde aporta | Evidencia terrestre que necesitaríamos | Cuándo importa |
+|---|---|---|---|
+| ¿Cómo cambia el terreno visto por satélite al comprobarlo en campo? | Las cuatro | Imagen georreferenciada, elevación, muestras y puntos de validación | Siempre que el descubrimiento dependa de datos orbitales |
+| ¿Cómo separar agua antigua, hielo presente y sales? | Arcadia, Jezero, Gale, Oxia | Datación relativa, mineralogía y medidas actuales del subsuelo | Cuando se invocan «recursos» o «habitabilidad» |
+| ¿Cómo afectan polvo y arena a observaciones y operaciones? | Las cuatro | Granulometría, aerosol/deposición, viento y desempeño de equipos | En ensayos de sensores, movilidad o energía |
+| ¿Dónde se rompe una inferencia de biofirma? | Jezero, Gale, Oxia | Controles bióticos/abióticos y contaminación | En muestreo astrobiológico |
+| ¿Qué puede extrapolarse bajo baja presión/gravedad? | Las cuatro | Comparación dimensional o ensayos controlados adicionales | Si se extrapola mecánica, erosión o fluidos |
+
+Las condiciones planetarias no serán «casillas obligatorias» de un sitio de campo terrestre. Aire, radiación y gravedad se registran como diferencias que pueden exigir experimentos complementarios.
+
+### 7. Orden para iniciar la búsqueda terrestre
+
+Estas son **prioridades prácticas para iniciar**, no un ranking científico de regiones ni la elección definitiva de una misión:
+
+| Orden | Línea | Por qué resulta comprobable | Condición de descarte inicial |
+|---|---|---|---|
+| 1 | **A1 — hielo enterrado en Arcadia** | Se puede contrastar detección remota con perforaciones o exposiciones y controles secos | Sin hielo verificado o sin profundidad conocida, no vale para ensayar detección de hielo |
+| 2 | **O1/O2 — arcillas y depósitos aluviales de Oxia** | Permite medir si imágenes/espectros predicen mineralogía y facies reales | Solo color/forma, sin muestras mineralógicas ni contexto |
+| 3 | **J1/J2 — delta e ígneo alterado de Jezero** | Hay dos preguntas distintas que pueden aportar candidatos inesperados | Mezclar afloramientos inconexos como si fueran una secuencia |
+| 4 | **G1/G2 — sucesión y sales de Gale** | Muy informativo si existe una sección larga, accesible y estudiada | Sales sin relación estratigráfica ni análisis de alteración |
+
+Este orden ayuda a repartir trabajo y delimitar consultas. Un candidato terrestre inesperado puede surgir de cualquier línea. Los análogos conocidos —por ejemplo Atacama, Qaidam, Haughton o Lanzarote— se usarán como **comparadores por tarea**; la propuesta debe caracterizar al menos un sector terrestre concreto y mostrar qué aportaría frente a ellos.
+
+### 8. Plantilla para pasar de una pregunta a un candidato terrestre
+
+| Campo obligatorio | Ejemplo de contenido, todavía sin elegir un lugar |
+|---|---|
+| ID de pregunta | A1, J1, G2 u O1 |
+| Tarea | Detectar hielo, interpretar un delta, distinguir diagénesis, etc. |
+| Unidad marciana | Subunidad/ambiente dentro de la región y límites de la fuente |
+| Polígono terrestre | Coordenadas y superficie del sector específico |
+| Propiedad indispensable | Qué presencia/proceso debe comprobarse |
+| Variable y unidad | Profundidad (m), tamaño de grano (µm/mm), pendiente (° sobre base definida), especie mineral, etc. |
+| Método y fuente | Producto satelital, mapa, artículo, sondeo y fecha |
+| Escala y confianza | Tamaño de píxel, número de muestras, incertidumbre e interpretación |
+| Diferencias importantes | Presión, gravedad, biología, clima, agua líquida |
+| Utilidad | Qué instrumento, hipótesis o procedimiento podría ponerse a prueba |
+| Uso real | Acceso, permisos, protección, temporada y posibilidad de muestrear |
+| Estado | Hipótesis / candidato prometedor / caracterizado con mediciones |
+
+**Regla de decisión:** una imagen sugiere una ubicación; evidencia independiente decide si pasa a candidato. «Nuevo» se referirá a un lugar o proceso poco utilizado como análogo *para esa tarea*, no a la ausencia total de estudios: hacen falta datos suficientes para defenderlo.
+
+### 9. Resultado y siguiente paso
+
+Ya están definidas **doce preguntas específicas** (A1–A3, J1–J3, G1–G3, O1–O3), sus condiciones y el tipo de validación. El siguiente paso es buscar sectores terrestres mediante NASA Earthdata, Copernicus, JAXA, cartografía geológica y literatura de campo. Allí construiremos una lista corta con coordenadas y pruebas de los atributos indispensables. La comparación final deberá decir qué aprende una misión del lugar propuesto y qué aspectos marcianos no reproduce.
+
+### Fuentes de esta derivación
+
+- **[R1] Arcadia–Amazonis.** [Caracterización regional consolidada](#caracterización-de-regiones-de-marte-para-buscar-análogos-terrestres), secciones 3 y 7; Luzzi et al. (2025), [geomorfología de sitios próximos](https://doi.org/10.1029/2024JE008724); Bramson et al. (2017), [preservación de hielo](https://doi.org/10.1002/2017JE005357); Campbell y Morgan (2018), [alternativa de interpretación radar](https://doi.org/10.1002/2017GL075844).
+- **[R2] Jezero.** Documento regional, sección 4; Mangold et al. (2021), [delta y depósitos de inundación](https://doi.org/10.1126/science.abl4051); [mineralogía del piso](https://doi.org/10.1029/2022JE007450); [artículo de Bright Angel](https://doi.org/10.1038/s41586-025-09413-0).
+- **[R3] Gale.** Documento regional, sección 5; [secuencia eólica y agua en la base de la unidad con sulfatos](https://doi.org/10.1029/2025JE009556); [evaporitas en la transición arcilla–sulfato](https://doi.org/10.1029/2026JE009783); [análisis SAM-EGA](https://pubmed.ncbi.nlm.nih.gov/39619889/).
+- **[R4] Oxia.** Documento regional, sección 6; Fawdon et al. (2024), [mapa geológico a 1:30.000](https://doi.org/10.1080/17445647.2024.2302361); [sistemas aluviales antiguos](https://www.sciencedirect.com/science/article/pii/S0012821X22005404); [ESA, misión Rosalind Franklin](https://explorationscience.esa.int/project/exomars-rosalind-franklin-rfm/).
+- **Enunciado del desafío:** texto proporcionado por el equipo, *Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars* (NASA Space Apps Challenge 2026). El objetivo evaluable es una ubicación terrestre caracterizada, presentada en una herramienta o visualización.
