@@ -1575,3 +1575,159 @@ Una búsqueda preliminar de topónimos y «Mars analog» no demuestra ausencia d
 24. ESA, [Copernicus Sentinel-2](https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel2.html); [Sentinel-1](https://documentation.dataspace.copernicus.eu/Data/Sentinel1.html).
 
 **Estado final de esta etapa:** revisión bibliográfica comparativa mundial; aún **no** se descargaron ni procesaron capas sobre polígonos propios, verificaron todas las coordenadas de afloramiento ni obtuvieron permisos. Ningún sitio se presenta como análogo validado o descubrimiento absoluto.
+
+---
+
+## Verificación geográfica y de datos de cuatro candidatos terrestres
+
+**Coiponautas · Línea Marte · 14 de noviembre de 2026**
+
+### 1. Resultado de esta ronda
+
+Se revisó el contexto del repositorio aportado en `Texto pegado(2).txt` y se contrastaron las fuentes originales de Saskylakh, Lake Yamma Yamma, Bhallil y Williams Point. Esta ronda añade evidencia y una primera geometría descargada al inventario bibliográfico. El adjunto es una descripción del Git: no constituye una auditoría realizada por nosotros al repositorio remoto.
+
+**Resultado material:** se descargó el KMZ oficial del humedal Lake Yamma Yamma y se convirtió su geometría a GeoJSON. Su límite corresponde al humedal inventariado, **no al delta ni a un sitio de muestras**. Para los otros sectores hay referencias de posición de distinta precisión; no se fabricaron polígonos de afloramiento.
+
+| Candidato | Localización comprobada | Datos comprobados | Decisión de esta ronda |
+|---|---|---|---|
+| Yamma Yamma | Geometría oficial DIWA descargada; delta al NE según fotografía NASA | KMZ original y GeoJSON local; artículo sedimentológico; fotografía NASA identificada | **Seguir** con delimitación del delta dentro del contexto cartográfico |
+| Saskylakh | Coordenada regional publicada 71,95 N / 114,10 E y contorno dibujado en artículo | Métodos, sensores, fechas y carácter modelado de capa activa; resultados de autores bajo solicitud | **Seguir condicionado** para A2/A3; A1 todavía insuficiente |
+| Bhallil | Perfil descrito a 15 km al SE de Fez; falta coordenada puntual | Mineralogía de perfil de 10 m y figura de ubicación | **Condicionado**: buen caso mineralógico, pendiente localización precisa |
+| Williams Point | Fotografía geolocalizada en EGU; falta vincular punto con columna de 2022 | Columna publicada y foto de 2014 con licencia explícita | **Condicionado**: comparación estratigráfica documental, no polígono de ensayo validado |
+
+Las decisiones se refieren al avance de investigación, no a autorización de campo o certificación de idoneidad. No se completó una descarga de escenas Sentinel/Landsat ni procesamiento de DEM. Por eso se distingue explícitamente producto consultable, archivo descargado y resultado calculado.
+
+### 2. Cambios frente a la lista anterior
+
+1. Yamma Yamma ya dispone de una geometría oficial utilizable como contexto en GIS.
+2. Saskylakh necesita una corrección de interpretación: las profundidades de capa activa del análisis provienen de ESA CCI, un modelo térmico de resolución horizontal de 1 km. No son medidas directas en cada polígono.
+3. Los resultados de Saskylakh se ofrecen por solicitud al autor. Que Sentinel y Landsat sean públicos no hace público automáticamente el producto procesado del artículo.
+4. Bhallil tiene perfil muestreado de 10 m, pero esa longitud vertical no implica 10 m de extensión horizontal ni detectabilidad orbital.
+5. Williams Point tiene una coordenada de fotografía que ayuda a orientarse. No debe copiarse como coordenada del perfil sedimentológico sin comprobar las figuras del estudio.
+6. Un humedal, un punto fotográfico, un perfil vertical y un campo de polígonos son objetos distintos. El catálogo necesita conservar ese tipo de geometría y su función.
+
+### 3. Yamma Yamma: primera base geográfica real
+
+#### 3.1 Fuente, archivo y comprobaciones
+
+[WetlandInfo, Queensland: ficha oficial DIWA](https://wetlandinfo.detsi.qld.gov.au/wetlands/facts-maps/diwa-wetland-lake-yamma-yamma/) ofrece un KMZ del límite inventariado. Se descargó el archivo de 1.781 bytes, se abrió como ZIP, se leyó el KML y se convirtió su polígono a GeoJSON conservando las coordenadas.
+
+- Original: `yamma_yamma_oficial.kmz`.
+- Derivado: `Yamma_Yamma_humedal_oficial.geojson`.
+- Un polígono y 123 vértices de anillo, incluyendo el cierre.
+- Extensión extraída: longitud **141,24802 a 141,62633 E**; latitud **−26,50856 a −26,16645**.
+- Orden GeoJSON: longitud, latitud. La caja delimitadora es un resultado de lectura de vértices; no es el contorno del delta.
+- La página declara **86.614 ha = 866,14 km²** para el área DIWA. Esta cifra es publicada, no un cálculo geodésico nuestro.
+
+La ficha oficial clasifica también 62.620 ha lacustres y 18.905 ha palustres en su cartografía 2021. Son categorías territoriales; no deben confundirse con superficie de agua en la fecha de una imagen. La existencia de pastoreo en la ficha no establece permiso de acceso a predios.
+
+#### 3.2 Qué sector se busca dentro de este marco
+
+NASA identifica un delta triangular en el lado nororiental del lago en la imagen **STS044-73-10**, noviembre de 1991. [Registro original](https://eol.jsc.nasa.gov/SearchPhotos/photo.pl?frame=10&mission=STS044&roll=73). Es una observación histórica independiente útil para localizar formas; la fotografía no sustituye una ortoimagen para medir área o distancias.
+
+El estudio de [Mann y Amos, 2022](https://doi.org/10.1080/03721426.2022.2027649) y la [tesis de 2017](https://digital.library.adelaide.edu.au/items/8bda2080-2ba5-4846-b970-7f25808a9926/full) aportan facies, granulometría y evolución geomorfológica. Debe elegirse la desembocadura efectivamente descrita en sus figuras y mantener separadas entradas secundarias, frente deltaico y llanura lacustre.
+
+#### 3.3 Comparación marciana y mediciones
+
+**Pregunta J1:** ¿qué parte del sistema río–delta–lago se reconoce con imágenes y cuál requiere observación sedimentológica? La referencia es el ambiente deltaico de Jezero, sin extender la equivalencia a carbonatos o suelo ígneo de todo el cráter.
+
+| Variable | Medida a extraer | Evidencia de contraste | Limitación |
+|---|---|---|---|
+| Extensión deltaica | Polígono interpretado, área km² y borde incierto | Figuras sedimentológicas y canales de entrada | Confundir frente deltaico con costa temporal |
+| Canales | Longitud, anchura resuelta, orientación y bifurcaciones | Mapa de facies y varias fechas | Una anchura menor que varios píxeles es poco robusta |
+| Superficie inundada | Área y proporción por fecha válida | Imagen natural, infrarrojo y cartografía | Agua turbia, sombra y suelo húmedo alteran índices |
+| Pendiente | Distribución y longitud de base declarada | DEM, controles de vacíos y artefactos | En relieve casi plano el error vertical puede dominar |
+| Granulometría | Tamaño y rango por muestra/facies | Tabla de campo | No asignar una muestra a todo el polígono |
+| Mineralogía | Especies verificadas por muestra | Análisis publicados | No deducir arcillas de color o proximidad a lago |
+
+**Prueba propuesta:** cartografiar facies con imagen únicamente, reservar las observaciones de campo para evaluación y registrar aciertos/errores por clase. Si no hay puntos georreferenciados independientes suficientes, el resultado será concordancia cualitativa con mapas publicados, no exactitud cuantitativa validada.
+
+**Criterio de continuidad:** conexión espacial demostrable entre entrada, depósito y observación de campo. **Criterio de pausa:** no poder localizar las muestras o no resolver el depósito con las imágenes disponibles. Cooper Creek ya figura en NASA como análogo planetario; la originalidad sería la prueba de interpretación específica y sus datos reutilizables.
+
+### 4. Saskylakh: separar terreno observable de subsuelo modelado
+
+#### 4.1 Qué se verificó
+
+[Wang et al., 2023, DOI 10.3390/rs15051335](https://www.mdpi.com/2072-4292/15/5/1335) sitúan el estudio alrededor de **71,95 N, 114,10 E**, con 12,84 km² y figuras del perímetro. La coordenada tiene dos decimales; no debe presentarse como localización centimétrica de un sondeo.
+
+La tabla de adquisición especifica Sentinel-1B **IW, Level-1 SLC, VV**, del **1 junio 2018 al 3 mayo 2019**. Para reproducir interferometría se necesitan escenas complejas compatibles y órbitas; un producto GRD no sustituye el SLC porque no conserva la misma información de fase.
+
+**Corrección decisiva:** ESA Permafrost CCI combina satélite y reanálisis mediante CryoGrid y proporciona capa activa/temperaturas a 1.000 m. Su validación extensa no demuestra validación local de cada polígono de Saskylakh. Por ello una profundidad interpolada en un transecto no es un sondeo real.
+
+#### 4.2 Productos y viabilidad
+
+| Producto | Uso admisible | Qué falta |
+|---|---|---|
+| Sentinel-1 SLC histórico en ASF/Copernicus | Reproducción parcial de deformación | IDs, órbita, pares, coherencia y referencia estable |
+| Landsat óptico | Agua/vegetación y contexto | Escenas, máscaras de calidad y temporada comparable |
+| ESA CCI permafrost | Contexto térmico modelado | Versión exacta y celda; no usar como prueba de profundidad A1 |
+| AW3D30 | Contexto de relieve | Tile, máscara y datum; no microrelieve de surcos |
+| ArcticDEM | Evaluar relieve de polígonos | Strip/tile concreto, fecha, vacíos, registro vertical |
+
+[ArcticDEM del Polar Geospatial Center](https://www.pgc.umn.edu/data/arcticdem/) ofrece strips y mosaicos de 2 m. Sus strips no están automáticamente ajustados a control de terreno; los mosaicos mezclan fechas. Su disponibilidad general **no prueba todavía** que una tesela útil y sin vacíos cubra el sector. NASADEM no es opción para ~72 N: los productos SRTM llegan aproximadamente a 60 N.
+
+#### 4.3 Prueba y clasificación
+
+**A2:** medir tamaño de polígonos y surcos con resolución suficiente y comparar qué rasgos desaparecen al degradar la resolución. Calcular anchura de rasgo / tamaño de píxel antes de aceptar una medición. Dos metros de píxel no garantizan detectar surcos menores ni exactitud vertical de dos metros.
+
+**A3:** comparar sectores, humedad y cambios, con mecanismos terrestres explícitos. El deshielo por agua líquida y la vegetación diferencian la respuesta de Marte. **A1 permanece condicionado:** faltan exposición/sondeo de hielo y profundidad real más un control negativo seco. El aeródromo no es automáticamente un control seco: es terreno alterado por ingeniería.
+
+No se declara válido un ensayo de navegación de rover sin un modelo de obstáculos y validación. Puede servir como análisis remoto de geomorfología aun sin acceso de campo. Los productos derivados del artículo se solicitan al autor: no se enviaron mensajes.
+
+### 5. Bhallil: detalle mineralógico con posición pendiente
+
+[Artículo original de Dekayir et al., 2002](https://comptes-rendus.academie-sciences.fr/geoscience/articles/fr/10.1016/S1631-0713(02)01829-1/): perfil aproximadamente a **15 km al sureste de Fez**, con muestreo a lo largo de **10 m de profundidad**, metabasalto, saprolita y suelo. La distancia y orientación permiten acotar búsqueda, pero no reconstruyen una coordenada de afloramiento. No se usó el centro urbano de Bhallil como sustituto.
+
+La identificación usa petrografía, microscopía electrónica, difracción y Mössbauer; se estudia fracción arcillosa <2 µm. El trabajo documenta Fe-saponita y transformaciones hacia otras smectitas. La analogía O1/J2 es estudiar cómo minerales parecidos pueden registrar historias de alteración diferentes, no identificar el clima de Oxia a partir de un perfil marroquí.
+
+| Campo requerido | Estado | Acción que lo resuelve |
+|---|---|---|
+| Coordenada de perfil | Pendiente | Georreferenciar figura 1 con puntos reconocibles y declarar error |
+| Extensión horizontal | Pendiente | Identificar exposición real y continuidad |
+| Mineral por nivel | Publicado | Transcribir tabla conservando código de muestra y profundidad |
+| Espectros de reflectancia orbital comparables | No comprobados | Buscar mediciones VNIR/SWIR o aceptar alcance de laboratorio |
+| Cobertura actual | Pendiente | Imagen reciente y máscara de vegetación/suelo |
+| Acceso y posibilidad de muestreo | Pendiente | Titular y conservación, si se propone campo |
+
+DRX y Mössbauer no son espectros de reflectancia CRISM. Para compararlos se necesita un vínculo medido o una hipótesis claramente identificada. La visita a una figura del editor produjo error de acceso; el texto sí fue legible. **Decisión: condicionado**, manteniéndolo como referencia mineralógica mientras se resuelve la ubicación. La edad del estudio obliga a comprobar que la exposición todavía existe antes de prometer ensayo de campo.
+
+### 6. Williams Point: localizar la columna sin confundir fotografía y muestra
+
+La [fotografía de Martin Struck en EGU Imaggeo](https://imaggeo.egu.eu/view/3022/) describe Williams Point con Shelly Island a la izquierda. Registra **−29,0398; 137,6284**, tomada el **31 julio 2014**, publicada en 2015 y licencia **CC BY 3.0**. Es un punto fotográfico de contexto, no una coordenada verificada de las excavaciones de Cohen.
+
+El estudio [Cohen et al., 2022](https://doi.org/10.1016/j.quascirev.2022.107635) reconstruye la secuencia con sedimentología, mineralogía y cronología. Su registro institucional es accesible; no se obtuvo en esta ronda un fichero de coordenadas de muestras. La columna vertical de unos 15 m no puede resolverse capa a capa en un DEM regional de 30 m.
+
+**Prueba G1:** reconstruir contactos y facies sobre fotografías/perfiles, preservando correspondencia entre capa y análisis. **G2:** establecer qué yeso es transportado, precipitado o alterado con observaciones por estrato. No inferir historia diagenética de un índice de imagen superficial.
+
+**Unidades para catálogo:** punto de foto; línea de sección sedimentológica; polígono de exposición. Deben ser entidades vinculadas, no una geometría intercambiable. Coordenadas de foto permiten buscar contexto, pero no justifican generar un buffer denominado «sitio validado».
+
+**Acceso:** el parque restringe entrada recreativa al lecho y cuenta con gestión y valores culturales específicos. La ficha digital es viable; campaña de toma de muestras no está verificada. **Decisión: condicionado**, alta utilidad documental G1, menor madurez espacial que Yamma Yamma.
+
+### 7. Regla común de comparación Tierra–Marte
+
+Para cada atributo guardar: unidad marciana, unidad terrestre, valor, unidad física, método, fecha, resolución, incertidumbre, procedencia y tipo de evidencia. Una región marciana admite varias unidades; cada comparación debe apuntar a la que sustenta la propiedad.
+
+- Para relieve: usar longitud de base comparable y especificar datum; no comparar pendientes calculadas con píxeles incompatibles.
+- Para minerales: registrar método y mezcla; presencia espectral no equivale a abundancia medida por DRX.
+- Para temperatura: distinguir aire, piel superficial y subsuelo; registrar hora/estación/profundidad.
+- Para hielo: distinguir confirmado, inferido y modelado; profundidad de capa activa terrestre no equivale al techo de un depósito marciano.
+- Para procesos: separar Marte antiguo de Marte actual y forma preservada de proceso activo terrestre.
+- Para acceso: separar consulta de datos, visita y muestreo. Un lugar puede ser excelente análogo científico y difícil para operaciones.
+
+No calcular un porcentaje único de parecido hasta definir tarea y pesos. Emplear inicialmente estados por propiedad: verificada, parcialmente comparable, contradictoria o desconocida. «Desconocida» no es cero similitud y no debe favorecer un lugar con pocos datos.
+
+### 8. Base estructurada que puede integrar el otro chat
+
+Campos mínimos: `candidate_id`, `earth_sector`, `geometry_role`, `geometry_source`, `location_uncertainty_m`, `mars_region`, `mars_unit`, `question_id`, `variable`, `value`, `unit`, `method`, `spatial_support`, `observation_date`, `source_url`, `evidence_type`, `analog_limit`, `access_status`, `decision`.
+
+Guardar valores faltantes como null. Mantener autoría y fecha del producto. La geometría oficial Yamma Yamma debe llevar `geometry_role=official_wetland_boundary_not_delta`. Los demás candidatos pueden entrar en catálogo sin geometría de ensayo hasta resolverla; la interfaz debe mostrar el estado.
+
+Estructura sugerida: `investigacion/marte/verificacion_candidatos.md`, `datos/terrestres/yamma_yamma/original/`, `datos/terrestres/yamma_yamma/derivados/` y `metadatos/fuentes.csv`. Son rutas propuestas para el chat encargado del Git; no se modificaron ramas.
+
+### 9. Balance y siguiente prueba delimitada
+
+El siguiente análisis espacial debe empezar por Yamma Yamma: límite oficial ya obtenido, identificación histórica del delta y literatura sedimentológica. Hay que localizar el delta en una escena ortorrectificada, trazar su contorno interpretado y comparar con figuras del estudio. Seleccionar después fechas contrastantes, anotar IDs de escenas y calcular solo variables resueltas.
+
+Saskylakh es segundo candidato para geomorfología si se confirma una tesela ArcticDEM útil; se mantiene abierto como caso de hielo, sin atribuirle sondeos inexistentes. Bhallil y Williams Point aportan evidencia especializada, pero la ubicación exacta de los perfiles sigue siendo un requisito antes de presentarlos como sitios de ensayo localizados.
+
+**Productos realmente obtenidos:** revisión de fuentes y decisiones por candidato; KMZ oficial y GeoJSON derivado; inventario de limitaciones. **Pendiente:** contornos de ensayo, escenas con IDs, rásteres recortados, métricas propias, comparación numérica marciana y validación de campo. Esto evita que una buena bibliografía se confunda con un experimento realizado.
