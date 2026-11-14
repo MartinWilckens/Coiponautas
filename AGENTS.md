@@ -23,4 +23,4 @@ Estamos en la etapa de investigación y definición de criterios. La idea que te
 
 ## Trabajo en equipo y con asistentes de IA
 
-Cada integrante lleva sus avances en un Markdown con su alias en la raíz del repositorio, como [`neo.md`](neo.md). Al incorporar un sitio candidato o un criterio, deja la fuente, explica qué condición de la misión ayuda a evaluar e indica qué falta validar. Para retomar el trabajo con un asistente de IA, usa este README, los cuadernos y el Markdown del integrante como contexto. Los criterios, sus pesos y los sitios candidatos siguen abiertos a la investigación del equipo.
+Cada integrante lleva sus avances en un Markdown con su alias en la raíz del repositorio, como [`neo.md`](neo.md). Al incorporar un sitio candidato o un criterio, deja la fuente, explica qué condición de la misión ayuda a evaluar e indica qué falta validar. Para retomar el trabajo con un asistente de IA, usa este archivo, los cuadernos y el Markdown del integrante como contexto. Los criterios, sus pesos y los sitios candidatos siguen abiertos a la investigación del equipo.
