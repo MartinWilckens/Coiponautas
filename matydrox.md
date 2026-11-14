@@ -221,8 +221,8 @@ Este archivo se entrega para que el chat encargado del repositorio lo incorpore;
 **Proyecto:** NASA Space Apps Challenge 2026  
 **Línea de investigación:** Marte — Matías  
 **Fecha:** 14 de noviembre de 2026  
-**Estado:** revisión documental e inspección inicial de datos; pendiente de revisión del equipo  
-**Ruta en el repositorio:** `Estado del arte/Arcadia_Amazonis_consolidacion_de_evidencia.md`
+**Estado:** versión ampliada con caracterización regional de Arcadia; fichas individuales y extracción climática pendientes  
+**Ruta en el repositorio:** `matydrox.md`
 
 ### 1. Propósito y relación con el documento anterior
 
@@ -232,7 +232,7 @@ El objetivo sigue siendo **caracterizar sitios marcianos para buscar análogos t
 
 El documento anterior planteó dos líneas iniciales —hielo y operaciones en Arcadia–Amazonis; materiales y búsqueda de señales en Oxia/Jezero—. Se comenzó por Arcadia–Amazonis para examinar información concreta. Esta elección fue exploratoria: no surgió de un ranking cuantitativo de todas las regiones de Marte.
 
-**Límite de esta entrega:** consolida lo aprendido. La siguiente etapa será interpretar conjuntamente esta evidencia para decidir qué características buscar y exigir a los candidatos terrestres. Esa selección de requisitos y la búsqueda de nuevos sitios no se desarrollan aquí.
+**Alcance de esta actualización:** incorpora una caracterización regional de Arcadia en la sección 11, conservando los datos locales ya reunidos. Distingue resultados publicados, interpretaciones y parámetros todavía no medidos. Las fichas individuales de AP-1, AP-8 y AP-9 serán la próxima etapa; después se definirán requisitos para buscar análogos terrestres. No se presenta esta revisión documental como una caracterización instrumental completa.
 
 ### 2. Enfoque acordado
 
@@ -423,7 +423,7 @@ Las propiedades de una muestra no deben atribuirse automáticamente a todos los 
 | «Arcadia es plana» | Hay sectores de bajo relieve; la variabilidad y escala deben especificarse |
 | «Hielo a 10 cm» | Estimación indirecta asociada al patrón poligonal y su formación, no profundidad actual confirmada |
 | «Hielo a 50–60 cm en AP-1» | Exposición en un cráter situado aproximadamente a 23 km, medida respecto a su borde |
-| «Depósitos de 30–80 m» | Cifra de las notas pendiente de fuente y delimitación; no se asigna a los tres sitios |
+| «Depósitos de 30–80 m» | Fuente recuperada: Bramson et al. (2017), basada en interpretación radar previa; espesor inferido y discutido, no profundidad hasta el hielo ni valor de cada AP |
 | «SWIM 0,43 = 43 %» | Índice de consistencia; no probabilidad, pureza o profundidad |
 | «Capas de 0–1 y 1–5 m son mediciones distintas» | Los pares de raster son idénticos y cambian algunas ponderaciones documentadas |
 | «Qaidam reproduce Arcadia» | Hay comparaciones posibles por dimensión; aún no una correspondencia integral demostrada |
@@ -431,21 +431,136 @@ Las propiedades de una muestra no deben atribuirse automáticamente a todos los 
 
 Las notas `MARTE 2026 .docx` se conservan como síntesis de trabajo; los artículos y productos identificados respaldan los campos técnicos. [N]
 
-### 11. Estado de la caracterización y vacíos
+### 11. Caracterización regional ampliada de Arcadia
 
-| Dimensión | Evidencia disponible | Limitación pendiente |
+#### 11.1 Qué región estamos describiendo
+
+**Arcadia es una referencia regional heterogénea.** Para este proyecto interesan especialmente sus llanuras de latitudes medias y la transición hacia Amazonis septentrional. No deben combinarse como si fueran un solo sitio todos los terrenos que un artículo denomina «Arcadia».
+
+| Referencia espacial | Cobertura de la evidencia | Uso correcto |
 |---|---|---|
-| Ubicación | Coordenadas de los tres sitios | Definir polígonos operativos de comparación |
-| Relieve | Desniveles e imágenes/modelos identificados | Comparación sobre áreas y escalas homogéneas |
-| Morfología | Inventarios y tamaños de polígonos | Recuperar cartografía digital y su cobertura |
-| Hielo | Indicios, modelos y exposición cercana | Profundidad y continuidad actuales por sitio |
-| Materiales | Contexto regional | Composición y granulometría local suficientes |
-| Ambiente térmico | Contexto general | Valores específicos con período y escala |
-| Polvo y viento | Contexto general | Caracterización local útil para una actividad definida |
-| Propiedades mecánicas | Información insuficiente en lo revisado | Resistencia, cohesión y comportamiento del subsuelo |
-| Radiación y presión | Contexto planetario | Definir su relevancia para las actividades análogas |
+| Franja de Ramsdale et al. (2019) | 300 km de ancho, 30–80° N, centrada en 170° O / 190° E | Contexto regional y variación latitudinal; no mapa de los tres AP [R1] |
+| Unidades sinuosas estudiadas por Hibbard et al. (2018) | 38–40° N; 156–166° O, equivalentes a 194–204° E | Contrastar superficies sinuosas con terrenos adyacentes [R2] |
+| Referencia térmica de Piqueux et al. (2019) | Ejemplo en 45° N, 190° E | Inferencia térmica de hielo somero; no corresponde a AP-1/8/9 [R6] |
+| AP-1, AP-8 y AP-9 | Coordenadas y huellas de las secciones 4–5 | Evidencia local que después tendrá fichas individuales [L] |
 
-Los datos faltantes permanecen como desconocidos. No se sustituirán por promedios de Marte presentados como mediciones de AP-1/AP-8/AP-9.
+Estas coberturas son ámbitos de estudios, no una delimitación oficial nueva de Arcadia. La ficha regional del catálogo deberá contener subunidades y procedencia espacial de cada atributo.
+
+#### 11.2 Geología, materiales e historia del terreno
+
+La cartografía de Ramsdale et al. relaciona la transición meridional hacia Amazonis con llanuras de probable origen volcánico y reconoce un manto rico en hielo que recubre materiales previos. La distribución de hidrógeno y de formas superficiales cambia con la latitud. No corresponde describir toda la región como un único afloramiento de basalto. [R1]
+
+Hibbard et al. (2021) interpretan tres estructuras sinuosas como glaciares enterrados bajo detritos, apoyándose en morfología, propiedades térmicas y radar. Su semejanza con antiguas corrientes de hielo estancadas es una interpretación, no una medición de flujo actual. [R3]
+
+**Esquema de trabajo propuesto:** distinguir una cobertura superficial de partículas, un subsuelo con distribución de hielo variable y materiales geológicos subyacentes. Este esquema organiza preguntas; no fija tres capas universales con espesores conocidos.
+
+| Material o propiedad | Caracterización defendible | Límite |
+|---|---|---|
+| Cobertura superficial de las unidades sinuosas | Interpretada como suelo predominantemente arenoso, suelto o poco cohesivo a partir de propiedades térmicas e imágenes [R2] | No hay aquí curva granulométrica medida ni ensayo de cohesión |
+| Terrenos vecinos | Menor inercia térmica, compatibles con una mayor influencia de partículas finas [R2] | No equivale a espesor de polvo medido |
+| Hielo | Evidencias independientes de hielo subsuperficial; arquitectura y contenido variables [L, R4–R6] | No es una capa uniforme confirmada bajo toda Arcadia |
+| Mineralogía superficial | No se recuperó una identificación cuantitativa representativa de los AP | No asignar porcentajes de basaltos, arcillas o sulfatos por analogía con otros lugares |
+| Sales y percloratos | No quedaron caracterizados localmente con las fuentes revisadas | No trasladar concentraciones de Phoenix ni composiciones de Qaidam |
+
+La historia relevante para análogos incluye acumulación y preservación de hielo, pérdida por sublimación, contracción térmica, impactos y modificación eólica. No todas las formas conservadas tienen que estar formándose hoy. Los cambios de oblicuidad son parte de las explicaciones propuestas para la historia del hielo; no una prueba de su edad en cada AP. [L, R3, R4]
+
+#### 11.3 Relieve, rugosidad y obstáculos
+
+Golombek et al. (2021) publican elevaciones redondeadas de **−3,9 km respecto al geoide MOLA** para los tres AP. También identifican superficies poligonales suaves de Arcadia que satisfacen su criterio de pendiente inferior a 5° sobre 10 m. Este resultado no se aplica a todo el terreno regional ni reemplaza un mapa de pendientes. [R7]
+
+Para la comparación terrestre deben conservarse por separado:
+
+- **Elevación:** contexto topográfico y atmosférico; −3,9 km en Marte no exige un análogo terrestre a esa elevación.
+- **Pendiente y longitud de base:** inclinación calculada sobre una distancia explícita.
+- **Rugosidad:** variación de altura a escalas comparables con ruedas, patas o recorridos.
+- **Obstáculos:** diámetro, altura, abundancia y distribución de rocas, grietas y crestas.
+
+La sección 5 ya documenta relieve poligonal métrico y diámetros del orden de diez metros. Eso permite describir una superficie con microrelieve aun cuando la llanura sea regionalmente poco inclinada. Siguen pendientes percentiles de pendiente y densidades de obstáculos obtenidos con un mismo método para los tres sitios. [L]
+
+#### 11.4 Propiedades térmicas: cifras disponibles y significado
+
+La inercia térmica describe la resistencia de una superficie a cambiar de temperatura. No es una temperatura ni determina por sí sola un tamaño de grano.
+
+| Parámetro | Valor publicado | Alcance y naturaleza |
+|---|---:|---|
+| Inercia térmica de unidades sinuosas | 200–250 J·m⁻²·K⁻¹·s⁻½ | Resultado orbital publicado en resumen de congreso de 2018; no distribución individual de AP [R2] |
+| Inercia térmica de terrenos circundantes | 100–200 J·m⁻²·K⁻¹·s⁻½ | Mismo estudio y comparación; no rango completo de Arcadia [R2] |
+| Inercia térmica regional usada por Bramson et al. | 196 J·m⁻²·K⁻¹·s⁻½ | Parámetro adoptado a partir de TES [R4, tabla 1] |
+| Albedo adoptado para Arcadia | 0,23 | Valor representativo del área de estudio, no constante regional [R4] |
+
+Los contrastes apoyan la separación de unidades para buscar análogos, pero admiten distintas combinaciones de partículas, compactación y estratificación. **Una coincidencia de inercia térmica no demuestra igualdad mineralógica ni mecánica.**
+
+No se obtuvo en esta revisión una serie de temperatura superficial que permita publicar máximas, mínimas y amplitudes diarias o estacionales de nuestra área. Tampoco se ejecutó un modelo térmico nuevo. Por ello, no se rellenan esos campos con extremos planetarios de Marte.
+
+La investigación térmica sí aporta algo concreto: Piqueux et al. ajustan temperaturas estacionales de MCS y THEMIS con un modelo de dos capas, suponiendo hielo en la inferior. Sus mapas regionales tienen 3 píxeles por grado; en el ejemplo de 45° N, 190° E infieren hielo a pocos centímetros. Es una estimación dependiente del modelo y espacialmente distinta de los AP. [R6]
+
+Para obtener temperaturas comparables habrá que registrar coordenadas, hora solar local, estación marciana —longitud solar, Ls—, año marciano, polvo y si la variable corresponde al suelo o al aire. Eso se resolverá con extracción de productos o modelado, no añadiendo más promedios generales a la bibliografía.
+
+#### 11.5 Hielo y estructura del subsuelo: qué queda resuelto
+
+**La evidencia de hielo somero y la hipótesis de un depósito grueso son cuestiones diferentes.** La primera no valida automáticamente la segunda.
+
+| Cuestión | Resultado regional | Estado |
+|---|---|---|
+| ¿Existe hielo cercano a la superficie? | Exposiciones por impactos y múltiples indicadores orbitales, además de la evidencia geomorfológica de la sección 6 | Respaldado para localidades observadas; no confirmado punto por punto [L, R6] |
+| ¿De dónde provienen los 30–80 m? | Bramson et al. (2017) recogen espesores derivados de la interpretación radar de depósitos de Arcadia | Fuente identificada; no profundidad de enterramiento [R4] |
+| ¿Es todo ese espesor hielo dominante? | Campbell y Morgan encuentran pérdidas radar incompatibles con predominio de hielo en grandes fracciones del espesor investigado | Interpretación discutida [R5] |
+| ¿Qué muestran las unidades sinuosas? | Hibbard et al. reúnen evidencia a favor de glaciares cubiertos por detritos | Hipótesis respaldada por varios indicadores; no sondeo directo [R3] |
+| ¿Cuánto hielo hay bajo cada AP? | No determinado aquí de forma directa | Pendiente; SWIM no sustituye el contenido volumétrico [L, S] |
+
+Bramson et al. modelan preservación durante 21 millones de años y una cobertura residual que limita la pérdida de hielo. Es un mecanismo de supervivencia compatible con su interpretación, no una datación ni una prueba de continuidad bajo los tres sitios. [R4]
+
+Almacenar separadamente: profundidad del techo, espesor, fracción de hielo, porosidad, material de cobertura y método de inferencia. Cuando dos estudios difieran, conservar ambas hipótesis; no promediarlas como si fueran medidas equivalentes.
+
+**Actualización metodológica de 2026:** Courville et al. publicaron un enfoque probabilístico para SWIM. Esto no convierte retroactivamente los índices de la tabla 3 de Luzzi ni los raster auxiliares aportados en probabilidades. El catálogo debe identificar método y versión. Se verificó la publicación y su enfoque; no se descargaron ni calcularon sus productos en esta entrega. [R13]
+
+#### 11.6 Atmósfera, viento y polvo
+
+El contexto planetario es una atmósfera tenue dominada por CO₂ —aproximadamente 95 %—. Eso no constituye una medida de presión en Arcadia. [R10]
+
+Heavens (2017) estudia tormentas de polvo texturadas en el noreste de Amazonis–suroeste de Arcadia, con imágenes y observaciones atmosféricas. Documenta estructura y dinámica de tormentas y enfriamiento superficial bajo sus nubes. Por tanto, la zona no puede representarse como un desierto frío atmosféricamente inactivo. [R8]
+
+Stanzel et al. (2006) identificaron remolinos activos en Arcadia mediante HRSC. Eso acredita actividad eólica regional, pero no da una tasa anual ni una velocidad del viento a la altura de un instrumento en AP-1. [R9]
+
+| Campo | Qué puede registrarse ahora | Qué falta para cuantificarlo |
+|---|---|---|
+| Actividad de polvo | Observada regionalmente; separar remolinos y tormentas | Frecuencia por área, estación y cobertura de observación |
+| Presión | Contexto de baja presión; no rango local establecido aquí | Serie modelada con elevación y estación explícitas |
+| Viento | Procesos eólicos observados | Velocidad, dirección, altura de referencia y variabilidad local |
+| Opacidad del polvo | Variable ambiental necesaria | Serie con longitud de onda, normalización y fechas |
+| Depósito sobre equipos | No cuantificado para los AP | No deducirlo solamente de presencia de tormentas |
+
+La Mars Climate Database permite obtener temperatura, presión, viento y otras variables mediante simulaciones y escenarios de polvo. Sus salidas deben etiquetarse como **modeladas**. La climatología media no representa por sí sola una tormenta extrema ni ráfagas sobre microrelieve. [R11]
+
+La climatología de polvo de LMD ofrece opacidad de columna a 9,3 µm, incluyendo productos normalizados a 610 Pa y a presión superficial. Es necesario conservar esa distinción antes de comparar valores. [R12]
+
+#### 11.7 Resistencia del suelo, excavación y movilidad
+
+La caracterización mecánica permanece indirecta. Las imágenes y propiedades térmicas ayudan a formular hipótesis sobre partículas y cobertura; **no proporcionan un ensayo de penetración, una resistencia portante o una curva de compactación**.
+
+Golombek et al. excluyen de su selección superficies de inercia térmica inferior a 100 J·m⁻²·K⁻¹·s⁻½ por su posible asociación con polvo espeso poco favorable para soporte o radar. Es un criterio de selección, no una frontera universal que garantice firmeza por encima de 100. [R7]
+
+Para evitar una falsa caracterización, quedan sin valor numérico local: cohesión, ángulo de fricción, densidad aparente, resistencia a penetración, abrasividad, hundimiento y esfuerzo de excavación. La futura ficha podrá contener hipótesis de material para ensayos, claramente separadas de mediciones marcianas. No se trasladan parámetros mecánicos de InSight o Phoenix a Arcadia.
+
+#### 11.8 Agua líquida, biología, cuevas y límites de analogía
+
+En la documentación incorporada no queda establecida una reserva actual de agua líquida, una biosignatura confirmada ni un sistema de cuevas en las áreas AP. Esos campos se registran como **no caracterizados**, no como ausencias demostradas. La presencia de hielo, por sí sola, no confirma habitabilidad ni conservación de material biológico.
+
+La gravedad y el ambiente radiativo pertenecen al contexto marciano y no son criterios que un paisaje terrestre reproduzca íntegramente. Tampoco se asigna a Arcadia una dosis medida por Curiosity en otra región. Para experimentos de presión, radiación o comportamiento físico dependiente de gravedad harán falta condiciones controladas o una justificación de escala; el lugar terrestre puede seguir siendo útil para otras dimensiones.
+
+#### 11.9 Balance de esta actualización
+
+| Dimensión | Avance logrado | Pendiente real |
+|---|---|---|
+| Contexto geológico | Distinción entre materiales previos, cobertura y unidades interpretadas como glaciares | Composición local y estratigrafía verificable |
+| Relieve | Contexto de llanura baja y datos locales conservados | Estadísticas homogéneas de pendientes y obstáculos |
+| Superficie | Contraste térmico cuantificado entre unidades sinuosas y vecinas | Granulometría y espesores medidos |
+| Hielo | Fuente del espesor recuperada; hipótesis contrapuestas documentadas | Profundidad, pureza y continuidad por sitio |
+| Temperatura | Propiedades térmicas y método de observación identificados | Ciclos diarios y estacionales extraídos o modelados |
+| Atmósfera y polvo | Actividad regional demostrada y productos identificados | Series locales de presión, viento y opacidad |
+| Mecánica | Alcance de inferencias delimitado | Parámetros geotécnicos directos |
+
+**Resultado:** disponemos de una caracterización documental regional más sólida para preparar las fichas individuales. No disponemos todavía de una caracterización numérica completa de todos los campos. Los vacíos que quedan requieren productos concretos, procesamiento o mediciones nuevas; no se resuelven atribuyendo a toda Arcadia un valor único.
 
 ### 12. Productos identificados para continuar después
 
@@ -469,7 +584,7 @@ Este conjunto fue identificado en la bibliografía, pero no se descargó ni insp
 
 Quedan consolidadas tres sitios de referencia marcianos de una misma región, varios sectores terrestres documentados de Qaidam y un inventario de las capas auxiliares SWIM disponibles.
 
-**Siguiente etapa:** definir qué buscar en la Tierra y qué requisitos exigir según el objetivo de la misión análoga. No se decide aquí una lista final de requisitos, ponderaciones, candidatos nuevos ni un ranking.
+**La siguiente etapa será elaborar las fichas individuales de AP-1, AP-8 y AP-9**, manteniendo separados los datos propios y el contexto regional. Después se traducirán sus características a requisitos de análogos terrestres según la actividad. No se decide aquí una lista final de requisitos, ponderaciones, candidatos nuevos ni un ranking.
 
 Para reproducir las extracciones de SWIM, queda pendiente registrar la versión o suma de verificación del ZIP, los nombres exactos de las capas, la transformación de coordenadas y el tratamiento de NoData. Las comprobaciones del paquete se conservan como resultados reportados en el borrador; quedan pendientes de reproducción por el equipo.
 
@@ -481,3 +596,21 @@ Para reproducir las extracciones de SWIM, queda pendiente registrar la versión 
 - **[N] Notas de trabajo.** `MARTE 2026 .docx` (archivo de trabajo del equipo).
 - **Contexto previo.** [NASA, 26 de octubre de 2023: cartografía del hielo marciano](https://www.nasa.gov/solar-system/planets/mars/nasa-is-locating-ice-on-mars-with-this-new-map/) y [portal SWIM](https://swim.psi.edu/).
 - **Documento anterior.** [Investigacion_Marte_requisitos_para_analogos.md](Estado%20del%20arte/Investigacion_Marte_requisitos_para_analogos.md).
+
+#### Fuentes añadidas para la caracterización regional
+
+Consulta bibliográfica: 14 de noviembre de 2026. Se indican los tipos de evidencia; un resumen de congreso tiene menor desarrollo metodológico que un artículo completo. No se descargaron nuevos raster climáticos ni se ejecutaron simulaciones.
+
+- **[R1] Ramsdale et al. (2019).** *Grid Mapping the Northern Plains of Mars: Geomorphological, Radar, and Water-Equivalent Hydrogen Results From Arcadia Plantia*. JGR: Planets, 124, 504–527. [DOI: 10.1029/2018JE005663](https://doi.org/10.1029/2018JE005663). Cartografía regional y comparación de geomorfología, radar e hidrógeno; la franja estudiada no coincide con las huellas AP.
+- **[R2] Hibbard et al. (2018).** *Evidence for Flow in Buried Ice in the Mid-Latitudes of Arcadia Planitia*. LPSC, resumen 2606. [PDF, 2 páginas](https://www.hou.usra.edu/meetings/lpsc2018/pdf/2606.pdf). Fuente de los intervalos de inercia térmica y de las inferencias sobre partículas superficiales. Resultados preliminares de congreso; no mediciones geotécnicas.
+- **[R3] Hibbard, Williams, Golombek, Osinski y Godin (2021).** *Evidence for widespread glaciation in Arcadia Planitia, Mars*. Icarus, 359, 114298; edición del 1 de mayo de 2021. [DOI: 10.1016/j.icarus.2020.114298](https://doi.org/10.1016/j.icarus.2020.114298). Se verificaron resumen y metadatos accesibles; no se realizó revisión integral del texto cerrado. Interpretación de las unidades sinuosas a partir de varios conjuntos orbitales.
+- **[R4] Bramson, Byrne y Bapst (2017).** *Preservation of Midlatitude Ice Sheets on Mars*. JGR: Planets, 122, 2250–2266; primera publicación el 11 de octubre de 2017. [DOI: 10.1002/2017JE005357](https://doi.org/10.1002/2017JE005357). Tabla 1 y secciones de introducción/modelado: propiedades representativas, espesor interpretado y preservación. Antecedente radar: Bramson et al. (2015), [Widespread excess ice in Arcadia Planitia, Mars](https://doi.org/10.1002/2015GL064844).
+- **[R5] Campbell y Morgan (2018).** *Fine-Scale Layering of Mars Polar Deposits and Signatures of Ice Content in Nonpolar Material From Multiband SHARAD Data Processing*. GRL. [DOI: 10.1002/2017GL075844](https://doi.org/10.1002/2017GL075844). Atenuación radar: interpretación alternativa a depósitos dominados por hielo en todo su espesor.
+- **[R6] Piqueux et al. (2019).** *Widespread Shallow Water Ice on Mars at High Latitudes and Midlatitudes*. GRL, 46, 14290–14298. [DOI: 10.1029/2019GL083947](https://doi.org/10.1029/2019GL083947). Temperaturas MCS/THEMIS y ajuste de dos capas; producto regional de 3 píxeles por grado.
+- **[R7] Golombek et al. (2021).** *SpaceX Starship Landing Sites on Mars*. LPSC, resumen 2420. [PDF, 2 páginas](https://www.hou.usra.edu/meetings/lpsc2021/pdf/2420.pdf). Tabla 1: elevaciones; texto: criterios y superficies evaluadas. Estudio de candidatos, no designación vigente de una base ni certificación de aterrizaje.
+- **[R8] Heavens (2017).** *Textured Dust Storm Activity in Northeast Amazonis–Southwest Arcadia, Mars: Phenomenology and Dynamical Interpretation*. Journal of the Atmospheric Sciences, 74, 1011–1037, abril de 2017. [DOI: 10.1175/JAS-D-16-0211.1](https://doi.org/10.1175/JAS-D-16-0211.1). Observación y análisis de tormentas regionales; no serie meteorológica en los AP.
+- **[R9] Stanzel et al. (2006).** *Dust devils on Mars observed by the High Resolution Stereo Camera*. GRL. [DOI: 10.1029/2006GL025816](https://doi.org/10.1029/2006GL025816). Detección de remolinos activos, incluida Arcadia.
+- **[R10] NASA/NSSDC.** [Mars Fact Sheet](https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html). Contexto planetario; no observaciones locales de Arcadia.
+- **[R11] Equipo Mars Climate Database.** [Documentación del acceso web](https://www-mars.lmd.jussieu.fr/mars/info_web/) y [descripción de MCD 6.1, 2022](https://meetingorganizer.copernicus.org/EPSC2022/EPSC2022-786.html). Modelos, variables y escenarios; registrar la versión realmente utilizada al generar una salida.
+- **[R12] Equipo LMD.** [Climatologies of the Martian Atmospheric Dust Optical Depth](https://www-mars.lmd.jussieu.fr/mars/dust_climatology/). Productos de opacidad y normalizaciones; acceso identificado, sin extracción espacial en esta revisión.
+- **[R13] Courville et al. (2026).** *Subsurface Water Ice Mapping on Mars: A Probabilistic Approach*. Planetary Science Journal, 7, 183. [DOI: 10.3847/PSJ/ae8904](https://doi.org/10.3847/PSJ/ae8904); [registro institucional USGS](https://pubs.usgs.gov/publication/70279509). Publicación registrada el 31 de julio de 2026. Marco probabilístico posterior a los productos citados en la sección 7; no se recalcularon los valores anteriores.
