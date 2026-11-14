@@ -1440,3 +1440,138 @@ Ya están definidas **doce preguntas específicas** (A1–A3, J1–J3, G1–G3, 
 - **[R3] Gale.** Documento regional, sección 5; [secuencia eólica y agua en la base de la unidad con sulfatos](https://doi.org/10.1029/2025JE009556); [evaporitas en la transición arcilla–sulfato](https://doi.org/10.1029/2026JE009783); [análisis SAM-EGA](https://pubmed.ncbi.nlm.nih.gov/39619889/).
 - **[R4] Oxia.** Documento regional, sección 6; Fawdon et al. (2024), [mapa geológico a 1:30.000](https://doi.org/10.1080/17445647.2024.2302361); [sistemas aluviales antiguos](https://www.sciencedirect.com/science/article/pii/S0012821X22005404); [ESA, misión Rosalind Franklin](https://explorationscience.esa.int/project/exomars-rosalind-franklin-rfm/).
 - **Enunciado del desafío:** texto proporcionado por el equipo, *Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars* (NASA Space Apps Challenge 2026). El objetivo evaluable es una ubicación terrestre caracterizada, presentada en una herramienta o visualización.
+
+---
+
+## Prospección mundial de sitios terrestres para analogías marcianas
+
+**NASA Space Apps Challenge 2026 · Línea Marte**  
+**14 de noviembre de 2026 · Versión corregida de la lista corta**
+
+**Insumos:** [caracterización de Arcadia–Amazonis, Jezero, Gale y Oxia](#caracterización-de-regiones-de-marte-para-buscar-análogos-terrestres) y [preguntas A1–O3](#paso-1--preguntas-de-exploración-marciana-que-guiarán-la-búsqueda-de-análogos-terrestres). Se eliminaron las preferencias geográficas de la primera búsqueda. **El resultado buscado son ubicaciones terrestres caracterizadas; Marte proporciona las preguntas y los comparadores.**
+
+### 1. Método y alcance de las afirmaciones
+
+Buscamos por proceso y tarea: hielo y polígonos (Arcadia), desembocaduras y facies deltaicas (Jezero), cambios lacustre–eólico (Gale) y origen de arcillas en roca hospedante (Oxia). Para cada candidato distinguimos **medición publicada**, **hipótesis de analogía** y **prueba pendiente**. Que un sitio aparezca en esta lista no implica que sea único, desconocido, accesible para tomar muestras o ya validado con datos satelitales procesados por el equipo. «Original» significará un uso específico insuficientemente probado frente a comparadores, sujeto a revisión bibliográfica.
+
+| Evidencia | Valor y límite |
+|---|---|
+| Perfil, facies, mineralogía o sondeo medido | Verifica un atributo local; no caracteriza automáticamente toda una región. |
+| Imágenes, radar y DEM | Delimitan formas, tiempos y escalas; una señal de radar no verifica por sí sola la composición o profundidad del hielo. |
+| Interpretación Tierra–Marte | Requiere propiedad compartida, escala compatible, prueba independiente y diferencias físicas explícitas. |
+
+### 2. Lista corta mundial, ordenada por pregunta
+
+| Sector terrestre | Pregunta marciana | Lo que está documentado | Hipótesis y estado |
+|---|---|---|---|
+| **Saskylakh, campo poligonal junto al aeródromo, Yakutia (Rusia)** | **A2/A3** terreno poligonal y cambio; **A1** condicional | Estudio de **12,84 km²** centrado aproximadamente en **71,95° N, 114,10° E** con polígonos de centro bajo/alto, Sentinel-1 InSAR, Landsat y JAXA AW3D30 [1]. | Comparar visibilidad de obstáculos a distintas resoluciones y deformación. Para detección de hielo A1 faltan profundidad y controles de subsuelo **en puntos georreferenciados**. |
+| **Delta de Lake Yamma Yamma, Queensland (Australia)** | **J1**, secundariamente O2 geométrico | Lago efímero ~**20 × 40 km**, delta migrante, granulometría, hidrología, imágenes y DEM [2, 3]. | Ensayar si interpretación orbital elige facies adecuadas de una desembocadura efímera; validación posible contra campo publicado. |
+| **Perfil de Bhallil, Atlas Medio (Marruecos)** | **O1/J2** minerales y origen de alteración | Metabasalto y saprolita con smectita/interestratificados clorita–smectita; petrografía, DRX, Mössbauer y estados Fe²⁺/Fe³⁺ por nivel [4]. | Probar cómo un mismo mineral oculta distintas historias de alteración. Falta localizar coordenada y extensión cartografiable del perfil. |
+| **Williams Point, Kati Thanda–Lake Eyre (Australia)** | **G1**, G2 condicional | Columna ~**15 m**: base lacustre, **5–6 m** fluvio-lacustres, ~**0,5 m** litoral, **6 m** eólicos; análisis mineralógicos y cronología [5]. | Comparar lectura de unidades húmedas y eólicas, sin afirmar coincidencia exacta de la transición arcilla–sulfato de Gale. Parque con acceso restringido [6]. |
+| **Perfiles periféricos de Salada de Chiprana (España)** | **G1/G2** | Paleosuelos y facies lacustres/eólicas, incluyendo paleosuelo sobre sedimento eólico datado **322,2 ± 21,6 ka** [7]. | Control independiente para Williams Point; falta comprobar minerales por estrato. Reserva natural [8]. |
+| **Sondeos de Aucanquilcha (Chile)** | **A1/A3**, condicional | Perforación y termometría en estudio multisitio altoandino; punto ~5.300 m [9]. | Verificar sondeo preciso, hielo real y control seco antes de proponer ensayo de detección. Ojos del Salado ya es análogo publicado [10]. |
+| **Depósitos marginales de Laguna Miscanti (Chile)** | **J1/G1**, condicional | Facies lacustres y abanicos; testigo de **7,95 m** y registro ~22 ka [11, 12]. | Un abanico no es un delta sin facies y conexión demostradas; reserva protegida [13]. |
+| **Tobas Colbún de Quinamávida (Chile)** | **O1/J2**, parcial | Tobas alteradas a zeolitas, con smectita variable [14]. | Caso para estudiar falsas clasificaciones minerales; zeolitas dominantes impiden llamarlo análogo directo de arcillas Fe/Mg de Oxia. |
+
+**No hay cuota por continente ni puntuación total única.** Los cuatro primeros sectores son las hipótesis más interesantes para **tareas distintas**; los siguientes sirven de alternativas y controles. Las coordenadas de Saskylakh se refieren al área de estudio, no a perforaciones. No se han validado todavía las coordenadas de afloramiento del resto.
+
+### 3. Pruebas que harían útiles los cuatro candidatos principales
+
+#### Saskylakh: de una llanura orbital a obstáculos y deformación
+
+El estudio de Wang y colaboradores (2023) distingue polígonos de centro bajo y alto, lagunas termokársticas y transectos aproximados de **9 y 6,8 km**. Informan contenido regional de hielo **>40 % en volumen** y capa activa próxima a 1 m a partir de referencias previas, y analizan deformación en **2018–2019** con Sentinel-1. Usaron Landsat y JAXA AW3D30 [1]. Es un sector concreto, no «toda Siberia».
+
+**Ensayo A2:** delimitar campo, distinguir polígonos, agua y surcos en imagen de alta resolución, luego reducir a píxeles de 30 m; cuantificar obstáculos que desaparecen y errores de trazado de ruta. **Ensayo A3:** comparar cambios temporales y mecanismos de degradación; la fusión y circulación de agua terrestres no se extrapolan automáticamente a Marte. **A1 exige sondeos/exposiciones locales** y profundidad del hielo: el porcentaje regional y la deformación InSAR no miden el techo de hielo bajo cada celda.
+
+**Prueba de descarte:** sin cartografía fina abierta para validar y sin series reproducibles, relegarlo a comparador. Un ensayo de campo en Yakutia exige logística y permisos aún no investigados. El conocido Axel Heiberg [15] sirve de control de analogía criogénica.
+
+#### Lake Yamma Yamma: una desembocadura real para Jezero
+
+Mann y Amos (2022) estudiaron un lago efímero de ~20 × 40 km, ~750 km aguas arriba y ~90 m por encima de Kati Thanda–Lake Eyre, cuyo delta principal migra al noroeste. Reunieron granulometría, facies de campo, imágenes, frecuencia de inundación, hidrología y elevación [2]. Su tesis precedente documenta desembocaduras terminales, dunas y depósitos de crecida [3]. Queensland indica que se llena por completo aproximadamente **cada 25–30 años** [16].
+
+**Ensayo J1:** trazar canal–entrada–delta–lago en imágenes y elevación, seleccionar hipotéticas muestras por apariencia orbital, y contrastar la clasificación contra facies publicadas. Para O2 se puede contrastar la geometría de canales, sin asumir que sean equivalentes a crestas invertidas de Oxia. **No representa** carbonatos, material ígneo de Jezero ni condiciones de Marte actual.
+
+**Novedad delimitada:** ya está estudiado como análogo sedimentario de otra cuenca [3], y NASA llamó análogo planetario al **sistema regional de Cooper Creek**, que fluye hacia Yamma Yamma [17]. No presentarlo como sitio descubierto por nosotros. La propuesta propia es una evaluación reproducible de **elección de facies y falsos positivos en un delta seco**. Acceso/tenencia y valores ecológicos/culturales deben verificarse antes de cualquier campo [16].
+
+#### Bhallil: misma señal arcillosa, distinto proceso
+
+Dekayir y colaboradores (2002) describieron metabasalto triásico y saprolita; smectita y clorita–smectita pueden aparecer en ambos. Con petrografía, difracción de rayos X y Mössbauer distinguen niveles de hierro mayoritariamente ferroso, parcialmente oxidado y oxidado [4]. Existe figura de situación, pero **no se extrajeron coordenadas del perfil**.
+
+**Ensayo O1/J2:** hacer una predicción con cartografía o espectro de superficie y revelar después el perfil mineralógico y estado de hierro. Pregunta: ¿se confunde roca previamente alterada con meteorización posterior? La utilidad está en el **proceso de inferencia**, no en afirmar que la composición completa de Bhallil sea la de Oxia. Murrin Murrin ya fue comparado explícitamente con Nili Fossae [18], y Otago/Granby se estudiaron para Oxia [19]: servirán de contraste. **Descartar como caso satelital** si el afloramiento es demasiado pequeño o la ubicación no se puede verificar.
+
+#### Williams Point: sucesión estratigráfica para Gale
+
+Cohen y colaboradores (2022) reexaminaron un acantilado de ~15 m en el borde sur de Madigan Gulf: capas lacustres basales, 5–6 m fluvio-lacustres, ~0,5 m de playa/costa y 6 m eólicos. Emplearon excavación, microfacies, DRX/FRX, isótopos y OSL; reportan fases lacustres ~230–131 ka, fluvio-lacustres ~86 ka y sedimento eólico yesífero ~49 ka [5]. Estas son edades terrestres, sin equivalencia cronológica con Gale.
+
+**Ensayo G1:** clasificar capas y contactos de imágenes/perfiles sin revelar interpretación, después contrastar con mediciones del artículo. Para **G2** hay que verificar si el yeso es deposicional, reciclado o diagenético por estrato; la columna **no reproduce automáticamente** el paso arcilla–sulfato de Gale.
+
+**Acceso:** Kati Thanda–Lake Eyre National Park es gestionado con pueblos Arabana y Dieri. Se llega a miradores por rutas designadas, pero no se permite el acceso recreativo al lecho; esto **no prueba** que Williams Point sea accesible [6]. Inicialmente debe ser ficha digital. Trabajo sobre el afloramiento requeriría autorización específica.
+
+### 4. Casos secundarios y comparadores ya conocidos
+
+- **Chiprana, España:** replicar G1 con paleosuelos y sedimentos lacustres/eólicos datados. Reserva Natural Dirigida; no inferir permiso para muestreo por poder visualizarla [7, 8].
+- **Aucanquilcha, Chile:** sirve para A1 **solo** si un sondeo localizado muestra hielo y profundidad comprobados y otro ofrece control seco. Permafrost no implica hielo explotable en el punto elegido [9]. Ojos del Salado es control altoandino preexistente [10].
+- **Miscanti, Chile:** comprobar con mapas y secciones si los abanicos publicados se conectan con facies lacustres; el testigo no valida por sí mismo un delta expuesto [11–13].
+- **Quinamávida, Chile:** contraste negativo de espectros/minerales; no etiquetar como Oxia mineralógico porque las zeolitas predominan [14, 19].
+
+| Análogo conocido | Papel en la comparación |
+|---|---|
+| **Qaidam occidental, China** [20] | Referencia de estudios de ambientes áridos; comparar preguntas concretas, no desiertos completos. |
+| **Lago Salda, Turquía** [21] | Control carbonatado para Jezero, diferente al ensayo de facies de Yamma Yamma. |
+| **Murrin Murrin, Australia** [18] | Perfil ya relacionado con filosilicatos marcianos, contraste directo de Bhallil. |
+| **Otago/Granby** [19] | Controles mineralógicos publicados para Oxia. |
+| **Axel Heiberg, Canadá** [15] | Control criogénico de formas ya descritas como análogos. |
+| **Ojos del Salado** [10] | Control de investigaciones altoandinas, evita atribuir novedad geográfica a Aucanquilcha. |
+
+Una búsqueda preliminar de topónimos y «Mars analog» no demuestra ausencia de estudios anteriores. Antes de presentar novedad al jurado hay que revisar también variantes del nombre, tesis y artículos locales. En particular, **Cooper Creek ya figura como analogía planetaria en NASA** [17].
+
+### 5. Datos abiertos y secuencia ejecutable
+
+| Tarea | Repositorios/productos | Resultado y límite |
+|---|---|---|
+| Delimitar cuencas, delta y polígonos | Artículos con figuras/coordenadas [1–5]; NASA **Earthdata/NASADEM** donde cubra [22]; **JAXA AW3D30** [23] | DEM de decenas de metros para contexto; no resuelve láminas ni microrelieve de rover. |
+| Ver agua/inundación y cambios | NASA Landsat/Worldview; ESA **Sentinel-2** [24] | Series húmedo/seco y cobertura; nubes, sales y sombras pueden confundirse. |
+| Deformación de Saskylakh | ESA **Sentinel-1**, Landsat, AW3D30 como en [1] | InSAR documenta desplazamiento relativo bajo condiciones de coherencia; no identifica profundidad o pureza del hielo. |
+| Materiales/arcillas | DRX, petrografía, Mössbauer de [4, 5, 7, 14], mapas geológicos; espectros remotos solo donde la escala alcance | Sentinel-2 no diagnostica por sí solo la especie ni el origen de una arcilla. |
+| Condiciones y uso | Instituciones de parques [6, 8, 13, 16] | Separar consulta digital, visita pública y muestreo con permiso. |
+
+**Próxima entrega comprobable:** dos fichas de **procesos distintos** con polígono GeoJSON, coordenadas y su procedencia, imagen/DEM y al menos una capa temporal o geológica procesada, medida terrestre independiente, unidad marciana comparada, control conocido y una predicción susceptible de ser refutada. Empezar con **Yamma Yamma (J1)** y **Saskylakh (A2/A3)** por su expresividad cartográfica; **Bhallil (O1)** tras ubicar el perfil, y **Williams Point (G1)** si hay cartografía de afloramiento suficiente. Elegir por disponibilidad real de datos al ejecutar la prueba.
+
+### 6. Cómo se verá ante el jurado
+
+| Criterio comunicado | Evidencia que mostrar |
+|---|---|
+| **Impacto** | Catálogo reutilizable que ayude a escoger un análogo según objetivo, con datos y límites verificables. |
+| **Creatividad** | Identificar fallos reales de inferencia: forma deltaica mal clasificada, mineral igual de origen distinto, hielo inferido de relieve. |
+| **Validez** | Predicciones orbitales confrontadas con facies, mineralogía, sondeos o cartografía publicados; medidas con escala e incertidumbre. |
+| **Relevancia** | Ubicaciones de la **Tierra** caracterizadas para una pregunta de Marte, sin convertir la lista de regiones marcianas en producto final. |
+| **Presentación** | Mapa filtrable por pregunta, atributo, evidencia, acceso y ruptura de analogía; ficha que separa dato, inferencia y pendiente. |
+
+### Fuentes primarias y oficiales
+
+1. Wang et al. (2023), [Saskylakh y deformación InSAR](https://doi.org/10.3390/rs15051335), *Remote Sensing* 15, 1335. El dato regional de hielo y capa activa remite a referencias del artículo.
+2. Mann y Amos (2022), [sedimentología de Lake Yamma Yamma](https://doi.org/10.1080/03721426.2022.2027649), estudio de campo, satélite, inundación y DEM.
+3. Mann (2017), [tesis doctoral, Universidad de Adelaide](https://digital.library.adelaide.edu.au/items/8bda2080-2ba5-4846-b970-7f25808a9926/full), depósitos terminales y comparación sedimentaria.
+4. Dekayir et al. (2002), [perfil de alteración de Bhallil](https://doi.org/10.1016/S1631-0713(02)01829-1), *Comptes Rendus Geoscience* 334.
+5. Cohen et al. (2022), [secuencia de Williams Point](https://digital.library.adelaide.edu.au/items/52c0c260-3351-4916-8dc8-a931281d04aa), investigación original y cronología.
+6. South Australia National Parks, [Kati Thanda–Lake Eyre National Park](https://www.parks.sa.gov.au/parks/kati-thanda-lake-eyre-national-park), administración y acceso.
+7. Tierra et al. (2026), [paleosuelos de Salada de Chiprana](https://doi.org/10.1016/j.catena.2026.110058), *Catena*.
+8. Gobierno de Aragón, [Reserva Natural Dirigida Saladas de Chiprana](https://www.aragon.es/-/reserva-natural-dirigida-de-las-saladas-de-chiprana).
+9. Yoshikawa et al. (2025), [permafrost de Andes áridos](https://doi.org/10.1080/15230430.2025.2532202), estudio de múltiples montañas.
+10. Nagy et al., [Ojos del Salado y analogía térmica](https://doi.org/10.1089/ast.2018.2021).
+11. Valero-Garcés et al. (1999), [facies lacustres del Altiplano](https://www.sciencedirect.com/science/article/abs/pii/S0031018299000188).
+12. Grosjean et al. (2001), [testigo de Miscanti](https://www.sciencedirect.com/science/article/pii/S0921818100000631).
+13. CONAF, [Reserva Nacional Los Flamencos](https://www.conaf.cl/parque_nacionales/reserva-nacional-los-flamencos/).
+14. Bascuñán et al. (2007), [tobas zeolitizadas en Quinamávida](https://www.cambridge.org/core/journals/clays-and-clay-minerals/article/abs/zeolitization-of-tuffs-at-quinamavida-central-southern-chile/2FEAC4DB7907E913D97703DD4EF159A6).
+15. Hibbard et al. (2022), [Axel Heiberg, formas análogas](https://www.hou.usra.edu/meetings/lpsc2022/pdf/2551.pdf).
+16. Queensland Government, [Cooper Creek y Lake Yamma Yamma](https://wetlandinfo.detsi.qld.gov.au/wetlands/ecology/processes-systems/water/catchment-stories/lake-eyre-basin/cooper-creek/), funcionamiento y valores del humedal.
+17. NASA Earth Observatory, [*Cooper Creek, Australia*](https://science.nasa.gov/earth/earth-observatory/cooper-creek-australia-147046/), analogía planetaria regional ya conocida.
+18. Carter et al., [Murrin Murrin y Nili Fossae](https://www.sciencedirect.com/science/article/abs/pii/S0019103511003496), comparación previa.
+19. Krzesińska et al. (2021), [Otago/Granby como controles de Oxia](https://pubmed.ncbi.nlm.nih.gov/34406809/).
+20. Anglés y Li (2017), [Qaidam occidental](https://doi.org/10.1002/2017JE005293).
+21. NASA Earth Observatory, [Lago Salda y Jezero](https://science.nasa.gov/earth/earth-observatory/jez-like-mars-147041/).
+22. NASA, [Earthdata Search](https://search.earthdata.nasa.gov/).
+23. JAXA, [AW3D30](https://www.eorc.jaxa.jp/ALOS/en/aw3d30/data/index.htm).
+24. ESA, [Copernicus Sentinel-2](https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel2.html); [Sentinel-1](https://documentation.dataspace.copernicus.eu/Data/Sentinel1.html).
+
+**Estado final de esta etapa:** revisión bibliográfica comparativa mundial; aún **no** se descargaron ni procesaron capas sobre polígonos propios, verificaron todas las coordenadas de afloramiento ni obtuvieron permisos. Ningún sitio se presenta como análogo validado o descubrimiento absoluto.
