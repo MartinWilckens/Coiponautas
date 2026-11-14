@@ -836,3 +836,204 @@ Corrección del XMind: las descripciones de Jezero y Oxia están intercambiadas.
 7. **Portales terrestres:** [JAXA G-Portal](https://gportal.jaxa.jp/), [Copernicus Explore Data](https://dataspace.copernicus.eu/explore-data), [NASA Earthdata](https://search.earthdata.nasa.gov/) y [Worldview](https://worldview.earthdata.nasa.gov/). Los dos últimos fueron aportados por el equipo; no se extrajeron datos terrestres en esta ficha.
 8. **NASA/NSSDC.** [Mars Fact Sheet](https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html). Contexto planetario; no medición de AP-1.
 9. **Documento de continuidad:** `Arcadia_Amazonis_consolidacion_de_evidencia.md`, versión ampliada del 14/11/2026. Contiene la revisión regional y la inspección reproducible del ZIP SWIM aportado. Los resultados regionales no se transfieren automáticamente a AP-1.
+
+---
+
+## Tres regiones marcianas para la búsqueda de análogos terrestres: Jezero, Gale y Oxia Planum
+
+**NASA Space Apps Challenge 2026 · Línea Marte**  
+**Fecha:** 14 de noviembre de 2026  
+**Alcance:** caracterización **regional**; las características de una roca, perforación, punto del recorrido o elipse no se atribuyen a toda la región. Complementa las fichas de Arcadia y AP-1.
+
+### 1. Cómo interpretar las tres regiones
+
+Jezero sirve principalmente para comparar una cuenca de impacto con registro fluvial y lacustre, un delta y materiales ígneos alterados; Gale, una larga sucesión de ambientes lacustres, eólicos y de alteración leída por un rover; Oxia, una extensa planicie antigua con arcillas cartografiadas desde órbita, relieves fluviales y la futura exploración subsuperficial de Rosalind Franklin. Son **referencias para distintas actividades análogas**, no tres aspirantes equivalentes a una base permanente. [J1, G1, O1]
+
+| Región | Unidad de estudio | Dato directo de superficie | Principal incertidumbre de escala |
+|---|---|---|---|
+| Jezero | Cráter ~45 km, cuenca de captación, delta occidental, piso y margen | Perseverance desde febrero de 2021 | El corredor visitado no representa todos los sedimentos de la cuenca [J2, J3] |
+| Gale | Cráter ~154 km, piso y estratos de Aeolis Mons / Mount Sharp | Curiosity desde agosto de 2012 | La sección recorrida muestrea algunas unidades del enorme edificio sedimentario [G1] |
+| Oxia Planum | Llanura en el borde oriental de Chryse, cerca de 18° N; zona cartografiada para aterrizaje | Sin rover en superficie a esta fecha | Mineralogía, procesos y accesibilidad se infieren principalmente de órbita [O1, O2] |
+
+**Corrección del XMind:** Perseverance explora Jezero; la selección de Rosalind Franklin corresponde a Oxia. Gale es el lugar de Curiosity. [J2, G1, O1]
+
+### 2. Jezero: cuenca de impacto, delta y rocas ígneas
+
+#### 2.1 Paisaje y secuencia
+
+Jezero es un cráter con antiguos valles de entrada, abanico/delta occidental, piso y bordes. La geometría sedimentaria vista desde órbita y desde Perseverance respalda transporte fluvial hacia un antiguo cuerpo de agua. La distribución de rocas cambia entre el piso, el abanico y la unidad marginal. Seleccionar un solo paisaje terrestre para «todo Jezero» perdería esa diversidad. [J2–J5]
+
+El aterrizaje de Perseverance en el piso ocurrió el 18 de febrero de 2021. Una elipse publicada de **7,7 × 6,6 km** es información histórica de esa misión, no el límite del cráter. El delta se investigó después del piso. [J2, J3]
+
+#### 2.2 Materiales, mineralogía, agua y sales
+
+Las primeras mediciones de SuperCam en el piso encontraron rocas con olivino y piroxenos; el miembro inferior Séítah incluye acumulación ígnea de granos milimétricos de olivino, mientras unidades superiores muestran otras composiciones. La evidencia de alteración por fluidos está presente, pero es espacialmente variable. **El piso no puede clasificarse sencillamente como fondo lacustre sedimentario** por su aspecto en imágenes orbitales. [J4, J5]
+
+En el abanico superior, análisis de SHERLOC de siete objetivos erosionados identificaron, entre otros, carbonatos, sulfatos y fases interpretadas como perclorato o fosfato. Ese muestreo documenta diversidad química en los objetivos medidos; no proporciona una abundancia uniforme de sales para el cráter. La interpretación del origen de los carbonatos incluye precipitación y transporte, entre otras posibilidades. [J6]
+
+El margen añade otra secuencia posible de interacción roca–fluido: un estudio de SuperCam publicado en 2026 identifica rocas cristalinas ricas en olivino y, a menor elevación en los afloramientos examinados, señales de circulación de fluidos, carbonatos, sílice y vetas tardías. Las relaciones se han documentado en exposiciones específicas; no deben extrapolarse a todas las orillas de un paleolago. [J7]
+
+| Pregunta | Caracterización regional de Jezero | Límite |
+|---|---|---|
+| Basaltos/rocas ígneas | Dominan partes del piso recorrido; unidades diferenciadas | El delta y el margen no son iguales al piso |
+| Arcillas | Hay fases de alteración y contexto mineralógico de la cuenca; identificación dependiente de unidad | Sin porcentaje único regional |
+| Carbonatos | Detectados en contextos marginales y abanico | Su presencia no prueba por sí sola un biomarcador |
+| Sulfatos/percloratos | Detectados en algunas muestras estudiadas | Abundancia y distribución regional heterogéneas |
+| Agua antigua | Red de entrada, depósito deltaico y alteración | No implica un lago permanente en todos los períodos |
+| Hielo actual | No se ha establecido un reservorio somero comparable a Arcadia en esta síntesis | No convertir pasado lacustre en hielo accesible actual |
+| Dunas y polvo | Sedimentos móviles y cobertura de polvo en partes del cráter | Faltan métricas regionales homogéneas de movilidad |
+
+#### 2.3 Atmósfera, temperatura, radiación y procesos activos
+
+El instrumento **MEDA** de Perseverance mide condiciones ambientales en su recorrido. Un análisis de **700 soles** cubre aproximadamente un año marciano de temperatura superficial y del aire próximo al suelo: documenta oscilaciones diarias y estacionales, además de variación entre soles. Son datos de un vehículo en movimiento y requieren coordenada, hora, estación, altura y período para cualquier comparación cuantitativa. No se propone un único máximo/mínimo «de Jezero» sin especificarlos. [J8]
+
+La atmósfera marciana está dominada por CO₂, con baja presión. Jezero tiene polvo, viento y procesos eólicos; las series de MEDA pueden distinguir temperatura, presión y polvo si se extraen. La dosis de radiación, una propiedad física del entorno marciano, no queda reproducida por una cuenca terrestre visualmente similar. No se ha demostrado actividad volcánica actual ni cuevas accesibles en el conjunto de esta caracterización. [J8, M1]
+
+#### 2.4 Astrobiología y utilidad para análogos
+
+Un delta, sedimentos finos, rocas alteradas y carbonatos justifican investigar **preservación y detectabilidad** de posibles señales antiguas. Un compuesto orgánico, una textura sugerente o una reacción mineral no bastan por sí solos para demostrar vida; se necesitan controles de origen no biológico y contexto estratigráfico. Conviene buscar análogos por tareas: formación de delta, preservación en arcillas/carbonatos, discriminación de rocas ígneas frente a sedimentarias y estrategias de selección de muestras. [J3–J7]
+
+### 3. Gale: una sucesión de ambientes, no un solo desierto
+
+#### 3.1 Geografía y relieve
+
+Gale es un cráter de impacto con una montaña sedimentaria central, Aeolis Mons (Mount Sharp). Curiosity aterrizó en agosto de 2012, exploró el piso y ascendió estratos de la base de la montaña. La altura de Mount Sharp se suele resumir como **~5 km**; esa cifra describe el edificio, no una pendiente caminable ni la elevación de cada estación de muestreo. Los estratos expuestos permiten examinar cambios de ambientes a lo largo del tiempo. [G1, G2]
+
+No se asigna un solo valor de rugosidad a Gale: el piso con gravas, afloramientos, pendientes, crestas, dunas y laderas tienen obstáculos y escalas diferentes. Para movilidad análoga es indispensable escoger una unidad y un trayecto concreto, más el tamaño del vehículo.
+
+#### 3.2 Rocas, minerales y agua
+
+En Yellowknife Bay, Curiosity documentó lutitas y evidencia de un antiguo lago de agua dulce junto con componentes químicos y fuentes de energía relevantes para habitabilidad. Los estratos inferiores de Mount Sharp registran depósito lacustre y modificaciones posteriores por aguas subterráneas. Más arriba aparecen intervalos con arcillas y unidades con sulfatos; esta disposición no obliga a una historia lineal y uniforme de «lago y luego desierto». [G1, G2]
+
+El trabajo de 2026 en la base de la unidad estratificada con sulfatos identifica una sucesión principalmente eólica de mantos arenosos y dunas, **con un intervalo lacustre y señales de humedecimiento periódico**. Otro estudio de muestras perforadas en la transición arcillas–sulfatos encuentra señales de arcillas, sulfatos de Fe/Mg y cloruros variables, interpretando fluidos salinos posteriores al depósito. Ambos muestran que unidad sedimentaria, composición y alteración se deben caracterizar por separado. [G3, G4]
+
+| Pregunta | Caracterización regional de Gale | Límite |
+|---|---|---|
+| Material volcánico/basáltico | Forma parte del contexto y de sedimentos derivados | No llamar basalto a todos los estratos sedimentarios |
+| Arcillas | Documentadas en intervalos y muestras | Variación vertical y lateral |
+| Sulfatos y otras sales | Documentados en unidades altas y alteración diagenética | No equivalen necesariamente a un desierto totalmente seco durante cada depósito |
+| Agua antigua | Lagos, aportes fluviales, agua subterránea e intervalos húmedos | Procesos con edades y escalas distintas |
+| Dunas y erosión | Formas eólicas y estratos de origen eólico; erosión expone la montaña | Distinguir dunas activas de rocas depositadas por antiguas dunas |
+| Hielo subsuperficial actual | No caracterizado aquí como recurso de base | No trasladar depósitos de Arcadia |
+| Cuevas/erupciones actuales | No documentadas como rasgo de las unidades seleccionadas | No inferir ausencia absoluta en todo el cráter |
+
+#### 3.3 Ambiente medido y biología
+
+Curiosity tiene el instrumento meteorológico **REMS** y un conjunto de análisis de muestras a bordo (incluido SAM). Gale posee, por tanto, observaciones directas de temperatura del aire/suelo, presión, viento y condiciones de polvo en su trayecto; cualquier cifra debe venir con sol, hora local, altura y ubicación. Para la comparación con un sitio terrestre hay que distinguir clima **actual** medido del clima **antiguo** interpretado a partir de las rocas. [G1, M2]
+
+Los hallazgos de carbono orgánico y otros compuestos en muestras examinadas se investigan en el contexto de fuentes bióticas y abióticas. La evidencia de habitabilidad antigua en varios ambientes no constituye detección de vida. La astrobiología de Gale favorece análogos de depósito, diagénesis, preservación de compuestos y decisión de dónde perforar. La radiación sobre la superficie y dentro del suelo requiere tratamiento específico y no se equipara a la de un desierto terrestre. [G1, G4]
+
+#### 3.4 Perfil para búsqueda terrestre
+
+Separar al menos tres tareas: **(a)** lago y lutitas antiguas, **(b)** transición mineralógica y aguas salinas, **(c)** dunas/mantos arenosos y agua fluctuante. Una sola localización terrestre podría cubrir alguna tarea, pero habrá que explicar cuáles y por qué.
+
+### 4. Oxia Planum: arcillas antiguas y cartografía antes del aterrizaje
+
+#### 4.1 Contexto, selección y estado de misión
+
+Oxia se encuentra cerca de **18° N**, en el borde oriental de la cuenca de Chryse y en la transición geológica entre tierras altas y bajas. ESA mantiene la selección de esta región para **Rosalind Franklin**, con lanzamiento programado para **2028** según la ficha consultada. A noviembre de 2026 **no hay mediciones del rover en Oxia**; el calendario de una misión es información sujeta a actualización. [O1]
+
+Su objetivo es estudiar materiales antiguos ricos en minerales arcillosos y buscar posibles señales de vida pasada. El taladro planeado puede alcanzar **hasta 2 m**: es una capacidad prevista del instrumento, no una profundidad a la que ya se haya detectado una biosignatura en Oxia. [O1]
+
+#### 4.2 Cartografía, relieve y procesos
+
+El mapa de Fawdon et al. (2024), a escala **1:30.000**, distingue **15 unidades de roca en seis grupos y siete unidades superficiales/texturales**. Combina datos visibles e infrarrojos de órbita y plantea relaciones entre afloramientos, depósitos y superficies que guían la futura selección de muestras. Es una interpretación previa al trabajo de campo marciano. [O2]
+
+Un estudio de crestas sinuosas con HiRISE, CTX y **CaSSIS** de ESA interpreta parte de las rocas portadoras de filosilicatos como depósitos de antiguos sistemas fluviales/aluviales. La forma sinuosa por sí sola puede tener diversas causas: la inferencia combina relieve, geometría y contexto. No se debe imponer a todas las unidades arcillosas una misma historia fluvial. [O3]
+
+| Pregunta | Caracterización regional de Oxia | Límite |
+|---|---|---|
+| Relieve superficial | Llanura con diversidad de unidades, crestas y afloramientos mapeados | Sin estadística homogénea de pendientes/obstáculos en este documento |
+| Arcillas | Exposiciones extensas de filosilicatos asociadas a agua antigua | Mineral específico y abundancia dependen del afloramiento y espectro |
+| Basaltos y rocas volcánicas | No se asigna composición volcánica a todos los mantos oscuros | Requiere análisis mineralógico de cada unidad |
+| Sulfatos, carbonatos, percloratos | No hay en esta síntesis cuantificación regional demostrada | Evitar transferir hallazgos de Jezero o Gale |
+| Agua antigua | Alteración mineral y evidencia de antiguos depósitos fluviales | No demuestra agua líquida presente hoy |
+| Hielo actual / cantidad | Sin reservorio local cuantificado aquí | No confundir taladro de 2 m con detección de hielo |
+| Dunas, polvo, erosión | Unidades superficiales cartografiadas y procesos de modificación | Faltan tasas y validación local de superficies activas |
+| Erupciones/cuevas | Sin evidencia particular incorporada para ensayos de esos procesos | No atribuir capacidades de «análogo volcánico» sin unidad concreta |
+
+#### 4.3 Atmósfera, temperatura, radiación y astrobiología
+
+La presión, temperaturas diarias/estacionales, viento y polvo de Oxia **no se han medido por un vehículo en la región**. Productos orbitales o una Mars Climate Database pueden suministrar observaciones/modelos según cobertura, hora, elevación y escenario de polvo. Hay que rotular qué tipo de dato se extrajo; en este documento no se ejecutó un modelo de clima local. [M1, M3]
+
+La hipótesis astrobiológica combina rocas antiguas, arcillas, exposición y acceso por perforación. Las arcillas pueden registrar interacciones pasadas con agua, pero su sola presencia no demuestra preservación de compuestos orgánicos ni origen biológico. Hasta que Rosalind Franklin analice muestras, **habitabilidad, preservación, detectabilidad y vida** son preguntas separadas. [O1, O2]
+
+#### 4.4 Perfil para búsqueda terrestre
+
+Buscar afloramientos de depósitos fluviales antiguos con filosilicatos medidos, relaciones estratigráficas legibles y posibilidad real de muestreo bajo cobertura superficial. Los terrenos elegidos deberán conservar permisos, accesibilidad y restricciones ambientales documentados. Análogos de salares muy recientes podrían reproducir ciertas sales, pero no automáticamente el proceso que produjo las arcillas antiguas de Oxia.
+
+### 5. Comparación transversal para el futuro catálogo
+
+| Criterio del XMind | Jezero | Gale | Oxia |
+|---|---|---|---|
+| Proceso central | Entrada fluvial, abanico/delta y alteración de piso/margen | Acumulación, erosión y diagénesis de una extensa secuencia | Alteración antigua y depósitos fluviales/planicie arcillosa |
+| Geología decisiva | Ígneo + delta + carbonatos en contextos distintos | Lutitas, arcillas, sales y arenas estratificadas | Unidades con filosilicatos cartografiadas desde órbita |
+| Mejor tipo de análogo | Lago-delta con mineralogía y estratos estudiados | Sucesión lacustre–eólica con alteración posterior | Llanura fluvial antigua arcillosa y test de muestreo subsuperficial |
+| Evidencia de campo marciano | Perseverance | Curiosity | Aún no |
+| Ambiente actual | MEDA a lo largo de recorrido | REMS a lo largo de recorrido | Orbital/modelado si se extrae |
+| Hielo superficial como recurso | No establecido aquí | No establecido aquí | No establecido aquí |
+| Biosignatura confirmada | No | No | No hay exploración in situ todavía |
+| Riesgo para el comparador | Equiparar todo el piso con delta | Reducir una historia compleja a una transición seca simple | Tratar un mapa predictivo como verificación en superficie |
+
+La selección del análogo debe arrancar por una **pregunta ensayable**: por ejemplo, identificar sedimentos deltaicos, buscar orgánicos en filosilicatos, distinguir diagénesis salina de depósito primario o planear una perforación. Luego se ponderan propiedades que sí importan para esa tarea. Una apariencia similar en imagen satelital es solo una pista.
+
+### 6. Cómo se conectan las bibliotecas NASA, ESA, JAXA y CSA
+
+| Biblioteca | Uso apropiado | Aplicación en este informe |
+|---|---|---|
+| NASA PDS / ODE | MRO: CRISM, HiRISE, CTX, MCS, SHARAD; catálogos planetarios | Verificar cobertura y descargar productos para polígonos de cada región [D1] |
+| NASA Perseverance y Curiosity | Mediciones de superficie, imágenes, química y meteorología | Fundamentan Jezero y Gale; requieren selección espacial/temporal [J4, J8, M2] |
+| ESA Mars Express HRSC/OMEGA y TGO CaSSIS | Topografía, imagen y mineralogía marciana según instrumento | Oxia y contexto de las demás; CaSSIS en [O3] |
+| NASA Earthdata y Worldview | Tierra: temperatura, hielo, polvo y visualización | Se aplicarán a candidatos terrestres, no a coordenadas marcianas |
+| ESA Copernicus Data Space | Sentinel para materiales superficiales, cubierta, relieve indirecto, cambios | Se aplicará a candidatos terrestres [D2] |
+| JAXA G-Portal | Variables de observación terrestre según misión/producto | Se aplicará a candidatos terrestres [D3] |
+| CSA RADARSAT | Radar terrestre con limitaciones de acceso/producto y geometría | Posible caracterización de hielo o superficie terrestre |
+| NASA LRO / Diviner | Referencias lunares | Fuera de estas tres regiones marcianas |
+
+En este informe se revisaron publicaciones y fichas oficiales; **no se descargaron nuevos productos orbitales o raster de temperatura**. La tabla indica el camino verificable para completar campos numéricos, no análisis que ya se hayan hecho.
+
+### 7. Campos de datos que deben acompañar cada futuro análogo terrestre
+
+- Delimitar **polígono**, tamaño y proceso que se representa; guardar latitud/longitud y fecha de observación.
+- Identificar litología/mineral con método, profundidad, muestra y laboratorio; distinguir parecido geométrico de mecanismo.
+- Medir relieve, pendientes y obstáculos a **escalas comparables** con la actividad (rover, perforación o EVA).
+- Registrar temperatura de **aire, suelo y subsuelo** por separado, con hora, estación y profundidad.
+- Documentar agua/hielo con tipo de evidencia, techo, espesor, contenido y variación espacial; documentar sales independientemente.
+- Para polvo/erosión, distinguir deposición, transporte actual y formas fósiles.
+- Añadir habitabilidad, preservación, detectabilidad y origen biológico como preguntas distintas.
+- Añadir acceso, dueño o administrador, permisos, protección, temporada, seguridad de terreno y costos de campaña.
+- Registrar qué no puede reproducir el campo terrestre: gravedad, presión/atmósfera y radiación marcianas. Estas variables requieren instalaciones o modelos complementarios.
+
+### Fuentes principales y fecha de consulta
+
+Consulta: **14/11/2026**. Las cifras corresponden al ámbito espacial y temporal indicado; no son valores universales.
+
+**Jezero**
+
+- **[J1]** NASA, [Mars 2020 science highlights](https://science.nasa.gov/mission/mars-2020-perseverance/science-highlights/).
+- **[J2]** NASA, [elipse de aterrizaje de Perseverance](https://science.nasa.gov/resource/perseverance-rover-landing-ellipse-in-jezero-crater/).
+- **[J3]** NASA, [ruta hacia el delta y unidades del piso](https://science.nasa.gov/resource/perseverances-route-to-the-delta-2/).
+- **[J4]** Artículo de SuperCam, [Reflectance of Jezero Crater Floor: 2. Mineralogical Interpretation](https://doi.org/10.1029/2022JE007450), 2022/2023.
+- **[J5]** Artículo de SuperCam, [Petrological Traverse of the Olivine Cumulate Séítah Formation](https://doi.org/10.1029/2022JE007638), 2023.
+- **[J6]** Artículo SHERLOC, [Mineralogical Diversity in the Upper Fan Campaign](https://doi.org/10.1029/2024JE008750), 2025.
+- **[J7]** Equipo Perseverance, [Lake- and groundwater-associated alteration of the olivine-rich Margin unit](https://pmc.ncbi.nlm.nih.gov/articles/PMC13593571/), 2026; las interpretaciones corresponden a afloramientos estudiados.
+- **[J8]** Equipo MEDA, [One Martian Year of Near-Surface Temperatures at Jezero](https://doi.org/10.1029/2024JE008385), 2024; 700 soles.
+
+**Gale**
+
+- **[G1]** NASA, [A Guide to Gale Crater](https://science.nasa.gov/resource/a-guide-to-gale-crater/) y [Curiosity y Mount Sharp](https://science.nasa.gov/resource/nasas-curiosity-rover-explores-a-mountain-on-mars/).
+- **[G2]** NASA, [Curiosity: misión y evidencia del lago de Yellowknife Bay](https://science.nasa.gov/wp-content/uploads/2024/03/CuriosityPoster.pdf) y [secuencia sedimentación/erosión](https://science.nasa.gov/resource/sedimentation-and-erosion-in-gale-crater-mars/).
+- **[G3]** Estudio de Curiosity, [An Aeolian Depositional Sequence Shaped by Near-Surface Water at the Base of the Layered Sulfate Unit](https://doi.org/10.1029/2025JE009556), 2026.
+- **[G4]** Estudio SAM-EGA, [Environmental Changes Recorded in Sedimentary Rocks in the Clay-Sulfate Transition Region](https://pubmed.ncbi.nlm.nih.gov/39619889/), 2024.
+
+**Oxia y datos**
+
+- **[O1]** ESA, [Rosalind Franklin rover mission](https://www.esa.int/missions/about-us/directorates/human-and-robotic-exploration/mars/exomars/rosalind-franklin-rover) y [detalles científicos e instrumento de perforación](https://explorationscience.esa.int/project/exomars-rosalind-franklin-rfm/).
+- **[O2]** Fawdon et al. (2024), [The high-resolution map of Oxia Planum](https://doi.org/10.1080/17445647.2024.2302361), escala 1:30.000; [resumen de ESA](https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Best_geological_map_for_a_European_rover_on_Mars).
+- **[O3]** [Ancient alluvial plains at Oxia Planum, Mars](https://www.sciencedirect.com/science/article/pii/S0012821X22005404), 2023; análisis orbital HiRISE/CTX/CaSSIS.
+- **[M1]** NASA, [Mars Fact Sheet](https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html), contexto planetario; no cifras meteorológicas locales.
+- **[M2]** NASA PDS, [archivo REMS de Curiosity](https://pdsatmospheres.nmsu.edu/data_and_services/atmospheres_data/MARS/curiosity/rems.html) y [ficha MEDA de Perseverance](https://pds.nasa.gov/ds-view/pds/viewContext.jsp?identifier=urn%3Anasa%3Apds%3Acontext%3Ainstrument%3Amars2020.meda&version=1.3). Registrar el conjunto de datos y las fechas de cada extracción.
+- **[M3]** Equipo Mars Climate Database, [documentación](https://www-mars.lmd.jussieu.fr/mars/info_web/); salidas climáticas son simulaciones según escenario.
+- **[D1]** NASA PDS, [Orbital Data Explorer](https://ode.rsl.wustl.edu/).
+- **[D2]** ESA/Copernicus, [Explore Data](https://dataspace.copernicus.eu/explore-data/).
+- **[D3]** JAXA, [G-Portal](https://gportal.jaxa.jp/).
