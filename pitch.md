@@ -1,16 +1,7 @@
 # Gancho inicial
 
-![Buzz Aldrin y Neil Armstrong durante el entrenamiento geológico del Apollo 11 en Texas, 1969](apollo-11-entrenamiento-geologia.png)
-
-*NASA · Entrenamiento geológico del Apollo 11 · Texas, 1969. Imagen proporcionada para este pitch.*
-
-
 
 **Guion:** Una base análoga en Islandia, en un tubo de lava reveló que el rover no podía entrar ni salir solo: la pendiente y las rocas bloqueaban el acceso. Mejor descubrirlo en la Tierra que en la Luna. Las bases análogas son el medio para probar.
-
-
-
-![Importancia: temperatura, visibilidad y humedad](diapositiva-02-importancia-iconos.png)
 
 Slide problema: Hoy no existe una herramienta que compare datos y evalúe dónde es viable instalar una base análoga​.
 
