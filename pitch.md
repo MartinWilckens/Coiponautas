@@ -22,9 +22,12 @@ Hoy, las misiones continuan; el regreso a la Luna en 2028, los futuros amartizaj
 
 **Guion:** Por lo tanto, encontrar lugares que representen las condiciones de las misiones en la Luna o Marte es de suma importancia. Pero no basta con que se parezcan físicamente a esas superficies.
 
-### Imagen 2 — Datos que respalden la elección (imagen generada con IA, despues cambiar)
+
 
 ![Importancia: temperatura, visibilidad y humedad](diapositiva-02-importancia-iconos.png)
+
+Slide problema: Hoy no existe una herramienta que compare datos y evalúe dónde es viable instalar una base análoga​
+Slide solución: La solución es Coypus Analog Mission Database: una interfaz que permite buscar y comparar lugares para instalar bases análogas según las necesidades de cada misión. El usuario define parámetros como físicos, geológicos, movilidad y logístico, y la plataforma muestra en el mapa los sitios que coinciden. Para cada lugar, reúne las fuentes disponibles y señala qué datos siguen pendientes. Así, ayuda a evaluar y comparar la viabilidad de cada candidato con criterios claros y evidencia visible.
 
 **Guion:** Necesitamos datos que respalden la elección de esos lugares, como su temperatura, las condiciones de visibilidad y la humedad, para evaluar qué tan bien representan el entorno y las tareas de la misión.
 
