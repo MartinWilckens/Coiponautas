@@ -1,4 +1,4 @@
-# Cinco propuestas de estaciones análogas lunares y marcianas
+# Propuestas de bases análogas
 
 ## Alcance y criterio
 
@@ -10,6 +10,8 @@ Un análogo terrestre reproduce propiedades o tareas seleccionadas. Ninguno de e
 
 | Sitio | Propuesta de estación | Similitud que se ensayaría | Evidencia destacada | Principal limitación |
 | --- | --- | --- | --- | --- |
+| Sistema de tubos de Roiho (Ana Heva / Ana Te Pahu), Rapa Nui | Campaña subterránea de cartografía, robótica y comunicaciones | Cavidades volcánicas lunares y marcianas; geología y operaciones parciales | Galería de Ana Heva descrita con 4 m de ancho y 2 m de alto promedio; medición puntual de 20–21 °C y 100 % HR | Patrimonio y administración indígena, inundación local, estrechamientos y estabilidad sin caracterizar |
+| Salar de Pajonales, Chile | Estación temporal de geología, teledetección y pruebas de materiales | Cuencas evaporíticas, sulfatos, sequedad y cambios húmedo-seco de Marte | Salar de 104 km² a 3.537 m; costras, lagunas y paleoterrazas; biofirmas microbianas mapeadas | Agua y costras espacialmente heterogéneas; fragilidad biológica y datos de ingeniería insuficientes |
 | Chajnantor B3, Chile | Campaña de georradar y perforación para hielo subsuperficial | Prospección y muestreo de suelo cementado por hielo; Marte y regiones lunares frías | Sondeo de 14 m; permafrost de unos 5 m y alto contenido de hielo reportado | Más de 5.000 m de altitud, acceso y representatividad de un punto pequeño |
 | Pali-Aike, Chile | Campaña de movilidad robótica y navegación en cráter volcánico | Relieve volcánico, pendientes y rutas; principalmente Marte | Cráter de 160–180 m, paredes de 40–45° y laderas hacia la base de 10–22° | Parque nacional, patrimonio arqueológico y prohibición de acampar dentro del parque |
 | Quinamávida, Chile | Estación de caracterización de tobas y pruebas de instrumentos mineralógicos | Detección/muestreo de filosilicatos y minerales de alteración; Marte | Toba con mordenita, clinoptilolita/heulandita y smectita | Cantera y muestras puntuales; no representa clima ni superficie marciana |
@@ -18,7 +20,101 @@ Un análogo terrestre reproduce propiedades o tareas seleccionadas. Ninguno de e
 
 ---
 
-## 1. Chajnantor B3 · Región de Antofagasta, Chile
+## Sistema de tubos de Roiho: Ana Heva / Ana Te Pahu · Rapa Nui, Chile
+
+### Propuesta
+
+Evaluar una campaña científica de bajo impacto para cartografiar cavidades, medir comunicaciones, probar navegación robótica y documentar geología subterránea. El mapa inicial nombra **Ana Heva**; estudios de espeleología describen un sistema de tubos en el campo de Roiho que incluye Ana Heva, Ana Te Pahu y Vaiteka. Debe confirmarse con guías y administradores qué cavidad y recorrido representan las coordenadas de campaña. La eventual estación sería externa y temporal; no se propone construir dentro de la cueva.
+
+### Similitud planetaria
+
+La analogía es con **tubos de lava lunares y marcianos** en cuanto a cavidades volcánicas, pasajes confinados, exploración robótica, comunicación sin línea de vista y estudio de paredes y depósitos minerales secundarios. Es una similitud geológica y operacional parcial. La cueva terrestre no reproduce vacío, radiación espacial, gravedad planetaria ni ambiente térmico extraterrestre. La comparación de temperatura y humedad no equivale a una analogía climática planetaria.
+
+### Datos documentados y datos preliminares
+
+| Campo | Dato | Alcance |
+| --- | --- | --- |
+| Coordenada de referencia | 27°06′47,90″ S, 109°24′49,94″ O | Punto de la campaña de reconocimiento del campo de tubos de Roiho; no se debe interpretar automáticamente como la boca de Ana Heva o Ana Te Pahu. |
+| Geometría de Ana Heva | Dimensiones medias de galería descritas como unos 4 m de ancho y 2 m de alto | Medición descriptiva del tubo estudiado; el tramo con espeleotemas tenía una constricción de unos 40 cm de altura. No es un modelo 3D completo. |
+| Temperatura y humedad | 20–21 °C y 100 % de humedad relativa | Lectura durante la visita/muestreo de 2007 en Ana Heva, no promedio anual. |
+| Agua | Se observó una corriente de aproximadamente 1 L/s en el tubo | Observación puntual del estudio, asociada a infiltración de lluvia; no demuestra caudal permanente ni disponibilidad de agua para una estación. |
+| Geología/mineralogía | Espeleotemas coraloides silíceos y depósitos tipo flowstone; se observaron películas finas de agua | El estudio analizó interacción microbio-mineral en Ana Heva. Las muestras estaban a unos 20 m y 40 m de la entrada, según el trabajo de campo publicado. |
+| Conexión entre cavidades | El campo de Roiho incluye una extensa red de cavidades y tubos; algunas descripciones relacionan Ana Te Pahu, Ana Heva y Vaiteka | La continuidad precisa y la correspondencia de nombres/entradas deben confirmarse con cartografía espeleológica actual. |
+| Mapa 3D y estabilidad | Sin cobertura 3D continua ni evaluación geotécnica publicada para un asentamiento | Pendientes antes de cualquier despliegue de módulos, soportes o anclajes. |
+
+Fuentes: [Calaforra et al. (2014), *Siliceous Speleothems and Associated Microbe-Mineral Interactions from Ana Heva Lava Tube*](https://doi.org/10.1080/01490451.2013.827762) · [Guía de campo del Simposio Internacional de Vulcanoespeleología, ubicación y topografía de Ana Heva](https://www.vulcanospeleology.org/sym16/Field%20Guide%20Galapagos%202014.pdf) · [CONAF, Parque Nacional Rapa Nui](https://www.conaf.cl/parque_nacionales/parque-nacional-rapa-nui/) · [Ma’u Henua, portal oficial del Parque Nacional](https://www.rapanuinationalpark.com/en/).
+
+### Datos que falta caracterizar
+
+- Modelo 3D de las entradas, galerías y conexiones; largo, secciones transversales, bifurcaciones, desniveles, colapsos y zonas inundables.
+- Medición multitemporal de temperatura, humedad, ventilación, CO₂/O₂ y filtraciones en distintas estaciones y profundidades de la cueva. Los valores de 2007 son instantáneos.
+- Evaluación geotécnica del techo, bloques, fracturas, desprendimientos y capacidad de carga del suelo; delimitar sectores que nunca se deben ocupar.
+- Mapeo de radiofrecuencia, pérdida de señal, posiciones de repetidores, navegación robótica y procedimientos de entrada/salida y rescate.
+- Inventario de fauna cavernícola, microorganismos, espeleotemas, agua y zonas de reproducción; controlar ruido, luces, calor, pisadas y contaminación.
+- Diferenciar qué datos de mineralogía y microbiología corresponden a Ana Heva y cuáles a otras cavidades de Roiho; no extrapolar resultados entre tubos.
+- Cartografía arqueológica y cultural con los administradores locales, sin publicar localizaciones sensibles sin autorización.
+- Logística exterior: rutas, evacuación, comunicaciones, energía, agua, saneamiento y almacenamiento limpio de muestras.
+
+### Desafíos para instalar una base análoga
+
+- El Parque Nacional Rapa Nui es Patrimonio Mundial y está administrado con la comunidad indígena Ma’u Henua. El ingreso está regulado; se debe acordar cualquier estudio con la administración y obtener los permisos aplicables antes de trabajar.
+- Hay patrimonio arqueológico y cultural en el paisaje de cuevas. No instalar anclajes, módulos, iluminación, cableado, sensores fijos o señalética dentro de una cavidad sin evaluación patrimonial y consentimiento/permiso explícitos.
+- La cueva tiene pasajes estrechos y sectores que se inundan; en el punto descrito, una constricción de 40 cm limita el paso. Esto reduce la posibilidad de introducir hábitats y exige un plan especializado de rescate.
+- La humedad saturada favorece condensación, corrosión y crecimiento biológico; equipo eléctrico, comunicaciones y almacenamiento de muestras requieren protección y control de contaminación.
+- Los depósitos silíceos y comunidades microbianas son parte del objeto científico: tránsito repetido, luz o muestreo pueden alterarlos. Establecer zonas control y evitar extracción si bastan imágenes y espectroscopía in situ.
+- Rapa Nui es remoto, con logística de transporte y evacuación limitada. Una **base logística ligera fuera de la cueva** y visitas de equipo pequeñas y guiadas son más realistas que una estación habitable subterránea.
+
+---
+
+## Salar de Pajonales · Región de Antofagasta, norte de Chile
+
+### Propuesta
+
+Desarrollar una estación de campaña desmontable para cartografiar mineralogía, morfologías evaporíticas y microhábitats; medir cómo cambian las señales orbitales, aéreas y de campo entre lagunas, costras y paleoterrazas. Como experimento posterior, estudiar en laboratorio si minerales hidratados locales pueden aportar agua y cuánta energía requeriría el proceso. La extracción de agua no está demostrada como operación de campo ni como recurso viable.
+
+### Similitud planetaria
+
+Pajonales se compara con **cuencas evaporíticas de Marte antiguo** por sulfatos de calcio, sales, costras, patrones poligonales, evaporación, aridez, UV elevado, volcanismo/hidrotermalismo y transiciones entre condiciones húmedas y secas. También es útil para validar teledetección y búsqueda de biofirmas en microhábitats salinos. Es una analogía geológica, ambiental y astrobiológica parcial; la presión, atmósfera, gravedad y radiación ionizante marcianas no se reproducen en la Tierra.
+
+### Datos documentados y datos preliminares
+
+| Campo | Dato | Alcance |
+| --- | --- | --- |
+| Área del salar | 104 km² | Superficie del salar publicada. El polígono de la estación o de cada estudio es menor y debe cartografiarse aparte. |
+| Coordenadas y altitud de referencia | 25°08′40″ S, 68°49′12″ O; 3.537 m s. n. m. | Referencia publicada para el salar/área de estudio. |
+| Coordenada del mapa inicial | 25.4149° S, 68.77215° O | Valor anotado en el mapa original; no coincide con las coordenadas publicadas del salar. Debe verificarse si se trata de otro punto o de un error antes de usarlo. |
+| Tipo de ambiente | Cuenca evaporítica andina activa, en fase de desecación, con lagunas/salinas, costras, áreas inundadas ocasionalmente y paleoterrazas expuestas | Las superficies representan etapas distintas del balance hídrico; no asumir que las condiciones son uniformes en los 104 km². |
+| Mineralogía y morfología | Salar de Ca-sulfato; se describen domos, redes de crestas poligonales, terreno poligonal y cobertura detrítica/eólica; el yeso domina estructuras del Dome Field | Caracterización localizada; las fases y estructuras cambian por microhábitat. |
+| Biofirmas | Se mapearon comunidades fotosintéticas con imágenes, drones y muestras; el estudio reporta colonización espacialmente agrupada | La presencia y probabilidad de biofirmas varían a escala de microhábitat. Es un antecedente de biosignaturas, no una medida de seguridad o habitabilidad humana. |
+| Temperatura | 5 °C como promedio en el mapa inicial | Sin fuente, estación, periodo ni método asociado; tratar como no verificado y medir series locales de aire y suelo. |
+| Hidrología | Lagunas activas remanentes, inundación infrecuente, costras y paleoterrazas; recarga por agua superficial y probablemente subterránea | La distribución de agua y la inferencia de agua subterránea requieren cartografía e instrumentación por sector. |
+
+Fuentes: [Hinman et al. (2022), *Surface Morphologies in a Mars-Analog Ca-Sulfate Salar*](https://doi.org/10.3389/fspas.2021.797591) · [Warren-Rhodes et al. (2023), *Orbit-to-ground framework to decode and predict biosignature patterns*](https://doi.org/10.1038/s41550-022-01882-x) · [Chong Díaz et al. (2020), *Mineral Paragenesis Precipitating in Salt Flat Pools*](https://www.mdpi.com/2075-163X/12/5/646) · [SERNAGEOMIN, *Origen y evolución de estromatolitos de yeso en salares de la alta cordillera*](https://andeangeology.cl/index.php/revista1/article/view/V46n1-3029/html).
+
+### Datos que falta caracterizar
+
+- Resolver la discordancia de coordenadas y publicar un polígono WGS84 para el salar, los sectores de ensayo y cada muestra/sondeo; especificar datum, precisión y fecha.
+- Medir distribución, profundidad, salinidad y estacionalidad del agua superficial/subsuperficial; distinguir agua libre, salmuera, humedad de poros y agua estructural en minerales.
+- Cuantificar mineralogía e hidratación por unidad: yeso y otras sales, fases hidratadas, proporciones, impurezas, granulometría, porosidad y estructura cristalina.
+- Verificar si algún mineral local contiene agua recuperable y medir rendimiento, temperatura y energía específica (kWh por kg de agua), subproductos, residuos y pérdida de fases minerales. Empezar con muestras pequeñas y controles de laboratorio.
+- Geotecnia por microhábitat: grosor de costra, resistencia a compresión/corte, capacidad de carga, hundimiento, fractura, abrasión, respuesta a vibración, ruedas, módulos y anclajes.
+- Series de temperatura del aire y suelo, humedad, presión, viento, radiación UV, polvo, precipitaciones, evaporación y extremos diarios/estacionales; diferenciar estaciones y elevaciones.
+- Caracterizar biofirmas y ecosistemas con áreas de referencia: distribución de estromatolitos, comunidades endolíticas, microorganismos y condición de las lagunas.
+- Inventario de rutas, permisos, concesiones, titularidad, fuentes de energía, agua, telecomunicaciones y evacuación médica; definir también medidas de restauración del terreno.
+
+### Desafíos para instalar una base análoga
+
+- **Altitud y ambiente:** el salar está a 3.537 m; hipoxia de altura, frío, viento, UV intenso, polvo y variaciones térmicas afectan al personal, módulos y energía. El promedio de 5 °C del mapa no sustituye un registro local.
+- **Sustrato heterogéneo:** una costra salina puede ser resistente en un punto y frágil o hueca en otro. No ubicar módulos o rutas antes de hacer ensayos de carga y cartografiar costras, salmueras y zonas blandas.
+- **Conservación de microhábitats:** tránsito, perforación, calentamiento, extracción de agua y contaminación pueden destruir comunidades y señales biológicas. Establecer áreas núcleo sin intervención y rutas de bajo impacto.
+- **Gestión de agua y energía:** no considerar los sulfatos hidratados como suministro disponible hasta demostrar presencia, rendimiento y coste energético. Evitar que el ensayo cambie la química local de salmueras o produzca residuos difíciles de retirar.
+- **Instalación y seguridad:** requiere módulos aislados, anclajes compatibles con costras, protección eléctrica contra polvo, autonomía energética, comunicaciones y rescate a gran altitud.
+- **Acceso y permisos:** verificar propiedad, concesiones mineras, permisos ambientales y científicos y coordinación con comunidades y autoridades competentes; las campañas no deben competir con la protección de hábitats.
+- La alternativa recomendada es una **base de apoyo temporal fuera de las unidades biológicas y de costra frágil**, con instrumentos autónomos y despliegues de corta duración.
+
+---
+
+## Chajnantor B3 · Región de Antofagasta, Chile
 
 ### Propuesta
 
@@ -59,7 +155,7 @@ Fuentes: [Mena et al. (2021), *Freeze–thaw cycles and snow impact at arid perm
 
 ---
 
-## 2. Cono de Pali-Aike · Región de Magallanes, Chile
+## Cono de Pali-Aike · Región de Magallanes, Chile
 
 ### Propuesta
 
@@ -99,7 +195,7 @@ Fuentes: [SERNAGEOMIN y Sociedad Geológica de Chile (2024), *Geositios de Chile
 
 ---
 
-## 3. Quinamávida · Región del Maule, Chile
+## Quinamávida · Región del Maule, Chile
 
 ### Propuesta
 
@@ -141,7 +237,7 @@ Fuentes: [Bascuñán et al., *Zeolitization of tuffs at Quinamávida, central so
 
 ---
 
-## 4. Saskylakh · Yakutia noroccidental, Rusia
+## Saskylakh · Yakutia noroccidental, Rusia
 
 ### Propuesta
 
@@ -182,7 +278,7 @@ Fuente: [Wang et al. (2023), *Monitoring Ground Surface Deformation of Ice-Wedge
 
 ---
 
-## 5. Laguna Miscanti · Región de Antofagasta, Chile
+## Laguna Miscanti · Región de Antofagasta, Chile
 
 ### Propuesta
 
@@ -237,3 +333,32 @@ Antes de escoger un punto para una estación, comparar cada sitio con el mismo c
 8. **Calidad de evidencia:** para cada valor, guardar fuente externa, año/periodo, método, unidad, escala y si es medición directa, modelo o dato regional.
 
 El resultado debe ser una evaluación por tarea —**apto, apto con restricciones, no apto o falta evidencia**—, no una puntuación única que oculte los riesgos. Para una misión humana, separar el valor científico del lugar de la viabilidad de operar allí una estación.
+
+## Ficha para incorporar nuevas propuestas
+
+```md
+## [Nombre del sitio] · [región, país]
+
+### Propuesta
+[Tipo de estación/campaña, tarea y emplazamiento posible.]
+
+### Similitud planetaria
+[Luna/Marte, propiedad o tarea específica, y límites de la comparación.]
+
+### Datos documentados y preliminares
+| Campo | Dato | Alcance, periodo, método o incertidumbre |
+| --- | --- | --- |
+| Ubicación | | |
+| Geología/terreno | | |
+| Ambiente | | |
+| Agua/hielo/minerales | | |
+| Acceso/protección | | |
+
+Fuentes: [publicación primaria, autoridad competente o conjunto de datos].
+
+### Datos que falta caracterizar
+- [Dato, método, escala y ubicación de la medición pendiente.]
+
+### Desafíos para instalar una base análoga
+- [Ingeniería, operación, seguridad, permisos, ambiente y comunidad.]
+```
