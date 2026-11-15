@@ -436,3 +436,25 @@ El repositorio cubre 3 de las 9 regiones lunares de Artemis III y 5 de 44 entrad
 - NASA (2024). NASA provides update on Artemis III Moon landing regions. https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/
 
 - Bussey y Hoffman (2016). Human Mars landing site and impacts on Mars surface operations. NASA NTRS 20160001040. https://ntrs.nasa.gov/citations/20160001040
+
+## Datos de radiación en la Luna y Marte
+
+Comparación de la radiación en la superficie lunar y marciana, con la Tierra como referencia.
+
+| Parámetro | La Luna | Marte | Tierra (referencia) |
+|---|---|---|---|
+| **Fuentes principales** | Rayos cósmicos galácticos (GCR) y partículas energéticas solares (SEP) | Rayos cósmicos galácticos (GCR) de alta energía y partículas energéticas solares (SEP) | Radiación cósmica filtrada y radiación natural terrestre |
+| **Atmósfera y protección** | Sin atmósfera (exposición directa) | Atmósfera muy tenue de CO₂ (~1 % de la presión terrestre, ~6 hPa); produce radiación secundaria de neutrones | Atmósfera densa (blindaje óptimo) |
+| **Campo magnético** | Ausente (solo remanentes locales) | Ausente (solo remanentes corticales) | Fuerte (magnetosfera protectora) |
+| **Tasa de dosis horaria** | ~60 µSv/h | ~26–28 µSv/h | ~0,08–0,33 µSv/h |
+| **Dosis diaria promedio** | 1,3–1,5 mSv/día | 0,64–0,67 mSv/día (230–250 µGy/día absorbida) | 0,002–0,008 mSv/día |
+| **Dosis anual acumulada** | ~475–550 mSv/año | 200–230 mSv/año | ~2,4–3 mSv/año |
+| **Exposición en misión / comparación** | 200 a 300 veces mayor que en la Tierra; ~2,6 veces superior a la Estación Espacial Internacional (ISS) | Viaje de ida y vuelta más estancia: ≥900 mSv | Nivel base de referencia humana |
+
+### Fuentes oficiales (NASA y misiones científicas)
+
+- **NASA — Mars Science Laboratory (MSL) / rover Curiosity:** mediciones del instrumento RAD (Radiation Assessment Detector) en el cráter Gale. [NASA Mars Exploration — Radiation Assessment Detector](https://mars.nasa.gov/msl/spacecraft/instruments/rad/).
+- **NASA — Programa Artemis y Space Radiation Analysis Group (SRAG):** evaluaciones de riesgo de radiación espacial para misiones lunares y espacio profundo. [NASA Space Radiation](https://www.nasa.gov/analogs/nsrl/).
+- **Misión Chang’e-4 / instrumento LND (Lunar Lander Neutron and Dosimetry):** mediciones directas en la superficie lunar publicadas en *Science Advances* (Zhang et al., 2020) y referenciadas por el equipo de análisis de radiación de la NASA.
+
+> Las cifras y descripciones se transcribieron del PDF proporcionado.
