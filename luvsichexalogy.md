@@ -320,3 +320,119 @@ Una zona de exploración (EZ) es un conjunto de regiones de interés ubicadas a 
 - [7] DLR. Detección simulada de hielo de agua en LUNA. https://www.dlr.de/en/latest/news/2025/water-ice-on-the-moon-simulated-detection-in-the-luna-facility
 
 - [8] ESA. Astronauta y rover en un tubo de lava (PANGAEA-X). https://www.esa.int/ESA_Multimedia/Images/2018/08/Astronaut_and_rover_in_lava_tube
+
+## Análogos terrestres propuestos: lugares y brechas
+
+**Coiponautas · NASA Space Apps Challenge 2026 · 15 de noviembre de 2026**
+
+### Resumen
+
+El repositorio cubre 3 de las 9 regiones lunares de Artemis III y 5 de 44 entradas marcianas del taller de 2015. Además, hay condiciones sin análogo natural. Este documento propone cuatro lugares nuevos para el repo, cada uno ligado a una brecha, y deja declaradas dos condiciones que solo se ensayan en laboratorio. Ningún sitio se presenta como «no estudiado por la NASA»: solo se afirma lo que las fuentes permiten. Todos quedan como «candidata, historial de campañas por verificar».
+
+### Lugares propuestos
+
+#### 1. Stefánshellir–Surtshellir (Islandia)
+
+- Qué es: sistema de tubos de lava en el campo Hallmundarhraun, Islandia occidental. Un reconocimiento de EuroMoonMars en 2018 lo eligió como el mejor candidato para una base análoga lunar. Lo organiza la asociación 4th Planet Logistics Iceland; la campaña CHILL-ICE construyó allí un hábitat.
+
+- A qué se asemeja: tubos de lava lunares y marcianos usados como refugio (protección contra radiación y polvo). La intensidad solar a 65° N es comparable a la del ecuador de Marte.
+
+- Brecha que cubre: el repo trata el subsuelo solo como cartografía robótica (pozo de Mare Tranquillitatis). Aquí la tarea es vivir y operar en la cavidad.
+
+- Límite: la gravedad terrestre es mayor; no reproduce vacío ni radiación.
+
+- Fuentes: [1], [2], [3].
+
+#### 2. La Corona y Cueva de los Naturalistas (Lanzarote, España)
+
+- Qué es: La Corona es uno de los mayores complejos de tubos de lava de la Tierra, con unos 7,6 km de largo y unos 30 m de ancho promedio. En Cueva de los Naturalistas, un estudio de 2026 combinó mediciones sísmicas, magnéticas y gravimétricas.
+
+- A qué se asemeja: tubos de lava de gran tamaño, como los lunares. Las Canarias se consideran un buen análogo del vulcanismo marciano de placa única.
+
+- Brecha que cubre: el repo usa Cueva de los Verdes para mapeo robótico. Naturalistas aporta detección de cavidades desde la superficie, útil para el pozo de Mare Tranquillitatis, donde el radar sugiere un conducto bajo el borde.
+
+- Límite: Lanzarote ya es sitio de campañas de ESA (PANGAEA); no es un lugar «virgen».
+
+- Fuentes: [4], [5], [6], [12].
+
+#### 3. Túneles de lava de Rapa Nui (Chile) — por verificar
+
+- Qué es: tubos de lava de Isla de Pascua, estudiados por sus espeleotemas silíceos.
+
+- A qué se asemeja: cavidades basálticas, como las de la Luna y Marte.
+
+- Brecha que cubre: subsuelo como base, con un sitio chileno. No encontré uso previo como análogo planetario; eso no prueba que no exista.
+
+- Pendiente: permisos, acceso y estado de protección del sitio.
+
+- Fuentes: [7].
+
+#### 4. Salares andinos de sulfato de calcio (norte de Chile)
+
+- Qué es: salares de la alta cordillera, al este de Atacama. Salar de Pajonales tiene 104 km² y es un salar de sulfato de calcio. Un estudio de 2017 encontró que los sulfatos forman la costra principal de los salares andinos.
+
+- A qué se asemeja: depósitos evaporíticos y sulfatos hidratados de Marte. Hay rasgos espectrales en Valles Marineris parecidos a los de Río Tinto, otro análogo de sulfatos.
+
+- Brecha que cubre: el repo no trata la extracción de agua desde minerales hidratados, relevante cerca del ecuador marciano (por ejemplo, Melas Chasma, propuesta en 2015 a 12° S y sin cobertura en el repo).
+
+- Aclaración: Pajonales ya figura en neo.md para buscar biofirmas. Lo nuevo es la tarea (deshidratar el mineral y medir energía por litro de agua), no el sitio. Esa tarea es una propuesta nuestra: las fuentes no la muestran ensayada.
+
+- Fuentes: [8], [9], [10], [11].
+
+### Condiciones sin análogo natural
+
+- Frío y oscuridad permanentes. Ningún terreno terrestre las reproduce; neo.md ya indica que requieren ensayos controlados, pero no nombra una instalación con vacío térmico o criogenia. Se propone declararlo como brecha y buscar la instalación adecuada. [13], [14].
+
+- Excavación de grandes volúmenes. El repo cubre perforación y muestreo (TRIDENT), no movimiento de grandes masas. Se ha propuesto mirar minas a cielo abierto, pero es una hipótesis sin fuente que la respalde como análogo. [13].
+
+### Cobertura del repo (referencia)
+
+- Luna: de Gerlache Rim 2 con análogo; Haworth parcial; Malapert propuesto. Solo nombradas: Cabeus B, Mons Mouton Plateau, Mons Mouton, Nobile Rim 1 y 2, Slater Plain. [14], [15], [16].
+
+- Marte: tocadas Gale, Jezero, Deuteronilus Mensae (2) y Nili Fossae. Sin cobertura, entre otras: Melas Chasma, Meridiani Planum, Mawrth Vallis y Valles Marineris. [14], [17].
+
+### Lo que falta verificar
+
+- Historial de campañas (tarea, área y fecha) de cada sitio.
+
+- Permisos y acceso, sobre todo en Rapa Nui y los salares andinos.
+
+- Los votos del taller de 2015 para Melas Chasma: no se pudieron confirmar.
+
+- Si existe una tarea de agua desde sulfatos ya ensayada en otro lugar.
+
+### Fuentes
+
+- Gasser, Feucht, Stefánsson y Dunn (2019). Lava tube analogue test site, for Moon and Mars in West Iceland. EPSC-DPS. https://meetingorganizer.copernicus.org/EPSC-DPS2019/EPSC-DPS2019-182-1.pdf
+
+- Concept and field reconnaissance for a semi-permanent Moon-analogue habitat inside a lava tube in Iceland (2019). EGU2019-17503. https://meetingorganizer.copernicus.org/EGU2019/EGU2019-17503-1.pdf
+
+- Heemskerk et al. (2020). CHILL-ICE: construction of a habitat inside a lunar-analogue lava-tube. Europlanet Science Congress. https://meetingorganizer.copernicus.org/EPSC2020/EPSC2020-901.html
+
+- Tomasi et al. (2022). Large size lava tubes as planetary analogues: the case of La Corona (Lanzarote). Europlanet Science Congress. https://meetingorganizer.copernicus.org/EPSC2022/EPSC2022-1003.html
+
+- Seismic, magnetic and gravity investigations of lunar lava tubes: an Earth-analogue case study from Lanzarote (2026). EGU26-11341. https://doi.org/10.5194/egusphere-egu26-11341
+
+- Lava tubes (Canarias) como análogo marciano: https://scite.ai/authors/ilaria-tomasi-z1OPMY
+
+- EANA 2025. Resumen sobre espeleotemas de tubos de lava de Lanzarote, Isla de Pascua, La Palma y Galápagos. https://eana-net.eu/conferences/EANA2025/abstract_show.php?id=141
+
+- Hinman et al. (2022). Surface morphologies in a Mars-analog Ca-sulfate salar, High Andes, Northern Chile. Frontiers in Astronomy and Space Sciences. https://www.frontiersin.org/journals/astronomy-and-space-sciences/articles/10.3389/fspas.2021.797591/pdf
+
+- Flahaut et al. (2017). Remote sensing and in situ mineralogic survey of the Chilean salars: an analog to Mars evaporate deposits? https://sshade.eu/data/publication/PUBLI_Flahaut_2017
+
+- Azua-Bustos et al. (2021). The Atacama Desert in Northern Chile as an analog model of Mars. https://doi.org/10.3389/fspas.2021.810426
+
+- NASA Astrobiology Institute (2015). Mars analog studies: mineral assemblages in terrestrial settings (Río Tinto). https://astrobiology.nasa.gov/nai/annual-reports/2015/mit/mars-analog-studies-mineral-assemblages-in-terrestrial-settings/index.html
+
+- ESA (2018). Astronaut and rover in lava tube (PANGAEA-X, Cueva de los Verdes). https://www.esa.int/ESA_Multimedia/Images/2018/08/Astronaut_and_rover_in_lava_tube
+
+- Repositorio Coiponautas, neo.md. https://github.com/MartinWilckens/Coiponautas/blob/main/neo.md
+
+- Repositorio Coiponautas, luvsichexalogy.md. https://github.com/MartinWilckens/Coiponautas/blob/main/luvsichexalogy.md
+
+- Repositorio Coiponautas, figue.md. https://github.com/MartinWilckens/Coiponautas/blob/main/figue.md
+
+- NASA (2024). NASA provides update on Artemis III Moon landing regions. https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/
+
+- Bussey y Hoffman (2016). Human Mars landing site and impacts on Mars surface operations. NASA NTRS 20160001040. https://ntrs.nasa.gov/citations/20160001040
