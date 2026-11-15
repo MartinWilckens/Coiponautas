@@ -8,7 +8,7 @@
 
 Aquí vemos a Neil Armstrong y Buzz Aldrin practicando geología en Texas, en 1969, antes del Apollo 11.
 
-Antes de despegar hacia la Luna, Neil había acumulado 959 horas de entrenamiento para el Apollo 11.
+Antes de despegar hacia la Luna, Neil había acumulado 959 horas de entrenamiento.
 
 Hoy, prepararnos para vivir en otros mundos también exige elegir dónde ensayar aquí, en la Tierra. y no desperdiciar esas 959 horas de un astronauta depende de que tan eficaces seamos al hacerlo
 
