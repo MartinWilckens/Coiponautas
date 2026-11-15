@@ -166,3 +166,157 @@ Como ampliación del conjunto actual, conviene añadir **la llanura de Apollo 11
 - [Li et al. (2018), firmas espectrales de hielo cerca de Haworth](https://doi.org/10.1073/pnas.1802345115).
 - [Estudio de rutas geológicas en Malapert](https://doi.org/10.1029/2024JE008905).
 - [Horvath et al. (2022), análisis térmico de cavidades lunares](https://doi.org/10.1029/2022GL099710).
+
+**COIPONAUTAS · NASA SPACE APPS CHALLENGE 2026**
+
+## Sitios de alunizaje y amartizaje frente a los análogos terrestres
+
+*Qué regiones de la Luna y de Marte ya tienen traducción a análogo en el repositorio, y cuáles no*
+
+> Fecha: 14 de noviembre de 2026. Repositorio revisado: MartinWilckens/Coiponautas, rama main, commit f6e9002.
+>
+> Elaboración: redactado con asistencia de IA (Claude, Anthropic) a partir del repositorio del equipo y de fuentes de NASA. Debe revisarse antes de integrarlo, e incluirse en AI_USAGE.md.
+
+### 1. Propósito y alcance
+
+Este documento responde una pregunta concreta: de los lugares de aterrizaje que NASA ha considerado para la Luna y para Marte, ¿cuáles tienen ya un análogo terrestre trabajado en el repositorio de Coiponautas y cuáles no? No lista lugares de la Tierra por investigar.
+
+“Sin cobertura” significa que el sitio no aparece trabajado en el repo. No significa que NASA o la comunidad no tengan análogos para él: este documento no cuenta cuántos análogos existen por sitio, y esa cifra no se verificó.
+
+### 2. Resumen
+
+- Luna. NASA publicó nueve regiones candidatas para Artemis III [1][2]. El repo tiene un análogo documentado para una (de Gerlache Rim 2), uno parcial (Haworth) y una tarea propuesta sin análogo (Malapert). Las otras seis solo aparecen nombradas en figue.md.
+
+- Marte. El primer taller de zonas de exploración humana (2015) presentó 47 propuestas [3][4]. En el apéndice D se agrupan en 44 entradas distintas. El repo toca cinco: Gale y Jezero con un tipo de analogía buscada, Deuteronilus Mensae (dos entradas) y Nili Fossae solo mencionados. Las otras 39 entradas no aparecen.
+
+- Lo trabajado fuera de esas listas. El repo desarrolla con más profundidad Arcadia–Amazonis y Oxia Planum, que no figuran por nombre en la lista de 2015.
+
+### 3. Cómo leer los estados
+
+- **Con análogo documentado:** Hay una tarea definida y al menos un análogo o instalación citado como comparador.
+- **Parcial:** Hay tarea y comparador, pero el repo declara límites importantes en lo que representa.
+- **Propuesto, sin análogo:** Hay tarea o tipo de analogía definidos, pero ningún comparador concreto.
+- **Solo listado / mencionado:** El sitio aparece nombrado, sin análisis ni análogo.
+- **Sin cobertura:** No aparece en el repo (búsqueda por nombre en todos los archivos).
+
+### 4. Luna: nueve regiones candidatas de Artemis III
+
+La lista es de octubre de 2024, fue refinada a partir de trece regiones anunciadas en 2022, y no está en orden de prioridad [1][2]. NASA indicó que seguirá evaluando áreas más allá de estas nueve [1]. Todas están cerca del polo sur.
+
+| Región | Tarea en el repo | Análogo documentado en el repo | Estado | Dónde en el repo |
+| --- | --- | --- | --- | --- |
+| Peak near Cabeus B | — | Ninguno | Solo listado | figue.md (lista de 9); Cabeus aparece como referencia de hielo LCROSS en neo.md |
+| Haworth | Entrar a un sector oscuro, detectar hielo y recuperar una muestra | Ensayo controlado de detección simulada de hielo en la instalación LUNA (DLR/ESA). Límite declarado: las condiciones criogénicas en vacío requieren ensayos específicos. | Parcial | neo.md |
+| Malapert Massif | Mantener enlace y energía desde terreno elevado | Ninguno documentado. Ensayo propuesto: misma ruta con y sin repetidor. | Propuesto, sin análogo | neo.md; figue.md |
+| Mons Mouton Plateau | — | Ninguno | Solo listado | figue.md (lista de 9) |
+| Mons Mouton | — | Ninguno | Solo listado | figue.md (“otra región elevada considerada”) |
+| Nobile Rim 1 | — | Ninguno | Solo listado | figue.md (lista de 9) |
+| Nobile Rim 2 | — | Ninguno | Solo listado | figue.md (lista de 9) |
+| de Gerlache Rim 2 | Navegación de rover o EVA con Sol rasante y transiciones de sombra | Rover ERNEST (JPL): pruebas de marzo de 2026 con sombras largas de amanecer y atardecer. Instalación LUNA (DLR): luz dirigida repetible. Falta la comparación de desempeño. | Con análogo documentado | neo.md; figue.md |
+| Slater Plain | — | Ninguno | Solo listado | figue.md (lista de 9) |
+
+#### 4.1 Otras referencias lunares que usa el repo
+
+| Región | Tarea en el repo | Análogo documentado en el repo | Estado | Dónde en el repo |
+| --- | --- | --- | --- | --- |
+| Pozo de Mare Tranquillitatis (fuera del polo) | Cartografiar una cavidad y mantener enlace con un robot | Cueva de los Verdes, Lanzarote: PANGAEA-X probó navegación y mapeo robotizado dentro del tubo de lava. | Con análogo documentado | neo.md |
+| Llanura de Apollo 11 (fuera del polo) | Aterrizaje en superficie abierta, baja latitud | Propuesta como quinta referencia lunar; sin análogo asignado. | Propuesto, sin análogo | luvsichexalogy.md |
+| Connecting Ridge y borde de Shackleton | Referencias de iluminación y topografía | Ninguno. Se usan como contexto de de Gerlache Rim 2. | Solo listado | figue.md; neo.md |
+
+### 5. Marte: propuestas del taller de 2015
+
+Una zona de exploración (EZ) es un conjunto de regiones de interés ubicadas a unos 100 km de un sitio de aterrizaje central [3]. El apéndice D del paper de Bussey y Hoffman resume las propuestas [3]. Aquí se reproducen el nombre, la latitud y el proponente tal como figuran allí. La tabla tiene 47 filas: Gale Crater aparece en tres (mismo identificador de mapa) y Ausonia Cavus en dos (fila repetida), así que se agruparon en 44 entradas. Se corrigieron errores de transcripción evidentes en el nombre (por ejemplo, “Copericus”).
+
+| N.º | Sitio propuesto (2015) | Latitud | Proponente(s) | Cobertura en el repo |
+| --- | --- | --- | --- | --- |
+| 1 | Acheron Fossae | 40° N | Viola | Sin cobertura |
+| 2 | Apollinaris Sulci | 12,5° S | Kerber | Sin cobertura |
+| 3 | Apollinaris Sulci (otra propuesta) | 13° S | Rice | Sin cobertura |
+| 4 | Aram Chaos | 2,5° N | Sibille | Sin cobertura |
+| 5 | Ausonia Cavus | 32° S | Hamilton | Sin cobertura |
+| 6 | Cerberus | 10° N | Wright | Sin cobertura |
+| 7 | Chryse – Viking | 22,5° N | Farrell | Sin cobertura |
+| 8 | Columbus Crater | 29° S | Lynch | Sin cobertura |
+| 9 | Coprates Chasma | 11,5° S | Mojarro; Carr | Sin cobertura |
+| 10 | Copernicus Crater | 49° S | Westenberg | Sin cobertura |
+| 11 | Deuteronilus Mensae | 39° N | Head | Solo mencionado: aparece como zona con evidencia SWIM de hielo, sin análisis propio (matydrox.md, sección 3) |
+| 12 | Deuteronilus Mensae (otra propuesta) | 41° N | Plaut | Solo mencionado (igual que la anterior) |
+| 13 | Eastern Hellas | 40° S | Rice | Sin cobertura |
+| 14 | Eastern Valles Marineris | 4° S | Clifford | Sin cobertura |
+| 15 | Endeavour Crater | 3° S | Clarke | Sin cobertura |
+| 16 | Equatorial Valles Marineris | 19° S | Mitchell | Sin cobertura |
+| 17 | Erberus Montes | 39° N | Viola | Sin cobertura |
+| 18 | Firsoff Crater | 0° | Ori | Sin cobertura |
+| 19 | Gale Crater | 4,5° S | Calef; Montaño; Yun | Propuesto, sin análogo: región de referencia con tipo de analogía buscada (secuencias sedimentarias, arcillas, sulfatos) |
+| 20 | Gusev Crater | 14,5° S | Longo | Sin cobertura |
+| 21 | Hadriacus Palus | 27° S | Skinner | Sin cobertura |
+| 22 | Hale Crater | 36° S | Stillman | Sin cobertura |
+| 23 | Hebrus Valles | 20° N | Davila; Schulze-Makuch | Sin cobertura |
+| 24 | Hellas Rim | 39° S | Levy | Sin cobertura |
+| 25 | Huygens Crater | 13,5° S | Ackiss; Sheridan; Niles | Sin cobertura |
+| 26 | Hypanis | 12° N | Gupta; Sefton-Nash | Sin cobertura |
+| 27 | Ismenius Cavus | 33,5° N | Mangold | Sin cobertura |
+| 28 | Jezero Crater | 17,5° N | Mustard | Propuesto, sin análogo: región de referencia con tipo de analogía buscada (depósitos deltaicos, sedimentos finos, alteración por agua) |
+| 29 | Kasei Valles | 25° N | Hamilton | Sin cobertura |
+| 30 | Mawrth Vallis | 24,5° N | Horgan | Sin cobertura |
+| 31 | McLaughlin Crater | 22° N | Michalski | Sin cobertura |
+| 32 | Melas Chasma | 12° S | McEwen | Sin cobertura |
+| 33 | Meridiani Planum | 0,5° N | Cohen | Sin cobertura |
+| 34 | Mesopotamia | 35,5° S | Gallegos | Sin cobertura |
+| 35 | Newton Crater | 40,5° S | Laine | Sin cobertura |
+| 36 | Nili Fossae | 22° N | Markle | Solo mencionado: aparece en la bibliografía de matydrox.md como comparación previa |
+| 37 | Noachis Terra | 37° S | Hill | Sin cobertura |
+| 38 | Noctis Landing | 6,5° S | Lee | Sin cobertura |
+| 39 | Phlegra Dorsa | 39° N | Barker | Sin cobertura |
+| 40 | Protonilus Mensae | 42° N | Gallegos | Sin cobertura |
+| 41 | Sinus Meridiani | 2° S | Wilkinson; McGovern | Sin cobertura |
+| 42 | Southern Nectaris Fossae | 29° S | Boatwright | Sin cobertura |
+| 43 | Tempe Terra | 42° N | Gallegos | Sin cobertura |
+| 44 | Vallis Marineris Mouth | 20° N | Kochemasov | Sin cobertura |
+
+#### 5.1 Regiones trabajadas en el repo que no figuran en el apéndice D
+
+| Región | Coordenadas / latitud | Qué hay en el repo |
+| --- | --- | --- |
+| Arcadia–Amazonis: AP-1, AP-8 y AP-9 | 39,8° N; 40,75° N; 40,02° N | Es la zona con más trabajo en el repo. Caracterización de relieve, polígonos e indicadores de hielo (valores SWIM). Vacíos declarados: profundidad y continuidad actual del hielo, composición y granulometría local, propiedades mecánicas, ambiente térmico local. No aparece por nombre en el apéndice D de 2015. |
+| Oxia Planum | ≈ 18° N | Región de referencia: materiales con arcillas, sitio elegido para Rosalind Franklin. Tipo de analogía buscada, sin comparador específico. No aparece por nombre en el apéndice D de 2015. |
+
+### 6. Limitaciones
+
+- Las dos listas son históricas. La lunar es de 2024 y es específica de Artemis III. La marciana es de 2015, no es un ranking, y la propia organización no buscaba una lista priorizada.
+
+- La clasificación de cobertura sale de buscar cada nombre en todos los archivos del repo y de leer las secciones de regiones de referencia. matydrox.md (unos 185 KB) no se leyó línea por línea, así que una mención suelta podría haberse escapado.
+
+- Las cifras de latitud de Marte son las del paper; sus longitudes no se reproducen porque la tabla original las presenta de forma ambigua.
+
+- Un sitio “sin cobertura” no está probado como “sin análogo”. Para afirmar lo segundo hay que registrar las campañas publicadas, el área y la fecha de búsqueda, como ya indica neo.md.
+
+- No se cuenta el número de análogos por sitio. Es el dato que falta para comparar el tamaño del vacío entre la Luna y Marte.
+
+### 7. Fuentes
+
+#### Repositorio
+
+- [R] Equipo Coiponautas. Repositorio de trabajo (neo.md, figue.md, luvsichexalogy.md, matydrox.md, Estado del arte/). Leído el 14 de nov. de 2026. https://github.com/MartinWilckens/Coiponautas
+
+#### Listas de sitios
+
+- [1] NASA (28 de oct. de 2024). NASA Provides Update on Artemis III Moon Landing Regions. https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/
+
+- [2] George, T.; Rubio, M. A.; Lawrence, S. J.; Curell, P. Artemis III Site Selection Update: Downselection From Thirteen to Nine Candidate Regions. NASA NTRS 20250011660. https://ntrs.nasa.gov/citations/20250011660
+
+- [3] Bussey, B.; Hoffman, S. J. (2016). Human Mars Landing Site and Impacts on Mars Surface Operations. IEEE Aerospace Conference. NASA NTRS 20160001040. Apéndice D en la copia de SciSpace. https://ntrs.nasa.gov/citations/20160001040
+
+- Copia consultada (incluye el apéndice D): https://scispace.com/pdf/human-mars-landing-site-and-impacts-on-mars-surface-1r5qb8k95j.pdf
+
+- [4] Bussey, B.; Davis, R. (27 de oct. de 2015). Human Landing Sites Study (HLS2) Overview. NASA. https://www.nasa.gov/wp-content/uploads/2015/11/hls2-overview-v3tagged.pdf
+
+#### Análogos citados en neo.md y figue.md
+
+- [5] NASA/JPL. Pruebas del rover ERNEST. https://www.jpl.nasa.gov/news/nasa-testing-advanced-capabilities-for-moon-mars-rovers/
+
+- [6] DLR. Instalación LUNA. https://www.dlr.de/en/research-and-transfer/featured-topics/mission-moon/the-luna-moon-facility
+
+- [7] DLR. Detección simulada de hielo de agua en LUNA. https://www.dlr.de/en/latest/news/2025/water-ice-on-the-moon-simulated-detection-in-the-luna-facility
+
+- [8] ESA. Astronauta y rover en un tubo de lava (PANGAEA-X). https://www.esa.int/ESA_Multimedia/Images/2018/08/Astronaut_and_rover_in_lava_tube
