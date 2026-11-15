@@ -4,6 +4,12 @@ Revisión del [HTML publicado](https://github.com/MartinWilckens/Coiponautas/blo
 
 > **Cambios posteriores a la auditoría.** El atlas ya incorporó las propuestas de Ana Te Pahu y Salar de Pajonales. Pajonales tiene una posición de referencia publicada y Ana Te Pahu sigue pendiente de ubicar. También se etiquetaron La Corona y Lava Beds con la tarea «Cuevas». Las cifras y la tabla de 78 fichas corresponden a la versión auditada. [Actualización del atlas](https://github.com/MartinWilckens/Coiponautas/commit/f46316138630a2a58a24c9d7711a6fb9b88b9eb1)
 
+> **Completado del 15 de noviembre de 2026.** La información encontrada para cada ficha está en el [Apéndice C](#apéndice-c--datos-completados-por-ficha). Para cada ficha se buscó primero en el repositorio (`Propuestas-de-bases-analogas.md`, `Inventario-…`, `neo.md`, `matydrox.md`, `luvsichexalogy.md`) y después en fuentes externas. Las correcciones de fuentes y los duplicados están en el [Apéndice D](#apéndice-d--correcciones-y-duplicados-detectados).
+>
+> - **Coordenadas.** Se marca qué representa cada punto. Un **punto primario** viene del operador o del artículo científico. Un **punto de contexto** viene del enlace permanente de Wikipedia y representa el lugar, el cráter, la ciudad o la instalación, no el sector del ensayo. Los puntos de contexto sirven para situar la ficha en el mapa y activar la celda climática. No sirven como sector de ensayo.
+> - **Imágenes.** Se citan archivos de Wikimedia Commons con autor y licencia comprobados en la API de Commons. Si la imagen muestra el contexto y no el sector exacto, se indica.
+> - **Lo que sigue pendiente** son solo los datos que no están publicados o que la fuente no deja leer sin acceso institucional (por ejemplo, algunas tablas de Taylor & Francis y MDPI). En esos casos se da la fuente que hay que abrir a mano o la persona u organismo a quien preguntar. Ningún dato se ha inventado ni interpolado.
+
 ## Cobertura comprobada del HTML
 
 | Indicador | Cargado en el atlas |
@@ -76,6 +82,8 @@ La cobertura de parámetros cuenta fichas con al menos un valor registrado. Algu
 
 ### Qué falta en cada ficha de cuevas o recintos
 
+> La tabla siguiente conserva el diagnóstico original. Debajo de ella, la tabla «Datos recuperados» resume lo encontrado, y el detalle de cada ficha está en el [Apéndice C](#apéndice-c--datos-completados-por-ficha).
+
 | Ficha | Vacío y próximo dato recuperable |
 | --- | --- |
 | **Lanzarote · Cueva de los Verdes / La Corona** | La ficha histórica menciona fotogrametría y la ESA documenta **1,3 km de tramo modelado**. Extraer la entrada y los límites del tramo, fecha, sensores, precisión, disponibilidad del modelo y foto interior. Diferenciarlo de la salida a Caldera Blanca. [Informe ESA](https://blogs.esa.int/caves/2018/03/13/the-bowels-of-earth-in-3d/) · [Imagen 3D](https://www.esa.int/Space_in_Member_States/Spain/Un_agujero_de_gusano_volcanico) |
@@ -95,6 +103,25 @@ La cobertura de parámetros cuenta fichas con al menos un valor registrado. Algu
 
 Para contrastar nuevos candidatos, **La Corona** aporta una referencia de cartografía interior y **TubeX** aporta un ensayo de detección desde superficie. En cada caso, los requerimientos se derivan de la tarea y del equipo que se quiere probar.
 
+#### Datos recuperados para cuevas y recintos
+
+| Ficha | Datos encontrados | Sigue sin publicarse |
+| --- | --- | --- |
+| **Lanzarote · Cueva de los Verdes / La Corona** | Punto de contexto de la cueva: 29.16111°, -13.43889°. El sistema tiene unos 6 km sobre el nivel del mar y otros 1,5 km bajo el mar, en el Túnel de la Atlántida. ESA modeló en 3D 1,3 km en menos de tres horas en 2017. Foto: [Lanzarote 5, Luc Viatour, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Lanzarote_5_Luc_Viatour.jpg). [Wikipedia, rev. 1264610022](https://en.wikipedia.org/w/index.php?oldid=1264610022) · [ESA](https://blogs.esa.int/caves/2018/03/13/the-bowels-of-earth-in-3d/) | Límites del tramo modelado y precisión del modelo. Hay que pedirlos a ESA (blog CAVES & Pangaea). |
+| **California · Lava Beds** | Punto de contexto: 41.71389°, -121.50833°. El monumento tiene más de 46.000 acres (190 km²). La temperatura media diaria va de −0,1 °C en diciembre a 20,5 °C en julio. Foto: [Lava Beds Cave collapse trench, NPS, dominio público](https://commons.wikimedia.org/wiki/File:Lava_Beds_Cave_collapse_trench.jpg). [Wikipedia, rev. 1373474447](https://en.wikipedia.org/w/index.php?oldid=1373474447) | Nombre de cada cavidad usada en TubeX y el error por tramo. Ver [NTRS 20205000768](https://ntrs.nasa.gov/citations/20205000768). |
+| **Cerdeña · ESA CAVES** | La cueva es **Sa Grutta**, un sistema en el Supramonte, en el valle de Lanaittu (Parque del Gennargentu). Las ediciones de Cerdeña son 2011–2014 y 2016. En 2016 hubo seis noches bajo tierra con astronautas de cinco agencias. [ESA, 2016](https://esa.int/ESA_Multimedia/Images/2016/07/Underground_lake) · [ESA, Underground wonderland](https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/CAVES_and_Pangaea/Underground_wonderland) · [Wikipedia ESA CAVES, rev. 1362339188](https://en.wikipedia.org/w/index.php?oldid=1362339188) | Coordenada de la entrada y plano. ESA no los publica y conviene no hacerlo sin acuerdo con los espeleólogos locales. |
+| **Eslovenia · ESA CAVES** | En 2019 la cueva fue **Divača (Divaška jama)**, en colaboración con el Parque de las Cuevas de Škocjan. Hubo seis días bajo tierra. La tripulación fue Gerst, Acaba, Epps, Chub, Kutryk y Onishi. [Gobierno de Eslovenia, 19/09/2019](https://www.gov.si/en/news/2019-09-19-astronauts-training-for-space-missions-in-slovenian-caves/) · [ESA blog](https://blogs.esa.int/caves/?p=1911) | Plano, tramos de progresión y microclima. Pedirlos al Parque de Škocjan. |
+| **«Cuevas de España»** | ESA cuenta seis ediciones de CAVES entre 2011 y 2019 sin nombrar ninguna en España. Las ediciones documentadas son en Cerdeña y Eslovenia. La entrada parece confundir PANGAEA-X, que en 2017 se hizo en la Cueva de los Verdes de Lanzarote, o Astroland, en Cantabria. [ESA, What is CAVES](https://www.esa.int/articles/what-is-caves) | Se propone fusionarla con Lanzarote o con Cantabria (ver Apéndice D). |
+| **Cantabria · Astroland** | Cueva en **Arredondo**, de unos 1,5 km de largo y 60 m de alto. Ares Station tiene dos módulos. En la primera misión, seis astronautas análogos pasaron tres días dentro. El Space Center tiene cinco módulos en el Parque Científico y Tecnológico de Cantabria. [Wikipedia Astroland, rev. 1382850341](https://en.wikipedia.org/w/index.php?oldid=1382850341) · [Estudio de la Universidad de Cádiz](https://produccioncientifica.uca.es/documentos/6492afdb7bb1586d2f054454?lang=eu) | Coordenada de la boca y microclima. El operador no los publica. |
+| **Dachstein, Austria** | Campaña OeWF del 27/04 al 01/05/2012 en la **Mammuthöhle** y la **Rieseneishöhle**, a unos 1.600 m. Se llega en teleférico más 10 min a pie. Se hizo la puesta a punto completa del traje Aouda.X y se operó el Cliffbot en el Tristandom el 29/04. Foto: [Tristandom, Tigerente, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Dachstein_Rieseneish%C3%B6hle_Tristandom_H%C3%A4ngebr%C3%BCcke_20210918.jpg). [OeWF](https://oewf.org/en/?p=8621) · [Space.com](https://www.space.com/16182-mock-mars-mission-austrian-caves.html) | Perfil vertical y espesor del hielo. Están en el informe de misión de OeWF, cuyo archivo `mission.oewf.org` devolvía 404 el 15/11/2026. |
+| **Islandia** | Europlanet 2020 RI ofreció acceso a «ambientes fríos y calientes de Islandia» como análogo de campo. [Informe final Europlanet 2020 RI](https://www.europlanet.org/wp-content/uploads/2019/11/Europlanet_2020_RI_Final_Report_151119.pdf) | El informe no nombra la cavidad ni el sector. Ver Apéndice C. |
+| **Ana Te Pahu, Rapa Nui** | Fotos de la entrada: [Cave opening at Ana Te Pahu, Fabianokm, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Cave_opening_at_Ana_Te_Pahu.jpg) y [Ana Te Pahu, LuxoDresden, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Ana_Te_Pahu.JPG). Galería de Ana Heva de unos 4 × 2 m, con una constricción de 40 cm. Se midieron 20–21 °C y 100 % de HR en 2007 y un caudal de unos 1 L/s. [Propuesta del equipo](Propuestas-de-bases-analogas.md) · [Calaforra et al. (2014)](https://doi.org/10.1080/01490451.2013.827762) | Coordenada de la boca y plano. Ma'u Henua debe autorizar su publicación. |
+| **Sasso San Gottardo · Asclepios** | Asclepios II, en julio de 2022, duró 14 días con seis astronautas análogos. Simuló el polo sur lunar y se centró en extraer agua. Asclepios I duró 8 días y trató sobre tubos de lava lunares. Foto: [Sasso San Gottardo, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Erlebniswelt_Gotthard_Kristall_I_Fondazione_Sasso_San_Gottardo_(Jeff_Skrob).jpg). [IAC-22](https://iafastro.directory/iac/archive/browse/IAC-22/A5/IPB/68314/) · [Wikipedia, rev. 1361782110](https://en.wikipedia.org/w/index.php?oldid=1361782110) | Plano de las galerías y aforo. Pedirlos a asclepios.ch. |
+| **Piła · LunAres** | Punto de contexto: 53.17484°, 16.72632°. Hay 250 m² de área EVA en un antiguo hangar militar. El plan actual del hábitat tiene 176 m² para seis tripulantes, en módulos unidos por un atrio. Fundado en 2017. [Wikipedia, rev. 1382252764](https://en.wikipedia.org/w/index.php?oldid=1382252764) · [LunAres, About habitat](https://lunares.space/about-habitat) | Plano oficial actualizado. |
+| **Rzepiennik · AATC** | El Hábitat 1.0 (2018) tenía seis módulos y 57 m². Desde 2023 funciona el Hábitat 2.0 en **Rzepiennik Suchy**, que concentra las misiones de 2026. Misiones de 7 días con tripulaciones de seis. AATC declara 116 misiones con 598 participantes. [AATC, Analog Mission](https://astronaut.center/analog/mission/) · [AATC, eventos 2026](https://www.astronaut.center/news/archive/2026/) · [Preprints 2024](https://www.preprints.org/manuscript/202409.2138) | El punto actual del atlas corresponde al Hábitat 1.0. Falta la coordenada del 2.0. |
+| **Biosphere 2 · SAM** | Punto de contexto: 32.57878°, -110.85059°. SAM está construido sobre el Test Module de 1987. Tiene esclusa, presión regulada y capacidad para cuatro tripulantes. El Mars yard figura con 250 m² en un artículo IAC y con 3.000 ft² en la web del proyecto. La obra empezó en enero de 2021 y el primer equipo llegó en abril de 2023. Foto: [Biosphere 2 Test Module, CC0](https://commons.wikimedia.org/wiki/File:Biosphere_2_Test_Module.jpg). [Biosphere 2](https://biosphere2.org/research/projects/space-analog-moon-and-mars) · [IAC-24](https://dl.iafastro.directory/event/IAC-2024/paper/81892/) | Superficie habitable oficial. |
+| **Colonia · Aouda y LUNA** | LUNA abrió en septiembre de 2024. FLEXHab está junto a la sala LUNA desde mediados de abril de 2025. Aouda 17C se hizo en 2017, antes de LUNA. [DLR, blog FLEXHab](https://www.dlr.de/en/blog/archive/2025/the-flexhab-space-habitat-moon-living-on-earth) | Edificio de Aouda 17C. OeWF no lo publicó. |
+
 ## Prioridades fuera de las cuevas
 
 - **Salar de Pajonales.** La propuesta aún no aparece en el atlas. Verificar polígono, unidad de costra, ubicación de las muestras, cota y serie climática. La tabla extendida 3 ofrece microclima y disponibilidad de agua por tipo de cristal. Añadir mapas, imágenes y muestras con su ubicación. Mantener la extracción como hipótesis de ensayo. [Warren-Rhodes et al., datos extendidos](https://www.nature.com/articles/s41550-022-01882-x)
@@ -103,6 +130,14 @@ Para contrastar nuevos candidatos, **La Corona** aporta una referencia de cartog
 - **Yamma Yamma, Miscanti y Chiprana.** Distinguir delta, orilla, paleosuelo, transectos y muestras. Priorizar evolución del agua, salinidad, granulometría y permisos específicos.
 - **Williams Point, Bhallil y Quinamávida.** Localizar perfiles y muestras exactos. Añadir fotos con escala, espesores y mineralogía cuantitativa por nivel.
 - **Recintos y operaciones humanas.** Cruzar recinto, tarea, duración, equipo, ambiente controlado, fotos y resultado. Mantener referencias a la edición exacta de cada campaña.
+
+### Avance en estas prioridades (15/11/2026)
+
+- **Salar de Pajonales.** La coordenada publicada es 25°08′40″ S, 68°49′12″ O, que coincide con el punto de Wikipedia: -25.14444°, -68.82°. El punto del mapa inicial (-25.4149°, -68.77215°) queda unos 30 km al sur y no debe usarse. Imagen regional: [ISS006-E-35457, NASA JSC, dominio público](https://commons.wikimedia.org/wiki/File:ISS006-E-35457_-_View_of_Chile.jpg). [Wikipedia, rev. 1385829382](https://en.wikipedia.org/w/index.php?oldid=1385829382) · [Hinman et al. (2022)](https://doi.org/10.3389/fspas.2021.797591)
+- **Chajnantor y Aucanquilcha.** El sondeo B3 llega a 14 m y atraviesa unos 5 m de permafrost. En 2019 hubo más de 100 ciclos de hielo y deshielo en los 3 cm superiores. Según el resumen de Yoshikawa et al. (2025), en Aucanquilcha se perforó a **6.176 m**, con 24 sitios en 11 montañas entre 1° y 33° S. Por encima de 5.800 m, la capa activa mide 10–30 cm. Las coordenadas de A2 y de B4/B5 están en la Tabla 1 del artículo. Es de acceso abierto (DOAJ), pero Taylor & Francis bloquea la descarga automática: hay que copiarlas desde el navegador. [Yoshikawa et al. (2025)](https://doi.org/10.1080/15230430.2025.2532202) · [Registro DOAJ](https://library.kab.ac.ug/Record/doaj-art-5b3aa60ed88f43cd812fa806fa8b4d1f)
+- **Pali-Aike y Saskylakh.** Pali-Aike tiene un punto de contexto del campo volcánico (-52.082°, -69.698°) y dos fotos con licencia. En Saskylakh, el poblado está en 71.96528°, 114.09222°, con acceso solo por camino de invierno vía Olenyok. El perímetro del campo poligonal está en la Fig. 1 de Wang et al. (2023), y MDPI bloquea la descarga automática. Ver Apéndice C.
+- **Yamma Yamma, Miscanti y Chiprana.** En Chiprana se recuperaron los perfiles CH1 (41.24° N, 0.17° O) y CH2 (41.23° N, 0.18° O), con cotas, edades OSL, CE del agua, yeso y clima (ver Apéndice C). Yamma Yamma mide 20 × 40 km y su delta principal migró hacia el NO. Los transectos están en la tesis de Mann (2018), cap. 4.
+- **Williams Point, Bhallil y Quinamávida.** Bhallil está a 15 km al SE de Fès, con un pozo de unos 10 m y valores Mössbauer por facies. Quinamávida tiene la coordenada de muestra 35°48′ S, 71°26′ O. Williams Point tiene la cronología OSL por unidad. Ver Apéndice C.
 
 ## Orden de carga
 
@@ -242,3 +277,309 @@ Una ficha puede aportar varias observaciones del mismo parámetro. Los números 
 | **República Checa** | Sin geometría · Imagen pendiente · Sin ubicación | Tarea pendiente. Objetivo científico. [Fuente](https://www.fs.cvut.cz/news/2503-3356/hydronaut-research-and-training-station-for-underwater-and-space-research-employment/) | Precisar cuerpo de agua y sector. Documentar profundidad, visibilidad, condiciones del agua y acceso según el ensayo. Precisar emplazamiento de Hydronaut DeepLab, profundidad y condiciones de aislamiento del ensayo. Georreferenciar el sector de campaña y vincular su fuente primaria. |
 | **Entornos submarinos y piscinas de entrenamiento de Estados Unidos** | Sin geometría · Imagen pendiente · Sin ubicación | Tarea pendiente. Profundidad del agua. [Fuente](https://www.nasa.gov/johnson/neutral-buoyancy-laboratory/) | Localizar la piscina del Sonny Carter Training Facility y enlazar la réplica y configuración de flotabilidad de cada EVA. Georreferenciar el sector de campaña y vincular su fuente primaria. |
 | **Chajnantor · sondeo B3** | Sondeo B3 · ladera oriental · Vista satelital · Regional | Hielo, Perforación. Fracción volumétrica de hielo, Temperatura del suelo, Permafrost, Hielo, Altitud. [Fuente](https://doi.org/10.1080/15230430.2021.1878739) | Documentar controles con y sin hielo en B4/B5 y vincular cada perfil térmico a su sondeo. Caracterizar rugosidad, material superficial, pendiente, rutas y acceso para instrumentos. Verificar controles con y sin hielo, rutas y acceso. La posición original coincide con Mena et al. (2021). Yoshikawa et al. (2025) reportan 5.079 m y una posición redondeada a 0,01°. Se conserva la cota aproximada de 5.075 m de la fuente original y se explicita el estudio que aporta cada medida. |
+
+## Apéndice C · Datos completados por ficha
+
+Orden igual al del Apéndice B. Para cada ficha: **Ubicación**, **Tarea** (etiqueta propuesta para el filtro, solo si la fuente documenta la actividad), **Datos** nuevos, **Imagen** con crédito y licencia, **Acceso** y **Pendiente** (lo que no está publicado). Abreviaturas: «PC» = punto de contexto; «PP» = punto primario.
+
+### C.1 Candidatos y antecedentes del equipo
+
+**Saskylakh, Rusia**
+- **Ubicación.** El poblado está en 71.96528°, 114.09222° (PC, [Wikipedia, rev. 1375157592](https://en.wikipedia.org/w/index.php?oldid=1375157592)). El estudio está junto al aeródromo, en la ribera oriental del Anabar, a unos 17 m. [Wang et al. (2023)](https://doi.org/10.3390/rs15051335)
+- **Datos.** Entre el 01/06/2018 y el 03/05/2019, la deformación superficial varió entre −49,73 y +45,97 mm/año. La capa activa aumentó 26 cm entre 1997 y 2019 según el modelo del estudio. [Propuesta del equipo](Propuestas-de-bases-analogas.md#saskylakh--yakutia-noroccidental-rusia)
+- **Imagen.** [Muelle de Saskylakh, Vladislav Kyamyarya, 2008, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:%D0%9F%D1%80%D0%B8%D1%87%D0%B0%D0%BB_%D0%B2%D0%BE%D0%B7%D0%BB%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%BA%D0%B0_%D0%A1%D0%B0%D1%81%D0%BA%D1%8B%D0%BB%D0%B0%D1%85.jpg). Muestra el contexto del poblado, no los polígonos.
+- **Acceso.** No hay caminos todo el año. Hay un camino de invierno a Olenyok y desde ahí 600 km a Udachny (Wikipedia, misma revisión).
+- **Pendiente.** Digitalizar el perímetro de la Fig. 1 de Wang et al. (2023) desde el navegador, porque MDPI bloquea la descarga automática. No hay sondeos de campo publicados.
+
+**Lake Yamma Yamma, Australia**
+- **Ubicación.** El centro del lago está en -26.27778°, 141.45861° (PC, [Wikipedia, rev. 1366285005](https://en.wikipedia.org/w/index.php?oldid=1366285005)).
+- **Datos.** Es un lago efímero de 20 × 40 km junto a Cooper Creek, unos 750 km aguas arriba de Kati Thanda y unos 90 m por encima. El delta principal migró hacia el NO con el tiempo. [Mann y Amos (2022)](https://doi.org/10.1080/03721426.2022.2027649). Lleno, ocupa 72.000 ha según Wikipedia, frente a 86.614 ha en el polígono DIWA: son polígonos distintos.
+- **Imagen.** [Sentinel-2 L2A, 18/09/2022, ESA, atribución](https://commons.wikimedia.org/wiki/File:Lake_Yamma_Yamma_2022-09-18_Sentinel-2_L2A_True_color.jpg). Es una fecha útil como escena húmeda o seca de referencia.
+- **Pendiente.** Georreferenciar los transectos del capítulo 4 de la [tesis de Mann (2018)](https://digital.library.adelaide.edu.au/dspace/bitstream/2440/112880/2/Mann2018_PhD.pdf).
+
+**Bhallil, Marruecos**
+- **Ubicación.** El perfil está **a 15 km al sureste de Fès**, en un pozo de unos 10 m de profundidad (Dekayir et al. 2002, §2.1). La localidad de Bhalil está en 33.85° N, 4.867° O (PC, [Wikipedia, rev. 1377772060](https://en.wikipedia.org/w/index.php?oldid=1377772060)). El infobox de Wikipedia imprime la longitud sin signo oeste; se corrige a −4.867.
+- **Datos.** La roca madre es un basalto toleítico de textura dolerítica, atravesado por fisuras centimétricas rellenas de calcita y cuarzo. Hay tres facies: metabasalto, saprolita inferior y saprolita superior. En el metabasalto, un doblete de Fe³⁺ ocupa el 14 % del área Mössbauer y la saponita hipogénica tiene ~10 % de Fe²⁺. En la saprolita hay un doblete de Fe²⁺ del 20 %. En la saprolita superior hay un único doblete de Fe³⁺, de montmorillonita-beidellita. [Dekayir et al. (2002)](https://comptes-rendus.academie-sciences.fr/geoscience/item/10.1016/S1631-0713(02)01829-1.pdf)
+- **Tarea.** Geología y Perforación (las muestras se tomaron a lo largo del pozo).
+- **Pendiente.** No se publicó la coordenada exacta del pozo. Hay que preguntar a los autores (Universidad Moulay Ismail, Meknès).
+
+**Williams Point, Australia**
+- **Ubicación.** Se mantiene el punto fotográfico de contexto. El centro de Kati Thanda está en -28.66667°, 137.33333° (PC, [Wikipedia, rev. 1384836342](https://en.wikipedia.org/w/index.php?oldid=1384836342)).
+- **Datos.** Las facies lacustres profundas sobre la Formación Etadunna datan de unos 206 ± 13 ka. La fase fluvio-lacustre data de unos 86 ± 4 ka, con 8 muestras OSL. El paleolago tuvo una profundidad máxima de **12 m**. La unidad eólica de Williams Point data de unos 49 ± 4 ka. [Cohen et al. (2022)](https://doi.org/10.1016/j.quascirev.2022.107635) · cronología previa en [Fu, Cohen y Arnold (2017)](https://ro.uow.edu.au/smhpapers/4564)
+- **Imagen.** Regional: [Lake Eyre, Landsat 1999, NASA GSFC, dominio público](https://commons.wikimedia.org/wiki/File:NEO_lake_eyre_big.jpg).
+- **Pendiente.** Coordenadas de la columna y espesores por nivel. Están en el artículo de pago, así que hay que pedirlos a los autores (Universidad de Wollongong).
+
+**Salada de Chiprana, España**
+- **Ubicación (PP).** El pedón **CH1** está en una terraza lacustre, en 41.24° N, 0.17° O: calicata de 180 cm hasta el nivel freático, a 152 m s. n. m. (8 m sobre el lago), con edad OSL de 9,0 ± 0,7 ka. El pedón **CH2** está en un depósito eólico, en 41.23° N, 0.18° O: calicata de 200 cm más sondeo con barrena hasta 300 cm, con un paleosuelo de 322,2 ± 21,6 ka. En total hay 25 muestras de suelo. [Tierra et al. (2026), §3 y resumen](https://cir.cenieh.es/handle/20.500.12136/3579)
+- **Datos.** El lago está a 138 m s. n. m. Tiene unas 41 ha de lámina de agua y 5,6 m de profundidad máxima registrada, dentro de una depresión de 75 ha con un escarpe NO de unos 12 m. Las crestas eólicas están entre 143 y 151 m, con menos de 2 m de relieve y una pendiente de 4° hacia el lago. La CE del agua es de 27 dS/m (1992) y 47 dS/m (2022), y llega a 150 dS/m en estiaje (octubre de 2025, dato propio de los autores). El yeso en el suelo va de menos del 5 % al 51 % y el pH de 7,6 a 8,8. La granulometría se midió por difracción láser (Tabla 2). El lago es Ramsar desde 1999 y Natura 2000 ES2430041.
+- **Clima.** Estación de Caspe, a 11 km al E: temperatura media anual de 15,8 °C, máxima de 44,7 °C, lluvia de 191–484 mm (media de 316,4 mm en 2004–2024) y ETP de 1.500 mm. El viento regional dominante es del NO (mismo artículo).
+- **Imagen.** [Paisaje de la laguna salada de Chiprana, Javierbarriendos, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Paisaje_laguna_salada_de_Chiprana.png).
+- **Pendiente.** Permiso de muestreo vigente en la Reserva. Hay que tramitarlo con el Gobierno de Aragón.
+
+**Aucanquilcha, Chile**
+- **Ubicación.** La cumbre del volcán está en -21.22083°, -68.46861° (PC, [Wikipedia, rev. 1385731624](https://en.wikipedia.org/w/index.php?oldid=1385731624)).
+- **Datos.** En Aucanquilcha se perforó a **6.176 m**. El estudio cubre 24 sitios en 11 montañas y encontró permafrost seco y permafrost rico en hielo. Por encima de 5.800 m, la capa activa mide 10–30 cm. [Yoshikawa et al. (2025), resumen](https://doi.org/10.1080/15230430.2025.2532202)
+- **Imagen.** [Volcán Aucanquilcha, Diego Delso, 2016, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Volc%C3%A1n_Aucanquilcha,_Chile,_2016-02-10,_DD_11.JPG).
+- **Pendiente.** Coordenadas de A2 y del sondeo de cumbre, y fracción de hielo. Están en la Tabla 1, que es de acceso abierto, pero la descarga automática está bloqueada. Hay que copiarla desde el navegador.
+
+**Laguna Miscanti, Chile**
+- **Ubicación.** El lago está en -23.725°, -67.765° (PC, [Wikipedia, rev. 1384686687](https://en.wikipedia.org/w/index.php?oldid=1384686687)). Coincide con la referencia de Grosjean (-23.7333°, -67.7667°).
+- **Datos.** El testigo de octubre de 1995 mide 7,95 m y se sacó bajo 9,68 m de agua. Registra unos 22.000 años radiocarbónicos. El lago está en el Sector 3 de la Reserva Los Flamencos, con normativa de uso público. [Propuesta del equipo](Propuestas-de-bases-analogas.md#laguna-miscanti--región-de-antofagasta-chile) · [Normativa del Sector 3](https://socairechile.cl/wp-content/uploads/2025/03/NORMATIVA-SECTOR-3-LAGUNAS-MISCANTI-Y-MINIQUES1.pdf)
+- **Imagen.** [Laguna Miscanti, Godot13, 2006, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Laguna_Miscanti_(Antofagasta,_Chile)_03.jpg).
+- **Pendiente.** Coordenada del testigo. El artículo no la publica; hay que preguntar a los autores (Universidad de Berna).
+
+**Quinamávida, Chile**
+- **Ubicación.** La muestra de cantera está en **35°48′ S, 71°26′ O** (-35.80°, -71.4333°), en la Formación Colbún. [Villalobos et al. (2018)](https://revistadelaconstruccion.uc.cl/index.php/RDLC/article/download/2035/2107/3911) · [Propuesta del equipo](Propuestas-de-bases-analogas.md#quinamávida--región-del-maule-chile). Esta coordenada permite activar la celda climática.
+- **Imagen.** Solo hay fotos de contexto de la localidad: [Termas de Quinamávida, R.A.T.P., CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Termas_de_Quinam%C3%A1vida._-_panoramio.jpg). No hay foto pública del afloramiento.
+- **Pendiente.** Proporciones minerales por intervalo. No están publicadas; hay que medirlas.
+
+**LUNA, Colonia**
+- **Datos.** La sala mide unos 700 m² y tiene simulante **EAC-1A** con 60 cm de espesor, unas 900 t de material basáltico de una cantera local. Abrió en septiembre de 2024. La iluminación inicial es provisional, con lámparas de estudio. El plan de DLR incluía el simulador solar Candelabra (4.º trimestre de 2025), la rampa Moon Zeppelin (1.er trimestre de 2026) y la descarga de gravedad Puppeteer (3.er trimestre de 2026). [EGU25-19008](https://meetingorganizer.copernicus.org/EGU25/EGU25-19008.html) · [DLR, portafolio LUNA](https://www.dlr.de/en/rb/research-operation/portfolio/dlr_rb_portfolio_luna.pdf/@@download/file) · [Elementos de LUNA](https://luna-analog-facility.de/en/for-users/elements/)
+- **Imagen.** [LUNA Analog Facility, Raimond Spekking, 25/09/2024, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:LUNA_Analog_Facility-4498.jpg).
+- **Pendiente.** Confirmar con DLR si el Candelabra ya está instalado. La fuente es de mayo de 2025.
+
+**Lanzarote · PANGAEA**
+- **Datos.** Los sitios centrales de PANGAEA son las secuencias permotriásicas de los Dolomitas, el Ries, Lanzarote y las anortositas de Lofoten. [ESA, What is PANGAEA](https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/CAVES_and_Pangaea/What_is_PANGAEA) · [Sauro et al. (2023), Acta Astronautica](https://doi.org/10.1016/j.actaastro.2022.12.034)
+- **Imagen.** [Borde de Caldera Blanca, GerritR, 2017, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Auf_dem_Rand_der_Caldera_Blanca,_Lanzarote_II.jpg) · [Montaña de Tinguatón, Patrice78500, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Monta%C3%B1a_de_Tinguat%C3%B3n_01.jpg).
+- **Pendiente.** Trazas GPS de cada edición. ESA no las publica.
+
+**Pali-Aike, Chile**
+- **Ubicación.** El campo volcánico está en -52.082°, -69.698° (PC, [Wikipedia, rev. 1369594432](https://en.wikipedia.org/w/index.php?oldid=1369594432)). El cono tiene su punto Sernageomin en el atlas.
+- **Datos.** La cueva de Pali-Aike conserva ocupación humana de hace unos 9.000 años. CONAF no permite acampar dentro del parque. [Bienes Nacionales](https://patrimonio.bienes.cl/patrimonio/pali-aike/) · [CONAF](https://www.conaf.cl/parque_nacionales/parque-nacional-pali-aike/)
+- **Imagen.** [Volcán de Pali Aike, Mat Austro, 2023, CC BY 4.0](https://commons.wikimedia.org/wiki/File:Volc%C3%A1n_de_Pali_Aike.jpg) · [Parque Nacional Pali Aike, Janitoalevic, 2016, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Parque_Nacional_Pali_Aike_Chile-Foto2.jpg).
+- **Pendiente.** Rugosidad y obstáculos a escala de rover. Hay que medirlos en terreno con fotogrametría y permiso de CONAF.
+
+**Chajnantor · sondeo B3**
+- **Datos.** El sondeo llega a 14 m y atraviesa un permafrost de unos 5 m de espesor. En 2019 hubo más de 100 ciclos de hielo y deshielo en los 3 cm superiores, con un deshielo máximo de 14 cm. [Mena et al. (2021)](https://doi.org/10.1080/15230430.2021.1878739) · [Propuesta del equipo](Propuestas-de-bases-analogas.md#chajnantor-b3--región-de-antofagasta-chile)
+- **Imagen.** De contexto, del Llano de Chajnantor y no de B3: [Chajnantor 2004, Ricardo Bustos, dominio público](https://commons.wikimedia.org/wiki/File:Chajnantor2004.jpg).
+- **Pendiente.** Coordenadas de B4 y B5. Están en la Tabla 1 de Yoshikawa et al. (2025); ver Aucanquilcha.
+
+**Ana Te Pahu, Rapa Nui** (propuesta nueva) — ver la tabla de cuevas. Imagen: [Cave opening at Ana Te Pahu, Fabianokm, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Cave_opening_at_Ana_Te_Pahu.jpg).
+
+**Salar de Pajonales** (propuesta nueva) — ver «Avance en estas prioridades».
+
+### C.2 Desiertos, regiones áridas y terrenos geológicos
+
+**Hanksville / San Rafael Swell · MDRS**
+- **Ubicación.** 38.40646°, -110.79190° (PC, coincide con el punto del atlas), a 11,63 km por carretera al NO de Hanksville. [Wikipedia, rev. 1373694615](https://en.wikipedia.org/w/index.php?oldid=1373694615)
+- **Tarea.** Operaciones humanas y Geología. Las EVA usan una base de datos de puntos de ruta y se hacen a pie o en ATV.
+- **Datos.** El hábitat es un cilindro de dos plantas y unos 10 m de diámetro. El tanque de agua es de 450 galones (unos 1.700 L), a 30 m del hábitat.
+- **Imagen.** [MDRS 2020, The Mars Society/MDRS, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Mars_Desert_Research_Station_2020.jpg).
+- **Pendiente.** Trazas de EVA por tripulación. Están en los informes diarios de MDRS, que no tienen datos estructurados.
+
+**Devon Island · HMP**
+- **Datos.** El cráter Haughton mide unos 23 km de diámetro y tiene 31,04 ± 0,37 Ma según ⁴⁰Ar/³⁹Ar. El impactor medía unos 2 km. Aflora material de hasta 1.700 m de profundidad. El centro del cráter está en 75.38333°, -89.66667° (PC). [Wikipedia, rev. 1379912284](https://en.wikipedia.org/w/index.php?oldid=1379912284) · [Erickson et al. (2021)](https://cendekia.unisza.edu.my/neuaxis-e/Record/curtin-20.500.11937-90162/Description)
+- **Tarea.** Movilidad (rovers K10), Geología y Operaciones humanas.
+- **Imagen.** [Rovers Red and Black en Haughton, NASA, 2007, dominio público](https://commons.wikimedia.org/wiki/File:Rovers_Red_and_Black_at_Houghton_Crater_Devon_Island_Canada.jpg) · [K10 Mars-1, HMP, dominio público](https://commons.wikimedia.org/wiki/File:DrDeans_K10_Mars-1_(4871774545).jpg).
+- **Pendiente.** Trazas de rover por campaña. Están en informes del Mars Institute sin datos descargables.
+
+**Devon Island · FMARS**
+- **Ubicación.** 75.43132°, -89.82339° (PC), que coincide con el atlas, en Haynes Ridge sobre el cráter, a unos 165 km al NE de Resolute. [Wikipedia, rev. 1383647652](https://en.wikipedia.org/w/index.php?oldid=1383647652)
+- **Tarea.** Operaciones humanas.
+- **Datos.** El hábitat mide 7,7 m de alto y 8,3 m de diámetro. Las comunicaciones tienen un retardo típico de 20 min.
+- **Imagen.** [Construcción de FMARS, The Mars Society, 2000, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:FMARS_Station_Construction_4_2000-07-26.JPG).
+
+**Néguev / cráter Ramon · D-MARS**
+- **Ubicación.** El centro del makhtesh está en 30.57861°, 34.81778° (PC). El makhtesh mide 40 km de largo, 2–10 km de ancho y 500 m de profundidad. [Wikipedia, rev. 1383891234](https://en.wikipedia.org/w/index.php?oldid=1383891234)
+- **Tarea.** Operaciones humanas y Geología.
+- **Datos.** Las misiones de D-MARS duraron 4 días en febrero de 2018 y 11 días en 2019. [Wikipedia D-MARS, rev. 1353201311](https://en.wikipedia.org/w/index.php?oldid=1353201311). El hábitat desplegado mide unos 50 m², según la prensa. [Calcalist](https://www.calcalistech.com/ctech/articles/0,7340,L-3736668,00.html)
+- **Imagen.** [EVA de D-MARS01 desde dron, Kletetschka y Aharonson, D-MARS, 2018, CC BY 4.0](https://commons.wikimedia.org/wiki/File:D-MARS01_EVA_sol2_drone.jpg).
+- **Pendiente.** Coordenada del hábitat. D-MARS no la publica.
+
+**Desierto de Dhofar · AMADEE-18**
+- **Ubicación.** La misión se hizo en el desierto de **Marmul**, en la gobernación de Dhofar. [Oman Observer](https://www.omanobserver.om/article/73976/Front%20Stories/dhofar-readying-for-mars-mission-trials)
+- **Tarea.** Movilidad (rover Husky, rover eólico TumbleWeed), Detección de hielo o agua del subsuelo (GPR ScanMars, geófono Water Explorer), Geología (espectrometría de campo), Construcción y recursos (impresión 3D A3DPT-2, invernadero Hortextreme) y Operaciones humanas.
+- **Datos.** La misión duró cuatro semanas, en febrero de 2018, con 15 experimentos. En febrero hace típicamente 16–27 °C, con menos de 10 mm de precipitación. Hay estructuras sedimentarias del Paleoceno y el Eoceno y domos salinos de la Cuenca Salina del Sur de Omán. [OeWF, AMADEE-18](https://oewf.org/en/amadee-18)
+- **Pendiente.** Coordenadas de la estación. Hay que pedirlas a OeWF.
+
+**Desierto del Néguev · AMADEE-20** — Mismo cráter Ramon y mismo hábitat D-MARS. La misión fue en octubre de 2021, con OeWF, la Agencia Espacial de Israel y D-MARS, y el centro de apoyo en Austria. [Phys.org/AFP](https://phys.org/news/2021-10-life-mars-simulating-red-planet.html). **Propuesta: fusionar con la ficha D-MARS como segunda campaña** (Apéndice D).
+
+**Armash · AMADEE-24, Armenia**
+- **Ubicación.** Una meseta rocosa cerca de Armash, en la provincia de Ararat. [Armenpress](https://armenpress.am/en/article/1122580/amp)
+- **Tarea.** Movilidad (SAMPLE: transitabilidad y transporte de muestras), Geología (GeoPrep y GEOS-24: muestreo y espectroscopía), Operaciones humanas (PRESSURE: EVA de emergencia), Construcción y recursos (aerogenerador AVAWT, fotobiorreactor) y navegación (ALIX: localización por radiointerferometría).
+- **Datos.** La misión de campo fue del 05/03 al 05/04/2024, con seis astronautas análogos y 16 experimentos. [OeWF, AMADEE-24](https://oewf.org/en/amadee-24/)
+- **Pendiente.** Coordenada del hábitat. OeWF no la publica.
+
+**Sáhara septentrional · MARS2013**
+- **Ubicación.** El sitio está en la **cresta de Hamar Laghdad** (montículos Kess Kess del Devónico), en el Tafilalt, al E de Erfoud. Groemer, Foresta y Turetschek (2014) imprimen «31°21′N, 004°04′E» ([Astrobiology 14(5)](https://www.liebertpub.com/toc/ast/14/5)). Pero Erfoud está en 31.436°, **−4.233°** ([Wikipedia, rev. 1382987271](https://en.wikipedia.org/w/index.php?oldid=1382987271)) y la guía de campo de la UNESCO sitúa el centro de la cresta en **31°23′ N, 4°04′ O** ([guía Kess Kess 2006](https://www.vliz.be/projects/classatdesert/docs/KK_FieldGuide2006.pdf)). **Se resuelve como longitud oeste.** El punto de trabajo es 31.35°, −4.067°; la «E» del artículo es una errata.
+- **Tarea.** Movilidad (rovers Magma White y Cliffbot), Astrobiología (instrumento L.I.F.E.) y Operaciones humanas (Aouda.X).
+- **Datos.** La misión fue del 01/02 al 28/02/2013, con equipos de 23 países y en colaboración con el Centro Ibn Battuta. Los 48 montículos Kess Kess ocupan unos 0,5 × 3,5 km. [IAC-13](https://iafastro.directory/iac/archive/browse/IAC-13/A3/3B/19513/) · [Cavalazzi (2015)](https://cris.unibo.it/retrieve/handle/11585/472566/e1dcb338-59f8-7715-e053-1705fe0a6cc9/Chemgeol_2015_Cavalazzi.pdf)
+
+**Arkaroola y Flinders Ranges**
+- **Ubicación.** 30.31167° S, 139.33611° E (PC), en un santuario de 610 km² a 700 km al N de Adelaida. [Wikipedia, rev. 1377554632](https://en.wikipedia.org/w/index.php?oldid=1377554632)
+- **Tarea.** Geología, Astrobiología y Movilidad (Mars Robot Challenge).
+- **Datos.** Spaceward Bound Australia 2009 se hizo del 9 al 16 de julio en Arkaroola, Marree y Reedy Springs, con el tema «la evolución de la vida en el sistema solar». [Informe SBA 2009](https://www.marssociety.org.au/sites/default/files/library/SBA-2009_Expedition_Report.pdf)
+- **Imagen.** [Arkaroola desde el aire, Kdliss, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:ArkaroolaAir.jpg).
+
+**Arkaringa / Painted Desert / Coober Pedy**
+- **Ubicación.** El Painted Desert está en -27.90592°, 134.83642° (PC), a 120 km al NE de Coober Pedy, en la estancia Arckaringa. Fue fondo marino hace 80 Ma. Coober Pedy está en -29.01111°, 134.75556°. [Wikipedia, rev. 1348898069](https://en.wikipedia.org/w/index.php?oldid=1348898069) · [Coober Pedy, rev. 1381612615](https://en.wikipedia.org/w/index.php?oldid=1381612615)
+- **Tarea.** Geología.
+- **Imagen.** [Arkaringa, dominio público](https://commons.wikimedia.org/wiki/File:Arkaringa.jpg) · [Coober Pedy, qwesy qwesy, CC BY 3.0](https://commons.wikimedia.org/wiki/File:Coober_Pedy_-_panoramio_(4).jpg).
+
+**Woomera y Moon Plain**
+- **Ubicación.** El pueblo de Woomera está en -31.2°, 136.8225° (PC). [Wikipedia, rev. 1378279789](https://en.wikipedia.org/w/index.php?oldid=1378279789)
+- **Acceso.** Está dentro del complejo militar RAAF Woomera Range, de unos 122.000 km². Entrar fuera de la carretera requiere autorización de Defensa (misma revisión).
+- **Imagen.** [Woomera, dominio público](https://commons.wikimedia.org/wiki/File:Woomera.jpg).
+- **Pendiente.** Polígono de Moon Plain y ruta de Jarntimarra-1 (2001). Hay que pedirlos a Mars Society Australia.
+
+**Pilbara y Shark Bay**
+- **Ubicación.** Hamelin Pool está en -26.44111°, 114.34944° (PC), en una reserva marina de 1.270 km². [Wikipedia, rev. 1367515960](https://en.wikipedia.org/w/index.php?oldid=1367515960)
+- **Tarea.** Astrobiología. **Se recomienda separar en dos fichas.** Shark Bay tiene estromatolitos vivos de hasta 1,5 m que crecen unos 0,5 mm/año. Pilbara tiene estromatolitos fósiles de 3,48 Ga en la Formación Dresser, en el Domo North Pole. [Wikipedia Dresser, rev. 1369613496](https://en.wikipedia.org/w/index.php?oldid=1369613496)
+- **Imagen.** [Hamelin Pool, Phil Whitehouse, CC BY 2.0](https://commons.wikimedia.org/wiki/File:Hamelin_Pool_(Stromatolites)_(2051681803).jpg) · [Estromatolito Dresser, James St. John, CC BY 2.0](https://commons.wikimedia.org/wiki/File:Stromatolite_(Dresser_Formation,_Paleoarchean,_3.48_Ga;_Normay_Mine,_North_Pole_Dome,_Pilbara_Craton,_Western_Australia)_1_(32857204117).jpg).
+
+**Marree, Reedy Springs y Lake Eyre**
+- **Ubicación.** Marree está en -29.64918°, 138.06356° (PC), a 49 m s. n. m., con unos 144,7 mm de lluvia al año. [Wikipedia, rev. 1377201514](https://en.wikipedia.org/w/index.php?oldid=1377201514)
+- **Datos.** Spaceward Bound Australia 2009 visitó Arkaroola, Marree y Reedy Springs. El informe no documenta un trabajo en el propio Lake Eyre. [Informe SBA 2009](https://www.marssociety.org.au/sites/default/files/library/SBA-2009_Expedition_Report.pdf)
+- **Imagen.** [Marree 2004, ogwen, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Marree_2004_-_panoramio_(2).jpg).
+
+**Cuenca de Qaidam**
+- **Datos.** La cuenca tiene unos 120.000 km² y está a unos 3.000 m. La temperatura media anual es de 2–4 °C, con 26 mm de lluvia al año frente a 3.000–3.200 mm de evaporación. El Servicio Geológico Chino la usa como análogo para ensayar espectroscopía de Tianwen-1. [Wikipedia, rev. 1366613413](https://en.wikipedia.org/w/index.php?oldid=1366613413)
+- **Tarea.** Geología y Astrobiología.
+- **Imagen.** Regional: [Qaidam, NASA, 1991, dominio público](https://commons.wikimedia.org/wiki/File:Qaidam-basin-china.jpg).
+
+**Jinchang · Mars Base 1 (C-Space)**
+- **Datos.** Está en el Gobi de Gansu, a unos 40 km de Jinchang según AFP; otra fuente dice 15 km al S. La obra empezó en junio de 2018 y abrió al público en abril de 2019. La construyó C-Space con el Centro de Entrenamiento de Astronautas de China. Su fundador declaró que todavía no sirve para investigación científica. La superficie es contradictoria: 67 km² según una fuente y una quinta parte de un campo de fútbol americano según otra. [Phys.org/AFP](https://phys.org/news/2019-04-small-china-mars-base-teens.pdf) · [Sixth Tone](https://www.sixthtone.com/news/1004107)
+- **Tarea.** Operaciones humanas, con fines educativos y turísticos.
+- **Pendiente.** Coordenada. No está publicada.
+
+**Desierto de Atacama · Yungay** — El punto de calicata ya está en el atlas. No se encontraron datos nuevos con fuente para las perforaciones ARADS. **Pendiente.**
+
+**Depresión de Danakil**
+- **Ubicación.** 14.2417°, 40.3° (PC). Es una depresión de unos 200 × 50 km a unos 125 m bajo el nivel del mar. [Wikipedia, rev. 1384659349](https://en.wikipedia.org/w/index.php?oldid=1384659349)
+- **Datos.** El domo de Dallol mide unos 3 × 1,5 km y se eleva unos 60 m. Sus salmueras son anóxicas, con pH < 0, más de 108 °C, más de 26 g/L de Fe y unas 10 veces la salinidad del mar. [Wikipedia Dallol, rev. 1377192598](https://en.wikipedia.org/w/index.php?oldid=1377192598). Europlanet lo caracterizó como análogo hidrotermal para Marte, y se abrió al acceso a finales de 2017. [Informe Europlanet](https://www.europlanet.org/wp-content/uploads/2019/11/Europlanet_2020_RI_Final_Report_151119.pdf)
+- **Tarea.** Astrobiología y Geología.
+- **Imagen.** [Dallol, A. Savin, 2018, Free Art License](https://commons.wikimedia.org/wiki/File:ET_Afar_asv2018-01_img48_Dallol.jpg).
+
+**Lago Tirez** — Europlanet lo caracterizó y se abrió al acceso a finales de 2017. El alga que tiñe el lago se llamó *Dunaliella salina* EP-1 por el proyecto ([informe Europlanet](https://www.europlanet.org/wp-content/uploads/2019/11/Europlanet_2020_RI_Final_Report_151119.pdf)). **Tarea:** Astrobiología. **Imagen:** [ortofoto MTN25 0687c3, 2007, CNIG, CC BY 4.0](https://commons.wikimedia.org/wiki/File:MTN25-0687c3-2007-Laguna_de_Tirez.jpg).
+
+**Río Tinto**
+- **Datos.** El río mide unos 100 km y está en la Faja Pirítica Ibérica, con depósitos de 300–350 Ma. El punto de contexto es 37.21°, -6.938°. [Wikipedia, rev. 1384300948](https://en.wikipedia.org/w/index.php?oldid=1384300948). Allí se hicieron la simulación OeWF de abril de 2011 con el rover Eurobot de ESA y la campaña Moonwalk de abril de 2016 con el hábitat SHEE. [Wikipedia OeWF, rev. 1367850711](https://en.wikipedia.org/w/index.php?oldid=1367850711) · [SHEE](https://ttu-ir.tdl.org/items/f938a41d-4c74-4c67-8da1-e3b0108de90e)
+- **Tarea.** Perforación (MARTE), Astrobiología y Movilidad.
+- **Imagen.** [Río Tinto, Carol Stoker, NASA Ames, 2002, dominio público](https://commons.wikimedia.org/wiki/File:Rio_tinto_river_CarolStoker_NASA_Ames_Research_Center.jpg).
+
+**Centro Ibn Battuta, Marruecos** — Es un sitio de acceso de Europlanet 2020 RI y socio de MARS2013. La base logística está en la Universidad Cadi Ayyad de Marrakech, en 31.666°, -8.0° (PC, [Wikipedia, rev. 1359685165](https://en.wikipedia.org/w/index.php?oldid=1359685165)), lejos del terreno de campo. **Pendiente:** sectores de campo. El informe de Europlanet no los nombra.
+
+**Tirol / Kaunertal · AMADEE-15**
+- **Datos.** La misión fue del 3 al 15 de agosto de 2015 en un glaciar rocoso del Kaunertal. OeWF la presentó como la misión análoga marciana a mayor altitud del mundo. Participaron 19 países y unas 100 personas, y se usaron los trajes Aouda.X y Aouda.S. [OeWF](https://oewf.org/en/?p=8622) · [Mountain Research Initiative](https://mountainresearchinitiative.org/?p=8334)
+- **Tarea.** Operaciones humanas y Movilidad (pruebas robóticas).
+- **Imagen.** [Kaunertaler Gletscher, Sjaak Kempe, 2018, CC BY 2.0](https://commons.wikimedia.org/wiki/File:20180622_18_Kaunertaler_Gletscher_(43048895491).jpg).
+- **Pendiente.** Coordenada y altitud exactas. Están en el informe de OeWF, cuyo archivo estaba caído.
+
+**Dachstein** — Ver la tabla de cuevas. **Tarea:** Cuevas y Operaciones humanas.
+
+### C.3 Terrenos volcánicos e islas
+
+**Mauna Loa · HI-SEAS** — 19.60238°, -155.48719° (PC), a unos 2.500 m. La cúpula mide unos 11 m de diámetro, con 30,3 m² en planta baja (26,8 m² útiles) y 39,4 m² en la planta alta. HI-SEAS IV duró 366 días, de agosto de 2015 a agosto de 2016. **Tarea:** Operaciones humanas. [Wikipedia, rev. 1379040570](https://en.wikipedia.org/w/index.php?oldid=1379040570) · Imagen: [prueba de traje, Tiffany Swarmer/NASA, dominio público](https://commons.wikimedia.org/wiki/File:HI_SEAS_Analogue_suit_test.jpg).
+
+**Kīlauea / Mauna Ulu · BASALT**
+- **Ubicación.** Mauna Ulu está en 19.36722°, -155.20139° (PC). La erupción de 1969–1974 duró 1.774 días, emitió 350 millones de m³ de lava y sus coladas cubren 44 km². [Wikipedia, rev. 1355473329](https://en.wikipedia.org/w/index.php?oldid=1355473329)
+- **Datos.** BASALT trabajó en septiembre de 2016 con permiso especial del Parque Nacional de los Volcanes de Hawái. El control científico estuvo en Kīlauea Military Camp, con antenas repetidoras en la torre del Observatorio Volcanológico de Hawái. [USGS, Volcano Watch](https://usgs.gov/news/volcano-watch-nasa-practices-mars-exploration-kilauea-volcano)
+- **Tarea.** Geología, Astrobiología y Operaciones humanas.
+- **Imagen.** [Mauna Ulu en 1974, Robin Holcomb/USGS, dominio público](https://commons.wikimedia.org/wiki/File:Mauna_Ulu_june_1974.jpg).
+
+**Hawái · PISCES** — El sitio de ensayo está en las laderas bajas del Mauna Kea. ILSO-ISRU se hizo del 27/01 al 11/02/2010 con ocho equipos. En 2012, NASA y CSA hicieron una prueba ISRU (RESOLVE y MMAMA) en depósitos de ceniza volcánica. **Tarea:** Construcción y recursos (ISRU) y Perforación. [NASA, archivo ISRU](https://webarchive.library.unt.edu/web/20130221205815/http://www.nasa.gov/exploration/analogs/isru/index.html) · [ASCE](https://ascelibrary.com/doi/10.1061/41096%28366%29108) · Imagen de contexto: [Mauna Kea, Maplemoths, CC BY 4.0](https://commons.wikimedia.org/wiki/File:Mauna_Kea_from_the_sky.jpg).
+
+**Lanzarote** — Ver la tabla de cuevas, Cueva de los Verdes. **Tarea:** Cuevas y Movilidad. **Propuesta:** fusionar con «Lanzarote · PANGAEA» como sector propio (Apéndice D).
+
+**Tenerife**
+- **Ubicación.** Las pruebas se hicieron en **Las Minas de San José**, dentro del Parque Nacional del Teide. El punto de contexto del parque es 28.263°, -16.616°. [ESA, junio de 2017](https://www.esa.int/Space_in_Member_States/Spain/Ensayos_nocturnos_para_robots_exploradores) · [Wikipedia, rev. 1383205210](https://en.wikipedia.org/w/index.php?oldid=1383205210)
+- **Tarea.** **Movilidad con baja visibilidad.** El proyecto LUCID probó durante 9 días, de día y de noche, los rovers HDPR (ESA) y RAT (GMV). Llevaban cámaras estéreo, iluminación, GPS, láser y lidar. Uno de ellos recorrió más de 300 pies (unos 90 m) de forma autónoma en la oscuridad. [ESA, Rovers drive through Tenerife darkness](https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Rovers_drive_through_Tenerife_darkness) · [Inverse](https://www.inverse.com/article/34640-moon-rovers-will-explore-in-the-dark)
+- **Datos.** En Izaña, a 2.371 m, la temperatura media anual es de 10,2 °C, con unas 3.500 h de sol al año.
+- **Imagen.** [Caldera de Las Cañadas, Diego Delso, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Caldera_de_las_Ca%C3%B1adas,_Parque_Nacional_del_Teide,_Santa_Cruz_de_Tenerife,_Espa%C3%B1a,_2012-12-16,_DD_05.jpg).
+- **Relevancia.** Es el comparador directo de Pali-Aike para la movilidad con Sol rasante en el polo sur lunar.
+
+**Islandia** — Europlanet ofreció ambientes fríos y calientes ([informe](https://www.europlanet.org/wp-content/uploads/2019/11/Europlanet_2020_RI_Final_Report_151119.pdf)). **Pendiente:** sectores concretos. El informe no los nombra.
+
+**Lofoten** — Desde 2022, PANGAEA incluye el **complejo intrusivo de Flakstadøy**, con anortositas análogas a la corteza lunar primaria. En 2025 se hizo la cuarta visita de astronautas. **Tarea:** Geología. [ESA, The Moon in a fjord](https://www.esa.int/ESA_Multimedia/Images/2023/07/The_Moon_in_a_fjord) · [ESA, Mapping for the Moon](https://www.esa.int/ESA_Multimedia/Images/2025/07/Mapping_for_the_Moon) · Imagen: [Flakstadøya, Ximonic, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:View_to_Justnesvika_beach,_Flakstad%C3%B8ya,_Lofoten,_Norway,_2015_April.jpg).
+
+**Bletterbach** — 46.35783°, 11.43419° (PC). El cañón corta el Pórfido Cuarzoso de Bolzano (~272 Ma), la Arenisca de Val Gardena (con huellas fósiles) y las formaciones Bellerophon y Werfen. **Tarea:** Geología. [Wikipedia, rev. 1357424527](https://en.wikipedia.org/w/index.php?oldid=1357424527) · Imagen: [Bletterbachschlucht, HaSt, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Bletterbachschlucht_-_Gorz_-_01.jpg).
+
+**Nördlinger Ries** — 48.88333°, 10.56667° (PC). El borde original medía unos 24 km y el impacto ocurrió hace 14,808 ± 0,038 Ma. Es un cráter de tipo rampart. Allí se entrenaron Shepard y Mitchell para Apollo 14. **Tarea:** Geología. [Wikipedia, rev. 1376062618](https://en.wikipedia.org/w/index.php?oldid=1376062618) · Imagen: [suevita de Aumühle, H. Raab, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Suevite_Aum%C3%BChle.jpg).
+
+**Bressanone** — Brixen está en 46.71667°, 11.65° (PC, [Wikipedia, rev. 1378356922](https://en.wikipedia.org/w/index.php?oldid=1378356922)). **Pendiente:** ninguna fuente consultada confirma jornadas de PANGAEA en Bressanone distintas de las de Bletterbach. Hay que revisarlo en [Sauro et al. (2023)](https://doi.org/10.1016/j.actaastro.2022.12.034).
+
+**Svalbard** — AMASE hace expediciones anuales desde 2003. Probó CheMin y SAM de Curiosity entre 2006 y 2011, e instrumentos de ExoMars desde 2007 ([Wikipedia AMASE, rev. 1353201532](https://en.wikipedia.org/w/index.php?oldid=1353201532)). En agosto de 2006, TRESSA (JPL) recorrió acantilados de hasta 85° y tomó muestras en tres sitios análogos ([Huntsberger et al. (2007)](https://openpolar.no/Record/crwiley:10.1002%2Frob.20219)). **Tarea:** Movilidad, Astrobiología y Geología. Imagen: [Bockfjorden, Jesse Allen, dominio público](https://commons.wikimedia.org/wiki/File:Bockfjorden_from_satelite.jpg).
+
+**Nuevo México** — El entrenamiento geológico de Artemis usó **Kilbourne Hole y Hunt's Hole**, en el campo volcánico de Potrillo ([Evans, LPSC 2024](https://ntrs.nasa.gov/api/citations/20230018695/downloads/LPSC2024_Evans_draft2.pdf) · [RISE2](https://reportingrise.pages.dev/rise2/5c-the-guru-of-potrillo)). En 2026 se entrenó cerca de Questa, en el alto Río Grande ([UT Austin](https://www.jsg.utexas.edu/news/2026/04/artemis-astronauts-showcase-ut-geology-roots/)). **Tarea:** Geología. Imagen: [Kilbourne Hole, Dicklyon, 2019, CC BY 4.0](https://commons.wikimedia.org/wiki/File:Kilbourne_Hole_aerial_Jan_2019.jpg). **Propuesta:** separar Potrillo y Questa en dos sectores.
+
+**California** — Ver Lava Beds en la tabla de cuevas. **Tarea:** Cuevas.
+
+### C.4 Regiones polares
+
+**Isla de Devon y Ártico canadiense** — Duplica el sector de HMP. **Propuesta:** fusionar con la ficha 2 (Apéndice D).
+
+**Concordia** — -75.09978°, 123.33220° (PC), a unos 3.233 m. En invierno baja de −80 °C, con una media anual de −50 °C y un récord de −84,6 °C. Hay unos 9 meses de aislamiento total y Vostok queda a 560 km. Las tripulaciones son de 12 a 15 personas, con un médico de ESA. **Tarea:** Operaciones humanas. [Wikipedia, rev. 1373635872](https://en.wikipedia.org/w/index.php?oldid=1373635872) · [ESA](https://explorationscience.esa.int/?p=473) · Imagen: [Concordia, StephenHudson, 2005, dominio público](https://commons.wikimedia.org/wiki/File:ConcordiaFromTower.jpg).
+
+**Neumayer III** — La posición de 2009 es -70.67444°, -8.27417°. La estación se desplaza unos **157 m/año** hacia el N y rota 0,25°/año, y se esperan unos 4 km de desplazamiento hacia 2034. La plataforma de hielo tiene unos 200 m de espesor y la estación, 210 m² de laboratorio. Desde 2018 funciona allí el **invernadero EDEN ISS**, que ensaya cultivos hidropónicos para Marte. **Tarea:** Operaciones humanas y Construcción y recursos. [Wikipedia, rev. 1373630248](https://en.wikipedia.org/w/index.php?oldid=1373630248) · [AWI, observatorio geomagnético](https://epic.awi.de/id/eprint/45893/) · Imagen: [Neumayer, Felix Riess, CC BY-SA 3.0 de](https://commons.wikimedia.org/wiki/File:Neumayer_Station_Antarctica_2009-12_2.jpg).
+
+**McMurdo** — -77.84632°, 166.66824° (PC, [Wikipedia, rev. 1383436516](https://en.wikipedia.org/w/index.php?oldid=1383436516)). Imagen: [McMurdo desde Observation Hill, owamux, CC BY 2.0](https://commons.wikimedia.org/wiki/File:McMurdo_Station_From_The_Top_Of_Observation_Hill.jpg). **Pendiente:** las campañas de NASA que usaron la base. La ficha no identifica ninguna concreta.
+
+**Lake Untersee** — El lago mide 6,5 × 2,5 km, con 11,4 km² y 169 m de profundidad máxima. El agua está a 0,5–5 °C. La cubierta de hielo mide 2–6 m (unos 3 m de media en verano), con unos 60 cm de ablación estival que se compensa con recongelación basal. Hay tapetes microbianos hasta al menos 130 m y estromatolitos cónicos. **Tarea:** Astrobiología y Detección de hielo. [Wikipedia, rev. 1366282035](https://en.wikipedia.org/w/index.php?oldid=1366282035) · [Frontiers in Microbiology (2019)](https://www.frontiersin.org/articles/10.3389/fmicb.2019.01019/full) · [Frontiers in Microbiology (2020)](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2020.607251/full) · Imagen: [Untersee, Wilfried Bauer, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Untersee_(Wohlthatmassiv).jpg).
+
+**Alaska** — **La fuente no corresponde a la ficha.** Wagner et al. (2023, JAIS) describen un prototipo de autonomía para Europa Lander, no una campaña en Alaska. El ensayo de JPL en hielo natural con EELS se hizo en el **glaciar Athabasca, Alberta (Canadá)**, en otoño de 2023: descensos verticales de unos 1,5 m en molinos glaciares. [Wagner et al. (2023)](https://ai.jpl.nasa.gov/public/documents/papers/wagner-et-al-2023-jais-el.pdf) · [JPL, EELS en Athabasca](https://www-robotics.jpl.nasa.gov/media/documents/20240305_EELS_Athabasca_IEEE.pdf). **Propuesta:** reubicar la ficha en Athabasca o buscar una fuente que documente un ensayo en Alaska (Apéndice D).
+
+### C.5 Cuevas, recintos y hábitats
+
+Sasso San Gottardo, Cerdeña, Eslovenia, «Cuevas de España», Cantabria, Piła, AATC, Biosphere 2 y Colonia/Aouda están en la tabla «Datos recuperados para cuevas y recintos».
+
+**JSC · HERA** — Está en el Edificio 220 del JSC. El campus está en 29.55833°, -95.08889° (PC, [Wikipedia, rev. 1384155933](https://en.wikipedia.org/w/index.php?oldid=1384155933)). El volumen total es de 148,6 m³ (636 ft²) y el módulo de higiene, de 14,1 m³. Tiene tres plantas en la configuración actual (la de 2014 tenía dos) y capacidad para cuatro tripulantes. **Tarea:** Operaciones humanas. [Ficha NASA HHP](https://www.nasa.gov/wp-content/uploads/2023/07/jsc-hhp-hera.pdf) · [Capacidades HERA 2019](https://www.nasa.gov/wp-content/uploads/2016/05/2019_hera_facility_capabilities_information.pdf) · Imagen: [HERA, Bill Stafford/NASA, dominio público](https://commons.wikimedia.org/wiki/File:Human_Exploration_Research_Analog_(HERA)_External_View.jpg).
+
+**JSC · CHAPEA / Mars Dune Alpha** — Es un hábitat de 1.700 ft² (158 m²) impreso en 3D por ICON, dentro de un hangar del JSC. CHAPEA 1 duró del 25/06/2023 al 06/07/2024 (**378 días**) con cuatro tripulantes. Las misiones 2 y 3 estaban previstas para 2025 y 2027. **Tarea:** Operaciones humanas y Construcción. [Wikipedia, rev. 1383921409](https://en.wikipedia.org/w/index.php?oldid=1383921409) · [NBC News](https://www.nbcnews.com/science/space/nasa-completes-first-mission-simulating-astronaut-life-mars-rcna160987) · Imagen: [hábitat CHAPEA, NASA/Bill Stafford, dominio público](https://commons.wikimedia.org/wiki/File:CHAPEA_habitat_(6).jpg).
+
+**Moscú · Mars500** — El IBMP está en 55.7795°, 37.5239° (PC, [Wikipedia, rev. 1320955349](https://en.wikipedia.org/w/index.php?oldid=1320955349)). Hay cuatro módulos herméticos que suman **550 m³**, más un módulo externo de superficie marciana. El módulo médico mide 3,2 × 11,9 m y el habitable 3,6 × 20 m, con camarotes de unos 3 m². El retardo de comunicación llegaba a 25 min. [ESA, The isolation facility](https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Mars500/The_isolation_facility) · [Wikipedia, rev. 1385407174](https://en.wikipedia.org/w/index.php?oldid=1385407174) · Imagen: [Mars500, IBMP/Oleg Volosh, «Copyrighted free use»](https://commons.wikimedia.org/wiki/File:Mars500.jpg).
+
+**Moscú · NEK / SIRIUS** — Es el mismo instituto IBMP. El NEK tiene cuatro módulos con más de 180 m². SIRIUS-21 duró 240 días, del 04/11/2021 al 03/07/2022, con seis tripulantes; una se retiró el día 33. SIRIUS-17 duró 17 días y SIRIUS-19, 120 días. [MAI](https://en.mai.ru/media/news/detail.php?ID=161826) · [SpaceWar](https://www.spacewar.com/reports/SIRIUS_21_to_simulate_flight_to_Moon_starts_in_Moscow_999.html). **Propuesta:** unir ambas fichas de Moscú en un solo sitio con dos campañas.
+
+**Beijing · Lunar Palace 1 (Yuegong-1)** — Está en el campus de Beihang, en 39.98°, 116.34083° (PC, [Wikipedia, rev. 1384450912](https://en.wikipedia.org/w/index.php?oldid=1384450912)). Tiene unos 150 m²; las cifras de 160 m² y 500 m³ no están verificadas. «Lunar Palace 365» duró 370 días, del 10/05/2017 al 15/05/2018, con ocho voluntarios en tres turnos y un 98 % de cierre. **Tarea:** Construcción y recursos (soporte vital biorregenerativo). [Beihang](https://ev.buaa.edu.cn/info/1099/2534.htm) · [Space.com](https://www.space.com/40612-china-lunar-palace-1-mock-moon-mission.html)
+
+**Francia · SHEE** — Es un hábitat para dos personas durante hasta dos semanas, que se despliega solo en pocos minutos. El único despliegue de campo documentado es **Moonwalk, en Río Tinto (España), en abril de 2016**. [SHEE, lecciones aprendidas](https://ttu-ir.tdl.org/items/f938a41d-4c74-4c67-8da1-e3b0108de90e) · [Liquifer](https://liquifer.com/shee). **Corrección:** no hay fuente que lo sitúe en Francia (Apéndice D).
+
+**Alemania · MaMBA (ZARM, Bremen)** — 53.1103°, 8.8579° (PC, [Wikipedia, rev. 1380750498](https://en.wikipedia.org/w/index.php?oldid=1380750498)). El módulo laboratorio mide 4,40 m de diámetro interior y 6,50 m de altura, y unos 5 m de diámetro exterior. **Tarea:** Construcción. [GLEX-2020](https://iafastro.directory/iac/paper/id/55935/abstract-pdf/GLEX-2020,2,3,3,x55935.brief.pdf) · [ZARM](https://www.zarm.uni-bremen.de/en/research/mamba-moon-and-mars-base-analog)
+
+**EE. UU. · «NDU Habitat Demonstrator» = ILMAH (UND)** — Está en 47.9222°, -97.0734° (PC, [Wikipedia, rev. 1381934542](https://en.wikipedia.org/w/index.php?oldid=1381934542)). Es un hábitat inflable sobre marco rígido para cuatro personas durante hasta 30 días. Se terminó en 2012 junto con el rover presurizado eléctrico y los trajes NDX-2. **Tarea:** Operaciones humanas. [UND, Planetary Exploration Initiative](https://aero.und.edu/space/human-spaceflight-lab/projects/planetary-exploration-initiative.html) · [Folleto UND](https://aero.und.edu/space/_files/docs/human-spaceflight-laboratory-brochure.pdf)
+
+**EE. UU. · «ILMH2»** — No hay ninguna fuente para ese nombre. Parece ILMAH. **Propuesta:** fusionar (Apéndice D).
+
+**FLEXhab, Colonia** — Es un contenedor marítimo convertido por SAGA (Copenhague), de 28 m², para cuatro tripulantes. Está junto a la sala LUNA desde mediados de abril de 2025. **Tarea:** Operaciones humanas. [SAGA](https://saga.dk/projects/flexhab) · [DLR](https://www.dlr.de/en/blog/archive/2025/the-flexhab-space-habitat-moon-living-on-earth)
+
+**HESTIA, JSC** — Está en la cámara de vacío de 20 pies del Edificio 7: 6,1 m de diámetro, 8,4 m de alto y tres plantas. Opera a presión reducida (8,2 psia) con un 34 % de O₂ y tiene esclusas para personas y material. Hasta 2024 se habían hecho seis ensayos. **Tarea:** Construcción y recursos (soporte vital). [NASA, capacidades HESTIA](https://www.nasa.gov/missions/analog-field-testing/hestia-facility-capabilities) · [ICES-2024-128](https://ntrs.nasa.gov/api/citations/20240005117/downloads/ICES-2024-128-Final%20Manuscript-No%20Tracked%20Changes.pdf)
+
+### C.6 Entornos submarinos y acuáticos
+
+**Aquarius Reef Base** — 24.95°, -80.45361° (PC), en Conch Reef. La escotilla está a 14 m (46 fsw) y el fondo bajo el hábitat, a 18 m (60 fsw). Queda a 9 km (5,4 mn) de la base en tierra de Islamorada. Es un recipiente a presión de 82 t y unos 43 ft de largo. **Tarea:** Operaciones humanas (EVA de NEEMO). [Ficha FIU 2019](https://environment.fiu.edu/aquarius/working-with-aquarius/_assets/arb_factsheet_2019.pdf) · [Wikipedia, rev. 1381012007](https://en.wikipedia.org/w/index.php?oldid=1381012007) · Imagen: [exterior de Aquarius, NASA, dominio público](https://commons.wikimedia.org/wiki/File:Aquarius_exterior_(whole).jpg) · [NEEMO 16 dentro de Aquarius, NASA, dominio público](https://commons.wikimedia.org/wiki/File:NEEMO_16_inside_Aquarius.jpg).
+
+**Pavilion Lake** — 50.86677°, -121.74191° (PC). El lago llega a 65 m de profundidad y tiene microbialitos entre 5 y 55 m, que crecen unos 0,05 mm/año. El PLRP empezó en 2004 (Lim, NASA Ames y Laval, UBC). En 2008 se usaron los submarinos DeepWorker del 23/06 al 03/07. **Tarea:** Astrobiología y Operaciones humanas. [Wikipedia, rev. 1372222371](https://en.wikipedia.org/w/index.php?oldid=1372222371) · [UC Davis](https://ucdavis.edu/news/lake-dive-search-ancient-life) · Imagen: [torres de microbialitos, Donnie Reid/NASA PLRP, dominio público](https://commons.wikimedia.org/wiki/File:Pavilion_Lake_microbialite_towers.jpg).
+
+**Entornos acuáticos de EE. UU. · NBRF (Universidad de Maryland)** — 38.99289°, -76.93944° (PC, [Wikipedia, rev. 1368181098](https://en.wikipedia.org/w/index.php?oldid=1368181098)). El tanque mide 50 ft (15 m) de diámetro y 25 ft (7,6 m) de profundidad, con 367.000 galones a unos 90 °F. **Tarea:** Operaciones humanas (EVA). [UMD](https://research.umd.edu/capabilities/neutral-buoyancy-research-facility-nbrf). **Pendiente:** la mención «NDU» no corresponde a esta instalación.
+
+**República Checa · Hydronaut H03 DeepLab** — Estaba en una cantera inundada de **Jesenný** (pueblo en 50.65778°, 15.33861°, PC, [Wikipedia, rev. 1380211318](https://en.wikipedia.org/w/index.php?oldid=1380211318)), a unos 10 m de profundidad, entre 7 y 13 m según la misión. En agosto de 2023 se trasladó al campus de la CTU en Dejvice, Praga. **Tarea:** Operaciones humanas. [CTU, agosto de 2023](https://aktualne.cvut.cz/en/reports/20230829-hydronaut-occupied-the-campus-in-dejvice) · [CTU, 2022](https://aktualne.cvut.cz/en/reports/20220822-space-exploration-begins-underwater) · Imagen: [H03 DeepLab, Mojmir Churavy, 2025, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Hydronaut_H03_DeepLab_standalone.jpg).
+
+**NBL · Sonny Carter Training Facility** — 29.6071°, -95.1439° (PC). La piscina mide 202 × 102 × 40 ft (62 × 31 × 12 m) y contiene 6,2 millones de galones (23.000 m³) a 28,9–30 °C. **Tarea:** Operaciones humanas (EVA). [Ficha NASA](https://www.nasa.gov/centers/johnson/pdf/167748main_FS_NBL508c.pdf) · [Wikipedia, rev. 1334564054](https://en.wikipedia.org/w/index.php?oldid=1334564054) · Imagen: [panorámica del NBL, dominio público](https://commons.wikimedia.org/wiki/File:NASA_Neutral_Buoyancy_Laboratory_Panorama.jpg).
+
+## Apéndice D · Correcciones y duplicados detectados
+
+| Ficha | Problema | Acción propuesta |
+| --- | --- | --- |
+| Alaska | La fuente (Wagner et al. 2023) trata de autonomía para Europa Lander, no de un sitio en Alaska. | Reubicar en el glaciar Athabasca (EELS, 2023) o buscar otra fuente. |
+| Sáhara septentrional (MARS2013) | El artículo imprime 004°04′ **E**, pero la cresta de Hamar Laghdad está en 4°04′ **O**. | Usar 31.35°, −4.067° y anotar la errata. |
+| Bhallil | El infobox de Wikipedia imprime la longitud de Bhalil sin signo oeste. | Usar −4.867 solo como punto de contexto. |
+| Néguev (AMADEE-20) y Néguev / Ramon (D-MARS) | Mismo cráter y mismo hábitat. | Una ficha con dos campañas (2018–2020 y octubre de 2021). |
+| Devon (fichas 2 y 36) | HMP y la entrada regional describen el mismo sector. | Fusionar y conservar FMARS aparte. |
+| Moscú (Mars500 y NEK/SIRIUS) | Mismo instituto. | Una ficha con dos campañas. |
+| «ILMH2» y «NDU Habitat Demonstrator» | No hay fuente para ILMH2. Ambos apuntan a ILMAH. | Una ficha ILMAH. |
+| «Cuevas de España» | ESA no documenta ninguna edición de CAVES en España. | Fusionar con Lanzarote (PANGAEA-X) o con Cantabria (Astroland), o eliminarla. |
+| Lanzarote y Lanzarote · PANGAEA | Son sectores distintos: Cueva de los Verdes y Caldera Blanca/Tinguatón. | Un sitio con dos sectores. |
+| Francia (SHEE) | El único despliegue documentado es en Río Tinto, España. | Cambiar el país o vincularla a la ficha de Río Tinto. |
+| Marree, Reedy Springs y Lake Eyre | SBA 2009 no documenta trabajo en Lake Eyre. | Quitar Lake Eyre del nombre o buscar otra campaña. |
+| Pilbara y Shark Bay | Son dos ambientes distintos: estromatolitos fósiles y vivos. | Dos fichas. |
+| Neumayer III | La posición de 2009 tiene un error de más de 2 km por la deriva de 157 m/año. | Marcar el punto con su fecha y pedir la posición actual a AWI. |
+| AATC | El punto del atlas es el del Hábitat 1.0, ya retirado. | Añadir el Hábitat 2.0 (Rzepiennik Suchy). |
+| Pajonales | El punto del mapa inicial queda unos 30 km al S del salar. | Usar -25.14444°, -68.82°. |
+| Mars Base 1 (Jinchang) | Las superficies publicadas se contradicen (67 km² frente a una parcela pequeña). | No cargar la superficie hasta tener una fuente oficial. |
+
+**Lo que no se pudo completar.** Se buscaron las fuentes de todos estos datos y no están publicadas o no se pueden leer sin acceso manual.
+
+- **Coordenadas no publicadas:** hábitats de D-MARS, AMADEE-18, AMADEE-24 y Mars Base 1, testigo de Miscanti y columna de Williams Point.
+- **Tablas que hay que copiar desde el navegador:** Yoshikawa et al. (2025), Tabla 1, para A2 y B4/B5, y Wang et al. (2023), Fig. 1, para el perímetro de Saskylakh.
+- **Informes del archivo `mission.oewf.org`,** que devolvía 404 el 15/11/2026.
+- **Mediciones de campo que no existen todavía:** rugosidad, granulometría por estrato, resistencia, dosis de radiación local y permisos vigentes. Hay que medirlas o pedirlas al gestor correspondiente.
