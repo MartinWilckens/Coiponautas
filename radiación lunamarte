@@ -1,0 +1,168 @@
+# Radiación ionizante en sitios lunares y marcianos
+
+*Datos por lugar para comparación con un atlas terrestre*
+
+> Fecha: 15 de noviembre de 2026.
+> Elaboración: redactado con asistencia de IA (Claude, Anthropic) a partir de fuentes de NASA, DLR/Kiel y literatura revisada por pares. Debe revisarse antes de integrarlo, e incluirse en AI_USAGE.md.
+> Sitios de partida: `luvsichexalogy.md` (nueve regiones Artemis III, Apollo, Mars Exploration Zones y regiones marcianas del repo).
+
+## 1. Hallazgo principal
+
+Solo hay medición directa de radiación en superficie en tres conjuntos de sitios: Gale (Marte), cráter von Kármán (Luna, Chang'e-4) y los seis sitios Apollo (dosis de tripulación por misión completa). Para el resto no existe un valor publicado por sitio en las fuentes consultadas. Allí se usa una línea base medida más un factor de blindaje por terreno (Luna) o por presión atmosférica (Marte).
+
+## 2. Criterios
+
+| Etiqueta | Significado |
+|---|---|
+| **Medido** | Detector en la superficie del sitio |
+| **Modelado** | Simulación de transporte de partículas (Geant4 u otro) |
+| **Sin valor propio** | No hay dato específico del sitio; se indica la línea base aplicable |
+| n. v. | No verificado en las fuentes consultadas |
+
+- Unidades: Gy = dosis absorbida; Sv = dosis equivalente. 1 rad = 10 mGy; 1 rem = 10 mSv.
+- GCR = rayos cósmicos galácticos; SEP = partículas solares energéticas.
+- La dosis depende del ciclo solar: más alta en mínimo solar, más baja en máximo.
+
+## 3. Normalización para comparar con la Tierra
+
+Valores anualizados = tasa × 365 días, con exposición continua. Solo sirven para comparar órdenes de magnitud.
+
+| Referencia | µSv/h | mSv/año | Fuente |
+|---|---|---|---|
+| Luna, superficie, von Kármán (Chang'e-4), mínimo solar | 57 | ≈ 500 | [1][2] |
+| ISS, mismo periodo (total) | 30,5 | ≈ 267 | [2] |
+| Marte, superficie, Gale | 27,9 | ≈ 245 | [3] |
+| Marte, tránsito Tierra–Marte (interior de nave) | 75 | ≈ 657 | [3] |
+| Tierra, promedio mundial de fuentes naturales (UNSCEAR, 2026) | 0,34 | 3,0 | [4] |
+| Tierra, promedio mundial previo (UNSCEAR, 2008) | 0,27 | 2,4 | [4][5] |
+| Tierra, valor máximo citado, Ramsar (Irán) | ≈ 30 | ≈ 260 | [6] |
+
+- Los valores terrestres incluyen radón e irradiación interna; los espaciales son externos (GCR). No son equivalentes en componentes.
+- UNSCEAR actualizó el promedio mundial natural de 2,4 a 3,0 mSv/año por mejores datos y métodos, no por un aumento real [4].
+
+## 4. Luna
+
+### 4.1 Mediciones directas
+
+| Lugar | Coordenadas | Tipo | Dosis absorbida | Dosis equivalente | Condición | Fuente |
+|---|---|---|---|---|---|---|
+| Cráter von Kármán, cuenca Polo Sur–Aitken (cara oculta) | n. v. | **Medido** (LND, Chang'e-4) | 13,2 ± 1 µGy/h total; neutros 3,1 ± 0,5 µGy/h | 1 369 µSv/día (≈ 57 µSv/h) | Ene. 2019, mínimo solar ciclo 24/25. ≈ 2,6× la dosis equivalente GCR de la ISS (523 µSv/día) | [1][2][7] |
+| Superficie lunar, era Apollo (promedio) | — | **Medido** | ≈ 0,6 mrad/h (≈ 6 µGy/h) GCR; rango en órbita y superficie 1–2 mrad/h | n. v. | Ciclo solar distinto al de 2019 | [8][9] |
+
+Chang'e-4 y CRaTER (LRO, en órbita, convertido a superficie) coinciden en enero de 2019 [7].
+
+### 4.2 Sitios Apollo
+
+La dosis es el promedio de los dosímetros de tripulación de la misión completa. Incluye tránsito y cinturones de Van Allen, no solo la superficie. Apollo 14 es la mayor por los pasos por los cinturones [10].
+
+| Misión | Sitio | Lat. (°) | Lon. (°) | Tiempo en superficie | Dosis media tripulación (mGy) |
+|---|---|---|---|---|---|
+| Apollo 11 | Mare Tranquillitatis | 0,67416 N | 23,47314 E | 21 h 38 min | 1,8 |
+| Apollo 12 | Oceanus Procellarum | 3,0128 S | 23,4219 O | 31 h 31 min | 5,8 |
+| Apollo 14 | Fra Mauro | 3,64589 S | 17,47194 O | 33 h 31 min | 11,4 |
+| Apollo 15 | Hadley–Apeninos | 26,13239 N | 3,63330 E | 66 h 54 min | 3,0 |
+| Apollo 16 | Descartes | 8,9734 S | 15,5011 E | 71 h 02 min | 5,1 |
+| Apollo 17 | Taurus-Littrow | 20,1911 N | 30,7723 E | 74 h 59 min | 5,5 |
+
+Fuentes: coordenadas [11]; dosis y tiempos [12]. Las dosis originales están en rad de piel (0,18; 0,58; 1,14; 0,30; 0,51; 0,55).
+
+### 4.3 Nueve regiones candidatas Artemis III (polo sur)
+
+NASA publicó las nueve regiones en octubre de 2024, sin orden de prioridad [13]. No hay valor de dosis publicado por región en las fuentes consultadas.
+
+- La exposición difiere menos del 10 % entre las 13 regiones candidatas originales [14].
+- La topografía local es el factor que más cambia la dosis: −40 % dentro de un cráter simple de 20 km y 3 km de profundidad; −10 % en el borde de Shackleton [14][15].
+
+| Región | Dato propio de radiación | Línea base aplicable | Incertidumbre |
+|---|---|---|---|
+| Peak near Cabeus B | Sin valor propio | Fila 4.1 × factor topográfico | < 10 % entre regiones [14] |
+| Haworth | Sin valor propio | Fila 4.1 × factor topográfico | < 10 % [14] |
+| Malapert Massif | Sin valor propio | Fila 4.1 × factor topográfico | < 10 % [14] |
+| Mons Mouton Plateau | Sin valor propio | Fila 4.1 × factor topográfico | < 10 % [14] |
+| Mons Mouton | Sin valor propio | Fila 4.1 × factor topográfico | < 10 % [14] |
+| Nobile Rim 1 | Sin valor propio | Fila 4.1 × factor topográfico | < 10 % [14] |
+| Nobile Rim 2 | Sin valor propio | Fila 4.1 × factor topográfico | < 10 % [14] |
+| de Gerlache Rim 2 | Sin valor propio | Fila 4.1 × factor topográfico | < 10 % [14] |
+| Slater Plain | Sin valor propio | Fila 4.1 × factor topográfico | < 10 % [14] |
+
+Estimación derivada (inferencia del equipo, no publicada): 13,2 µGy/h × 0,6–1,0 ≈ 8–13 µGy/h para terreno polar según blindaje topográfico. Usar solo como orden de magnitud.
+
+### 4.4 Modelo de referencia cerca de Shackleton
+
+Dosis de protones GCR, blindaje 5 mm Al, modelo Geant4 (mrad/h × 10 = µGy/h). No incluye iones pesados ni neutrones, por lo que no es comparable con Chang'e-4 [15].
+
+| Condición | Silicio, mín. solar (µGy/h) | Silicio, máx. solar (µGy/h) | Agua, mín. solar (µGy/h) | Agua, máx. solar (µGy/h) |
+|---|---|---|---|---|
+| Cielo completo (4π) | 5,87 | 1,75 | 8,45 | 2,51 |
+| Borde de Shackleton (zona Artemis Base Camp 004) | 2,59 | 0,776 | 3,73 | 1,11 |
+| Mínimo dentro de cráter simple de 20 km | 1,75 | 0,525 | 2,52 | 0,742 |
+
+Límite NASA-STD-3001 citado en la fuente: 100 rad en cristalino en 30 días (139 mrad/h) [15].
+
+## 5. Marte
+
+### 5.1 Medición directa y rangos
+
+| Lugar | Lat. | Elevación MOLA | Tipo | Dosis absorbida | Dosis equivalente | Condición | Fuente |
+|---|---|---|---|---|---|---|---|
+| **Cráter Gale** (Curiosity, RAD) | 4,5° S | −4,4 km | **Medido** | 0,210 ± 0,040 mGy/día (GCR) | 0,67 mSv/día | 300 sols, cerca del máximo del ciclo 24 | [3][16] |
+| Gale, rango por actividad solar | 4,5° S | −4,4 km | Modelado desde RAD | n. v. | 0,25–0,95 mSv/día; ≈ 110 (máx. solar) a ≈ 310 mSv/año (mín. solar) | Extrapolado | [17][18] |
+| Gale, evento SEP | 4,5° S | −4,4 km | **Medido** | n. v. | 0,025 mSv (primer evento, sol 242). Peor caso extrapolado: ≈ 8 mSv en 2 h | Presión de Gale | [17][19] |
+| Tránsito Tierra–Marte (interior de MSL) | — | — | **Medido** | 0,48 ± 0,08 mGy/día | ≈ 1,8 mSv/día | Referencia de crucero | [3][16] |
+
+### 5.2 Regiones del repo y extremos de elevación
+
+Ningún sitio de esta tabla, salvo Gale, tiene medición de radiación ionizante en superficie en las fuentes consultadas. La tasa de dosis GCR varía alrededor de un 10 % entre condiciones de presión atmosférica [20]. Mayor presión, es decir menor elevación, reduce la contribución de iones pesados y la dosis biológicamente ponderada [18][21].
+
+| Sitio | Lat. | Elevación MOLA | Tipo | Línea base aplicable | Fuente |
+|---|---|---|---|---|---|
+| Jezero | 17,5° N | n. v. | Sin valor propio | Gale ±≈ 10 % | [20] |
+| Oxia Planum | ≈ 18° N | n. v. (requisito de aterrizaje ExoMars: < −2 km) | Sin valor propio | Gale ±≈ 10 %; sitio más alto que Gale → dosis igual o algo mayor | [20][22] |
+| Arcadia–Amazonis (AP-1, AP-8, AP-9) | 39,8° N; 40,75° N; 40,02° N | n. v. | Sin valor propio | Gale ±≈ 10 % | [20] |
+| Deuteronilus Mensae | 39° N y 41° N | n. v. | Sin valor propio | Gale ±≈ 10 % | [20] |
+| Nili Fossae (Nili Fossae Trough) | ≈ 22° N | −0,6 km | Sin valor propio | Gale ±≈ 10 %; más alto que Gale → dosis igual o algo mayor | [20][23] |
+| Cumbre del monte Olimpo (extremo alto) | — | n. v. | **Modelado** | Presión ≈ 82 Pa; mayor espesor de regolito necesario para igual protección | [18][21] |
+| Cuenca Hellas (extremo bajo) | — | ≈ −8,2 km (punto más bajo) | **Modelado** | Presión ≈ 1 200 Pa; menor espesor de regolito necesario | [18][21][24] |
+
+### 5.3 Subsuelo y blindaje con regolito
+
+- Para limitar la dosis efectiva anual a 100 mSv se requieren entre 1 y 1,6 m de regolito. Es menos en el fondo de cráteres profundos y más en las cumbres [18].
+- La dosis efectiva y el flujo de neutrones alcanzan su máximo a ≈ 30 cm bajo la superficie [18].
+- Mapa NASA/JPL (Mars Odyssey, MARIE): 10–20 rem/año (≈ 100–200 mSv/año), más bajo a menor elevación [25]. Queda dentro del rango estimado a partir de RAD (≈ 110–310 mSv/año) [17].
+
+## 6. Vacíos de datos
+
+- No hay valores publicados por región para las nueve regiones Artemis III ni para 43 de las 44 entradas del taller marciano de 2015 (todas salvo Gale).
+- Falta confirmar elevación y coordenadas verificadas de Jezero, Oxia Planum, Arcadia–Amazonis y Deuteronilus Mensae, y las coordenadas de Chang'e-4.
+- No se recuperaron mapas SEP por sitio (Luna, octubre de 1989 como peor caso) en forma numérica.
+- Para el atlas terrestre, comparar en una misma magnitud (dosis equivalente ambiental o efectiva) y separar componentes: cósmica, terrestre y radón.
+
+## 7. Fuentes
+
+1. Zhang, S. et al. (2020). First measurements of the radiation dose on the lunar surface. *Science Advances* 6, eaaz1334. https://doi.org/10.1126/sciadv.aaz1334
+2. Kiel University / sci.news (2020). Comparación Luna–ISS–Tierra. https://www.sciencedaily.com/releases/2020/09/200926145212.htm ; https://www.sci.news/space/radiation-dose-rates-lunar-surface-08893.html
+3. Hassler, D. M. et al. (2014). Mars' surface radiation environment measured with MSL's Curiosity rover. *Science*. SwRI: https://www.swri.org/press-release/swri-scientists-publish-first-radiation-measurements-surface-mars
+4. UNSCEAR (2026). Evaluation of public exposure to ionizing radiation. https://unis.unvienna.org/unis/en/pressrels/2026/unisous453.html
+5. Agencia de Medio Ambiente de Japón (UNSCEAR 2008). https://www.env.go.jp/en/chemi/rhm/basic-info/2018/pdf/basic-1st-02-05.pdf
+6. AERB (India). Background natural radiation. https://mgw3.aerb.gov.in/english/background-natural-radiation
+7. Xu, Z. et al. (2022). Primary and albedo protons detected by LND. https://www.arxiv.org/pdf/2209.05831
+8. NASA JSC, Bailey, J. V. Radiation protection and instrumentation (Apollo). https://webarchive.library.unt.edu/eot2008/20090120032511/http://lsda.jsc.nasa.gov/books/apollo/S2ch3.htm
+9. NASA ALSJ. Radiation. https://www.nasa.gov/wp-content/uploads/static/history/alsj/WOTM/WOTM-Radiation.html
+10. NASA TN D-7080. Radiation protection and instrumentation for Apollo. https://www.nasa.gov/wp-content/uploads/static/history/alsj/tnD7080RadProtect.pdf
+11. NASA NSSDCA. Apollo landing site coordinates. https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html
+12. NASA. Space Faring: The Radiation Challenge (tabla Apollo). https://nasa.gov:443/pdf/284273main_Radiation_HS_Mod1.pdf
+13. NASA (28 oct. 2024). Artemis III Moon Landing Regions. https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/
+14. Spence, H. E. y Smith, S. S. (2025). LRO CRaTER and the radiation environment near the Moon. NAS LDHE Panel. https://www.nationalacademies.org/cdn/materials/a055a7cb-d07b-49dc-b8c1-d3636a5c507e
+15. Phipps, P. H. et al. (2020–2021). SEP/GCR dosage near a simple lunar crater. NASA NTRS 20210021041 y 20210021039. https://ntrs.nasa.gov/api/citations/20210021041/downloads/Phipps_Fall_AGU_2020.pdf
+16. Hassler, D. M. et al. Copia del artículo. https://pt.slideshare.net/sacani/mars-surface-radiationenvironmentmeasuredwithcuriosity
+17. Guo, J. et al. (2021). Radiation environment for future human exploration on the surface of Mars. *Astron. Astrophys. Rev.* 29, 8. https://link.springer.com/article/10.1007/s00159-021-00136-5
+18. Zhang, J. et al. (2022). From the top of Martian Olympus to deep craters and beneath. *JGR Planets* 127. https://doi.org/10.1029/2021JE007157
+19. Guo, J. et al. (2015). Modeling the variations of dose rate measured by RAD. https://arxiv.org/pdf/1507.03473
+20. Zhang, J. et al. (2023). Radiation impact of extreme SEP events on Mars. *Space Weather*. https://doi.org/10.1029/2023SW003490
+21. Dartnell, L. R. et al. (2007). Martian sub-surface ionising radiation. *Biogeosciences* 4, 545. https://boris.unibe.ch/25374/1/bg-4-545-2007.pdf
+22. OpenPlanetary. ExoMars 2020 landing sites. https://openplanetary.github.io/opm/exolss
+23. NASA Ames. MSL landing sites list. https://marsoweb.nas.nasa.gov/landingsites/msl2009/docs/msl_sites_list.html
+24. Diving into Badwater (punto más bajo de Marte). https://marslow.carrd.co/
+25. NASA/JPL (2002). Estimated Radiation Dosage on Mars (PIA03480). https://www.jpl.nasa.gov/images/pia03480-estimated-radiation-dosage-on-mars/
+
+**COIPONAUTAS · NASA SPACE APPS CHALLENGE 2026**
