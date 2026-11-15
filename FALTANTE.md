@@ -583,3 +583,40 @@ Sasso San Gottardo, Cerdeña, Eslovenia, «Cuevas de España», Cantabria, Piła
 - **Tablas que hay que copiar desde el navegador:** Yoshikawa et al. (2025), Tabla 1, para A2 y B4/B5, y Wang et al. (2023), Fig. 1, para el perímetro de Saskylakh.
 - **Informes del archivo `mission.oewf.org`,** que devolvía 404 el 15/11/2026.
 - **Mediciones de campo que no existen todavía:** rugosidad, granulometría por estrato, resistencia, dosis de radiación local y permisos vigentes. Hay que medirlas o pedirlas al gestor correspondiente.
+
+## Apéndice E · Coordenadas para las 22 fichas «Sin ubicación»
+
+**Revisión del 15 de noviembre de 2026.** El atlas publicado tenía **22 de 80 fichas en «Sin ubicación»**. Como el atlas es un mapa mundial, basta con marcar la localidad. Cada ficha tiene **una sola coordenada**, que puede cargarse directamente como ubicación del sitio.
+
+Coordenadas en grados decimales WGS84, en orden latitud, longitud. Las fuentes OSM son elementos de OpenStreetMap consultados el 15/11/2026. Las de Wikipedia enlazan a la revisión exacta consultada.
+
+| # | Sitio | Latitud, longitud | Lugar que marca | Fuente |
+| ---: | --- | --- | --- | --- |
+| 1 | **Ana Te Pahu · Rapa Nui** | **−27.11154, −109.40410** | Ana Te Pahu, Isla de Pascua | [OSM](https://www.openstreetmap.org/node/2307745811) |
+| 2 | **Armash · AMADEE-24, Armenia** | **39.76458, 44.80748** | Pueblo de Armash, provincia de Ararat | [OSM](https://www.openstreetmap.org/way/74370179) |
+| 3 | **El Escalón / Astroland · Cantabria** | **43.25402, −3.60932** | Cueva del Escalón, Arredondo | [OSM](https://www.openstreetmap.org/node/861256197) |
+| 4 | **Sa Grutta / ESA CAVES · Cerdeña** | **40.26708, 9.50470** | Valle de Lanaittu, Dorgali | [OSM](https://www.openstreetmap.org/way/375374012) |
+| 5 | **Ensayo Aouda 2017 · Colonia** | **50.85194, 7.13111** | Campus DLR / Centro Europeo de Astronautas, Colonia | [Wikipedia](https://en.wikipedia.org/w/index.php?oldid=1364631935) |
+| 6 | **Cuevas de España · campaña sin identificar** | **29.16078, −13.43869** | Cueva de los Verdes, Lanzarote (PANGAEA-X de ESA) | [Wikipedia](https://es.wikipedia.org/w/index.php?oldid=175160467) |
+| 7 | **Dachstein · Mammuthöhle y Rieseneishöhle** | **47.53490, 13.71871** | Entrada de la Rieseneishöhle, Obertraun | [OSM](https://www.openstreetmap.org/node/2104789608) |
+| 8 | **Dhofar · AMADEE-18, Omán** | **18.13889, 55.17778** | Marmul, Dhofar | [Wikipedia](https://en.wikipedia.org/w/index.php?oldid=1363057419) |
+| 9 | **Devon · antecedentes regionales de Haughton** | **75.38333, −89.66667** | Cráter Haughton, isla Devon | [Wikipedia](https://en.wikipedia.org/w/index.php?oldid=1379912284) |
+| 10 | **Divaška jama / ESA CAVES · Eslovenia** | **45.67523, 13.95065** | Entrada de Divaška jama, Divača | [OSM](https://www.openstreetmap.org/node/1180839140) |
+| 11 | **FLEXhab · Colonia** | **50.85142, 7.13184** | Junto a la sala LUNA, Colonia | [GEOFON DL.LUNAF](https://service.earthscope.org/irisws/fedcatalog/1/query?format=text&includeoverlaps=true&network=DL&nodata=404&starttime=2023-01-01) |
+| 12 | **Glaciar Athabasca · JPL EELS** | **52.19861, −117.24361** | Glaciar Athabasca, Alberta | [Wikipedia](https://en.wikipedia.org/w/index.php?oldid=1383589007) |
+| 13 | **Hawái · PISCES / Spaceward Bound** | **19.76115, −155.45573** | Hale Pōhaku, Mauna Kea | [OSM](https://www.openstreetmap.org/way/366906122) |
+| 14 | **HESTIA · Johnson Space Center** | **29.55707, −95.08589** | Edificio 7, Johnson Space Center, Houston | [OSM](https://www.openstreetmap.org/?mlat=29.55707&mlon=-95.08589#map=18/29.55707/-95.08589) |
+| 15 | **ILMH2 · identificación pendiente** | **47.92220, −97.07340** | Universidad de Dakota del Norte, Grand Forks | [Wikipedia](https://en.wikipedia.org/w/index.php?oldid=1381934542) |
+| 16 | **Svalbard · AMASE / TRESSA** | **79.43166, 13.30498** | Volcán Sverrefjell, Bockfjorden | [Wikipedia](https://en.wikipedia.org/w/index.php?oldid=1360740028) |
+| 17 | **Islandia · Europlanet** | **64.85000, −16.83000** | Campo de lava de Holuhraun | [Wikipedia](https://en.wikipedia.org/w/index.php?oldid=1378630405) |
+| 18 | **Jinchang · China Mars Simulation Base** | **38.52137, 102.18110** | Ciudad de Jinchang, Gansu | [OSM](https://www.openstreetmap.org/node/244080835) |
+| 19 | **Lofoten · ESA PANGAEA** | **68.08424, 13.37974** | Isla de Flakstadøya, Lofoten | [OSM](https://www.openstreetmap.org/relation/4148172) |
+| 20 | **Nuevo México · entrenamiento Artemis** | **31.97194, −106.96472** | Cráter Kilbourne Hole, campo volcánico de Potrillo | [Wikipedia](https://en.wikipedia.org/w/index.php?oldid=1316782507) |
+| 21 | **Sasso San Gottardo · Asclepios** | **46.55861, 8.56639** | Fortaleza Sasso San Gottardo, Airolo | [Wikipedia](https://de.wikipedia.org/w/index.php?oldid=261942841) |
+| 22 | **Tirol / Kaunertal · AMADEE-15** | **46.85833, 10.71111** | Glaciar de Kaunertal (Weißseeferner) | [Wikipedia](https://de.wikipedia.org/w/index.php?oldid=271563754) |
+
+**Notas.**
+
+- **Cuevas de España** probablemente duplica la ficha de Lanzarote, porque la Cueva de los Verdes es donde ESA entrenó en cuevas en España. Conviene fusionarlas.
+- **FLEXhab** queda en el mismo punto que LUNA, porque está junto a esa sala.
+- **Jinchang** marca la ciudad. La base está a entre 15 y 40 km, según la fuente.
