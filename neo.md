@@ -43,6 +43,12 @@
 - **Ficha por zona.** Mostrar qué se quiere ensayar, qué propiedad respalda la comparación, método y escala, fuente, historial de campañas y verificación pendiente. Etiquetar cada dato como medición de campo, estimación remota o hipótesis.
 - **Capas y viabilidad.** Usar Copernicus y Earthdata para el contexto terrestre y PDS/LRO para referencias planetarias. Mostrar acceso, transporte, costo, permisos por actividad, temporada, comunicaciones y evacuación. Para zonas cuyo historial quede pendiente, usar «candidata, historial de campañas por verificar». [Recursos del desafío reproducidos por HackAthlone](https://hackathlone.com/challenges/permanent-moon-base-locations-and-mars)
 
+## Resultados de las campañas análogas
+
+- **TRIDENT.** Diseñado para llevar muestras del subsuelo lunar a la superficie y buscar volátiles. Probó suelo suelto en Atacama, ocho pozos en Haughton y seis en Bishop Tuff. En Bishop, retirar los residuos cada 2 cm en vez de 10 cm permitió seguir sin atascarse en un pozo. En la Luna, PRIME-1 quedó de lado. El taladro se desplegó y se comprobaron sus mecanismos, pero la broca no alcanzó el suelo. [Ensayos en Tierra](https://ntrs.nasa.gov/citations/20240000585) · [Resultados en vuelo](https://doi.org/10.3847/PSJ/ae0b51).
+- **ERNEST.** En California recorrió 26 km en 37 horas de conducción repartidas en siete días. El reporte da el total de la campaña, sin separar desempeño por iluminación. [JPL](https://www.jpl.nasa.gov/news/nasa-testing-advanced-capabilities-for-moon-mars-rovers/).
+- **CanMars.** Guardó ocho muestras en dos campañas en Utah. Se priorizaron limolitas. El laboratorio encontró los valores más altos de carbono orgánico en areniscas, aun por debajo de 0,03 % en masa. [Resultados de CanMars](https://doi.org/10.1016/j.pss.2019.04.004).
+
 ## Luna: condiciones de exploración y requisitos para análogos terrestres
 
 **Coiponautas · NASA Space Apps Challenge 2026 · 14 de noviembre de 2026**
