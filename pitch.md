@@ -26,14 +26,17 @@ Hoy, las misiones continuan; el regreso a la Luna en 2028, los futuros amartizaj
 
 ![Importancia: temperatura, visibilidad y humedad](diapositiva-02-importancia-iconos.png)
 
-Slide problema: Hoy no existe una herramienta que compare datos y evalúe dónde es viable instalar una base análoga​
-Slide solución: La solución es Coypus Analog Mission Database: una interfaz que permite buscar y comparar lugares para instalar bases análogas según las necesidades de cada misión. El usuario define parámetros como físicos, geológicos, movilidad y logístico, y la plataforma muestra en el mapa los sitios que coinciden. Para cada lugar, reúne las fuentes disponibles y señala qué datos siguen pendientes. Así, ayuda a evaluar y comparar la viabilidad de cada candidato con criterios claros y evidencia visible.
+Slide problema: Hoy no existe una herramienta que compare datos y evalúe dónde es viable instalar una base análoga​.
 
-**Guion:** Necesitamos datos que respalden la elección de esos lugares, como su temperatura, las condiciones de visibilidad y la humedad, para evaluar qué tan bien representan el entorno y las tareas de la misión.
+Slide solución: La solución es Coypus Analog Mission Database: una interfaz que permite buscar y comparar lugares para instalar bases análogas según las necesidades de cada misión. El usuario define parámetros físicos, geológicos y logísticos, y la plataforma muestra en el mapa los sitios que coinciden. Para compararlos, integra datos oficiales de la Tierra, la Luna y Marte e identifica similitudes relevantes para cada misión. Para cada lugar, reúne las fuentes disponibles y señala qué datos siguen pendientes. Así, ayuda a evaluar y comparar la viabilidad de cada candidato con criterios claros y evidencia visible.
 
-*Pendiente: reemplazar esta lista por los parámetros definitivos que utilicemos en el proyecto y ajustar los iconos para que coincidan con ellos.*
+**Guion:** Ahora, ¿Qué hace que un lugar de la Tierra sea útil para preparar una misión? La interfaz reune condiciones de la Luna y Marte que las misiones necesitan representar, como temperatura, presión y humedad; la exposición a la radiación; y la presencia de agua superficial o hielo en zonas glaciares.
 
-*Ambas diapositivas contienen imágenes generadas con IA; son recursos ilustrativos, no fotografías documentales ni mediciones científicas.*
+Hilo al slide siguiente: Entonces ¿Con qué comparamos estos datos? Con información de la Nasa Power, que como se observa a mi espalda, se obtienen gráficos de temperatura, humedad, presión y radiación sobre la tierra.
+
+Ahora echemos un vistazo más de cerca a nuestra apliación: Immaginemos que queremos encontrar....
+
+
 
 ---
 
