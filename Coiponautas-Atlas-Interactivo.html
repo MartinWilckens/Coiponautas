@@ -772,15 +772,19 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .destination-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
 .destination-options button{padding:4px 8px;font-size:.78rem}
 .destination-options button[aria-pressed=true]{background:#e2efde;border-color:#62946c;color:#203c27;font-weight:700}
+
+.destination-options button small{display:inline-block;font-size:.66rem;margin-left:2px;opacity:.85}
+.destination-filter>small{display:block;margin-top:5px}
+.destination-tag{display:inline-flex;align-items:center;padding:2px 6px;border-radius:10px;background:#e7efe3;color:#31523b;font-size:.72rem;font-weight:700}
 </style></head><body>
 <header><a class="brand" href="#"><span class="brandmark">C</span><span>coiponautas<small>ATLAS DE ANÁLOGOS</small></span></a><nav><button id="saved">★ Guardados <span id="saved-count">0</span></button><button id="method">Método y fuentes</button></nav><select id="atlas-language" aria-label="Idioma" title="Idioma"><option value="es">Español</option><option value="en">English</option></select><button id="download-html">Guardar copia HTML ↓</button></header>
 <main><aside id="sidebar"><div class="intro"><h1>Atlas de sitios análogos</h1><div class="button-row catalog-entries-actions"><button id="open-catalog" type="button">Ver catálogo completo</button><button id="add-site" type="button">+ Añadir sitio</button><button id="exploration-guide" type="button">Conexión con la exploración</button></div></div>
 <div class="search"><span>⌕</span><input id="search" placeholder="Sitio, país, roca, entorno…" aria-label="Buscar lugares"></div>
 <fieldset class="mission-tasks destination-filter"><legend>Destino</legend><div class="destination-options">
- <button type="button" data-destination="" aria-pressed="true">Todos</button>
- <button type="button" data-destination="moon" aria-pressed="false">Luna</button>
- <button type="button" data-destination="mars" aria-pressed="false">Marte</button>
-</div></fieldset>
+ <button type="button" data-destination="" aria-pressed="true">Todos <small data-destination-count=""></small></button>
+ <button type="button" data-destination="moon" aria-pressed="false">Luna <small data-destination-count="moon"></small></button>
+ <button type="button" data-destination="mars" aria-pressed="false">Marte <small data-destination-count="mars"></small></button>
+</div><small>Destino orientativo. Las tareas y los datos afinan la búsqueda.</small></fieldset>
 <fieldset class="mission-tasks"><legend>Qué quieres probar</legend><div id="task-picker" class="task-picker"></div><small>Puedes elegir varias tareas.</small></fieldset>
 <section class="panel mission-panel" aria-labelledby="mission-title">
  <div class="criteria-heading"><h2 id="mission-title">Qué debe tener el sitio</h2><span id="filter-count" class="criteria-count"></span></div>
@@ -849,9 +853,7 @@ const catalog = {
         "ice",
         "geology"
       ],
-      "planetIds": [
-        "mars"
-      ],
+      "planetIds": ["moon", "mars"],
       "limitations": [
         "La capa activa publicada procede de un modelo de 1 km. Su profundidad local requiere contraste."
       ],
@@ -873,9 +875,7 @@ const catalog = {
         "geology",
         "mobility"
       ],
-      "planetIds": [
-        "mars"
-      ],
+      "planetIds": ["mars"],
       "limitations": [
         "El polígono oficial corresponde al humedal inventariado. La delimitación del delta está pendiente."
       ],
@@ -897,9 +897,7 @@ const catalog = {
         "geology",
         "drilling"
       ],
-      "planetIds": [
-        "mars"
-      ],
+      "planetIds": ["mars"],
       "limitations": [
         "La ubicación se describe aproximadamente a 15 km al sureste de Fez. La posición exacta del perfil está pendiente."
       ],
@@ -921,9 +919,7 @@ const catalog = {
         "geology",
         "drilling"
       ],
-      "planetIds": [
-        "mars"
-      ],
+      "planetIds": ["mars"],
       "limitations": [
         "La coordenada disponible localiza una fotografía de contexto. La posición de la columna sigue pendiente."
       ],
@@ -945,9 +941,7 @@ const catalog = {
         "geology",
         "astrobiology"
       ],
-      "planetIds": [
-        "mars"
-      ],
+      "planetIds": ["mars"],
       "limitations": [
         "La especie mineral y su distribución por estrato requieren comprobación."
       ],
@@ -970,9 +964,7 @@ const catalog = {
         "drilling",
         "geology"
       ],
-      "planetIds": [
-        "mars"
-      ],
+      "planetIds": ["moon", "mars"],
       "limitations": [
         "La asignación de datos al sondeo y la presencia física de hielo requieren revisión local."
       ],
@@ -994,9 +986,7 @@ const catalog = {
         "geology",
         "drilling"
       ],
-      "planetIds": [
-        "mars"
-      ],
+      "planetIds": ["mars"],
       "limitations": [
         "La equivalencia entre abanico y delta requiere evidencia sedimentológica."
       ],
@@ -1017,9 +1007,7 @@ const catalog = {
       "taskIds": [
         "geology"
       ],
-      "planetIds": [
-        "mars"
-      ],
+      "planetIds": ["mars"],
       "limitations": [
         "Analogía mineralógica parcial. La composición y el proceso deben compararse por unidad."
       ],
@@ -1043,9 +1031,7 @@ const catalog = {
         "human",
         "construction"
       ],
-      "planetIds": [
-        "moon"
-      ],
+      "planetIds": ["moon", "mars"],
       "limitations": [
         "Antecedente conocido de instalación construida. La disponibilidad de uso requiere gestión con sus responsables."
       ],
@@ -1068,10 +1054,7 @@ const catalog = {
         "human",
         "mobility"
       ],
-      "planetIds": [
-        "moon",
-        "mars"
-      ],
+      "planetIds": ["moon", "mars"],
       "limitations": [
         "Programa conocido de entrenamiento. La participación y autorización de campaña requieren consulta."
       ],
@@ -4229,7 +4212,7 @@ const inventory = [
       "joaco-1-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4249,7 +4232,7 @@ const inventory = [
       "joaco-2-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4269,7 +4252,7 @@ const inventory = [
       "joaco-3-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4289,7 +4272,7 @@ const inventory = [
       "joaco-4-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4309,7 +4292,7 @@ const inventory = [
       "joaco-5-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4329,7 +4312,7 @@ const inventory = [
       "joaco-6-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4349,7 +4332,7 @@ const inventory = [
       "joaco-7-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4369,7 +4352,7 @@ const inventory = [
       "joaco-8-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4389,7 +4372,7 @@ const inventory = [
       "joaco-9-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4409,7 +4392,7 @@ const inventory = [
       "joaco-10-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4429,7 +4412,7 @@ const inventory = [
       "joaco-11-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4449,7 +4432,7 @@ const inventory = [
       "joaco-12-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4469,7 +4452,7 @@ const inventory = [
       "joaco-13-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4489,7 +4472,7 @@ const inventory = [
       "joaco-14-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4509,7 +4492,7 @@ const inventory = [
       "joaco-15-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4529,7 +4512,7 @@ const inventory = [
       "joaco-16-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4549,7 +4532,7 @@ const inventory = [
       "joaco-17-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4569,7 +4552,7 @@ const inventory = [
       "joaco-18-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4589,7 +4572,7 @@ const inventory = [
       "joaco-19-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4609,7 +4592,7 @@ const inventory = [
       "joaco-20-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4629,7 +4612,7 @@ const inventory = [
       "joaco-21-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4649,7 +4632,7 @@ const inventory = [
       "joaco-22-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4669,7 +4652,7 @@ const inventory = [
       "joaco-23-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4689,7 +4672,7 @@ const inventory = [
       "joaco-24-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4709,7 +4692,7 @@ const inventory = [
       "joaco-25-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4729,7 +4712,7 @@ const inventory = [
       "joaco-26-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4749,7 +4732,7 @@ const inventory = [
       "joaco-27-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4769,7 +4752,7 @@ const inventory = [
       "joaco-28-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4789,7 +4772,7 @@ const inventory = [
       "joaco-29-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4809,7 +4792,7 @@ const inventory = [
       "joaco-30-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4829,7 +4812,7 @@ const inventory = [
       "joaco-31-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4849,7 +4832,7 @@ const inventory = [
       "joaco-32-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4869,7 +4852,7 @@ const inventory = [
       "joaco-33-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4889,7 +4872,7 @@ const inventory = [
       "joaco-34-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4909,7 +4892,7 @@ const inventory = [
       "joaco-35-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4927,7 +4910,7 @@ const inventory = [
     "status": "Antecedente recopilado · ubicación precisa pendiente",
     "sectorIds": [],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4947,7 +4930,7 @@ const inventory = [
       "joaco-37-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4967,7 +4950,7 @@ const inventory = [
       "joaco-38-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -4987,7 +4970,7 @@ const inventory = [
       "joaco-39-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5007,7 +4990,7 @@ const inventory = [
       "joaco-40-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5027,7 +5010,7 @@ const inventory = [
       "joaco-41-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5047,7 +5030,7 @@ const inventory = [
       "joaco-42-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5067,7 +5050,7 @@ const inventory = [
       "joaco-43-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5087,7 +5070,7 @@ const inventory = [
       "joaco-44-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5105,7 +5088,7 @@ const inventory = [
     "status": "Antecedente recopilado · ubicación precisa pendiente",
     "sectorIds": [],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5125,7 +5108,7 @@ const inventory = [
       "joaco-46-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5145,7 +5128,7 @@ const inventory = [
       "joaco-47-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5165,7 +5148,7 @@ const inventory = [
       "joaco-48-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5185,7 +5168,7 @@ const inventory = [
       "joaco-49-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5205,7 +5188,7 @@ const inventory = [
       "joaco-50-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5225,7 +5208,7 @@ const inventory = [
       "joaco-51-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5245,7 +5228,7 @@ const inventory = [
       "joaco-52-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5265,7 +5248,7 @@ const inventory = [
       "joaco-53-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5285,7 +5268,7 @@ const inventory = [
       "joaco-54-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5305,7 +5288,7 @@ const inventory = [
       "joaco-55-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5325,7 +5308,7 @@ const inventory = [
       "joaco-56-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5345,7 +5328,7 @@ const inventory = [
       "joaco-57-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5365,7 +5348,7 @@ const inventory = [
       "joaco-58-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5383,7 +5366,7 @@ const inventory = [
     "status": "Antecedente recopilado · ubicación precisa pendiente",
     "sectorIds": [],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5403,7 +5386,7 @@ const inventory = [
       "joaco-60-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5423,7 +5406,7 @@ const inventory = [
       "joaco-61-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5443,7 +5426,7 @@ const inventory = [
       "joaco-62-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5463,7 +5446,7 @@ const inventory = [
       "joaco-63-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5483,7 +5466,7 @@ const inventory = [
       "joaco-64-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5503,7 +5486,7 @@ const inventory = [
       "joaco-65-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5523,7 +5506,7 @@ const inventory = [
       "joaco-66-sector"
     ],
     "taskIds": [],
-    "planetIds": [],
+    "planetIds": ["moon", "mars"],
     "limitations": [
       "Correspondencia planetaria y propiedades cuantitativas pendientes de revisión individual."
     ],
@@ -5535,7 +5518,7 @@ const inventory = [
 ];
 const inventorySource = {"id": "joaco-inventory", "title": "Inventario de Joaco · compilación del equipo", "url": "https://github.com/MartinWilckens/Coiponautas/blob/f6e9002d527cef8030672461d22f3a98174ef38f/luvsichexalogy.md"};
 
-const paliAike = {id:'pali-aike',name:'Pali-Aike',country:'Chile',environment:'Terreno volcánico',description:'Aproximaciones al cono de Pali-Aike, candidato lunar propuesto por el equipo para navegación con luz rasante y sombras del relieve.',status:'Candidato del equipo · validación pendiente',sectorIds:['pali-aike-cono'],taskIds:['mobility','geology'],planetIds:['moon'],sourceId:'neo-pilot',limitations:['El DEM GLO-30 representa el cráter con unas 5–6 celdas. Falta resolución para obstáculos a escala de rover.'],pending:["Delimitar la ruta, medir rugosidad, horizonte y contraste, y confirmar la autorización de CONAF para el ensayo."]};
+const paliAike = {id:'pali-aike',name:'Pali-Aike',country:'Chile',environment:'Terreno volcánico',description:'Aproximaciones al cono de Pali-Aike, candidato lunar propuesto por el equipo para navegación con luz rasante y sombras del relieve.',status:'Candidato del equipo · validación pendiente',sectorIds:['pali-aike-cono'],taskIds:['mobility','geology'],planetIds:['moon','mars'],sourceId:'neo-pilot',limitations:['El DEM GLO-30 representa el cráter con unas 5–6 celdas. Falta resolución para obstáculos a escala de rover.'],pending:["Delimitar la ruta, medir rugosidad, horizonte y contraste, y confirmar la autorización de CONAF para el ensayo."]};
 const paliObservations = [{id:'pali-slope',sectorId:'pali-aike-cono',propertyId:'slope',value:[10,22],unit:'°',evidence:'medida',quality:'publicada',method:'Caracterización geomorfológica publicada por Sernageomin',date:null,scale:'Pendientes hacia la base del cono',sourceId:'pali-sernageomin',locator:'Ficha Cono de Pali-Aike',uncertainty:null},{id:'pali-diameter',sectorId:'pali-aike-cono',propertyId:'craterDiameter',value:[160,180],unit:'m',evidence:'medida',quality:'publicada',method:'Caracterización geomorfológica publicada por Sernageomin',date:null,scale:'Cráter cartografiado',sourceId:'pali-sernageomin',locator:'Ficha Cono de Pali-Aike',uncertainty:null}];
 
 const families=['Ciencia','Instrumentos','Relieve','Geología','Agua y hielo','Clima','Cuevas','Biología','Operación','Acceso','Fuentes'];
@@ -5637,7 +5620,7 @@ catalog.sources.push(b3Source);
 catalog.sites.push({
  id:'chajnantor-b3',name:'Chajnantor · sondeo B3',country:'Chile',
  environment:'Ladera volcánica altoandina con hielo enterrado',status:'Candidato documental',
- sectorIds:['chajnantor-b3'],taskIds:['ice','drilling'],planetIds:['moon'],
+ sectorIds:['chajnantor-b3'],taskIds:['ice','drilling'],planetIds:['moon','mars'],
  description:'Hipótesis del equipo para ensayar prospección de hielo con Haworth como referencia. El sondeo B3 encontró suelo volcánico fino cementado por hielo.',
  limitations:['La observación corresponde al sondeo B3. El clima de Haworth y la distribución regional del hielo requieren otros datos y ensayos.'],
  pending:['Verificar controles con y sin hielo, rutas y acceso.'],sourceId:b3Source.id
@@ -5757,7 +5740,7 @@ function render(){
   const candidate=r.candidate;
   const section=index===0 || visible[index-1].candidate!==candidate
     ? '<h3 class="result-section">'+(candidate?'Coincidencias':hasMatches?'Otros sitios del catálogo':'Sitios del catálogo')+'</h3>' : '';
-  return section+'<article class="card '+(candidate?'candidate-card ':'')+(selected===s.id?'selected':'')+'"><div class="country">'+escapeHTML(s.country)+'</div><h3><button data-open="'+s.id+'">'+escapeHTML(s.name)+'</button></h3><p>'+escapeHTML(s.environment)+'</p><div class="chips">'+s.taskIds.map(t=>'<span class="chip">'+escapeHTML(taskNames[t]||t)+'</span>').join('')+'</div><p class="small">'+'<span>'+(candidate?'Coincide con los filtros':r.status==='pending'?'Pendiente':'Catálogo')+'</span> · <span>'+(located?'Geometría disponible':'Sin coordenadas verificadas')+'</span>'+'</p>'+(regionalSummary(r.region)?'<p class="small region-status">'+regionalSummary(r.region)+'</p>':'')+(profile.criteria.length?'<span class="status '+r.status+'">'+labels.es[r.status]+'</span><p class="small">'+r.passed+'/'+r.total+' criterios cumplidos · '+r.known+'/'+r.total+' con datos'+(r.preferences!==null?' · Preferencias '+Math.round(r.preferences*100)+'%':'')+'</p>':'')+'<div class="card-bottom"><button data-compare="'+s.id+'">'+(compare.includes(s.id)?'✓ En comparación':'+ Comparar')+'</button><button data-save="'+s.id+'">'+(saved.has(s.id)?'★ Guardado':'☆ Guardar')+'</button></div></article>';
+  return section+'<article class="card '+(candidate?'candidate-card ':'')+(selected===s.id?'selected':'')+'"><div class="country">'+escapeHTML(s.country)+'</div><h3><button data-open="'+s.id+'">'+escapeHTML(s.name)+'</button></h3><p>'+escapeHTML(s.environment)+'</p><div class="chips">'+destinationBadge(s)+s.taskIds.map(t=>'<span class="chip">'+escapeHTML(taskNames[t]||t)+'</span>').join('')+'</div><p class="small">'+'<span>'+(candidate?'Coincide con los filtros':r.status==='pending'?'Pendiente':'Catálogo')+'</span> · <span>'+(located?'Geometría disponible':'Sin coordenadas verificadas')+'</span>'+'</p>'+(regionalSummary(r.region)?'<p class="small region-status">'+regionalSummary(r.region)+'</p>':'')+(profile.criteria.length?'<span class="status '+r.status+'">'+labels.es[r.status]+'</span><p class="small">'+r.passed+'/'+r.total+' criterios cumplidos · '+r.known+'/'+r.total+' con datos'+(r.preferences!==null?' · Preferencias '+Math.round(r.preferences*100)+'%':'')+'</p>':'')+'<div class="card-bottom"><button data-compare="'+s.id+'">'+(compare.includes(s.id)?'✓ En comparación':'+ Comparar')+'</button><button data-save="'+s.id+'">'+(saved.has(s.id)?'★ Guardado':'☆ Guardar')+'</button></div></article>';
  }).join('')||'<div class="empty"><h3>Sin coincidencias con esta búsqueda</h3><p>Revisa los requisitos y la disponibilidad de datos.</p><button id="reset-empty">Restablecer búsqueda</button></div>';
  if(selected && !catalogPreview && !visible.some(result=>result.site.id===selected)){
   selected=null;
@@ -5768,6 +5751,7 @@ function render(){
   const selectedSite=catalog.sites.find(site=>site.id===selected);
   q('detail-region').innerHTML=regionalDetail(evaluateRegionalClimate(selectedSite));
  }
+ updateDestinationCounts();
  renderMarkers();
  q('compare-tray').hidden=!compare.length;
  q('compare-tray').innerHTML=compare.length+' / 4 seleccionados <button id="compare-open">Comparar</button><button id="compare-clear">Vaciar</button>';
@@ -5856,7 +5840,7 @@ function openSite(id,fromCatalog=false){
  if(geo.length)map.fitBounds(highlight.getBounds(),{padding:[40,40],maxZoom:13});
  const access=catalog.accessConditions.filter(a=>a.siteId===id);
  q('detail').hidden=false;
- q('detail').innerHTML='<button class="close" id="detail-close" aria-label="Cerrar ficha">×</button><div class="country">'+escapeHTML(site.country)+'</div><h2>'+escapeHTML(site.name)+'</h2>'+figureFor(site)+'<p>'+escapeHTML(site.description)+'</p><div class="button-row"><button data-save="'+id+'">Guardar sitio</button><button data-compare="'+id+'">Comparar</button></div>'+(explorationFor(site)?'<h3>Conexión con la exploración</h3>'+explorationFor(site):'')+'<h3>Ubicación documentada</h3>'+locationEvidence(site)+'<p><a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(site.name)+'" target="_blank" rel="noopener">Buscar en Google Maps ↗</a></p><h3>Propiedades y evidencia</h3>'+rows.map(o=>'<div class="observation"><strong>'+escapeHTML(properties.find(p=>p.id===o.propertyId)?.label||o.propertyId)+'</strong>'+evidenceFor(o)+'</div>').join('')+(rows.length?'':'<p>El inventario aporta descripción y antecedentes. Las mediciones por propiedad quedan pendientes.</p>')+(site.sourceId?source(site.sourceId):'')+'<div id="detail-region">'+regionalDetail(evaluation.region)+'</div>'+'<h3>Límites de la analogía</h3><ul>'+list(site.limitations)+'</ul><h3>Acceso y operación</h3>'+access.map(a=>'<p>'+escapeHTML(a.description)+'</p>'+source(a.sourceId)).join('')+(access.length?'':'<p>Condiciones específicas pendientes de verificación.</p>')+'<h3>Datos pendientes</h3><ul>'+list(pendingFor(site))+'</ul>'+(evaluation.rows.length?'<h3>Tu perfil</h3>'+evaluation.rows.map(r=>'<p>'+escapeHTML(properties.find(p=>p.id===r.criterion.propertyId)?.label)+' · '+labels.es[r.status]+'</p>').join(''):'');
+ q('detail').innerHTML='<button class="close" id="detail-close" aria-label="Cerrar ficha">×</button><div class="country">'+escapeHTML(site.country)+'</div><h2>'+escapeHTML(site.name)+'</h2>'+destinationBadge(site)+figureFor(site)+'<p>'+escapeHTML(site.description)+'</p><div class="button-row"><button data-save="'+id+'">Guardar sitio</button><button data-compare="'+id+'">Comparar</button></div>'+(explorationFor(site)?'<h3>Conexión con la exploración</h3>'+explorationFor(site):'')+'<h3>Ubicación documentada</h3>'+locationEvidence(site)+'<p><a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(site.name)+'" target="_blank" rel="noopener">Buscar en Google Maps ↗</a></p><h3>Propiedades y evidencia</h3>'+rows.map(o=>'<div class="observation"><strong>'+escapeHTML(properties.find(p=>p.id===o.propertyId)?.label||o.propertyId)+'</strong>'+evidenceFor(o)+'</div>').join('')+(rows.length?'':'<p>El inventario aporta descripción y antecedentes. Las mediciones por propiedad quedan pendientes.</p>')+(site.sourceId?source(site.sourceId):'')+'<div id="detail-region">'+regionalDetail(evaluation.region)+'</div>'+'<h3>Límites de la analogía</h3><ul>'+list(site.limitations)+'</ul><h3>Acceso y operación</h3>'+access.map(a=>'<p>'+escapeHTML(a.description)+'</p>'+source(a.sourceId)).join('')+(access.length?'':'<p>Condiciones específicas pendientes de verificación.</p>')+'<h3>Datos pendientes</h3><ul>'+list(pendingFor(site))+'</ul>'+(evaluation.rows.length?'<h3>Tu perfil</h3>'+evaluation.rows.map(r=>'<p>'+escapeHTML(properties.find(p=>p.id===r.criterion.propertyId)?.label)+' · '+labels.es[r.status]+'</p>').join(''):'');
  monitorImages(q('detail'));
  if(innerWidth<760)showMap();
 }
@@ -5877,6 +5861,17 @@ function criteriaUI(){
    (criterion.required?'<small>Excluye incumplimientos documentados.</small>':'<small>Sube los sitios que cumplen en el orden de resultados.</small>')+
    '<details class="advanced"><summary>Opciones del criterio</summary><label>Importancia de la preferencia <output>'+escapeHTML(criterion.weight)+'</output><input'+binding+'weight" type="range" min="0" max="10" value="'+escapeHTML(criterion.weight)+'"></label><label>Tipo de evidencia<select'+binding+'evidence">'+['','medida','inferida','modelada'].map(v=>'<option value="'+v+'" '+(criterion.evidence===v?'selected':'')+'>'+(v||'Cualquiera documentada')+'</option>').join('')+'</select></label></details></section>';
  }).join('') || '<p class="criteria-hint">Toca un criterio para añadir un filtro. El número indica cuántos sitios tienen ese dato.</p>';
+}
+function updateDestinationCounts(){
+ document.querySelectorAll('[data-destination-count]').forEach(label=>{
+  const id=label.dataset.destinationCount;
+  label.textContent=id?catalog.sites.filter(site=>site.planetIds.includes(id)).length:catalog.sites.length;
+ });
+}
+function destinationBadge(site){
+ const tags=site.planetIds;
+ const label=tags.length===2?'Luna y Marte':tags.includes('moon')?'Luna':'Marte';
+ return '<span class="destination-tag">'+label+'</span>';
 }
 function syncDestination(){
  const destination=profile.planets?.[0] || '';
@@ -6381,9 +6376,10 @@ function validSiteRecord(record) {
 }
 function registerSite(record) {
  const {id,name,country,description,tasks,coords,photo,values}=record;
+ const planetIds=Array.isArray(record.planets)?['moon','mars'].filter(id=>record.planets.includes(id)):[];
  const site={
   id,name,country:country || 'País pendiente',description,environment:record.environment || 'Entorno por describir',
-  status:'Candidato añadido',planetIds:[],taskIds:tasks.filter(task=>Object.hasOwn(taskNames,task)),sectorIds:[id],
+  status:'Candidato añadido',planetIds:planetIds.length?planetIds:['moon','mars'],taskIds:tasks.filter(task=>Object.hasOwn(taskNames,task)),sectorIds:[id],
   limitations:[],pending:[],photo
  };
  if(publicUrl(record.source)) {
@@ -6465,6 +6461,7 @@ function comparisonTable() {
  return '<h2>Comparar sitios</h2><div class="table-scroll"><table class="comparison-table"><thead><tr><th scope="col">Parámetro</th>'+
   sites.map(site=>'<th scope="col">'+figureFor(site)+escapeHTML(site.name)+'</th>').join('')+'</tr></thead><tbody>'+
   row('Ubicación y precisión',locationEvidence)+
+  row('Destino',destinationBadge)+
   row('Fuentes profesionales',sourceList)+
   row('Conexión con la exploración',site=>explorationFor(site) || 'Pendiente')+
   ids.map(id=>row(properties.find(p=>p.id===id)?.label || id,site=>
@@ -6488,7 +6485,7 @@ function catalogDialog(onlyUnlocated=false) {
  const ordered=[...(onlyUnlocated===true?mapSites().map(result=>result.site).filter(site=>!geometries(site).length):catalog.sites)]
   .sort((a,b)=>a.name.localeCompare(b.name,'es'));
  q('dialog-content').innerHTML='<h2>'+(onlyUnlocated===true?'Sitios sin ubicación':'Catálogo completo')+' · '+ordered.length+' fichas</h2><div class="catalog-actions"><label>Buscar sitio<input id="catalog-search" type="search"></label><button type="button" id="catalog-compare">Comparar selección</button><button type="button" id="catalog-add-site">Añadir sitio</button></div><p>'+externalLink(catalogReport,'Inventario del equipo')+'</p><div id="catalog-entries">'+
-  ordered.map(site=>'<details class="catalog-entry" data-search="'+escapeHTML([site.name,site.country,site.environment,site.description].join(' ').toLocaleLowerCase('es'))+'"><summary>'+escapeHTML(site.name)+' <small>'+escapeHTML(site.status)+'</small></summary><p>'+escapeHTML(site.description)+'</p><h3>Ubicación documentada</h3>'+locationEvidence(site)+'<h3>Datos pendientes</h3><ul>'+list(pendingFor(site))+'</ul><h3>Fuentes profesionales</h3>'+sourceList(site)+'<button type="button" data-compare="'+site.id+'">'+(compare.includes(site.id)?'✓ En comparación':'+ Comparar')+'</button> <button type="button" data-catalog-site="'+site.id+'">'+(geometries(site).length?'Ver ficha y mapa':'Ver ficha')+'</button></details>').join('')+'</div><p id="catalog-empty" hidden>Sin coincidencias.</p>';
+  ordered.map(site=>'<details class="catalog-entry" data-search="'+escapeHTML([site.name,site.country,site.environment,site.description].join(' ').toLocaleLowerCase('es'))+'"><summary>'+escapeHTML(site.name)+' <small>'+escapeHTML(site.status)+'</small></summary>'+destinationBadge(site)+'<p>'+escapeHTML(site.description)+'</p><h3>Ubicación documentada</h3>'+locationEvidence(site)+'<h3>Datos pendientes</h3><ul>'+list(pendingFor(site))+'</ul><h3>Fuentes profesionales</h3>'+sourceList(site)+'<button type="button" data-compare="'+site.id+'">'+(compare.includes(site.id)?'✓ En comparación':'+ Comparar')+'</button> <button type="button" data-catalog-site="'+site.id+'">'+(geometries(site).length?'Ver ficha y mapa':'Ver ficha')+'</button></details>').join('')+'</div><p id="catalog-empty" hidden>Sin coincidencias.</p>';
  q('catalog-search').oninput=()=>{
   const needle=q('catalog-search').value.trim().toLocaleLowerCase('es');
   let found=false;
@@ -6518,7 +6515,7 @@ function parameterInput() {
  q('new-parameters').append(field);
 }
 function newSiteDialog() {
- q('dialog-content').innerHTML='<h2>Añadir sitio</h2><form id="new-site-form" class="site-form"><div class="fields"><label>Nombre<input name="siteName" required maxlength="120"></label><label>País o región<input name="country" maxlength="90"></label></div><label>Entorno<input name="environment" maxlength="120" placeholder="Ej. Desierto volcánico"></label><label>Descripción<textarea name="description" rows="3" maxlength="1200"></textarea></label><div class="fields"><label>Latitud<input name="lat" type="number" step="any" min="-90" max="90"></label><label>Longitud<input name="lon" type="number" step="any" min="-180" max="180"></label></div><fieldset><legend>Tareas</legend><div class="task-picker">'+taskCheckboxes('newTask')+'</div></fieldset><label>Fuente general del sitio<input name="siteSource" type="url" placeholder="https://"></label><fieldset><legend>Imagen (opcional)</legend><label>Archivo JPG, PNG o WebP, hasta 500 KB<input name="photoFile" type="file" accept="image/jpeg,image/png,image/webp"></label><label>O enlace directo a la imagen<input name="photoUrl" type="url"></label><label>Crédito de la imagen<input name="credit" maxlength="160"></label></fieldset><div id="new-parameters"></div><button id="new-parameter" type="button">+ Añadir parámetro</button><div class="button-row"><button type="submit">Guardar y seleccionar para comparar</button><button id="site-cancel" type="button">Volver al catálogo</button></div><p class="small">El sitio se guarda en este navegador. Usa «Guardar copia HTML» para compartirlo.</p><p id="new-site-error" role="alert"></p></form>';
+ q('dialog-content').innerHTML='<h2>Añadir sitio</h2><form id="new-site-form" class="site-form"><div class="fields"><label>Nombre<input name="siteName" required maxlength="120"></label><label>País o región<input name="country" maxlength="90"></label></div><label>Entorno<input name="environment" maxlength="120" placeholder="Ej. Desierto volcánico"></label><label>Descripción<textarea name="description" rows="3" maxlength="1200"></textarea></label><div class="fields"><label>Latitud<input name="lat" type="number" step="any" min="-90" max="90"></label><label>Longitud<input name="lon" type="number" step="any" min="-180" max="180"></label></div><fieldset><legend>Destino</legend><div class="task-picker"><label class="task-chip"><input type="checkbox" name="newPlanet" value="moon" checked><span>Luna</span></label><label class="task-chip"><input type="checkbox" name="newPlanet" value="mars" checked><span>Marte</span></label></div></fieldset><fieldset><legend>Tareas</legend><div class="task-picker">'+taskCheckboxes('newTask')+'</div></fieldset><label>Fuente general del sitio<input name="siteSource" type="url" placeholder="https://"></label><fieldset><legend>Imagen (opcional)</legend><label>Archivo JPG, PNG o WebP, hasta 500 KB<input name="photoFile" type="file" accept="image/jpeg,image/png,image/webp"></label><label>O enlace directo a la imagen<input name="photoUrl" type="url"></label><label>Crédito de la imagen<input name="credit" maxlength="160"></label></fieldset><div id="new-parameters"></div><button id="new-parameter" type="button">+ Añadir parámetro</button><div class="button-row"><button type="submit">Guardar y seleccionar para comparar</button><button id="site-cancel" type="button">Volver al catálogo</button></div><p class="small">El sitio se guarda en este navegador. Usa «Guardar copia HTML» para compartirlo.</p><p id="new-site-error" role="alert"></p></form>';
  q('new-parameter').onclick=parameterInput;
  q('site-cancel').onclick=catalogDialog;
  q('new-site-form').onsubmit=saveSite;
@@ -6531,11 +6528,13 @@ async function saveSite(event) {
  const read=(field)=>String(data.get(field) || '').trim();
  const error=q('new-site-error');
  const name=read('siteName');
+ const planets=data.getAll('newPlanet');
  const lat=read('lat'),lon=read('lon');
  const sourceUrl=publicUrl(read('siteSource'));
  const photoUrl=publicUrl(read('photoUrl'));
  const file=data.get('photoFile');
  if(!name){error.textContent='Escribe el nombre del sitio.';return;}
+ if(!planets.length){error.textContent='Selecciona Luna, Marte o ambos.';return;}
  if(Boolean(lat)!==Boolean(lon)){error.textContent='Completa ambas coordenadas o déjalas en blanco.';return;}
  if((read('siteSource') && !sourceUrl) || (read('photoUrl') && !photoUrl)){error.textContent='Usa enlaces HTTP o HTTPS.';return;}
  if((photoUrl || file?.size) && !read('credit')){error.textContent='Añade el crédito de la imagen.';return;}
@@ -6572,7 +6571,7 @@ async function saveSite(event) {
  if(!form.isConnected)return;
  const id='local-'+(globalThis.crypto?.randomUUID?.() || Date.now()+'-'+Math.random().toString(36).slice(2));
  const record={id,name,country:read('country'),environment:read('environment'),description:read('description'),
-  tasks:data.getAll('newTask'),coords:lat?[Number(lat),Number(lon)]:null,source:sourceUrl,photo,values};
+  tasks:data.getAll('newTask'),planets,coords:lat?[Number(lat),Number(lon)]:null,source:sourceUrl,photo,values};
  if(!writeStore(siteStorageKey,[...addedSites,record])){
   error.textContent='El navegador no pudo guardar el sitio. Comprueba el espacio disponible o prueba sin adjuntar un archivo.';return;
  }
@@ -6651,7 +6650,7 @@ function explorationGuide(){
 }
 addExplorationProposals();
 
-const english = {"ATLAS DE AN\u00c1LOGOS":"ANALOG ATLAS","Atlas de sitios an\u00e1logos":"Analog Site Atlas","Idioma":"Language","M\u00e9todo y fuentes":"Method and sources","Guardar copia HTML \u2193":"Save HTML copy \u2193","\u2605 Guardados":"\u2605 Saved","Ver cat\u00e1logo completo":"View full catalog","+ A\u00f1adir sitio":"+ Add site","A\u00f1adir sitio":"Add site","Buscar lugares":"Search sites","Sitio, pa\u00eds, roca, entorno\u2026":"Site, country, rock, environment\u2026","Qu\u00e9 quieres probar":"What do you want to test?","Puedes elegir varias tareas.":"Select one or more tasks.","Qu\u00e9 debe tener el sitio":"What should the site have?","Sin filtros de sitio":"No site filters","Toca un criterio para a\u00f1adir un filtro. El n\u00famero indica cu\u00e1ntos sitios tienen ese dato.":"Select a criterion to add a filter. The number shows how many sites have data.","Buscar otro criterio":"Find another criterion","Nombre":"Name","Grupo":"Group","Grupo de criterios":"Criteria group","Ej. profundidad":"e.g. depth","Guardar y combinar filtros":"Save and combine filters","Si hay varios filtros":"Combining filters","Cumplir todos":"Match all","Cumplir al menos uno":"Match any","Guardar o recuperar perfil":"Save or load a profile","Guardar":"Save","Duplicar":"Duplicate","Recuperar b\u00fasqueda":"Load search","Restaurar":"Load","Perfiles guardados\u2026":"Saved profiles\u2026","Mi exploraci\u00f3n":"My exploration","Sin coincidencias con esta b\u00fasqueda":"No matching sites","Revisa los requisitos y la disponibilidad de datos.":"Check the filters and available data.","Restablecer b\u00fasqueda":"Reset search","Restablecer":"Reset","Ordenar":"Sort","Preferencias":"Preferences","Evidencia disponible":"Available evidence","Pa\u00eds":"Country","resultados":"results","Exportar JSON \u2197":"Export JSON \u2197","Capas ambientales":"Environmental layers","Variable del mapa":"Map variable","Temperatura":"Temperature","Humedad":"Humidity","Humedad relativa":"Relative humidity","Presi\u00f3n":"Pressure","Presi\u00f3n superficial":"Surface pressure","Radiaci\u00f3n":"Radiation","R\u00edos y lagos":"Rivers and lakes","Filtros de mapa activos":"Active map filters","Mostrar capa en el mapa":"Show layer on map","M\u00ednimo":"Minimum","M\u00e1ximo":"Maximum","M\u00ednimo num\u00e9rico":"Minimum value","M\u00e1ximo num\u00e9rico":"Maximum value","Acerca el mapa para ver m\u00e1s r\u00edos. Pulsa un tramo para ver su nombre.":"Zoom in to see more rivers. Select a segment to see its name.","R\u00edo":"River","Lago o embalse":"Lake or reservoir","Mapa mundial":"World map","Mapa interactivo mundial":"Interactive world map","Mapa base":"Basemap","Sat\u00e9lite \u00b7 Esri":"Satellite \u00b7 Esri","Cartograf\u00eda \u00b7 Natural Earth":"Cartography \u00b7 Natural Earth","Relieve \u00b7 Esri":"Terrain \u00b7 Esri","Vista inicial":"Home view","Volver a la vista mundial":"Return to world view","Sitios en el mapa":"Sites on the map","Resultados":"Results","Todo el cat\u00e1logo":"Full catalog","Ajustar mapa":"Fit map","Sin ubicaci\u00f3n":"Unmapped sites","Buscar en esta zona":"Search this area","Todo el mundo":"Worldwide","Latitud, longitud":"Latitude, longitude","Latitud":"Latitude","Longitud":"Longitude","Ir":"Go","Sitios":"Sites","\u2605 Coincide \u00b7 \u25cf En cat\u00e1logo \u00b7 \u25c7 Pendiente":"\u2605 Matches \u00b7 \u25cf In catalog \u00b7 \u25c7 Pending","Mapa":"Map","Lista":"List","Cerrar":"Close","Cerrar ficha":"Close site","Sin coincidencias.":"No matches.","Cat\u00e1logo completo":"Full catalog","Sitios sin ubicaci\u00f3n":"Unmapped sites","Buscar sitio":"Search sites","Comparar selecci\u00f3n":"Compare selection","Inventario del equipo":"Team inventory","Datos pendientes":"Missing data","Fuentes":"Sources","Fuente pendiente":"Source pending","Fuente del sitio":"Site source","Fuente del par\u00e1metro":"Parameter source","Ver ficha y mapa":"Open site and map","Ver ficha":"Open site","\u2713 En comparaci\u00f3n":"\u2713 Selected","+ Comparar":"+ Compare","Comparar":"Compare","Comparar sitios":"Compare sites","Par\u00e1metro":"Parameter","Fuentes de la ficha":"Site sources","Pendiente":"Slope","Compatible":"Match","Incompatible":"Does not match","Sin dato":"No data","Cumple":"Meets criterion","Incumple":"Does not meet criterion","Evidencia discrepante":"Conflicting evidence","Coincide con los filtros":"Matches filters","Cat\u00e1logo":"Catalog","Coincidencias":"Matches","Otros sitios del cat\u00e1logo":"Other catalog sites","Clima regional pendiente":"Regional climate pending","Cumple los rangos del mapa":"Matches the map filters","Clima regional":"Regional climate","Clima regional \u00b7 celda de 4\u00b0":"Regional climate \u00b7 4\u00b0 cell","Sin celda enlazada. Se necesita una ubicaci\u00f3n documentada y cobertura clim\u00e1tica.":"No linked grid cell. A documented location and climate coverage are required.","Dato regional de una celda con centro sobre agua.":"Regional value from a grid cell centered over water.","Fuera del rango":"Outside range","Imagen pendiente":"Image pending","Imagen no disponible":"Image unavailable","Vista satelital del entorno \u00b7 Esri y colaboradores":"Satellite view of the area \u00b7 Esri and contributors","Foto de la instalaci\u00f3n \u00b7 DLR/ESA":"Facility photo \u00b7 DLR/ESA","Entrenamiento PANGAEA en Lanzarote \u00b7 ESA / A. Romeo":"PANGAEA training in Lanzarote \u00b7 ESA / A. Romeo","Pa\u00eds pendiente":"Country pending","Entorno por describir":"Environment to be described","Sitio a\u00f1adido":"Added site","Ubicaci\u00f3n por verificar":"Location to be verified","Punto aportado":"Submitted location","Ubicaci\u00f3n documentada":"Documented location","Coordenadas del sector pendientes.":"Sector coordinates are pending.","Geometr\u00eda disponible":"Mapped","Sin coordenadas verificadas":"No verified coordinates","Buscar en Google Maps \u2197":"Find on Google Maps \u2197","Propiedades y evidencia":"Parameters and evidence","El inventario aporta descripci\u00f3n y antecedentes. Las mediciones por propiedad quedan pendientes.":"The inventory includes context. Parameter measurements are pending.","Guardar sitio":"Save site","\u2605 Guardado":"\u2605 Saved","\u2606 Guardar":"\u2606 Save","Vaciar":"Clear","L\u00edmites de la analog\u00eda":"Analogy limits","Acceso y operaci\u00f3n":"Access and operations","Condiciones espec\u00edficas pendientes de verificaci\u00f3n.":"Specific conditions are pending verification.","Tu perfil":"Your profile","Pa\u00eds o regi\u00f3n":"Country or region","Entorno":"Environment","Descripci\u00f3n":"Description","Ej. Desierto volc\u00e1nico":"e.g. volcanic desert","Tareas":"Tasks","Fuente general del sitio":"General site source","Imagen (opcional)":"Image (optional)","Archivo JPG, PNG o WebP, hasta 500 KB":"JPG, PNG or WebP file up to 500 KB","O enlace directo a la imagen":"Or direct image link","Cr\u00e9dito de la imagen":"Image credit","+ A\u00f1adir par\u00e1metro":"+ Add parameter","Guardar y seleccionar para comparar":"Save and select for comparison","Volver al cat\u00e1logo":"Back to catalog","El sitio se guarda en este navegador. Usa \u00abGuardar copia HTML\u00bb para compartirlo.":"The site is saved in this browser. Use \u2018Save HTML copy\u2019 to share it.","Tipo":"Type","Tipo de par\u00e1metro":"Parameter type","Valor":"Value","Fuente del par\u00e1metro (puedes usar la del sitio)":"Parameter source (you can use the site source)","M\u00e9todo":"Method","Fecha o periodo":"Date or period","P\u00e1gina, figura o punto de muestreo":"Page, figure or sampling point","Evidencia":"Evidence","Por verificar":"To verify","Medida":"Measured","Inferida":"Inferred","Modelada":"Modeled","medida":"measured","inferida":"inferred","modelada":"modeled","aportada":"submitted","Quitar par\u00e1metro":"Remove parameter","Ej. Estacional":"e.g. seasonal","Quitar":"Remove","Aplicar para":"Use this to","Priorizar":"Prioritize","Filtrar":"Filter","Valores aceptados (opcional)":"Accepted values (optional)","Ej. Presente, estacional":"e.g. Present, seasonal","Escribe valores como aparecen en la ficha. Si lo dejas vac\u00edo basta con que haya evidencia.":"Enter values as shown in the site record. Leave blank to accept any documented value.","Excluye incumplimientos documentados.":"Excludes sites with a documented mismatch.","Sube los sitios que cumplen en el orden de resultados.":"Ranks matching sites higher.","Opciones del criterio":"Criterion options","Importancia de la preferencia":"Preference weight","Tipo de evidencia":"Evidence type","Cualquiera documentada":"Any documented type","Todos":"All","No hay par\u00e1metros con esos filtros.":"No parameters match those filters.","Ciencia":"Science","Instrumentos":"Instruments","Relieve":"Terrain","Geolog\u00eda":"Geology","Agua y hielo":"Water and ice","Clima":"Climate","Cuevas":"Caves","Biolog\u00eda":"Biology","Operaci\u00f3n":"Operations","Acceso":"Access","Movilidad":"Mobility","Hielo":"Ice","Perforaci\u00f3n":"Drilling","Astrobiolog\u00eda":"Astrobiology","Construcci\u00f3n":"Construction","Tripulaci\u00f3n":"Crew","Objetivo cient\u00edfico":"Scientific objective","Instrumento":"Instrument","Pendiente del terreno":"Slope","Rugosidad":"Roughness","Superficie":"Area","Terreno poligonal":"Polygonal ground","Tama\u00f1o de grano":"Grain size","Resistencia":"Strength","Minerales":"Minerals","Profundidad hasta hielo":"Depth to ice","Espesor de cobertura":"Cover thickness","Sales":"Salts","Temperatura local":"Local temperature","Temperatura del suelo":"Soil temperature","Velocidad del viento":"Wind speed","Cobertura vegetal":"Vegetation cover","Agua":"Water","Radiaci\u00f3n ionizante":"Ionizing radiation","Altitud":"Elevation","Polvo":"Dust","Preservaci\u00f3n y contaminaci\u00f3n":"Preservation and contamination","Comunicaciones":"Communications","Calidad documentada":"Documented quality","Profundidad del perfil":"Profile depth","Profundidad del agua":"Water depth","Conductividad del agua":"Water conductivity","pH del agua":"Water pH","Fracci\u00f3n volum\u00e9trica de hielo":"Volumetric ice fraction","Espesor de la capa activa":"Active layer thickness","Di\u00e1metro del cr\u00e1ter":"Crater diameter","Altura del relieve":"Relief height","Pendiente de las paredes del cr\u00e1ter":"Crater wall slope","Duraci\u00f3n del ensayo":"Test duration","Volumen interior":"Interior volume","Capacidad de tripulaci\u00f3n":"Crew capacity","Permafrost":"Permafrost","Radiaci\u00f3n en Tierra, Luna y Marte":"Radiation on Earth, the Moon and Mars","Las unidades distinguen dosis absorbida (Gy), equivalente y efectiva (Sv). Cada fila conserva la magnitud y el periodo de su fuente.":"The units distinguish absorbed dose (Gy) from equivalent and effective dose (Sv). Each entry retains the quantity and period reported by its source.","Medici\u00f3n LND":"LND measurement","Medici\u00f3n RAD":"RAD measurement","Estimaci\u00f3n mundial":"Global estimate","Dos\u00edmetros de tripulaci\u00f3n":"Crew dosimeters","Modelo de terreno":"Terrain model","Modelos y datos pendientes":"Models and data gaps","Luna \u00b7 Von K\u00e1rm\u00e1n":"Moon \u00b7 Von K\u00e1rm\u00e1n","Marte \u00b7 Gale":"Mars \u00b7 Gale","Tierra \u00b7 Promedio natural":"Earth \u00b7 Natural background average","Luna \u00b7 Apollo":"Moon \u00b7 Apollo","Luna \u00b7 Shackleton":"Moon \u00b7 Shackleton","Marte \u00b7 Otras regiones":"Mars \u00b7 Other regions","Blindaje por relieve":"Terrain shielding","Dosis local pendiente":"Local dose pending","Resumen Tierra, Luna y Marte":"Earth, Moon and Mars summary","Mediciones y modelos por lugar":"Measurements and models by site","El filtro terrestre se aplica cuando una ficha tiene una medici\u00f3n o estimaci\u00f3n local con su fuente.":"The Earth-site filter applies when a record has a sourced local measurement or estimate.","Dosis equivalente de rayos c\u00f3smicos gal\u00e1cticos (part\u00edculas cargadas). La dosis absorbida total en silicio fue 13,2 \u00b1 1 \u00b5Gy/h. Chang\u2019e-4, 2019, cerca del m\u00ednimo solar.":"Equivalent dose from galactic cosmic rays (charged particles). The total absorbed dose in silicon was 13.2 \u00b1 1 \u00b5Gy/h. Chang\u2019e-4, 2019, near solar minimum.","Dosis equivalente de rayos c\u00f3smicos gal\u00e1cticos durante los primeros 300 soles de Curiosity. Dosis absorbida en tejido estimada en 0,210 \u00b1 0,040 mGy/d\u00eda.":"Equivalent dose from galactic cosmic rays during Curiosity\u2019s first 300 sols. Estimated absorbed dose in tissue: 0.210 \u00b1 0.040 mGy/day.","Dosis efectiva anual. Incluye rad\u00f3n y otras fuentes naturales. La estimaci\u00f3n anterior era 2,4 mSv/a\u00f1o.":"Annual effective dose, including radon and other natural sources. The previous estimate was 2.4 mSv/year.","Intervalo de dosis absorbida de piel entre las misiones con alunizaje. Cada dato cubre la misi\u00f3n completa, incluidos el tr\u00e1nsito y los cinturones de radiaci\u00f3n.":"Range of absorbed skin doses across lunar landing missions. Each measurement covers the whole mission, including transit and the radiation belts.","El modelo calcula exposiciones bajo condiciones espec\u00edficas de topograf\u00eda, part\u00edculas y blindaje. Haworth y las dem\u00e1s regiones Artemis de la compilaci\u00f3n quedan sin un valor medido propio.":"The model estimates exposure under specific terrain, particle and shielding conditions. Haworth and the other Artemis regions in the compilation lack site measurements.","La altitud cambia la cantidad de atm\u00f3sfera por encima del sitio. Los datos de Gale sirven como referencia y las fichas de Jezero, Oxia y Arcadia\u2013Amazonis necesitan sus propias estimaciones o mediciones.":"Elevation changes the amount of atmosphere above a site. Gale is a reference point. Jezero, Oxia and Arcadia\u2013Amazonis need their own estimates or measurements.","Datos y criterio de selecci\u00f3n":"Data and selection criteria","CSV del equipo":"Team CSV","NASA POWER":"NASA POWER","Costa de Natural Earth":"Natural Earth coastline","R\u00edos de Natural Earth":"Natural Earth rivers","Cartograf\u00eda de Natural Earth":"Natural Earth cartography","\u00c1rea seleccionada":"Selected area","Corrige el intervalo m\u00ednimo y m\u00e1ximo.":"Check the minimum and maximum values.","Favoritos actualizados":"Saved sites updated","Selecciona al menos dos sitios.":"Select at least two sites.","Puedes comparar hasta cuatro lugares.":"You can compare up to four sites.","No hay sitios ubicados en esta vista.":"There are no mapped sites in this view.","Perfil guardado en este navegador":"Profile saved in this browser","El navegador impide guardar localmente. Puedes exportar la b\u00fasqueda.":"The browser blocked local storage. You can export the search.","No se pudo leer la imagen.":"The image could not be read.","Sitio guardado y seleccionado.":"Site saved and selected.","Sitio guardado. Quita un sitio de la comparaci\u00f3n para seleccionarlo.":"Site saved. Remove a site from the comparison to select it.","Escribe el nombre del sitio.":"Enter a site name.","Completa ambas coordenadas o d\u00e9jalas en blanco.":"Enter both coordinates or leave both blank.","Usa enlaces HTTP o HTTPS.":"Use HTTP or HTTPS links.","A\u00f1ade el cr\u00e9dito de la imagen.":"Add the image credit.","Indica una fuente v\u00e1lida para cada par\u00e1metro o una fuente general para los datos del sitio.":"Provide a valid source for each parameter or a general source for the site data.","Elige un solo origen para la imagen. Los archivos pueden ser JPG, PNG o WebP de hasta 500 KB.":"Choose one image source. JPG, PNG and WebP files up to 500 KB are supported.","El navegador no pudo guardar el sitio. Comprueba el espacio disponible o prueba sin adjuntar un archivo.":"The browser could not save the site. Check available storage or try without a file.","No se pudieron cargar algunas im\u00e1genes. Comprueba Internet o cambia la capa.":"Some tiles failed to load. Check your internet connection or choose another basemap.","Escribe latitud, longitud. Ejemplo -26.3, 141.4":"Enter latitude and longitude. Example: -26.3, 141.4","Ubicar el sector o a\u00f1adir una geometr\u00eda.":"Locate the site or add geometry.","Incorporar par\u00e1metros pertinentes con fuentes por dato.":"Add relevant parameters with individual sources.","A\u00f1adir una foto del sector con cr\u00e9dito.":"Add a credited photo of the site.","Vincular las tareas ensayadas a la campa\u00f1a.":"Link the tested tasks to the campaign.","Ver datos de radiaci\u00f3n":"View radiation data","Informe UNSCEAR":"UNSCEAR report","Informe de NASA":"NASA report","Quitar zona":"Clear area","Ubicar el sitio requiere una posici\u00f3n documentada.":"A documented location is required to map the site.","Las capas clim\u00e1ticas usan el dato de cada celda de 4\u00b0 y pintan solo su superficie terrestre. Las celdas costeras con centro en agua conservan su valor regional.":"Climate layers show each 4\u00b0 grid value over land. Coastal cells centered over water retain their regional value.","Los requisitos indispensables excluyen incumplimientos documentados. Un valor desconocido conserva el estado pendiente. La preferencia ponderada suma los pesos de los criterios satisfechos y divide por el peso total, incluidos los criterios sin dato. La cobertura de datos se muestra por separado. Este c\u00e1lculo es exploratorio y requiere validaci\u00f3n cient\u00edfica del equipo.":"Required criteria exclude documented mismatches. Missing values stay pending. Preference scores divide the weight of matching criteria by the total weight, including criteria without data. Data coverage is shown separately. The score is exploratory and requires scientific validation.","Las geometr\u00edas conservan la funci\u00f3n indicada por su fuente. Yamma Yamma representa el l\u00edmite del humedal. Parte del inventario est\u00e1 pendiente de georreferenciaci\u00f3n y puede contener campa\u00f1as superpuestas.":"Each geometry retains the meaning given by its source. Yamma Yamma outlines the wetland. Some inventory entries still need coordinates and campaigns may overlap.","Candidato documental":"Research proposal","Candidato del equipo \u00b7 validaci\u00f3n pendiente":"Team proposal \u00b7 validation pending","Antecedente conocido":"Known analog","Antecedente recopilado \u00b7 ubicaci\u00f3n precisa pendiente":"Prior campaign \u00b7 precise location pending","Candidato a\u00f1adido":"Added site","Sector indicado por quien a\u00f1adi\u00f3 el sitio":"Sector as specified by the contributor","Conexi\u00f3n con la exploraci\u00f3n":"Connection to exploration","Elige un lugar y conecta la evidencia con una tarea de Luna o Marte. Las fichas con una conexi\u00f3n explican qu\u00e9 se podr\u00eda probar, qu\u00e9 resultado ser\u00eda \u00fatil y qu\u00e9 falta verificar.":"Choose a site and link its evidence to a Moon or Mars task. Case notes show what to test, what result would be useful and what still needs verification.","Desaf\u00edo de NASA Space Apps":"NASA Space Apps Challenge","Propuesta":"Proposal","Ensayo documentado":"Documented test","Propuesta por validar":"Proposal awaiting validation","Luna":"Moon","Marte":"Mars","Luna y Marte":"Moon and Mars","Fuente profesional pendiente":"Professional source pending","Fuentes profesionales":"Professional sources","Longitud cartografiada":"Mapped length","Referencia publicada del salar":"Published reference location for the salar","Comparar la se\u00f1al de un radar de subsuelo sobre el sondeo B3 y sobre controles secos. El ensayo puede mostrar si el instrumento distingue hielo enterrado antes de enviarlo a un entorno lunar.":"Compare subsurface radar returns at borehole B3 and dry controls. The test could show whether the instrument distinguishes buried ice before deployment in a lunar setting.","Los sondeos representan puntos. La temperatura y la distribuci\u00f3n lunar del hielo requieren evidencia propia.":"Boreholes represent points. Lunar temperatures and ice distribution need separate evidence.","Ensayar navegaci\u00f3n cerca del cono con luz rasante y sombras. Medir p\u00e9rdida de seguimiento y desv\u00edos en la ruta para ajustar la c\u00e1mara y las decisiones del rover.":"Test navigation near the cone in low-angle light and shadow. Measure tracking loss and route deviations to tune the camera and rover decisions.","Verificar la ruta y sus obst\u00e1culos en terreno, y confirmar permisos.":"Verify the route and obstacles in the field and confirm permissions.","Cruzar im\u00e1genes de pol\u00edgonos con un recorrido de campo para averiguar a qu\u00e9 resoluci\u00f3n se detectan bordes y obst\u00e1culos. Esto ayuda a elegir im\u00e1genes y rutas para un rover.":"Compare imagery of polygonal ground with a field traverse to find the resolution needed to detect edges and obstacles. This helps choose imagery and rover routes.","El patr\u00f3n del terreno orienta la b\u00fasqueda de hielo. La detecci\u00f3n requiere medidas de subsuelo.":"The terrain pattern can guide an ice search. Detection requires subsurface measurements.","Comparar la interpretaci\u00f3n de capas sedimentarias en im\u00e1genes con muestras de campo de un delta ef\u00edmero. El resultado puede ayudar a priorizar el muestreo de facies fluviales y lacustres en Marte.":"Compare sedimentary layers interpreted from imagery with field samples from an ephemeral delta. Results could help prioritize sampling of fluvial and lake deposits on Mars.","El pol\u00edgono marca el humedal. Falta delimitar el tramo de trabajo.":"The polygon represents the wetland. The study area still needs a boundary.","Usar el perfil de alteraci\u00f3n para contrastar se\u00f1ales de arcillas con mineralog\u00eda de laboratorio. El contraste permite evaluar cu\u00e1ndo un espectr\u00f3metro puede separar materiales frescos y alterados.":"Use the weathering profile to compare clay signatures with laboratory mineralogy. This can test when a spectrometer distinguishes fresh and weathered material.","Vincular cada espectro y muestra a un nivel concreto antes de comparar.":"Link each spectrum and sample to a specific layer before comparing.","La instalaci\u00f3n permite practicar movilidad con simulante y observar c\u00f3mo la iluminaci\u00f3n afecta la visibilidad. Sirve para comparar instrumentos y procedimientos en un entorno controlado.":"The facility supports mobility trials on simulant and tests of visibility under different lighting. It can compare instruments and procedures in a controlled environment.","El resultado corresponde al simulante y al protocolo del ensayo.":"Results apply to the simulant and test protocol.","Practicar selecci\u00f3n de muestras y coordinaci\u00f3n entre el equipo de terreno y el equipo cient\u00edfico. Documentar por qu\u00e9 se eligi\u00f3 cada afloramiento y qu\u00e9 informaci\u00f3n se pudo recuperar durante el recorrido.":"Practice sample selection and coordination between field and science teams. Record why each outcrop was chosen and what information the traverse recovered.","Caldera Blanca y las campa\u00f1as en el tubo de La Corona son sectores distintos.":"Caldera Blanca and the La Corona tube campaigns are separate sectors.","La cartograf\u00eda 3D en La Corona permite estudiar c\u00f3mo un equipo construye un mapa de un tubo de lava donde no llega el GNSS. La cobertura del tramo y el error del modelo sirven para comparar instrumentos.":"3D mapping at La Corona shows how a team can map a lava tube without GNSS. Survey coverage and model error can be used to compare instruments.","La ESA document\u00f3 un tramo de 1,3 km. Los resultados corresponden a ese tramo.":"ESA documented a 1.3 km section. Results apply to that section.","Comparar la forma de tubos detectados mediante radar desde la superficie con su geometr\u00eda interior. La diferencia ayuda a estimar el riesgo de interpretar un hueco a partir de una sola se\u00f1al.":"Compare the shape of tubes detected by surface radar with their interior geometry. Differences help estimate the risk of interpreting a void from a single signal.","Los resultados dependen de la roca, la profundidad y la configuraci\u00f3n del equipo.":"Results depend on the rock, depth and instrument setup.","Si el sector y el acceso se confirman, un tubo de lava permite plantear una prueba de cartograf\u00eda y comunicaciones en pasajes con visibilidad limitada.":"If the sector and access are confirmed, a lava tube offers a setting for testing mapping and communications in passages with limited visibility.","Falta identificar el tramo, verificar su plano y confirmar las condiciones de investigaci\u00f3n y conservaci\u00f3n.":"The section, survey and conditions for research and conservation still need confirmation.","Comparar im\u00e1genes a\u00e9reas con muestras para probar si los patrones de una costra evapor\u00edtica ayudan a encontrar minerales hidratados y lugares donde convenga buscar biofirmas.":"Compare aerial imagery with samples to test whether evaporite crust patterns help locate hydrated minerals and promising targets for biosignature sampling.","La extracci\u00f3n de agua es una hip\u00f3tesis de ensayo que requiere un balance medido de agua y energ\u00eda.":"Water extraction is a proposed test that requires a measured water and energy balance.","Comparar espectros de las tobas con difracci\u00f3n de rayos X y muestras del afloramiento. El ensayo permite ver si un instrumento port\u00e1til distingue zeolitas y arcillas en mezclas de minerales de alteraci\u00f3n.":"Compare tuff spectra with X-ray diffraction and outcrop samples. The test can show whether a portable instrument distinguishes zeolites and clays in mixtures of alteration minerals.","Relacionar las lecturas con el estrato y las muestras exactas. La prueba requiere un sector autorizado.":"Link readings to the exact layer and samples. The test requires an authorized sector.","Comparar la cartograf\u00eda de orillas con los registros de sedimentos ya publicados. La comparaci\u00f3n permite probar qu\u00e9 se\u00f1ales de im\u00e1genes y minerales ayudan a reconocer dep\u00f3sitos asociados a antiguos lagos marcianos.":"Compare shoreline maps with published sediment records. The comparison can test which image and mineral signatures help identify deposits associated with ancient Martian lakes.","Usar el centro de la laguna como referencia geogr\u00e1fica. Falta ubicar el testigo y verificar el acceso para cualquier actividad nueva.":"Use the lake center as geographic context. The core location and access for any new work still need verification.","Destino":"Destination"};
+const english = {"ATLAS DE AN\u00c1LOGOS":"ANALOG ATLAS","Atlas de sitios an\u00e1logos":"Analog Site Atlas","Idioma":"Language","M\u00e9todo y fuentes":"Method and sources","Guardar copia HTML \u2193":"Save HTML copy \u2193","\u2605 Guardados":"\u2605 Saved","Ver cat\u00e1logo completo":"View full catalog","+ A\u00f1adir sitio":"+ Add site","A\u00f1adir sitio":"Add site","Buscar lugares":"Search sites","Sitio, pa\u00eds, roca, entorno\u2026":"Site, country, rock, environment\u2026","Qu\u00e9 quieres probar":"What do you want to test?","Puedes elegir varias tareas.":"Select one or more tasks.","Qu\u00e9 debe tener el sitio":"What should the site have?","Sin filtros de sitio":"No site filters","Toca un criterio para a\u00f1adir un filtro. El n\u00famero indica cu\u00e1ntos sitios tienen ese dato.":"Select a criterion to add a filter. The number shows how many sites have data.","Buscar otro criterio":"Find another criterion","Nombre":"Name","Grupo":"Group","Grupo de criterios":"Criteria group","Ej. profundidad":"e.g. depth","Guardar y combinar filtros":"Save and combine filters","Si hay varios filtros":"Combining filters","Cumplir todos":"Match all","Cumplir al menos uno":"Match any","Guardar o recuperar perfil":"Save or load a profile","Guardar":"Save","Duplicar":"Duplicate","Recuperar b\u00fasqueda":"Load search","Restaurar":"Load","Perfiles guardados\u2026":"Saved profiles\u2026","Mi exploraci\u00f3n":"My exploration","Sin coincidencias con esta b\u00fasqueda":"No matching sites","Revisa los requisitos y la disponibilidad de datos.":"Check the filters and available data.","Restablecer b\u00fasqueda":"Reset search","Restablecer":"Reset","Ordenar":"Sort","Preferencias":"Preferences","Evidencia disponible":"Available evidence","Pa\u00eds":"Country","resultados":"results","Exportar JSON \u2197":"Export JSON \u2197","Capas ambientales":"Environmental layers","Variable del mapa":"Map variable","Temperatura":"Temperature","Humedad":"Humidity","Humedad relativa":"Relative humidity","Presi\u00f3n":"Pressure","Presi\u00f3n superficial":"Surface pressure","Radiaci\u00f3n":"Radiation","R\u00edos y lagos":"Rivers and lakes","Filtros de mapa activos":"Active map filters","Mostrar capa en el mapa":"Show layer on map","M\u00ednimo":"Minimum","M\u00e1ximo":"Maximum","M\u00ednimo num\u00e9rico":"Minimum value","M\u00e1ximo num\u00e9rico":"Maximum value","Acerca el mapa para ver m\u00e1s r\u00edos. Pulsa un tramo para ver su nombre.":"Zoom in to see more rivers. Select a segment to see its name.","R\u00edo":"River","Lago o embalse":"Lake or reservoir","Mapa mundial":"World map","Mapa interactivo mundial":"Interactive world map","Mapa base":"Basemap","Sat\u00e9lite \u00b7 Esri":"Satellite \u00b7 Esri","Cartograf\u00eda \u00b7 Natural Earth":"Cartography \u00b7 Natural Earth","Relieve \u00b7 Esri":"Terrain \u00b7 Esri","Vista inicial":"Home view","Volver a la vista mundial":"Return to world view","Sitios en el mapa":"Sites on the map","Resultados":"Results","Todo el cat\u00e1logo":"Full catalog","Ajustar mapa":"Fit map","Sin ubicaci\u00f3n":"Unmapped sites","Buscar en esta zona":"Search this area","Todo el mundo":"Worldwide","Latitud, longitud":"Latitude, longitude","Latitud":"Latitude","Longitud":"Longitude","Ir":"Go","Sitios":"Sites","\u2605 Coincide \u00b7 \u25cf En cat\u00e1logo \u00b7 \u25c7 Pendiente":"\u2605 Matches \u00b7 \u25cf In catalog \u00b7 \u25c7 Pending","Mapa":"Map","Lista":"List","Cerrar":"Close","Cerrar ficha":"Close site","Sin coincidencias.":"No matches.","Cat\u00e1logo completo":"Full catalog","Sitios sin ubicaci\u00f3n":"Unmapped sites","Buscar sitio":"Search sites","Comparar selecci\u00f3n":"Compare selection","Inventario del equipo":"Team inventory","Datos pendientes":"Missing data","Fuentes":"Sources","Fuente pendiente":"Source pending","Fuente del sitio":"Site source","Fuente del par\u00e1metro":"Parameter source","Ver ficha y mapa":"Open site and map","Ver ficha":"Open site","\u2713 En comparaci\u00f3n":"\u2713 Selected","+ Comparar":"+ Compare","Comparar":"Compare","Comparar sitios":"Compare sites","Par\u00e1metro":"Parameter","Fuentes de la ficha":"Site sources","Pendiente":"Slope","Compatible":"Match","Incompatible":"Does not match","Sin dato":"No data","Cumple":"Meets criterion","Incumple":"Does not meet criterion","Evidencia discrepante":"Conflicting evidence","Coincide con los filtros":"Matches filters","Cat\u00e1logo":"Catalog","Coincidencias":"Matches","Otros sitios del cat\u00e1logo":"Other catalog sites","Clima regional pendiente":"Regional climate pending","Cumple los rangos del mapa":"Matches the map filters","Clima regional":"Regional climate","Clima regional \u00b7 celda de 4\u00b0":"Regional climate \u00b7 4\u00b0 cell","Sin celda enlazada. Se necesita una ubicaci\u00f3n documentada y cobertura clim\u00e1tica.":"No linked grid cell. A documented location and climate coverage are required.","Dato regional de una celda con centro sobre agua.":"Regional value from a grid cell centered over water.","Fuera del rango":"Outside range","Imagen pendiente":"Image pending","Imagen no disponible":"Image unavailable","Vista satelital del entorno \u00b7 Esri y colaboradores":"Satellite view of the area \u00b7 Esri and contributors","Foto de la instalaci\u00f3n \u00b7 DLR/ESA":"Facility photo \u00b7 DLR/ESA","Entrenamiento PANGAEA en Lanzarote \u00b7 ESA / A. Romeo":"PANGAEA training in Lanzarote \u00b7 ESA / A. Romeo","Pa\u00eds pendiente":"Country pending","Entorno por describir":"Environment to be described","Sitio a\u00f1adido":"Added site","Ubicaci\u00f3n por verificar":"Location to be verified","Punto aportado":"Submitted location","Ubicaci\u00f3n documentada":"Documented location","Coordenadas del sector pendientes.":"Sector coordinates are pending.","Geometr\u00eda disponible":"Mapped","Sin coordenadas verificadas":"No verified coordinates","Buscar en Google Maps \u2197":"Find on Google Maps \u2197","Propiedades y evidencia":"Parameters and evidence","El inventario aporta descripci\u00f3n y antecedentes. Las mediciones por propiedad quedan pendientes.":"The inventory includes context. Parameter measurements are pending.","Guardar sitio":"Save site","\u2605 Guardado":"\u2605 Saved","\u2606 Guardar":"\u2606 Save","Vaciar":"Clear","L\u00edmites de la analog\u00eda":"Analogy limits","Acceso y operaci\u00f3n":"Access and operations","Condiciones espec\u00edficas pendientes de verificaci\u00f3n.":"Specific conditions are pending verification.","Tu perfil":"Your profile","Pa\u00eds o regi\u00f3n":"Country or region","Entorno":"Environment","Descripci\u00f3n":"Description","Ej. Desierto volc\u00e1nico":"e.g. volcanic desert","Tareas":"Tasks","Fuente general del sitio":"General site source","Imagen (opcional)":"Image (optional)","Archivo JPG, PNG o WebP, hasta 500 KB":"JPG, PNG or WebP file up to 500 KB","O enlace directo a la imagen":"Or direct image link","Cr\u00e9dito de la imagen":"Image credit","+ A\u00f1adir par\u00e1metro":"+ Add parameter","Guardar y seleccionar para comparar":"Save and select for comparison","Volver al cat\u00e1logo":"Back to catalog","El sitio se guarda en este navegador. Usa \u00abGuardar copia HTML\u00bb para compartirlo.":"The site is saved in this browser. Use \u2018Save HTML copy\u2019 to share it.","Tipo":"Type","Tipo de par\u00e1metro":"Parameter type","Valor":"Value","Fuente del par\u00e1metro (puedes usar la del sitio)":"Parameter source (you can use the site source)","M\u00e9todo":"Method","Fecha o periodo":"Date or period","P\u00e1gina, figura o punto de muestreo":"Page, figure or sampling point","Evidencia":"Evidence","Por verificar":"To verify","Medida":"Measured","Inferida":"Inferred","Modelada":"Modeled","medida":"measured","inferida":"inferred","modelada":"modeled","aportada":"submitted","Quitar par\u00e1metro":"Remove parameter","Ej. Estacional":"e.g. seasonal","Quitar":"Remove","Aplicar para":"Use this to","Priorizar":"Prioritize","Filtrar":"Filter","Valores aceptados (opcional)":"Accepted values (optional)","Ej. Presente, estacional":"e.g. Present, seasonal","Escribe valores como aparecen en la ficha. Si lo dejas vac\u00edo basta con que haya evidencia.":"Enter values as shown in the site record. Leave blank to accept any documented value.","Excluye incumplimientos documentados.":"Excludes sites with a documented mismatch.","Sube los sitios que cumplen en el orden de resultados.":"Ranks matching sites higher.","Opciones del criterio":"Criterion options","Importancia de la preferencia":"Preference weight","Tipo de evidencia":"Evidence type","Cualquiera documentada":"Any documented type","Todos":"All","No hay par\u00e1metros con esos filtros.":"No parameters match those filters.","Ciencia":"Science","Instrumentos":"Instruments","Relieve":"Terrain","Geolog\u00eda":"Geology","Agua y hielo":"Water and ice","Clima":"Climate","Cuevas":"Caves","Biolog\u00eda":"Biology","Operaci\u00f3n":"Operations","Acceso":"Access","Movilidad":"Mobility","Hielo":"Ice","Perforaci\u00f3n":"Drilling","Astrobiolog\u00eda":"Astrobiology","Construcci\u00f3n":"Construction","Tripulaci\u00f3n":"Crew","Objetivo cient\u00edfico":"Scientific objective","Instrumento":"Instrument","Pendiente del terreno":"Slope","Rugosidad":"Roughness","Superficie":"Area","Terreno poligonal":"Polygonal ground","Tama\u00f1o de grano":"Grain size","Resistencia":"Strength","Minerales":"Minerals","Profundidad hasta hielo":"Depth to ice","Espesor de cobertura":"Cover thickness","Sales":"Salts","Temperatura local":"Local temperature","Temperatura del suelo":"Soil temperature","Velocidad del viento":"Wind speed","Cobertura vegetal":"Vegetation cover","Agua":"Water","Radiaci\u00f3n ionizante":"Ionizing radiation","Altitud":"Elevation","Polvo":"Dust","Preservaci\u00f3n y contaminaci\u00f3n":"Preservation and contamination","Comunicaciones":"Communications","Calidad documentada":"Documented quality","Profundidad del perfil":"Profile depth","Profundidad del agua":"Water depth","Conductividad del agua":"Water conductivity","pH del agua":"Water pH","Fracci\u00f3n volum\u00e9trica de hielo":"Volumetric ice fraction","Espesor de la capa activa":"Active layer thickness","Di\u00e1metro del cr\u00e1ter":"Crater diameter","Altura del relieve":"Relief height","Pendiente de las paredes del cr\u00e1ter":"Crater wall slope","Duraci\u00f3n del ensayo":"Test duration","Volumen interior":"Interior volume","Capacidad de tripulaci\u00f3n":"Crew capacity","Permafrost":"Permafrost","Radiaci\u00f3n en Tierra, Luna y Marte":"Radiation on Earth, the Moon and Mars","Las unidades distinguen dosis absorbida (Gy), equivalente y efectiva (Sv). Cada fila conserva la magnitud y el periodo de su fuente.":"The units distinguish absorbed dose (Gy) from equivalent and effective dose (Sv). Each entry retains the quantity and period reported by its source.","Medici\u00f3n LND":"LND measurement","Medici\u00f3n RAD":"RAD measurement","Estimaci\u00f3n mundial":"Global estimate","Dos\u00edmetros de tripulaci\u00f3n":"Crew dosimeters","Modelo de terreno":"Terrain model","Modelos y datos pendientes":"Models and data gaps","Luna \u00b7 Von K\u00e1rm\u00e1n":"Moon \u00b7 Von K\u00e1rm\u00e1n","Marte \u00b7 Gale":"Mars \u00b7 Gale","Tierra \u00b7 Promedio natural":"Earth \u00b7 Natural background average","Luna \u00b7 Apollo":"Moon \u00b7 Apollo","Luna \u00b7 Shackleton":"Moon \u00b7 Shackleton","Marte \u00b7 Otras regiones":"Mars \u00b7 Other regions","Blindaje por relieve":"Terrain shielding","Dosis local pendiente":"Local dose pending","Resumen Tierra, Luna y Marte":"Earth, Moon and Mars summary","Mediciones y modelos por lugar":"Measurements and models by site","El filtro terrestre se aplica cuando una ficha tiene una medici\u00f3n o estimaci\u00f3n local con su fuente.":"The Earth-site filter applies when a record has a sourced local measurement or estimate.","Dosis equivalente de rayos c\u00f3smicos gal\u00e1cticos (part\u00edculas cargadas). La dosis absorbida total en silicio fue 13,2 \u00b1 1 \u00b5Gy/h. Chang\u2019e-4, 2019, cerca del m\u00ednimo solar.":"Equivalent dose from galactic cosmic rays (charged particles). The total absorbed dose in silicon was 13.2 \u00b1 1 \u00b5Gy/h. Chang\u2019e-4, 2019, near solar minimum.","Dosis equivalente de rayos c\u00f3smicos gal\u00e1cticos durante los primeros 300 soles de Curiosity. Dosis absorbida en tejido estimada en 0,210 \u00b1 0,040 mGy/d\u00eda.":"Equivalent dose from galactic cosmic rays during Curiosity\u2019s first 300 sols. Estimated absorbed dose in tissue: 0.210 \u00b1 0.040 mGy/day.","Dosis efectiva anual. Incluye rad\u00f3n y otras fuentes naturales. La estimaci\u00f3n anterior era 2,4 mSv/a\u00f1o.":"Annual effective dose, including radon and other natural sources. The previous estimate was 2.4 mSv/year.","Intervalo de dosis absorbida de piel entre las misiones con alunizaje. Cada dato cubre la misi\u00f3n completa, incluidos el tr\u00e1nsito y los cinturones de radiaci\u00f3n.":"Range of absorbed skin doses across lunar landing missions. Each measurement covers the whole mission, including transit and the radiation belts.","El modelo calcula exposiciones bajo condiciones espec\u00edficas de topograf\u00eda, part\u00edculas y blindaje. Haworth y las dem\u00e1s regiones Artemis de la compilaci\u00f3n quedan sin un valor medido propio.":"The model estimates exposure under specific terrain, particle and shielding conditions. Haworth and the other Artemis regions in the compilation lack site measurements.","La altitud cambia la cantidad de atm\u00f3sfera por encima del sitio. Los datos de Gale sirven como referencia y las fichas de Jezero, Oxia y Arcadia\u2013Amazonis necesitan sus propias estimaciones o mediciones.":"Elevation changes the amount of atmosphere above a site. Gale is a reference point. Jezero, Oxia and Arcadia\u2013Amazonis need their own estimates or measurements.","Datos y criterio de selecci\u00f3n":"Data and selection criteria","CSV del equipo":"Team CSV","NASA POWER":"NASA POWER","Costa de Natural Earth":"Natural Earth coastline","R\u00edos de Natural Earth":"Natural Earth rivers","Cartograf\u00eda de Natural Earth":"Natural Earth cartography","\u00c1rea seleccionada":"Selected area","Corrige el intervalo m\u00ednimo y m\u00e1ximo.":"Check the minimum and maximum values.","Favoritos actualizados":"Saved sites updated","Selecciona al menos dos sitios.":"Select at least two sites.","Puedes comparar hasta cuatro lugares.":"You can compare up to four sites.","No hay sitios ubicados en esta vista.":"There are no mapped sites in this view.","Perfil guardado en este navegador":"Profile saved in this browser","El navegador impide guardar localmente. Puedes exportar la b\u00fasqueda.":"The browser blocked local storage. You can export the search.","No se pudo leer la imagen.":"The image could not be read.","Sitio guardado y seleccionado.":"Site saved and selected.","Sitio guardado. Quita un sitio de la comparaci\u00f3n para seleccionarlo.":"Site saved. Remove a site from the comparison to select it.","Escribe el nombre del sitio.":"Enter a site name.","Completa ambas coordenadas o d\u00e9jalas en blanco.":"Enter both coordinates or leave both blank.","Usa enlaces HTTP o HTTPS.":"Use HTTP or HTTPS links.","A\u00f1ade el cr\u00e9dito de la imagen.":"Add the image credit.","Indica una fuente v\u00e1lida para cada par\u00e1metro o una fuente general para los datos del sitio.":"Provide a valid source for each parameter or a general source for the site data.","Elige un solo origen para la imagen. Los archivos pueden ser JPG, PNG o WebP de hasta 500 KB.":"Choose one image source. JPG, PNG and WebP files up to 500 KB are supported.","El navegador no pudo guardar el sitio. Comprueba el espacio disponible o prueba sin adjuntar un archivo.":"The browser could not save the site. Check available storage or try without a file.","No se pudieron cargar algunas im\u00e1genes. Comprueba Internet o cambia la capa.":"Some tiles failed to load. Check your internet connection or choose another basemap.","Escribe latitud, longitud. Ejemplo -26.3, 141.4":"Enter latitude and longitude. Example: -26.3, 141.4","Ubicar el sector o a\u00f1adir una geometr\u00eda.":"Locate the site or add geometry.","Incorporar par\u00e1metros pertinentes con fuentes por dato.":"Add relevant parameters with individual sources.","A\u00f1adir una foto del sector con cr\u00e9dito.":"Add a credited photo of the site.","Vincular las tareas ensayadas a la campa\u00f1a.":"Link the tested tasks to the campaign.","Ver datos de radiaci\u00f3n":"View radiation data","Informe UNSCEAR":"UNSCEAR report","Informe de NASA":"NASA report","Quitar zona":"Clear area","Ubicar el sitio requiere una posici\u00f3n documentada.":"A documented location is required to map the site.","Las capas clim\u00e1ticas usan el dato de cada celda de 4\u00b0 y pintan solo su superficie terrestre. Las celdas costeras con centro en agua conservan su valor regional.":"Climate layers show each 4\u00b0 grid value over land. Coastal cells centered over water retain their regional value.","Los requisitos indispensables excluyen incumplimientos documentados. Un valor desconocido conserva el estado pendiente. La preferencia ponderada suma los pesos de los criterios satisfechos y divide por el peso total, incluidos los criterios sin dato. La cobertura de datos se muestra por separado. Este c\u00e1lculo es exploratorio y requiere validaci\u00f3n cient\u00edfica del equipo.":"Required criteria exclude documented mismatches. Missing values stay pending. Preference scores divide the weight of matching criteria by the total weight, including criteria without data. Data coverage is shown separately. The score is exploratory and requires scientific validation.","Las geometr\u00edas conservan la funci\u00f3n indicada por su fuente. Yamma Yamma representa el l\u00edmite del humedal. Parte del inventario est\u00e1 pendiente de georreferenciaci\u00f3n y puede contener campa\u00f1as superpuestas.":"Each geometry retains the meaning given by its source. Yamma Yamma outlines the wetland. Some inventory entries still need coordinates and campaigns may overlap.","Candidato documental":"Research proposal","Candidato del equipo \u00b7 validaci\u00f3n pendiente":"Team proposal \u00b7 validation pending","Antecedente conocido":"Known analog","Antecedente recopilado \u00b7 ubicaci\u00f3n precisa pendiente":"Prior campaign \u00b7 precise location pending","Candidato a\u00f1adido":"Added site","Sector indicado por quien a\u00f1adi\u00f3 el sitio":"Sector as specified by the contributor","Conexi\u00f3n con la exploraci\u00f3n":"Connection to exploration","Elige un lugar y conecta la evidencia con una tarea de Luna o Marte. Las fichas con una conexi\u00f3n explican qu\u00e9 se podr\u00eda probar, qu\u00e9 resultado ser\u00eda \u00fatil y qu\u00e9 falta verificar.":"Choose a site and link its evidence to a Moon or Mars task. Case notes show what to test, what result would be useful and what still needs verification.","Desaf\u00edo de NASA Space Apps":"NASA Space Apps Challenge","Propuesta":"Proposal","Ensayo documentado":"Documented test","Propuesta por validar":"Proposal awaiting validation","Luna":"Moon","Marte":"Mars","Luna y Marte":"Moon and Mars","Fuente profesional pendiente":"Professional source pending","Fuentes profesionales":"Professional sources","Longitud cartografiada":"Mapped length","Referencia publicada del salar":"Published reference location for the salar","Comparar la se\u00f1al de un radar de subsuelo sobre el sondeo B3 y sobre controles secos. El ensayo puede mostrar si el instrumento distingue hielo enterrado antes de enviarlo a un entorno lunar.":"Compare subsurface radar returns at borehole B3 and dry controls. The test could show whether the instrument distinguishes buried ice before deployment in a lunar setting.","Los sondeos representan puntos. La temperatura y la distribuci\u00f3n lunar del hielo requieren evidencia propia.":"Boreholes represent points. Lunar temperatures and ice distribution need separate evidence.","Ensayar navegaci\u00f3n cerca del cono con luz rasante y sombras. Medir p\u00e9rdida de seguimiento y desv\u00edos en la ruta para ajustar la c\u00e1mara y las decisiones del rover.":"Test navigation near the cone in low-angle light and shadow. Measure tracking loss and route deviations to tune the camera and rover decisions.","Verificar la ruta y sus obst\u00e1culos en terreno, y confirmar permisos.":"Verify the route and obstacles in the field and confirm permissions.","Cruzar im\u00e1genes de pol\u00edgonos con un recorrido de campo para averiguar a qu\u00e9 resoluci\u00f3n se detectan bordes y obst\u00e1culos. Esto ayuda a elegir im\u00e1genes y rutas para un rover.":"Compare imagery of polygonal ground with a field traverse to find the resolution needed to detect edges and obstacles. This helps choose imagery and rover routes.","El patr\u00f3n del terreno orienta la b\u00fasqueda de hielo. La detecci\u00f3n requiere medidas de subsuelo.":"The terrain pattern can guide an ice search. Detection requires subsurface measurements.","Comparar la interpretaci\u00f3n de capas sedimentarias en im\u00e1genes con muestras de campo de un delta ef\u00edmero. El resultado puede ayudar a priorizar el muestreo de facies fluviales y lacustres en Marte.":"Compare sedimentary layers interpreted from imagery with field samples from an ephemeral delta. Results could help prioritize sampling of fluvial and lake deposits on Mars.","El pol\u00edgono marca el humedal. Falta delimitar el tramo de trabajo.":"The polygon represents the wetland. The study area still needs a boundary.","Usar el perfil de alteraci\u00f3n para contrastar se\u00f1ales de arcillas con mineralog\u00eda de laboratorio. El contraste permite evaluar cu\u00e1ndo un espectr\u00f3metro puede separar materiales frescos y alterados.":"Use the weathering profile to compare clay signatures with laboratory mineralogy. This can test when a spectrometer distinguishes fresh and weathered material.","Vincular cada espectro y muestra a un nivel concreto antes de comparar.":"Link each spectrum and sample to a specific layer before comparing.","La instalaci\u00f3n permite practicar movilidad con simulante y observar c\u00f3mo la iluminaci\u00f3n afecta la visibilidad. Sirve para comparar instrumentos y procedimientos en un entorno controlado.":"The facility supports mobility trials on simulant and tests of visibility under different lighting. It can compare instruments and procedures in a controlled environment.","El resultado corresponde al simulante y al protocolo del ensayo.":"Results apply to the simulant and test protocol.","Practicar selecci\u00f3n de muestras y coordinaci\u00f3n entre el equipo de terreno y el equipo cient\u00edfico. Documentar por qu\u00e9 se eligi\u00f3 cada afloramiento y qu\u00e9 informaci\u00f3n se pudo recuperar durante el recorrido.":"Practice sample selection and coordination between field and science teams. Record why each outcrop was chosen and what information the traverse recovered.","Caldera Blanca y las campa\u00f1as en el tubo de La Corona son sectores distintos.":"Caldera Blanca and the La Corona tube campaigns are separate sectors.","La cartograf\u00eda 3D en La Corona permite estudiar c\u00f3mo un equipo construye un mapa de un tubo de lava donde no llega el GNSS. La cobertura del tramo y el error del modelo sirven para comparar instrumentos.":"3D mapping at La Corona shows how a team can map a lava tube without GNSS. Survey coverage and model error can be used to compare instruments.","La ESA document\u00f3 un tramo de 1,3 km. Los resultados corresponden a ese tramo.":"ESA documented a 1.3 km section. Results apply to that section.","Comparar la forma de tubos detectados mediante radar desde la superficie con su geometr\u00eda interior. La diferencia ayuda a estimar el riesgo de interpretar un hueco a partir de una sola se\u00f1al.":"Compare the shape of tubes detected by surface radar with their interior geometry. Differences help estimate the risk of interpreting a void from a single signal.","Los resultados dependen de la roca, la profundidad y la configuraci\u00f3n del equipo.":"Results depend on the rock, depth and instrument setup.","Si el sector y el acceso se confirman, un tubo de lava permite plantear una prueba de cartograf\u00eda y comunicaciones en pasajes con visibilidad limitada.":"If the sector and access are confirmed, a lava tube offers a setting for testing mapping and communications in passages with limited visibility.","Falta identificar el tramo, verificar su plano y confirmar las condiciones de investigaci\u00f3n y conservaci\u00f3n.":"The section, survey and conditions for research and conservation still need confirmation.","Comparar im\u00e1genes a\u00e9reas con muestras para probar si los patrones de una costra evapor\u00edtica ayudan a encontrar minerales hidratados y lugares donde convenga buscar biofirmas.":"Compare aerial imagery with samples to test whether evaporite crust patterns help locate hydrated minerals and promising targets for biosignature sampling.","La extracci\u00f3n de agua es una hip\u00f3tesis de ensayo que requiere un balance medido de agua y energ\u00eda.":"Water extraction is a proposed test that requires a measured water and energy balance.","Comparar espectros de las tobas con difracci\u00f3n de rayos X y muestras del afloramiento. El ensayo permite ver si un instrumento port\u00e1til distingue zeolitas y arcillas en mezclas de minerales de alteraci\u00f3n.":"Compare tuff spectra with X-ray diffraction and outcrop samples. The test can show whether a portable instrument distinguishes zeolites and clays in mixtures of alteration minerals.","Relacionar las lecturas con el estrato y las muestras exactas. La prueba requiere un sector autorizado.":"Link readings to the exact layer and samples. The test requires an authorized sector.","Comparar la cartograf\u00eda de orillas con los registros de sedimentos ya publicados. La comparaci\u00f3n permite probar qu\u00e9 se\u00f1ales de im\u00e1genes y minerales ayudan a reconocer dep\u00f3sitos asociados a antiguos lagos marcianos.":"Compare shoreline maps with published sediment records. The comparison can test which image and mineral signatures help identify deposits associated with ancient Martian lakes.","Usar el centro de la laguna como referencia geogr\u00e1fica. Falta ubicar el testigo y verificar el acceso para cualquier actividad nueva.":"Use the lake center as geographic context. The core location and access for any new work still need verification.","Destino":"Destination","Destino orientativo. Las tareas y los datos afinan la b\u00fasqueda.":"Destinations are indicative. Tasks and data narrow the search.","Selecciona Luna, Marte o ambos.":"Select the Moon, Mars or both."};
 let locale = 'es';
 const rememberedText = new WeakMap();
 const rememberedAttrs = new WeakMap();
