@@ -117,3 +117,52 @@ Alcance: recopilación de los principales lugares públicamente documentados en 
 - Europlanet 2020 RI – Final Report: https://www.europlanet-society.org/wp-content/uploads/2019/11/Europlanet_2020_RI_Final_Report_151119.pdf
 - ESA Topical Team – Space Analogs and Behavioral Health Performance Research: https://pmc.ncbi.nlm.nih.gov/articles/PMC11494059/
 > Nota de clasificación: algunas entradas son estaciones donde se desarrollan misiones tripuladas completas; otras son sitios de campañas científicas, entrenamiento geológico, ensayos robóticos o simulaciones de aislamiento/EVA. No deben interpretarse como equivalentes entre sí. Las ubicaciones de campañas móviles pueden variar entre ediciones y la lista recoge sitios explícitamente documentados en las fuentes consultadas.
+
+## Justificación de las referencias lunares para el análisis de análogos
+
+Los lugares lunares se eligieron para representar tareas diferentes, no para establecer un ranking único de los mejores sitios de alunizaje. El polo sur concentra el trabajo por su interés científico, el posible acceso a volátiles y las condiciones para una presencia prolongada. Las zonas ecuatoriales también son referencias válidas: las misiones Apollo alunizaron cerca del ecuador, y ofrecen un entorno operacional distinto que ayuda a comparar los retos de Artemis.
+
+NASA evalúa los sitios considerando el objetivo científico, la seguridad y el relieve, la iluminación, las comunicaciones, la disponibilidad de la misión y la trayectoria del sistema de aterrizaje. Una región candidata no equivale a un punto aprobado ni a una decisión de emplazamiento.
+
+### Referencias polares
+
+| Lugar | Razón para incluirlo | Qué permite estudiar | Límite de la evidencia |
+| --- | --- | --- | --- |
+| **de Gerlache Rim 2**, con Connecting Ridge y Shackleton como referencias topográficas cercanas | Región candidata para aterrizaje polar y terreno con luz solar de ángulo bajo. Sirve para analizar cómo relieve, sombras y visibilidad afectan la movilidad. | Pendiente y obstáculos a escala del rover o del módulo, contraste, duración de los tramos en sombra, navegación y continuidad de enlace. | Connecting Ridge y Shackleton ayudan a describir el entorno; no deben tratarse automáticamente como el punto de aterrizaje seleccionado. |
+| **Haworth** | Región candidata cercana a sectores permanentemente sombreados; permite estudiar la prospección de volátiles y las rutas entre terreno iluminado y frío. | Evidencia de hielo, estabilidad térmica, detección, acceso, recorrido y recuperación de muestras. | Firmas de hielo observadas cerca de la región no determinan la cantidad ni la profundidad de un depósito en un punto de aterrizaje. |
+| **Macizo Malapert** | Referencia de terreno elevado en el polo sur para estudiar comunicaciones y energía junto con la movilidad. La elevación puede mejorar el horizonte y la visibilidad de la Tierra. | Línea de vista a lo largo de una ruta, interrupciones del enlace, sombras, acceso solar y consumo energético. | El relieve local puede bloquear comunicaciones. Los puntos de aterrizaje publicados en estudios de rutas son hipótesis de análisis, no sitios aprobados. |
+
+NASA incluyó de Gerlache Rim 2, Haworth y Malapert entre las nueve regiones candidatas anunciadas en 2024 para Artemis III. La lista es regional y fechada; no identifica por sí sola una parcela final. Los estudios de Wueller et al. aportan puntos modelados dentro de varias de esas regiones para cruzar topografía, iluminación y acceso a sombra.
+
+### Referencia ecuatorial
+
+**Mare Tranquillitatis — llanura de Apollo 11.** Este es un comparador histórico de alunizaje en terreno abierto, separado del pozo de Mare Tranquillitatis que se analiza para exploración robótica de cavidades. Apollo 11 aterrizó a **0,67416° N, 23,47314° E**. NASA describe la cuenca como una llanura basáltica relativamente lisa y de baja pendiente, y caracteriza los seis sitios Apollo como cercanos al ecuador y en la cara visible.
+
+Este caso permite contrastar un aterrizaje de baja latitud, con amplio horizonte y luz más regular, con las condiciones polares de luz rasante y sombras profundas. Es una referencia histórica útil para seguridad de aterrizaje, navegación, geología basáltica y operaciones de superficie; no es una región candidata de Artemis ni demuestra que el ecuador sea la mejor zona para una base moderna.
+
+El ecuador tampoco elimina los retos ambientales. El día y la noche lunares duran alrededor de dos semanas terrestres cada uno, y las regiones ecuatoriales presentan extremos térmicos intensos. La iluminación suele ser más predecible que en los polos, pero la supervivencia de la noche sigue exigiendo energía y control térmico. En la cara visible, la comunicación directa con la Tierra es una ventaja operacional; la visibilidad concreta depende del horizonte y del relieve del sitio.
+
+### Comparación recomendada
+
+Para que el catálogo sea útil, comparar cada referencia con los mismos campos y declarar la escala y la fuente de cada dato:
+
+- **Seguridad de aterrizaje:** pendiente, rugosidad, rocas, cráteres y tamaño de obstáculos respecto de la tolerancia del módulo.
+- **Luz y temperatura:** elevación solar, períodos iluminados y en sombra, perfil térmico y ventana de misión.
+- **Comunicaciones:** visibilidad directa a la Tierra, obstrucciones del relieve, interrupción máxima y necesidad de repetidores.
+- **Ciencia y recursos:** basalto y registro volcánico en Mare Tranquillitatis; evidencia y acceso potencial a volátiles en Haworth; topografía, movilidad y entorno polar en de Gerlache y Malapert.
+- **Calidad de datos:** resolución, cobertura, época, incertidumbre y si el dato describe un punto, una ruta o toda una región.
+
+Como ampliación del conjunto actual, conviene añadir **la llanura de Apollo 11 como quinta referencia lunar de baja latitud**. Así el pozo de Mare Tranquillitatis conserva su función de caso de cavidad, mientras el sitio Apollo aporta un caso de aterrizaje en superficie abierta. Esta pareja, comparada con las tres referencias polares, muestra cómo cambia la elección del análogo terrestre según el objetivo de la misión.
+
+### Fuentes
+
+- [NASA, comparación de las condiciones de Apollo y Artemis](https://www.nasa.gov/moonbase-environment-visualization/).
+- [NASA, regiones candidatas de aterrizaje de Artemis III](https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/).
+- [NASA, criterios generales para seleccionar sitios lunares](https://ntrs.nasa.gov/citations/20230016267).
+- [NASA, ubicaciones de los sitios Apollo](https://science.nasa.gov/resource/apollo-landing-sites/) y [coordenadas de alunizaje](https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html).
+- [NASA, geología y relieve de Mare Tranquillitatis](https://science.nasa.gov/image-detail/20100528/).
+- [NASA NTRS, supervivencia durante la noche lunar](https://ntrs.nasa.gov/citations/20190000997).
+- [Wueller et al. (2026), puntos de aterrizaje y condiciones polares](https://doi.org/10.1029/2025JE009434).
+- [Li et al. (2018), firmas espectrales de hielo cerca de Haworth](https://doi.org/10.1073/pnas.1802345115).
+- [Estudio de rutas geológicas en Malapert](https://doi.org/10.1029/2024JE008905).
+- [Horvath et al. (2022), análisis térmico de cavidades lunares](https://doi.org/10.1029/2022GL099710).
