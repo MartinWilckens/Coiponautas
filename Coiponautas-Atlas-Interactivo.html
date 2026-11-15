@@ -694,14 +694,36 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .active-climate-filters:not([hidden]){display:flex;flex-wrap:wrap;gap:4px;margin:0 0 8px}
 .active-climate-filters button{background:#e7efe6;color:#223c2e;border-radius:6px;padding:4px 7px;font-size:.75rem}
 .region-status{margin:4px 0;color:#3d5142}
+
+.catalog-entries-actions{margin-top:8px}.catalog-entries-actions button{white-space:normal}
+.task-picker{display:flex;flex-wrap:wrap;gap:5px}
+.mission-tasks,.site-form fieldset{border:1px solid #bdcdbd;border-radius:7px;padding:8px;margin:8px 0}
+.task-chip{display:inline-flex;align-items:center;gap:5px;border:1px solid #c7d4c8;border-radius:6px;padding:3px 6px;margin:0;font-size:.75rem}
+.task-chip input{width:auto;margin:0;accent-color:#355c46}
+.task-chip:has(:checked){background:#e2efde;border-color:#62946c;color:#203c27}
+.task-chip span{white-space:normal}
+.criterion .fields,.site-form .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.site-form textarea{font:inherit;width:100%;padding:8px;border:1px solid #b3c3b6;border-radius:5px;box-sizing:border-box}
+.site-form>.button-row{margin-top:10px}.site-form [role=alert]{color:#993120}
+.catalog-actions{display:flex;align-items:end;gap:8px;flex-wrap:wrap}
+.catalog-actions label{flex:1 1 175px}
+.catalog-entry{border-top:1px solid #cbd8c9;padding:8px 0}
+.catalog-entry summary{cursor:pointer;font-weight:700}.catalog-entry summary small{display:inline;color:#465c49}
+.comparison-table td,.comparison-table th{min-width:150px;vertical-align:top}
+.comparison-table th:first-child{min-width:110px}
+.comparison-figure{margin:0 0 6px}.comparison-figure figcaption{font-size:.75rem;font-weight:400}
+.comparison-photo{height:128px;border-radius:7px;background:#e5ece3;display:grid;place-items:center;color:#334d3a;overflow:hidden}
+.comparison-photo img{width:100%;height:128px;object-fit:cover}
+.comparison-photo img[hidden],.image-fallback[hidden],.catalog-entry[hidden]{display:none}
+.parameter-evidence+.parameter-evidence{border-top:1px solid #ccd8cc;padding-top:6px;margin-top:6px}
 </style></head><body>
 <header><a class="brand" href="#"><span class="brandmark">C</span><span>coiponautas<small>ATLAS DE ANÁLOGOS</small></span></a><nav><button id="saved">★ Guardados <span id="saved-count">0</span></button><button id="method">Método y fuentes</button></nav><button id="download-html">Guardar copia HTML ↓</button></header>
-<main><aside id="sidebar"><div class="intro"><h1>Atlas de sitios análogos</h1><a class="jump-results" href="#candidate-results">Ver candidatos ↓</a></div>
+<main><aside id="sidebar"><div class="intro"><h1>Atlas de sitios análogos</h1><div class="button-row catalog-entries-actions"><button id="open-catalog" type="button">Ver catálogo completo</button><button id="add-site" type="button">+ Añadir sitio</button></div></div>
 <div class="search"><span>⌕</span><input id="search" placeholder="Sitio, país, roca, entorno…" aria-label="Buscar lugares"></div>
-<div class="planet-row"><button data-planet="" class="active">Todos</button><button data-planet="mars">Marte</button><button data-planet="moon">Luna</button></div>
-<label>Tarea de misión<select id="task"></select></label><label>Referencia planetaria<select id="reference"></select></label>
+<fieldset class="mission-tasks"><legend>Tareas de misión</legend><div id="task-picker" class="task-picker"></div><small>Se muestran sitios asociados a cualquiera de las tareas elegidas.</small></fieldset>
 <section class="panel mission-panel" aria-labelledby="mission-title">
  <h2 id="mission-title">Parámetros de misión</h2>
+ <p class="small">Activa o desactiva cada parámetro. «Requisito» descarta incumplimientos y «Preferencia» ordena los resultados.</p>
  <div id="quick-criteria" class="quick-criteria"></div>
  <div id="criteria"></div>
  <details class="advanced"><summary>Más parámetros y opciones <span id="filter-count"></span></summary>
@@ -747,6 +769,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <section id="map-panel" aria-label="Mapa interactivo mundial"><div id="map"></div><div class="map-title"><span class="live-dot"></span>Terrenos terrestres <span id="map-count"></span></div><div class="map-tools"><select id="base" aria-label="Mapa base"><option value="satellite">Satélite · Esri</option><option value="cartography">Cartografía · OSM</option><option value="relief">Relieve · Esri</option></select><button id="fit">Acercar a resultados</button><button id="area">Buscar en esta zona</button><button id="clear-area">Todo el mundo</button><input id="coordinates" aria-label="Latitud, longitud" placeholder="Latitud, longitud"><button id="locate">Ir</button></div><div class="map-message" id="map-status" role="status"></div>
 <div class="legend"><strong>Mapa de candidatos</strong><span>★ Candidato · ◇ Datos pendientes</span><span id="environment-map-key"></span><label><input type="checkbox" id="show-geometries" checked> Mostrar sitios</label><button id="export-geo">Exportar GeoJSON</button></div><div id="detail" class="detail" hidden></div><div id="compare-tray" hidden></div></section></main>
 <div class="mobile-switch"><button id="show-list">Lista</button><button id="show-map">Mapa</button></div><div id="toast" role="status" hidden></div><dialog id="dialog"><button id="close-dialog" aria-label="Cerrar">×</button><div id="dialog-content"></div></dialog>
+<script type="application/json" id="shared-sites">[]</script>
 <script>/* @preserve
  * Leaflet 1.9.4, a JS library for interactive maps. https://leafletjs.com
  * (c) 2010-2023 Vladimir Agafonkin, (c) 2010-2011 CloudMade
@@ -2852,7 +2875,7 @@ const properties=[
 const taskNames={mobility:'Movilidad y navegación',ice:'Detección de hielo',drilling:'Perforación y muestreo',geology:'Interpretación geológica',astrobiology:'Astrobiología',caves:'Exploración de cuevas',construction:'Construcción y recursos',human:'Operaciones humanas'};
 const templates=Object.entries(taskNames).map(([id,label])=>({id,label,tasks:[id]}));
 const labels={es:{compatible:'Compatible',incompatible:'Incompatible',pending:'Pendiente',unknown:'Sin dato',pass:'Cumple',fail:'Incumple',conflict:'Evidencia discrepante'}};
-const defaultProfile=()=>({name:'Mi exploración',planets:[],tasks:[],reference:'',groups:[{id:'principal',name:'Condiciones principales',mode:'all'}],criteria:[],climateRanges:{},missing:'include'});
+const defaultProfile=()=>({name:'Mi exploración',tasks:[],groups:[{id:'principal',name:'Condiciones principales',mode:'all'}],criteria:[],climateRanges:{},missing:'include'});
 
 function individual(observation,criterion,property){
   if(observation.value==null || observation.evidence==='unknown') return 'unknown';
@@ -2961,7 +2984,7 @@ function download(name,value,type='application/json'){
  const blob=value instanceof Blob?value:new Blob([typeof value==='string'?value:JSON.stringify(value,null,2)],{type});
  const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
-function source(id){const s=catalog.sources.find(s=>s.id===id);return s?'<a target="_blank" rel="noopener" href="'+escapeHTML(s.url)+'">'+escapeHTML(s.title)+' ↗</a>':'Fuente pendiente'}
+function source(id){const s=catalog.sources.find(s=>s.id===id);return s?externalLink(s.url,s.title+' ↗'):'Fuente pendiente'}
 function observations(site){return catalog.observations.filter(o=>site.sectorIds.includes(o.sectorId))}
 function geometries(site){return catalog.geometries.filter(g=>site.sectorIds.includes(g.sectorId))}
 function format(value){return Array.isArray(value)?value.join(' · '):String(value??'Sin dato')}
@@ -2974,7 +2997,7 @@ function geometryLayer(g,chosen=false){
   pointToLayer:(_feature,latlng)=>L.circleMarker(latlng,{pane:'candidates',radius:chosen?12:9,color:'#202b26',weight:3,fillColor:color,fillOpacity:1})
  });
 }
-const isCandidate = site => site.status === 'Candidato documental';
+const isCandidate = site => site.status.startsWith('Candidato');
 const primaryCriteria = ['water','ice','radiation','airTemp','slope','minerals','dust','access'];
 function evaluate(site){
  const evaluation = evaluateSite(site,profile,catalog,properties);
@@ -3001,9 +3024,7 @@ function render(){
  const invalid=validateProfile(profile);
  visible=catalog.sites.filter(site=>{
   if(search && ![site.name,site.country,site.environment,site.description].join(' ').toLocaleLowerCase().includes(search))return false;
-  if(profile.planets.length&&!site.planetIds.some(p=>profile.planets.includes(p)))return false;
   if(profile.tasks.length&&!profile.tasks.some(t=>site.taskIds.includes(t)))return false;
-  if(profile.reference&&!catalog.hypotheses.some(h=>h.siteId===site.id&&h.referenceId===profile.reference))return false;
   if(onlySaved&&!saved.has(site.id))return false;
   if(zone&&!geometries(site).some(g=>zone.intersects(L.geoJSON(g.geometry).getBounds())))return false;
   return true;
@@ -3060,35 +3081,49 @@ function openSite(id){
  selected=id;render();const rows=observations(site),geo=geometries(site),evaluation=evaluate(site);
  highlight.clearLayers();if(q('show-geometries').checked)geo.forEach(g=>geometryLayer(g,true).addTo(highlight));
  if(geo.length && q('show-geometries').checked)map.fitBounds(highlight.getBounds(),{padding:[40,40],maxZoom:13});
- const hypotheses=catalog.hypotheses.filter(h=>h.siteId===id);
  const access=catalog.accessConditions.filter(a=>a.siteId===id);
  q('detail').hidden=false;
- q('detail').innerHTML='<button class="close" id="detail-close" aria-label="Cerrar ficha">×</button><div class="country">'+escapeHTML(site.country)+'</div><h2>'+escapeHTML(site.name)+'</h2><p>'+escapeHTML(site.description)+'</p><div class="button-row"><button data-save="'+id+'">Guardar sitio</button><button data-compare="'+id+'">Comparar</button></div><h3>Ubicación documentada</h3>'+geo.map(g=>'<p>'+escapeHTML(g.role)+' · '+escapeHTML(g.precision)+'</p>'+source(g.sourceId)).join('')+(geo.length?'':'<p>Coordenadas del sector pendientes. Puedes consultar el nombre en un mapa externo.</p>')+'<p><a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(site.name)+'" target="_blank" rel="noopener">Buscar en Google Maps ↗</a></p><h3>Propiedades y evidencia</h3>'+rows.map(o=>'<div class="observation"><strong>'+escapeHTML(properties.find(p=>p.id===o.propertyId)?.label||o.propertyId)+'</strong><p>'+escapeHTML(format(o.value))+' '+escapeHTML(o.unit)+'</p><small>'+escapeHTML(o.evidence)+' · '+escapeHTML(o.method)+'<br>Escala '+escapeHTML(o.scale||'pendiente')+'<br>Fecha '+escapeHTML(o.date||'pendiente')+' · Incertidumbre '+escapeHTML(o.uncertainty||'pendiente')+'</small>'+source(o.sourceId)+'</div>').join('')+(rows.length?'':'<p>El inventario aporta descripción y antecedentes. Las mediciones por propiedad quedan pendientes.</p>')+(site.sourceId?source(site.sourceId):'')+'<div id="detail-region">'+regionalDetail(evaluation.region)+'</div><h3>Comparaciones planetarias</h3>'+hypotheses.map(h=>'<p>'+escapeHTML(catalog.references.find(r=>r.id===h.referenceId)?.name||h.referenceId)+' · '+escapeHTML(h.description)+'</p>').join('')+'<h3>Límites de la analogía</h3><ul>'+list(site.limitations)+'</ul><h3>Acceso y operación</h3>'+access.map(a=>'<p>'+escapeHTML(a.description)+'</p>'+source(a.sourceId)).join('')+(access.length?'':'<p>Condiciones específicas pendientes de verificación.</p>')+'<h3>Datos pendientes</h3><ul>'+list(site.pending)+'</ul>'+(evaluation.rows.length?'<h3>Tu perfil</h3>'+evaluation.rows.map(r=>'<p>'+escapeHTML(properties.find(p=>p.id===r.criterion.propertyId)?.label)+' · '+labels.es[r.status]+'</p>').join(''):'');
+ q('detail').innerHTML='<button class="close" id="detail-close" aria-label="Cerrar ficha">×</button><div class="country">'+escapeHTML(site.country)+'</div><h2>'+escapeHTML(site.name)+'</h2><p>'+escapeHTML(site.description)+'</p><div class="button-row"><button data-save="'+id+'">Guardar sitio</button><button data-compare="'+id+'">Comparar</button></div><h3>Ubicación documentada</h3>'+geo.map(g=>'<p>'+escapeHTML(g.role)+' · '+escapeHTML(g.precision)+'</p>'+source(g.sourceId)).join('')+(geo.length?'':'<p>Coordenadas del sector pendientes. Puedes consultar el nombre en un mapa externo.</p>')+'<p><a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(site.name)+'" target="_blank" rel="noopener">Buscar en Google Maps ↗</a></p><h3>Propiedades y evidencia</h3>'+rows.map(o=>'<div class="observation"><strong>'+escapeHTML(properties.find(p=>p.id===o.propertyId)?.label||o.propertyId)+'</strong><p>'+escapeHTML(format(o.value))+' '+escapeHTML(o.unit)+'</p><small>'+escapeHTML(o.evidence)+' · '+escapeHTML(o.method)+'<br>Escala '+escapeHTML(o.scale||'pendiente')+'<br>Fecha '+escapeHTML(o.date||'pendiente')+' · Incertidumbre '+escapeHTML(o.uncertainty||'pendiente')+'</small>'+source(o.sourceId)+'</div>').join('')+(rows.length?'':'<p>El inventario aporta descripción y antecedentes. Las mediciones por propiedad quedan pendientes.</p>')+(site.sourceId?source(site.sourceId):'')+'<div id="detail-region">'+regionalDetail(evaluation.region)+'</div>'+'<h3>Límites de la analogía</h3><ul>'+list(site.limitations)+'</ul><h3>Acceso y operación</h3>'+access.map(a=>'<p>'+escapeHTML(a.description)+'</p>'+source(a.sourceId)).join('')+(access.length?'':'<p>Condiciones específicas pendientes de verificación.</p>')+'<h3>Datos pendientes</h3><ul>'+list(pendingFor(site))+'</ul>'+(evaluation.rows.length?'<h3>Tu perfil</h3>'+evaluation.rows.map(r=>'<p>'+escapeHTML(properties.find(p=>p.id===r.criterion.propertyId)?.label)+' · '+labels.es[r.status]+'</p>').join(''):'');
  if(innerWidth<760)showMap();
 }
 function criteriaUI(){
  q('quick-criteria').innerHTML=primaryCriteria.map(id=>{
   const property=properties.find(p=>p.id===id);
   const active=profile.criteria.some(c=>c.propertyId===id);
-  return '<button data-property="'+id+'" aria-pressed="'+active+'" '+(active?'disabled':'')+'>'+(active?'✓ ':'+ ')+escapeHTML(property.label)+'</button>';
+  return '<button type="button" data-property="'+id+'" aria-pressed="'+active+'">'+(active?'✓ ':'+ ')+escapeHTML(property.label)+'</button>';
  }).join('');
- q('criteria').innerHTML=profile.criteria.map((c,i)=>{
-  const p=properties.find(p=>p.id===c.propertyId);
-  return '<section class="criterion"><div class="criterion-head"><strong>'+escapeHTML(p.label)+'</strong><button data-remove="'+i+'" aria-label="Eliminar criterio">×</button></div><label><input data-index="'+i+'" data-field="required" type="checkbox" '+(c.required?'checked':'')+'> Indispensable</label><label>Importancia relativa <output>'+c.weight+'</output><input data-index="'+i+'" data-field="weight" type="range" min="0" max="10" value="'+c.weight+'"></label>'+(p.type==='number'?'<div class="fields"><label>Mínimo ('+p.unit+')<input type="number" step="any" data-index="'+i+'" data-field="min" value="'+escapeHTML(c.min)+'"></label><label>Máximo ('+p.unit+')<input type="number" step="any" data-index="'+i+'" data-field="max" value="'+escapeHTML(c.max)+'"></label></div>':'<label>Valores aceptables, separados por coma<input data-index="'+i+'" data-field="values" value="'+escapeHTML(c.values)+'" placeholder="Valor exacto documentado"></label>')+'<label>Tipo de evidencia<select data-index="'+i+'" data-field="evidence">'+['','medida','inferida','modelada'].map(v=>'<option value="'+v+'" '+(c.evidence===v?'selected':'')+'>'+(v||'Cualquiera documentada')+'</option>').join('')+'</select></label></section>';
+ q('criteria').innerHTML=profile.criteria.map((criterion,index)=>{
+  const property=properties.find(p=>p.id===criterion.propertyId);
+  const binding=' data-index="'+index+'" data-field="';
+  const range='<div class="fields"><label>Mínimo ('+property.unit+')<input type="number" step="any"'+binding+'min" value="'+escapeHTML(criterion.min)+'"></label><label>Máximo ('+property.unit+')<input type="number" step="any"'+binding+'max" value="'+escapeHTML(criterion.max)+'"></label></div>';
+  const accepted='<label>Valores aceptados (opcional)<input'+binding+'values" value="'+escapeHTML(criterion.values)+'" placeholder="Ej. Presente, estacional"></label><small>Escribe valores como aparecen en la ficha. Si lo dejas vacío basta con que haya evidencia.</small>';
+  return '<section class="criterion"><div class="criterion-head"><strong>'+escapeHTML(property.label)+'</strong><button data-remove="'+index+'" aria-label="Quitar '+escapeHTML(property.label)+'">Quitar</button></div>'+
+   '<label>Cómo aplicarlo<select'+binding+'required"><option value="no">Preferencia</option><option value="yes" '+(criterion.required?'selected':'')+'>Requisito</option></select></label>'+(property.type==='number'?range:accepted)+
+   '<details class="advanced"><summary>Opciones del criterio</summary><label>Importancia de la preferencia <output>'+escapeHTML(criterion.weight)+'</output><input'+binding+'weight" type="range" min="0" max="10" value="'+escapeHTML(criterion.weight)+'"></label><label>Tipo de evidencia<select'+binding+'evidence">'+['','medida','inferida','modelada'].map(v=>'<option value="'+v+'" '+(criterion.evidence===v?'selected':'')+'>'+(v||'Cualquiera documentada')+'</option>').join('')+'</select></label></details></section>';
  }).join('');
 }
-function sync(){q('profile-name').value=profile.name;q('missing').value=profile.missing;q('group-mode').value=profile.groups[0].mode;q('reference').value=profile.reference;q('task').value=profile.tasks[0]||'';document.querySelectorAll('[data-planet]').forEach(b=>b.classList.toggle('active',profile.planets[0]===(b.dataset.planet||undefined)));criteriaUI();syncClimateView()}
+function sync(){
+ profile.criteria=profile.criteria.filter(c=>properties.some(p=>p.id===c.propertyId));
+ q('profile-name').value=profile.name;
+ q('missing').value=profile.missing;
+ q('group-mode').value=profile.groups[0].mode;
+ q('task-picker').querySelectorAll('input').forEach(input=>input.checked=profile.tasks.includes(input.value));
+ criteriaUI();
+ propertyOptions();
+ syncClimateView();
+}
 function reset(){profile=defaultProfile();zone=null;onlySaved=false;q('search').value='';sync()}
 function showMap(){document.body.classList.add('map-mode');setTimeout(()=>map.invalidateSize(),50)}
 function profileOptions(){q('profiles').innerHTML='<option value="">Perfiles guardados…</option>'+profiles.map((p,i)=>'<option value="'+i+'">'+escapeHTML(p.name)+'</option>').join('')}
-q('task').innerHTML='<option value="">Todas las tareas documentadas</option>'+Object.entries(taskNames).map(([id,name])=>'<option value="'+id+'">'+name+'</option>').join('');
-q('reference').innerHTML='<option value="">Referencia planetaria opcional</option>'+catalog.references.map(r=>'<option value="'+r.id+'">'+escapeHTML(r.name)+'</option>').join('');
-function propertyOptions(){const text=q('property-search').value.toLowerCase();q('families').innerHTML=families.map((f,n)=>{const items=properties.filter(p=>p.family===n&&p.label.toLowerCase().includes(text));return items.length?'<details class="family" '+(text?'open':'')+'><summary>'+f+'</summary>'+items.map(p=>'<button data-property="'+p.id+'">+ '+p.label+'</button>').join('')+'</details>':''}).join('')}
+function propertyOptions(){const text=q('property-search').value.toLowerCase();q('families').innerHTML=families.map((f,n)=>{const items=properties.filter(p=>p.family===n&&p.label.toLowerCase().includes(text));return items.length?'<details class="family" '+(text?'open':'')+'><summary>'+f+'</summary>'+items.map(p=>{const active=profile.criteria.some(c=>c.propertyId===p.id);return '<button type="button" data-property="'+p.id+'" aria-pressed="'+active+'">'+(active?'✓ ':'+ ')+p.label+'</button>'}).join('')+'</details>':''}).join('')}
 q('property-search').oninput=propertyOptions;
-q('criteria').oninput=e=>{const i=e.target.dataset.index,field=e.target.dataset.field;if(i==null)return;profile.criteria[i][field]=e.target.type==='checkbox'?e.target.checked:e.target.value;if(field==='weight')e.target.previousElementSibling.textContent=e.target.value;render()};
+q('task-picker').innerHTML=taskCheckboxes('missionTask');
+q('task-picker').onchange=()=>{
+ profile.tasks=Array.from(q('task-picker').querySelectorAll('input:checked'),input=>input.value);
+ render();
+};
+q('criteria').oninput=e=>{const i=e.target.dataset.index,field=e.target.dataset.field;if(i==null)return;profile.criteria[i][field]=field==='required'?e.target.value==='yes':e.target.value;if(field==='weight')e.target.previousElementSibling.textContent=e.target.value;render()};
 q('search').oninput=render;q('sort').onchange=render;q('show-geometries').onchange=render;
-q('task').onchange=()=>{profile.tasks=q('task').value?[q('task').value]:[];render()};
-q('reference').onchange=()=>{profile.reference=q('reference').value;render()};
 q('missing').onchange=()=>{profile.missing=q('missing').value;render()};
 q('group-mode').onchange=()=>{profile.groups[0].mode=q('group-mode').value;render()};
 q('base').onchange=()=>{Object.values(bases).forEach(l=>map.removeLayer(l));currentBase=q('base').value;bases[currentBase].addTo(map);features.bringToFront()};
@@ -3102,17 +3137,24 @@ document.addEventListener('click',e=>{
  }
  if(b.dataset.open)openSite(b.dataset.open);
  if(b.dataset.save){saved.has(b.dataset.save)?saved.delete(b.dataset.save):saved.add(b.dataset.save);writeStore('coipo-favorites',[...saved]);render();message('Favoritos actualizados')}
- if(b.dataset.compare){const id=b.dataset.compare;if(compare.includes(id))compare=compare.filter(v=>v!==id);else if(compare.length<4)compare.push(id);else message('Puedes comparar hasta cuatro lugares.');render()}
- if('planet' in b.dataset){profile.planets=b.dataset.planet?[b.dataset.planet]:[];sync()}
- if(b.dataset.property){if(profile.criteria.some(c=>c.propertyId===b.dataset.property))return message('Este criterio ya está añadido.');profile.criteria.push({propertyId:b.dataset.property,group:'principal',required:false,weight:5,min:'',max:'',values:'',evidence:''});criteriaUI();render()}
- if(b.dataset.remove!=null){profile.criteria.splice(Number(b.dataset.remove),1);criteriaUI();render()}
+ if(b.dataset.compare){const id=b.dataset.compare;if(compare.includes(id))compare=compare.filter(v=>v!==id);else if(compare.length<4)compare.push(id);else message('Puedes comparar hasta cuatro lugares.');render();if(b.closest('.catalog-entry'))b.textContent=compare.includes(id)?'✓ En comparación':'+ Comparar'}
+ if(b.dataset.property){
+  const parent=b.closest('#quick-criteria') || b.closest('#families');
+  const id=b.dataset.property;
+  const index=profile.criteria.findIndex(c=>c.propertyId===id);
+  if(index>=0)profile.criteria.splice(index,1);
+  else profile.criteria.push({propertyId:id,group:'principal',required:false,weight:5,min:'',max:'',values:'',evidence:''});
+  criteriaUI();
+  propertyOptions();
+  parent?.querySelector('[data-property="'+id+'"]')?.focus();
+  render();
+ }
+ if(b.dataset.remove!=null){profile.criteria.splice(Number(b.dataset.remove),1);criteriaUI();propertyOptions();render()}
  if(b.id==='detail-close'){q('detail').hidden=true;highlight.clearLayers();selected=null;render()}
  if(b.id==='compare-clear'){compare=[];render()}
- if(b.id==='compare-open'){
-  const sites=compare.map(id=>catalog.sites.find(s=>s.id===id));
-  const ids=[...new Set([...profile.criteria.map(c=>c.propertyId),...sites.flatMap(s=>observations(s).map(o=>o.propertyId))])];
-  q('dialog-content').innerHTML='<h2>Comparar terrenos</h2><div class="table-scroll"><table><thead><tr><th>Propiedad</th>'+sites.map(s=>'<th>'+escapeHTML(s.name)+'</th>').join('')+'</tr></thead><tbody>'+ids.map(id=>'<tr><th>'+escapeHTML(properties.find(p=>p.id===id)?.label||id)+'</th>'+sites.map(s=>'<td>'+ (observations(s).filter(o=>o.propertyId===id).map(o=>'<p>'+escapeHTML(format(o.value))+' '+escapeHTML(o.unit)+'<small>'+escapeHTML(o.evidence)+' · '+escapeHTML(o.scale)+'</small>'+source(o.sourceId)+'</p>').join('')||'Sin dato')+'</td>').join('')+'</tr>').join('')+'<tr><th>Limitaciones</th>'+sites.map(s=>'<td><ul>'+list(s.limitations)+'</ul></td>').join('')+'</tr></tbody></table></div>';q('dialog').showModal();
- }
+ if(b.id==='compare-open'||b.id==='catalog-compare')showComparison();
+ if(b.id==='open-catalog')catalogDialog();
+ if(b.id==='add-site'||b.id==='catalog-add-site')newSiteDialog();
  if(b.id==='reset'||b.id==='reset-empty'){q('saved').classList.remove('active');reset()}
  if(b.id==='relax'){profile.missing='include';sync()}
  if(b.id==='saved'){onlySaved=!onlySaved;render();b.classList.toggle('active',onlySaved)}
@@ -3126,7 +3168,7 @@ document.addEventListener('click',e=>{
  if(b.id==='export-geo'){const sectors=visible.flatMap(r=>r.site.sectorIds);download('coiponautas-geometrias.geojson',{type:'FeatureCollection',features:catalog.geometries.filter(g=>sectors.includes(g.sectorId)).map(g=>({type:'Feature',geometry:g.geometry,properties:{sectorId:g.sectorId,role:g.role,precision:g.precision,source:catalog.sources.find(s=>s.id===g.sourceId)}}))})}
  if(b.id==='show-map')showMap();if(b.id==='show-list')document.body.classList.remove('map-mode');
  if(b.id==='close-dialog')q('dialog').close();
- if(b.id==='download-html')download('Coiponautas.html',originalHTML,'text/html');
+ if(b.id==='download-html')download('Coiponautas.html',portableAtlas(),'text/html');
  if(b.id==='method'){q('dialog-content').innerHTML='<h2>Datos y criterio de selección</h2><p>Los requisitos indispensables excluyen incumplimientos documentados. Un valor desconocido conserva el estado pendiente. La preferencia ponderada suma los pesos de los criterios satisfechos y divide por el peso total, incluidos los criterios sin dato. La cobertura de datos se muestra por separado. Este cálculo es exploratorio y requiere validación científica del equipo.</p><p>Las geometrías conservan la función indicada por su fuente. Yamma Yamma representa el límite del humedal. Parte del inventario está pendiente de georreferenciación y puede contener campañas superpuestas.</p>'+Object.entries(research).map(([name,text])=>'<details><summary>'+escapeHTML(name)+'</summary><pre style="white-space:pre-wrap;font:inherit;font-size:12px">'+escapeHTML(text)+'</pre></details>').join('');q('dialog').showModal()}
 });
 q('locate').onclick=()=>{const coords=q('coordinates').value.split(',').map(Number);if(coords.length!==2||!coords.every(Number.isFinite)||Math.abs(coords[0])>90||Math.abs(coords[1])>180)return message('Escribe latitud, longitud. Ejemplo -26.3, 141.4');map.setView(coords,11)};
@@ -3368,6 +3410,255 @@ q('climate-export').onclick = () => download('coiponautas-clima-terrestre.geojso
     properties:{temperature_C:temp,relative_humidity_percent:humidity,pressure_kPa:pressure,year:2024,grid_spacing_deg:4,source:climateSource}
   }))
 });
+const inventoryGaps = {"saskylakh":["Per\u00edmetro del campo poligonal, profundidad y presencia de hielo con sondeos y controles secos, pendiente, rugosidad y rutas transitables.","Registrar la resoluci\u00f3n y fecha del relieve y de las im\u00e1genes de los pol\u00edgonos. Medir profundidad de deshielo estacional y vincularla a perfiles y puntos de humedad."],"yamma":["Pol\u00edgono del delta nororiental, fechas h\u00famedas y secas con su extensi\u00f3n de agua, pendiente, granulometr\u00eda y facies del sector.","A\u00f1adir superficie inundada por fecha y ubicaci\u00f3n de cada muestra de sedimento. Registrar microrelieve de la ruta y estado del firme entre campa\u00f1as."],"bhallil":["Coordenadas del perfil y afloramientos, espesor de los niveles, mineralog\u00eda por muestra y acceso.","Delimitar superficie disponible para trabajo de campo. A\u00f1adir humedad, dureza y espesores por nivel con una escala visible en fotograf\u00edas del perfil."],"williams":["Ubicaci\u00f3n de la secci\u00f3n y muestras, coordenadas del afloramiento, espesores por nivel, mineralog\u00eda y granulometr\u00eda.","Registrar orientaci\u00f3n, continuidad lateral y accesibilidad de cada tramo. Etiquetar las im\u00e1genes con el contacto estratigr\u00e1fico o la muestra a la que corresponden."],"chiprana":["Ubicar perfiles de paleosuelos, delimitar facies, medir salinidad y granulometr\u00eda, y comprobar permisos de muestreo.","Separar playas, dunas y paleosuelos en el mapa. Registrar nivel de agua, variaci\u00f3n por estaci\u00f3n y procedimiento usado para las medidas de salinidad."],"aucanquilcha":["Coordenadas del sondeo y del control seco, profundidad y fracci\u00f3n de hielo, condiciones del suelo y rutas de acceso.","Documentar el m\u00e9todo y fecha de detecci\u00f3n del hielo, espesor de cobertura seca, litolog\u00eda y resistencia de los materiales atravesados."],"miscanti":["Ubicar dep\u00f3sitos y transectos de orilla, medir granulometr\u00eda y mineralog\u00eda, caracterizar estacionalidad del agua y verificar permisos.","Distinguir el lago del punto de extracci\u00f3n del testigo y de los perfiles de orilla. A\u00f1adir profundidad del agua, salinidad y posici\u00f3n de cada transecto."],"quinamavida":["Ubicar el perfil de tobas, cuantificar minerales por muestra, registrar estratigraf\u00eda, accesos y permiso de muestreo.","Separar toba fresca y alterada. Registrar proporciones minerales por intervalo, t\u00e9cnica anal\u00edtica y granulometr\u00eda de las muestras."],"luna":["Ubicar la instalaci\u00f3n en el mapa, delimitar el \u00e1rea de ensayo y documentar granulometr\u00eda y densidad del simulante, par\u00e1metros controlados y acceso.","Registrar iluminaci\u00f3n programada, humedad, capacidad de recrear pendientes y par\u00e1metros del simulante para cada tipo de prueba."],"pangaea":["Identificar ruta y sectores exactos del curso, pendiente, rugosidad, litolog\u00eda, actividad espec\u00edfica y permisos.","Documentar distancias y tiempos de recorrido, instrumentos utilizados, resultados de campo e im\u00e1genes georreferenciadas de los afloramientos."],"pali-aike":["Coordenadas del cono y la ruta, trazabilidad de pendiente y di\u00e1metro por sector, rugosidad, horizonte, contraste y acceso.","Registrar tama\u00f1o de obst\u00e1culos, continuidad del firme y m\u00e9todo de medici\u00f3n del relieve. Asociar las fotos con el tramo recorrido y el cono identificado."],"chajnantor-b3":["Incorporar el 46 % de hielo hasta 2 m como valor estructurado del sondeo, delimitar su alcance, documentar controles B4/B5, pendiente, rugosidad y acceso.","Vincular la altitud y los perfiles de temperatura del suelo a cada sondeo. Registrar material suprayacente, m\u00e9todo de estimaci\u00f3n del hielo y condiciones de acceso para los instrumentos."],"joaco-1":["Diferenciar la estaci\u00f3n MDRS del sector de campo de San Rafael Swell. Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Obtener el trazado de las salidas MDRS y separar los afloramientos por campa\u00f1a."],"joaco-2":["Distinguir campa\u00f1a y sector de las otras entradas de isla de Devon. Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Vincular las estaciones de muestreo del cr\u00e1ter Haughton con la cartograf\u00eda de brechas de impacto."],"joaco-3":["Distinguir campa\u00f1a y sector de las otras entradas de isla de Devon. Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Ubicar el h\u00e1bitat FMARS y distinguir sus rutas de pr\u00e1ctica de los transectos cient\u00edficos."],"joaco-4":["Confirmar qu\u00e9 actividad y sector corresponden al cr\u00e1ter Ramon. Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Delimitar la zona de entrenamiento D-MARS y registrar las unidades de roca usadas en muestreo."],"joaco-5":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Recuperar el itinerario de AMADEE-18 y la ubicaci\u00f3n de cada ensayo de movilidad o instrumentos."],"joaco-6":["Cruzar con la entrada N\u00e9guev / cr\u00e1ter Ramon y conservar cada campa\u00f1a identificada. Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Buscar las zonas de operaci\u00f3n de AMADEE-20 y el alcance de comunicaciones durante el ensayo."],"joaco-7":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Registrar desnivel, firme y exposici\u00f3n de las rutas de AMADEE-24."],"joaco-8":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Vincular experimentos de MARS2013 con sus estaciones de medici\u00f3n y sus condiciones de polvo y viento."],"joaco-9":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Separar el sector de la prueba rob\u00f3tica de los recorridos geol\u00f3gicos en Arkaroola."],"joaco-10":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Ubicar perfiles estratigr\u00e1ficos y muestras por localidad de la expedici\u00f3n Jarntimarra-1."],"joaco-11":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Delimitar la llanura ensayada, registrar continuidad del firme y confirmar restricciones de acceso."],"joaco-12":["Separar Pilbara y Shark Bay si se usaron para actividades distintas. Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Vincular cada observaci\u00f3n de estromatolitos con su ambiente, escala y transecto."],"joaco-13":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Distinguir manantiales, abanicos y salares. Registrar salinidad y superficie inundada por periodo."],"joaco-14":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Delimitar el salar o cuenca espec\u00edfica y ligar las muestras de sales a la cartograf\u00eda de facies."],"joaco-15":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Separar el recinto C-Space de cualquier sector exterior y documentar el equipamiento empleado."],"joaco-16":["Acotar la campa\u00f1a en Atacama y cruzarla con los candidatos andinos ya fichados. Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Precisar las estaciones de Yungay y comparar muestras con perfiles de aridez y sales del mismo sector."],"joaco-17":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Distinguir las zonas muestreadas del sistema hidrotermal y registrar pH, temperatura, salinidad y acceso."],"joaco-18":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Fechar el estado de inundaci\u00f3n o desecaci\u00f3n de la laguna y vincular cada muestra de sales a su estaci\u00f3n."],"joaco-19":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Ubicar transectos de agua, sedimento y subsuelo. Documentar pH y qu\u00edmica por punto."],"joaco-20":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Ubicar los recorridos y afloramientos usados, adem\u00e1s del propio centro de apoyo."],"joaco-21":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Asignar cada medici\u00f3n de pendiente y nieve a una ruta concreta del ensayo de traje."],"joaco-22":["Litolog\u00eda, granulometr\u00eda, pendiente y polvo. A\u00f1adir salinidad o agua estacional si son parte del ensayo. Ubicar entrada y tramo de la cueva de hielo, y documentar espesor, seguridad y \u00e9poca del recorrido."],"joaco-23":["Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Distinguir el recinto de HI-SEAS de las coladas y rutas exteriores. Registrar accesos del ensayo."],"joaco-24":["Separar los sectores visitados en K\u012blauea y Mauna Ulu. Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Vincular muestras de BASALT a edad y tipo de colada, y documentar trayectos de aproximaci\u00f3n."],"joaco-25":["Identificar isla, sector y campa\u00f1a antes de cruzarlo con Mauna Loa o K\u012blauea. Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Relacionar cada experimento de PISCES o Spaceward Bound con su parcela y material de ensayo."],"joaco-26":["Cruzar con la ficha Lanzarote \u00b7 PANGAEA para identificar sectores o campa\u00f1as compartidos. Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Separar rutas en coladas y tramos de tubos de lava, con fotogrametr\u00eda cuando est\u00e9 disponible."],"joaco-27":["Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Precisar la unidad volc\u00e1nica y el gradiente altitudinal de cada sector visitado."],"joaco-28":["Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Identificar para cada campa\u00f1a la colada, glaciar o zona geot\u00e9rmica y su relaci\u00f3n con la tarea."],"joaco-29":["Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Localizar el afloramiento empleado en PANGAEA y documentar sus minerales y el relieve de acceso."],"joaco-30":["Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Ubicar el tramo del ca\u00f1\u00f3n y registrar espesor de estratos, litolog\u00edas y puntos de muestreo."],"joaco-31":["Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Identificar afloramientos de brechas o materiales de impacto usados en cada campa\u00f1a."],"joaco-32":["Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Relacionar cada jornada de PANGAEA con la ruta, los afloramientos y los protocolos de muestreo."],"joaco-33":["Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Distinguir el sector periglacial, las unidades de terreno congelado y la \u00e9poca de trabajo de campo."],"joaco-34":["Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Elegir el campo volc\u00e1nico y el volc\u00e1n espec\u00edfico. Identificar resoluci\u00f3n de las medidas de relieve."],"joaco-35":["Sector de ensayo, litolog\u00eda, pendiente y rugosidad. A\u00f1adir profundidad o geometr\u00eda de cavidades si corresponde. Precisar el tubo de lava y el tramo levantado, con secci\u00f3n, dimensiones y acceso autorizado."],"joaco-36":["Cruzar con las otras dos entradas de Devon e identificar cada campa\u00f1a. Separar estaci\u00f3n y sector exterior. Documentar temperatura, nieve o hielo, acceso estacional y, si aplica, profundidad de hielo. Vincular la entrada regional con los mismos nombres de sectores y fuentes de las fichas de Devon."],"joaco-37":["Separar estaci\u00f3n y sector exterior. Documentar temperatura, nieve o hielo, acceso estacional y, si aplica, profundidad de hielo. Separar los datos de aislamiento y operaci\u00f3n de las mediciones exteriores de Domo C."],"joaco-38":["Separar estaci\u00f3n y sector exterior. Documentar temperatura, nieve o hielo, acceso estacional y, si aplica, profundidad de hielo. Documentar la zona de trabajo sobre la plataforma, acceso estacional y protocolos de aislamiento."],"joaco-39":["Separar estaci\u00f3n y sector exterior. Documentar temperatura, nieve o hielo, acceso estacional y, si aplica, profundidad de hielo. Distinguir la base de cada campa\u00f1a de campo y vincular permisos a su ruta."],"joaco-40":["Separar estaci\u00f3n y sector exterior. Documentar temperatura, nieve o hielo, acceso estacional y, si aplica, profundidad de hielo. Ubicar el \u00e1rea de muestreo del lago y registrar espesor del hielo, profundidad y qu\u00edmica del agua."],"joaco-41":["Separar estaci\u00f3n y sector exterior. Documentar temperatura, nieve o hielo, acceso estacional y, si aplica, profundidad de hielo. Identificar el glaciar o campo periglacial y ligar los perfiles de hielo a su posici\u00f3n exacta."],"joaco-42":["Entrada, tramo y geometr\u00eda de la cavidad o instalaci\u00f3n. Documentar accesos, humedad y comunicaciones seg\u00fan la tarea. A\u00f1adir plano de las galer\u00edas asignadas a Asclepios, autonom\u00eda del recinto y cobertura de comunicaciones."],"joaco-43":["Entrada, tramo y geometr\u00eda de la cavidad o instalaci\u00f3n. Documentar accesos, humedad y comunicaciones seg\u00fan la tarea. Vincular cada edici\u00f3n ESA CAVES con la cavidad y sus tramos de pr\u00e1ctica de cartograf\u00eda."],"joaco-44":["Entrada, tramo y geometr\u00eda de la cavidad o instalaci\u00f3n. Documentar accesos, humedad y comunicaciones seg\u00fan la tarea. Identificar la cavidad y su desarrollo topogr\u00e1fico, junto con las condiciones de la campa\u00f1a."],"joaco-45":["Entrada, tramo y geometr\u00eda de la cavidad o instalaci\u00f3n. Documentar accesos, humedad y comunicaciones seg\u00fan la tarea. Confirmar cavidad, a\u00f1o de campa\u00f1a y posible relaci\u00f3n con la ficha de Cantabria."],"joaco-46":["Entrada, tramo y geometr\u00eda de la cavidad o instalaci\u00f3n. Documentar accesos, humedad y comunicaciones seg\u00fan la tarea. Distinguir las \u00e1reas de la instalaci\u00f3n Astroland y su relaci\u00f3n con la cavidad natural."],"joaco-47":["Entrada, tramo y geometr\u00eda de la cavidad o instalaci\u00f3n. Documentar accesos, humedad y comunicaciones seg\u00fan la tarea. A\u00f1adir plano y superficie \u00fatil del hangar LunAres, con condiciones de iluminaci\u00f3n y retraso de comunicaciones."],"joaco-48":["Entrada, tramo y geometr\u00eda de la cavidad o instalaci\u00f3n. Documentar accesos, humedad y comunicaciones seg\u00fan la tarea. Identificar la instalaci\u00f3n del AATC y el protocolo utilizado para la actividad elegida."],"joaco-49":["Entrada, tramo y geometr\u00eda de la cavidad o instalaci\u00f3n. Documentar accesos, humedad y comunicaciones seg\u00fan la tarea. Distinguir el per\u00edmetro y los experimentos de SAM dentro de Biosphere 2. Registrar atm\u00f3sfera y control ambiental."],"joaco-50":["Cruzar con LUNA \u00b7 Colonia e identificar el recinto preciso de cada ensayo. Entrada, tramo y geometr\u00eda de la cavidad o instalaci\u00f3n. Documentar accesos, humedad y comunicaciones seg\u00fan la tarea. Confirmar qu\u00e9 recinto DLR aloj\u00f3 Aouda y qu\u00e9 configuraci\u00f3n de traje, superficie y recorrido se us\u00f3."],"joaco-51":["Identificar el recinto y protocolo dentro de Johnson Space Center. Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Identificar el m\u00f3dulo HERA, su aforo y duraci\u00f3n, y enlazar el protocolo de cada campa\u00f1a."],"joaco-52":["Identificar el recinto y protocolo dentro de Johnson Space Center. Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Documentar las zonas de Mars Dune Alpha usadas en superficie, condiciones operativas y duraci\u00f3n."],"joaco-53":["Identificar el recinto y protocolo de Mosc\u00fa. Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Separar experimentos Mars-500 y SIRIUS por recinto, periodo y protocolo."],"joaco-54":["Identificar el recinto y protocolo de Mosc\u00fa. Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Relacionar cada campa\u00f1a SIRIUS con su duraci\u00f3n, tripulaci\u00f3n, comunicaciones y r\u00e9gimen de aislamiento."],"joaco-55":["Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Documentar m\u00f3dulos de Yuegong-1, duraci\u00f3n y m\u00e9tricas de soporte vital vinculadas a cada ensayo."],"joaco-56":["Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Registrar ejemplar y lugar de despliegue de SHEE, tiempo de instalaci\u00f3n y condiciones exteriores."],"joaco-57":["Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Identificar la versi\u00f3n de MaMBA y qu\u00e9 m\u00f3dulos o tareas fueron efectivamente ensayados."],"joaco-58":["Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Precisar ubicaci\u00f3n y versi\u00f3n del demostrador NDU, configuraci\u00f3n de m\u00f3dulos y pruebas documentadas."],"joaco-59":["Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Desambiguar la instalaci\u00f3n ILMH2, identificar el operador y verificar protocolo y plano."],"joaco-60":["Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Ubicar el recinto Flexhab y precisar qu\u00e9 configuraci\u00f3n y ambiente fueron ensayados."],"joaco-61":["Identificar recinto y protocolo. Documentar superficie \u00fatil, condiciones controladas, duraci\u00f3n, comunicaciones y acceso. Identificar el recinto HESTIA y los subsistemas, l\u00edmites operativos y periodo de cada prueba."],"joaco-62":["Precisar cuerpo de agua y sector. Documentar profundidad, visibilidad, condiciones del agua y acceso seg\u00fan el ensayo. A\u00f1adir la ubicaci\u00f3n del h\u00e1bitat Aquarius, profundidad de las EVA y visibilidad durante cada misi\u00f3n."],"joaco-63":["Precisar cuerpo de agua y sector. Documentar profundidad, visibilidad, condiciones del agua y acceso seg\u00fan el ensayo. Ligar los transectos de buceo y muestras a una batimetr\u00eda de Pavilion Lake."],"joaco-64":["Precisar cuerpo de agua y sector. Documentar profundidad, visibilidad, condiciones del agua y acceso seg\u00fan el ensayo. Identificar la instalaci\u00f3n o represa concreta y el protocolo de flotabilidad del experimento."],"joaco-65":["Precisar cuerpo de agua y sector. Documentar profundidad, visibilidad, condiciones del agua y acceso seg\u00fan el ensayo. Precisar emplazamiento de Hydronaut DeepLab, profundidad y condiciones de aislamiento del ensayo."],"joaco-66":["Precisar cuerpo de agua y sector. Documentar profundidad, visibilidad, condiciones del agua y acceso seg\u00fan el ensayo. Identificar piscina y r\u00e9plica usada, profundidad de trabajo, duraci\u00f3n y configuraci\u00f3n de la flotabilidad."]};
+const catalogReport = 'https://github.com/MartinWilckens/Coiponautas/blob/main/Inventario-Coiponautas-sitios-y-datos-pendientes.md';
+const siteStorageKey = 'coipo-added-sites-v1';
+const sharedSites = parseSharedSites();
+const savedSites = readStore(siteStorageKey,[]);
+const addedSites = Array.from(new Map([...sharedSites, ...(Array.isArray(savedSites)?savedSites:[])].flatMap(record =>
+  validSiteRecord(record) ? [[record.id,record]] : []
+)).values());
+addedSites.forEach(registerSite);
+
+const sitePhotographs = {
+ luna:{
+  url:'https://www.dlr.de/en/latest/news/2024/training-facility-for-astronautical-and-robotic-missions-to-the-moon/investigating-the-surface-of-the-moon-on-earth/@@images/image-400-d72b4e2537d65530ce7e042080647f08.jpeg',
+  credit:'Foto de la instalación · DLR/ESA',sourceId:'luna'
+ },
+ pangaea:{
+  url:'https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2024/10/arnaud_prost_takes_pictures_of_interesting_geological_site/26349252-1-eng-GB/Arnaud_Prost_takes_pictures_of_interesting_geological_site_pillars.jpg',
+  credit:'Entrenamiento PANGAEA en Lanzarote · ESA / A. Romeo',
+  sourceUrl:'https://www.esa.int/ESA_Multimedia/Images/2024/10/Arnaud_Prost_takes_pictures_of_interesting_geological_site'
+ }
+};
+
+function publicUrl(value) {
+ try {
+  const url = new URL(value);
+  return ['http:','https:'].includes(url.protocol) && !url.username && !url.password ? url.href : '';
+ } catch { return ''; }
+}
+function imageUrl(value) {
+ return /^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(value || '') ? value : publicUrl(value);
+}
+function externalLink(url,label) {
+ const href=publicUrl(url);
+ return href ? '<a href="'+escapeHTML(href)+'" target="_blank" rel="noopener noreferrer">'+escapeHTML(label)+'</a>' : escapeHTML(label);
+}
+function parseSharedSites() {
+ try {
+  const records=JSON.parse(q('shared-sites').textContent);
+  return Array.isArray(records)?records:[];
+ } catch { return []; }
+}
+function validSiteRecord(record) {
+ return record && /^local-[\w-]+$/.test(record.id) && typeof record.name==='string' &&
+  typeof record.description==='string' && Array.isArray(record.tasks) && Array.isArray(record.values) && record.values.every(entry=>entry && typeof entry==='object');
+}
+function registerSite(record) {
+ const {id,name,country,description,tasks,coords,photo,values}=record;
+ const site={
+  id,name,country:country || 'País pendiente',description,environment:record.environment || 'Entorno por describir',
+  status:'Candidato añadido',planetIds:[],taskIds:tasks.filter(task=>Object.hasOwn(taskNames,task)),sectorIds:[id],
+  limitations:[],pending:[],photo
+ };
+ if(publicUrl(record.source)) {
+  site.sourceId=id+'-source';
+  catalog.sources.push({id:site.sourceId,title:'Fuente del sitio',url:record.source});
+ }
+ catalog.sites.push(site);
+ if(Array.isArray(coords) && coords.length===2 && coords.every(Number.isFinite) && Math.abs(coords[0])<=90 && Math.abs(coords[1])<=180) {
+  catalog.geometries.push({sectorId:id,role:'Punto aportado',precision:'Ubicación por verificar',sourceId:site.sourceId,geometry:{type:'Point',coordinates:[coords[1],coords[0]]}});
+ }
+ values.forEach((entry,index)=>{
+  const property=properties.find(p=>p.id===entry.property);
+  if(!property) return;
+  const value=property.type==='number'?Number(entry.value):String(entry.value);
+  if(entry.value==='' || (property.type==='number' && !Number.isFinite(value))) return;
+  const idSource=id+'-parameter-'+index;
+  if(publicUrl(entry.source)) catalog.sources.push({id:idSource,title:'Fuente del parámetro',url:entry.source});
+  catalog.observations.push({
+   sectorId:id,propertyId:property.id,value,unit:property.unit,sourceId:publicUrl(entry.source)?idSource:site.sourceId,
+   evidence:entry.evidence || 'aportada',quality:'por verificar',method:entry.method || '',date:entry.date || '',locator:entry.locator || '',scale:'Sector indicado por quien añadió el sitio'
+  });
+ });
+}
+function pendingFor(site) {
+ const gaps = [...(inventoryGaps[site.id] || []), ...site.pending];
+ if(!geometries(site).length) gaps.push('Ubicar el sector o añadir una geometría.');
+ if(!observations(site).some(o=>o.propertyId!=='environment')) gaps.push('Incorporar parámetros pertinentes con fuentes por dato.');
+ if(!sitePhotographs[site.id] && !imageUrl(site.photo?.url)) gaps.push('Añadir una foto del sector con crédito.');
+ if(!site.taskIds.length) gaps.push('Vincular las tareas ensayadas a la campaña.');
+ return [...new Set(gaps)];
+}
+function siteSources(site) {
+ return [...new Set([
+  site.sourceId,
+  ...observations(site).map(o=>o.sourceId),
+  ...geometries(site).map(g=>g.sourceId),
+  ...catalog.accessConditions.filter(a=>a.siteId===site.id).map(a=>a.sourceId)
+ ].filter(id=>id && catalog.sources.some(item=>item.id===id)))];
+}
+function sourceList(site) {
+ const refs = siteSources(site);
+ return refs.length ? '<ul>'+refs.map(id=>'<li>'+source(id)+'</li>').join('')+'</ul>' : '<p>Fuente pendiente</p>';
+}
+function photoFor(site) {
+ const photo=site.photo || sitePhotographs[site.id];
+ if(photo && imageUrl(photo.url)) return {...photo,url:imageUrl(photo.url)};
+ const geo=geometries(site)[0];
+ if(!geo) return null;
+ const {lng,lat}=geometryAnchor(geo);
+ const bounds=[Math.max(-180,lng-.04),Math.max(-85,lat-.03),Math.min(180,lng+.04),Math.min(85,lat+.03)];
+ if(bounds[1]>=bounds[3]) return null;
+ const mapUrl='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer';
+ return {url:mapUrl+'/export?bbox='+bounds.map(v=>v.toFixed(5)).join(',')+'&bboxSR=4326&imageSR=4326&size=420,300&format=jpg&f=image',
+  credit:'Vista satelital del entorno · Esri y colaboradores',sourceUrl:mapUrl};
+}
+function figureFor(site) {
+ const photo=photoFor(site);
+ if(!photo) return '<div class="comparison-photo empty-photo">Imagen pendiente</div>';
+ return '<figure class="comparison-figure"><div class="comparison-photo"><img loading="lazy" referrerpolicy="no-referrer" src="'+escapeHTML(photo.url)+'" alt="'+escapeHTML(photo.credit || site.name)+'"><span class="image-fallback" hidden>Imagen no disponible</span></div><figcaption>'+
+  (photo.sourceUrl?externalLink(photo.sourceUrl,photo.credit):photo.sourceId?escapeHTML(photo.credit)+' · '+source(photo.sourceId):escapeHTML(photo.credit))+'</figcaption></figure>';
+}
+function monitorImages(container) {
+ container.querySelectorAll('.comparison-photo img').forEach(img=>{
+  const fallback=()=>{img.hidden=true;img.nextElementSibling.hidden=false;};
+  img.addEventListener('error',fallback,{once:true});
+  if(img.complete && !img.naturalWidth)fallback();
+ });
+}
+function evidenceFor(observation) {
+ const metadata=[observation.evidence,observation.method,observation.scale,observation.date,observation.locator,observation.uncertainty].filter(Boolean);
+ return '<div class="parameter-evidence"><strong>'+escapeHTML(format(observation.value))+(observation.unit?' '+escapeHTML(observation.unit):'')+'</strong>'+
+  (metadata.length?'<small>'+metadata.map(escapeHTML).join(' · ')+'</small>':'')+'<small>'+source(observation.sourceId)+'</small></div>';
+}
+function comparisonTable() {
+ const sites=compare.map(id=>catalog.sites.find(site=>site.id===id)).filter(Boolean);
+ const ids=[...new Set([...profile.criteria.map(c=>c.propertyId),...sites.flatMap(site=>observations(site).map(o=>o.propertyId))])];
+ const row=(label,body)=>'<tr><th scope="row">'+escapeHTML(label)+'</th>'+sites.map(site=>'<td>'+body(site)+'</td>').join('')+'</tr>';
+ return '<h2>Comparar sitios</h2><div class="table-scroll"><table class="comparison-table"><thead><tr><th scope="col">Parámetro</th>'+
+  sites.map(site=>'<th scope="col">'+figureFor(site)+escapeHTML(site.name)+'</th>').join('')+'</tr></thead><tbody>'+
+  row('Fuentes de la ficha',sourceList)+
+  ids.map(id=>row(properties.find(p=>p.id===id)?.label || (id==='craterDiameter'?'Diámetro del cráter':id),site=>
+   observations(site).filter(o=>o.propertyId===id).map(evidenceFor).join('') || 'Pendiente')).join('')+
+  Object.entries(climateVariables).map(([index,variable])=>row(variable.label+' regional',site=>{
+   const cell=siteClimateCell(site);
+   return cell?'<strong>'+formatClimate.format(cell[index])+' '+variable.unit+'</strong><small>Celda de 4° · Centro '+cell[1]+'°, '+cell[0]+'°</small><small>'+externalLink(climateSource,'CSV del equipo')+'</small>':'Pendiente';
+  })).join('')+
+  row('Datos pendientes',site=>'<ul>'+list(pendingFor(site))+'</ul>')+
+  '</tbody></table></div>';
+}
+function showComparison() {
+ if(compare.length<2){message('Selecciona al menos dos sitios.');return;}
+ q('dialog-content').innerHTML=comparisonTable();
+ monitorImages(q('dialog-content'));
+ if(!q('dialog').open)q('dialog').showModal();
+}
+
+function catalogDialog() {
+ const ordered=[...catalog.sites].sort((a,b)=>a.name.localeCompare(b.name,'es'));
+ q('dialog-content').innerHTML='<h2>Catálogo completo · '+ordered.length+' fichas</h2><div class="catalog-actions"><label>Buscar sitio<input id="catalog-search" type="search"></label><button type="button" id="catalog-compare">Comparar selección</button><button type="button" id="catalog-add-site">Añadir sitio</button></div><p>'+externalLink(catalogReport,'Inventario del equipo')+'</p><div id="catalog-entries">'+
+  ordered.map(site=>'<details class="catalog-entry" data-search="'+escapeHTML([site.name,site.country,site.environment,site.description].join(' ').toLocaleLowerCase('es'))+'"><summary>'+escapeHTML(site.name)+' <small>'+escapeHTML(site.status)+'</small></summary><p>'+escapeHTML(site.description)+'</p><h3>Datos pendientes</h3><ul>'+list(pendingFor(site))+'</ul><h3>Fuentes</h3>'+sourceList(site)+'<button type="button" data-compare="'+site.id+'">'+(compare.includes(site.id)?'✓ En comparación':'+ Comparar')+'</button></details>').join('')+'</div><p id="catalog-empty" hidden>Sin coincidencias.</p>';
+ q('catalog-search').oninput=()=>{
+  const needle=q('catalog-search').value.trim().toLocaleLowerCase('es');
+  let found=false;
+  q('catalog-entries').querySelectorAll('.catalog-entry').forEach(entry=>{entry.hidden=!entry.dataset.search.includes(needle);found ||= !entry.hidden;});
+  q('catalog-empty').hidden=found;
+ };
+ if(!q('dialog').open)q('dialog').showModal();
+}
+function taskCheckboxes(name) {
+ return Object.entries(taskNames).map(([id,label])=>'<label class="task-chip"><input type="checkbox" name="'+name+'" value="'+id+'"><span>'+escapeHTML(label)+'</span></label>').join('');
+}
+function parameterInput() {
+ const field=document.createElement('fieldset');
+ field.className='site-parameter';
+ field.innerHTML='<legend>Parámetro</legend><label>Tipo<select name="property" aria-label="Tipo de parámetro">'+properties.map(prop=>'<option value="'+prop.id+'">'+escapeHTML(prop.label+(prop.unit?' ('+prop.unit+')':''))+'</option>').join('')+'</select></label><label>Valor<input name="value" maxlength="120" required></label><label>Fuente del parámetro (puedes usar la del sitio)<input name="parameterSource" type="url"></label><div class="fields"><label>Método<input name="method" maxlength="180"></label><label>Fecha o periodo<input name="date" maxlength="80"></label></div><label>Página, figura o punto de muestreo<input name="locator" maxlength="180"></label><label>Evidencia<select name="evidence"><option value="aportada">Por verificar</option><option value="medida">Medida</option><option value="inferida">Inferida</option><option value="modelada">Modelada</option></select></label><button type="button" class="remove-parameter">Quitar parámetro</button>';
+ const type=field.querySelector('[name="property"]');
+ const value=field.querySelector('[name="value"]');
+ const syncType=()=>{
+  const property=properties.find(p=>p.id===type.value);
+  value.type=property.type==='number'?'number':'text';
+  value.step='any';
+  value.placeholder=property.unit || 'Ej. Estacional';
+ };
+ type.onchange=syncType;
+ syncType();
+ field.querySelector('button').onclick=()=>field.remove();
+ q('new-parameters').append(field);
+}
+function newSiteDialog() {
+ q('dialog-content').innerHTML='<h2>Añadir sitio</h2><form id="new-site-form" class="site-form"><div class="fields"><label>Nombre<input name="siteName" required maxlength="120"></label><label>País o región<input name="country" maxlength="90"></label></div><label>Entorno<input name="environment" maxlength="120" placeholder="Ej. Desierto volcánico"></label><label>Descripción<textarea name="description" rows="3" maxlength="1200"></textarea></label><div class="fields"><label>Latitud<input name="lat" type="number" step="any" min="-90" max="90"></label><label>Longitud<input name="lon" type="number" step="any" min="-180" max="180"></label></div><fieldset><legend>Tareas</legend><div class="task-picker">'+taskCheckboxes('newTask')+'</div></fieldset><label>Fuente general del sitio<input name="siteSource" type="url" placeholder="https://"></label><fieldset><legend>Imagen (opcional)</legend><label>Archivo JPG, PNG o WebP, hasta 500 KB<input name="photoFile" type="file" accept="image/jpeg,image/png,image/webp"></label><label>O enlace directo a la imagen<input name="photoUrl" type="url"></label><label>Crédito de la imagen<input name="credit" maxlength="160"></label></fieldset><div id="new-parameters"></div><button id="new-parameter" type="button">+ Añadir parámetro</button><div class="button-row"><button type="submit">Guardar y seleccionar para comparar</button><button id="site-cancel" type="button">Volver al catálogo</button></div><p class="small">El sitio se guarda en este navegador. Usa «Guardar copia HTML» para compartirlo.</p><p id="new-site-error" role="alert"></p></form>';
+ q('new-parameter').onclick=parameterInput;
+ q('site-cancel').onclick=catalogDialog;
+ q('new-site-form').onsubmit=saveSite;
+ if(!q('dialog').open)q('dialog').showModal();
+}
+async function saveSite(event) {
+ event.preventDefault();
+ const form=event.currentTarget;
+ const data=new FormData(form);
+ const read=(field)=>String(data.get(field) || '').trim();
+ const error=q('new-site-error');
+ const name=read('siteName');
+ const lat=read('lat'),lon=read('lon');
+ const sourceUrl=publicUrl(read('siteSource'));
+ const photoUrl=publicUrl(read('photoUrl'));
+ const file=data.get('photoFile');
+ if(!name){error.textContent='Escribe el nombre del sitio.';return;}
+ if(Boolean(lat)!==Boolean(lon)){error.textContent='Completa ambas coordenadas o déjalas en blanco.';return;}
+ if((read('siteSource') && !sourceUrl) || (read('photoUrl') && !photoUrl)){error.textContent='Usa enlaces HTTP o HTTPS.';return;}
+ if((photoUrl || file?.size) && !read('credit')){error.textContent='Añade el crédito de la imagen.';return;}
+ const values=[];
+ for(const field of form.querySelectorAll('.site-parameter')){
+  const fieldValue=(key)=>field.querySelector('[name="'+key+'"]').value.trim();
+  const reference=publicUrl(fieldValue('parameterSource'));
+  if((fieldValue('parameterSource') && !reference) || (!sourceUrl && !reference)){
+   error.textContent='Indica una fuente válida para cada parámetro o una fuente general para los datos del sitio.';return;
+  }
+  values.push({property:fieldValue('property'),value:fieldValue('value'),source:reference,method:fieldValue('method'),date:fieldValue('date'),evidence:fieldValue('evidence'),locator:fieldValue('locator')});
+ }
+ let photo;
+ if(photoUrl)photo={url:photoUrl,credit:read('credit'),sourceUrl:photoUrl};
+ if(file?.size){
+  if(photoUrl || !['image/jpeg','image/png','image/webp'].includes(file.type) || file.size>500000){
+   error.textContent='Elige un solo origen para la imagen. Los archivos pueden ser JPG, PNG o WebP de hasta 500 KB.';return;
+  }
+  const submit=form.querySelector('[type="submit"]');
+  submit.disabled=true;
+  try {
+   const url=await new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>resolve(reader.result);
+    reader.onerror=reject;
+    reader.readAsDataURL(file);
+   });
+   photo={url,credit:read('credit')};
+  } catch {
+   error.textContent='No se pudo leer la imagen.';
+   return;
+  } finally { submit.disabled=false; }
+ }
+ if(!form.isConnected)return;
+ const id='local-'+(globalThis.crypto?.randomUUID?.() || Date.now()+'-'+Math.random().toString(36).slice(2));
+ const record={id,name,country:read('country'),environment:read('environment'),description:read('description'),
+  tasks:data.getAll('newTask'),coords:lat?[Number(lat),Number(lon)]:null,source:sourceUrl,photo,values};
+ if(!writeStore(siteStorageKey,[...addedSites,record])){
+  error.textContent='El navegador no pudo guardar el sitio. Comprueba el espacio disponible o prueba sin adjuntar un archivo.';return;
+ }
+ addedSites.push(record);
+ registerSite(record);
+ if(compare.length<4)compare.push(id);
+ render();
+ catalogDialog();
+ message(compare.includes(id)?'Sitio guardado y seleccionado.':'Sitio guardado. Quita un sitio de la comparación para seleccionarlo.');
+}
+function portableAtlas() {
+ const records=JSON.stringify(addedSites).replace(/</g,'\\u003c');
+ return originalHTML.replace(/(<script[^>]+id="shared-sites"[^>]*>)[\s\S]*?(<\/script>)/,(_all,open,close)=>open+records+close);
+}
+
 sync();
 </script><!-- Leaflet license
 BSD 2-Clause License
