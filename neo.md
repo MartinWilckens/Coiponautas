@@ -185,3 +185,11 @@ Copia el bloque en un archivo Markdown para importarlo en XMind.
 - Pendiente → horizonte, detalle de obstáculos, contraste y acceso con CONAF. Historial de campañas de la tarea por verificar.
 - Valor de la web → explicar qué requisito cambia la recomendación e indicar la próxima medición. La misma ficha se puede aplicar a la verificación de hielo bajo cobertura en Arcadia–Amazonis.
 ```
+
+
+## Bitácora de la madrugada · 15 de noviembre de 2026
+
+- **Punto de partida (WhatsApp).** Buscar un sitio poco usado que permitiera repetir mejor una prueba real y ensayar algo pendiente. Empezamos por hielo bajo suelo y TRIDENT.
+- **TRIDENT.** En Haughton se hicieron ocho pozos. El vuelo fue a la Luna, donde Athena quedó de lado y el taladro se accionó sin perforar. Esa secuencia no da una razón para repetir el mismo ensayo en otro suelo.
+- **Pali-Aike.** Modelamos rutas de abastecimiento con Sol rasante. El oeste dio 30 min y el este 22 min en una fecha. Sirve para priorizar un tramo, pero queda por demostrar qué ventaja tendría frente a California. Pajonales quedó como candidato para extracción de agua de sulfatos.
+- **Qué cambió.** Partir por la decisión del ensayo y exigir evidencia para comprobarla. En el atlas, Saskylakh cumple por terreno poligonal y queda pendiente al exigir profundidad de hielo. NASA POWER ayuda a buscar regiones. El CSV de 2024 tiene latitud y longitud invertidas y presión en kPa rotulada como hPa.
