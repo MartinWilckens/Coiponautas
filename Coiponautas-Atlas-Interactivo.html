@@ -791,11 +791,63 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .mission-brief dd{margin:2px 0 0}
 .mission-brief small a{overflow-wrap:anywhere}
 .catalog-actions #catalog-location{min-width:10rem}
+.atlas-disclosure{border-top:1px solid var(--line);margin:10px 0}
+.atlas-disclosure>summary{cursor:pointer;font-weight:700;color:#233632;padding:2px 0}
+.atlas-disclosure>summary.criteria-heading{display:flex;justify-content:flex-start}
+.atlas-disclosure>summary.criteria-heading::-webkit-details-marker{display:none}
+.atlas-disclosure>summary.criteria-heading::after{content:none}
+.atlas-disclosure>summary.criteria-heading::before{content:'▸';color:var(--green);margin-right:3px}
+.atlas-disclosure[open]>summary.criteria-heading::before{content:'▾'}
+.atlas-disclosure>summary .criteria-count{margin-left:auto}
+.atlas-disclosure[open]>summary{margin-bottom:8px}
+.mission-presets{padding:9px 0 0}
+.mission-presets .small{margin:6px 0}
+.preset-controls{display:flex;align-items:center;gap:8px}
+.preset-controls select{min-width:0;flex:1}
+.preset-controls button{flex:none}
+.atlas-map-controls{position:absolute;z-index:502;top:16px;left:clamp(8px,2vw,24px);right:clamp(8px,2vw,24px);pointer-events:none}
+.atlas-map-head{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:8px}
+.atlas-map-head .map-title,.atlas-map-controls .map-tools{position:static}
+.atlas-map-head .map-title{margin:0;padding:8px 10px}
+.atlas-map-controls .map-tools{display:flex;flex-wrap:wrap;gap:6px}
+.atlas-map-controls button,.atlas-map-controls select,.atlas-map-controls input{pointer-events:auto}
+.map-world-picker{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:0 2px 14px #203d3112}
+.map-world-picker button{border:0;border-radius:5px;min-height:32px;padding:4px 10px;font-size:.76rem;white-space:nowrap}
+.map-world-picker button[aria-pressed=true]{background:var(--green);color:white}
+#planet-zone{min-height:34px;max-width:100%;width:auto;background:#fff}
+#map-panel:not([data-world=earth]) .map-title,#map-panel:not([data-world=earth]) .map-tools{display:none}
+#map-panel:not([data-world=earth]) #map,
+#map-panel:not([data-world=earth]) .legend,
+#map-panel:not([data-world=earth]) #map-status,#map-panel:not([data-world=earth]) #detail,
+#map-panel:not([data-world=earth]) #compare-tray{visibility:hidden;pointer-events:none}
+#map-panel [hidden]{display:none}
+#planet-map,#planet-map-canvas{position:absolute;inset:0}
+#planet-map{z-index:4}
+#planet-map,#planet-map .leaflet-container{background:#131917}
+#map-panel #detail{top:104px}
+#planet-map .planet-detail{top:62px;z-index:501}
+.planet-zone-pin{background:var(--green);border:2px solid #fff;border-radius:50%;box-shadow:0 1px 8px #102f26b0}
+.planet-zone-pin.active{outline:3px solid #ffca5c;outline-offset:2px}
+.planet-detail .comparison-figure{margin:9px 0}
+.planet-detail .zone-actions{margin:9px 0}
+.planet-detail .zone-actions button{background:var(--green);color:white}
+.planet-detail .zone-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.planet-detail .zone-links button{font-size:.75rem}
+.planet-detail details{margin:12px 0}
+.planet-map-status{position:absolute;bottom:45px;left:16px;right:16px;max-width:max-content;z-index:500;padding:8px 12px;border-radius:7px;background:#fff;color:#283930;font-size:.76rem;pointer-events:none}
+@media(max-width:1050px){#map-panel #detail{top:146px}}
+@media(max-width:760px){
+ .atlas-map-controls{top:10px}
+ #planet-map .planet-detail{top:96px;bottom:70px}
+ #map-panel #detail{top:132px}
+ .map-world-picker button{padding:4px 8px;min-height:30px}
+ #planet-zone{min-height:32px}
+}
 </style></head><body>
 <header><a class="brand" href="#"><span class="brandmark">C</span><span>coiponautas<small>ATLAS DE ANÁLOGOS</small></span></a><nav><button id="saved">★ Guardados <span id="saved-count">0</span></button></nav><select id="atlas-language" aria-label="Idioma" title="Idioma"><option value="es">Español</option><option value="en">English</option></select><button id="download-html">Guardar copia HTML ↓</button></header>
 <main><aside id="sidebar"><div class="intro"><h1>Atlas de sitios análogos</h1>
 <section class="mission-recommendation" aria-labelledby="recommendation-title">
- <h2 id="recommendation-title">Candidato destacado</h2>
+ <h2 id="recommendation-title" tabindex="-1">Candidato destacado</h2>
  <div id="recommendation-content" aria-live="polite" aria-atomic="true"></div>
 </section>
 <div class="button-row catalog-entries-actions"><button id="open-catalog" type="button">Ver catálogo completo</button><button id="add-site" type="button">+ Añadir sitio</button></div></div>
@@ -805,9 +857,17 @@ svg.leaflet-image-layer.leaflet-interactive path {
  <button type="button" data-destination="moon" aria-pressed="false">Luna <small data-destination-count="moon"></small></button>
  <button type="button" data-destination="mars" aria-pressed="false">Marte <small data-destination-count="mars"></small></button>
 </div><small>Destino orientativo. Las tareas y los datos afinan la búsqueda.</small></fieldset>
+<details id="mission-presets" class="atlas-disclosure mission-presets">
+ <summary>Presets de misión</summary>
+ <div class="preset-controls">
+  <select id="mission-preset" aria-label="Preset de misión"><option value="">Elige una zona de misión</option></select>
+  <button id="apply-mission-preset" type="button" disabled>Aplicar</button>
+ </div>
+ <p class="small">Elige destino y tareas, y añade preferencias editables.</p>
+</details>
 <fieldset class="mission-tasks"><legend>Qué quieres probar</legend><div id="task-picker" class="task-picker"></div><small>Puedes elegir varias tareas.</small></fieldset>
-<section class="panel mission-panel" aria-labelledby="mission-title">
- <div class="criteria-heading"><h2 id="mission-title">Qué debe tener el sitio</h2><span id="filter-count" class="criteria-count"></span></div>
+<details class="panel mission-panel atlas-disclosure" id="site-criteria-panel" open>
+ <summary class="criteria-heading"><span id="mission-title">Qué debe tener el sitio</span><span id="filter-count" class="criteria-count"></span></summary>
  <div id="quick-criteria" class="quick-criteria"></div>
  <div id="criteria"></div>
  <details class="parameter-browser">
@@ -823,9 +883,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
    <label>Recuperar búsqueda<select id="profiles"></select></label><button id="restore">Restaurar</button>
   </details>
  </details>
-</section>
-<section class="panel climate-panel" aria-labelledby="climate-title">
- <h2 id="climate-title">Capas ambientales</h2>
+</details>
+<details class="panel climate-panel atlas-disclosure" id="climate-panel">
+ <summary class="criteria-heading"><span id="climate-title">Capas ambientales</span><span id="climate-summary" class="criteria-count"></span></summary>
  <div class="environment-picker" role="group" aria-label="Variable del mapa">
   <button type="button" data-environment="2" aria-pressed="true">Temperatura</button>
   <button type="button" data-environment="3" aria-pressed="false">Humedad</button>
@@ -846,9 +906,28 @@ svg.leaflet-image-layer.leaflet-interactive path {
  <p class="small" id="climate-scale"></p>
  </div>
  <div id="geography-details" class="small" hidden></div>
-</section>
+</details>
 <div class="results-head" id="candidate-results"><h2><span id="count"></span> resultados</h2><select id="sort" aria-label="Ordenar"><option value="fit">Prioridad de misión</option><option value="evidence">Evidencia disponible</option><option value="name">Nombre</option><option value="country">País</option></select></div><p id="result-note" class="small"></p><div id="results"></div><footer class="sidebar-footer"><button id="reset">Restablecer</button><button id="export">Exportar JSON ↗</button></footer></aside>
-<section id="map-panel" aria-label="Mapa interactivo mundial"><div id="map"></div><div class="map-title"><span class="live-dot"></span><span id="map-count" aria-live="polite"></span></div><div class="map-tools"><select id="base" aria-label="Mapa base"><option value="satellite">Satélite · Esri</option><option value="cartography">Cartografía · Natural Earth</option><option value="relief">Relieve · Esri</option></select><div class="map-scope" role="group" aria-label="Sitios en el mapa"><button type="button" data-map-scope="results" aria-pressed="true">Resultados</button><button type="button" data-map-scope="catalog" aria-pressed="false">Todo el catálogo</button></div><button id="area">Buscar en esta zona</button><button id="clear-area">Quitar zona</button><input id="coordinates" aria-label="Latitud, longitud" placeholder="Latitud, longitud"><button id="locate">Ir</button></div><div class="map-message" id="map-status" role="status"></div>
+<section id="map-panel" aria-label="Mapa interactivo mundial" data-world="earth">
+<div id="map"></div>
+<div id="planet-map" hidden>
+ <div id="planet-map-canvas" aria-label="Mapa planetario"></div>
+ <p class="planet-map-status" id="planet-map-status" role="status" hidden>El mosaico no está disponible. Puedes abrir las zonas de misión.</p>
+ <aside class="detail planet-detail" id="planet-detail" hidden></aside>
+</div>
+<div class="atlas-map-controls">
+ <div class="atlas-map-head">
+  <div class="map-world-picker" role="group" aria-label="Cuerpo del mapa">
+   <button type="button" data-world="earth" aria-pressed="true">Tierra</button>
+   <button type="button" data-world="moon" aria-pressed="false">Luna</button>
+   <button type="button" data-world="mars" aria-pressed="false">Marte</button>
+  </div>
+  <select id="planet-zone" aria-label="Zona de misión" hidden></select>
+  <div class="map-title"><span class="live-dot"></span><span id="map-count" aria-live="polite"></span></div>
+ </div>
+ <div class="map-tools"><select id="base" aria-label="Mapa base"><option value="satellite">Satélite · Esri</option><option value="cartography">Cartografía · Natural Earth</option><option value="relief">Relieve · Esri</option></select><div class="map-scope" role="group" aria-label="Sitios en el mapa"><button type="button" data-map-scope="results" aria-pressed="true">Resultados</button><button type="button" data-map-scope="catalog" aria-pressed="false">Todo el catálogo</button></div><button id="area">Buscar en esta zona</button><button id="clear-area">Quitar zona</button><input id="coordinates" aria-label="Latitud, longitud" placeholder="Latitud, longitud"><button id="locate">Ir</button></div>
+</div>
+<div class="map-message" id="map-status" role="status"></div>
 <div class="legend"><strong>Sitios</strong><span>★ Coincide · ● En catálogo · ◇ Pendiente</span><span id="environment-map-key"></span></div><div id="detail" class="detail" hidden></div><div id="compare-tray" hidden></div></section></main>
 <div class="mobile-switch"><button id="show-list">Lista</button><button id="show-map">Mapa</button></div><div id="toast" role="status" hidden></div><dialog id="dialog"><button id="close-dialog" aria-label="Cerrar">×</button><div id="dialog-content"></div></dialog>
 <script type="application/json" id="shared-sites">[]</script>
@@ -5961,6 +6040,7 @@ function locationEvidence(site){
 
 function openSite(id,fromCatalog=false){
  const site=catalog.sites.find(s=>s.id===id);if(!site)return;
+ planetaryAtlas.showWorld('earth');
  catalogPreview=fromCatalog;
  selected=id;render();const rows=observations(site),geo=geometries(site),evaluation=evaluate(site);
  highlight.clearLayers();geo.forEach(g=>geometryLayer(g,true).addTo(highlight));
@@ -5982,11 +6062,13 @@ function criteriaUI(){
   const property=properties.find(p=>p.id===criterion.propertyId);
   const binding=' data-index="'+index+'" data-field="';
   const range='<div class="fields"><label>Mínimo ('+property.unit+')<input type="number" step="any"'+binding+'min" value="'+escapeHTML(criterion.min)+'"></label><label>Máximo ('+property.unit+')<input type="number" step="any"'+binding+'max" value="'+escapeHTML(criterion.max)+'"></label></div>';
+  const idealRange=property.type==='number'&&!criterion.required?
+   '<div class="fields"><label>Mínimo ideal ('+property.unit+')<input type="number" step="any"'+binding+'idealMin" value="'+escapeHTML(criterion.idealMin)+'"></label><label>Máximo ideal ('+property.unit+')<input type="number" step="any"'+binding+'idealMax" value="'+escapeHTML(criterion.idealMax)+'"></label></div>':'';
   const accepted='<label>Valores aceptados (opcional)<input'+binding+'values" value="'+escapeHTML(criterion.values)+'" placeholder="Ej. Presente, estacional"></label><small>Escribe valores como aparecen en la ficha. Si lo dejas vacío basta con que haya evidencia.</small>';
   return '<section class="criterion"><div class="criterion-head"><strong>'+escapeHTML(property.label)+'</strong><button data-remove="'+index+'" aria-label="Quitar '+escapeHTML(property.label)+'">Quitar</button></div>'+
    '<label>Aplicar para<select'+binding+'required"><option value="no">Priorizar</option><option value="yes" '+(criterion.required?'selected':'')+' >Filtrar</option></select></label>'+(property.type==='number'?range:accepted)+
    (criterion.required?'<small>Excluye incumplimientos documentados.</small>':'<small>Sube los sitios que cumplen en el orden de resultados.</small>')+
-   '<details class="advanced"><summary>Opciones del criterio</summary><label>Importancia de la preferencia <output>'+escapeHTML(criterion.weight)+'</output><input'+binding+'weight" type="range" min="0" max="10" value="'+escapeHTML(criterion.weight)+'"></label><label>Tipo de evidencia<select'+binding+'evidence">'+['','medida','inferida','modelada'].map(v=>'<option value="'+v+'" '+(criterion.evidence===v?'selected':'')+'>'+(v||'Cualquiera documentada')+'</option>').join('')+'</select></label></details></section>';
+   '<details class="advanced"><summary>Opciones del criterio</summary><label>Importancia de la preferencia <output>'+escapeHTML(criterion.weight)+'</output><input'+binding+'weight" type="range" min="0" max="10" value="'+escapeHTML(criterion.weight)+'"></label><label>Tipo de evidencia<select'+binding+'evidence">'+['','medida','inferida','modelada'].map(v=>'<option value="'+v+'" '+(criterion.evidence===v?'selected':'')+'>'+(v||'Cualquiera documentada')+'</option>').join('')+'</select></label>'+idealRange+'</details></section>';
  }).join('') || '<p class="criteria-hint">Toca un criterio para añadir un filtro. El número indica cuántos sitios tienen ese dato.</p>';
 }
 function updateDestinationCounts(){
@@ -6008,6 +6090,7 @@ function syncDestination(){
 }
 function sync(){
  syncDestination();
+ planetaryAtlas.syncPreset();
  profile.criteria=profile.criteria.filter(c=>properties.some(p=>p.id===c.propertyId));
  q('profile-name').value=profile.name;
  q('group-mode').value=profile.groups[0].mode;
@@ -6026,6 +6109,7 @@ function goHome(){
 }
 function reset(){
  profile=defaultProfile();
+ planetaryAtlas.showWorld('earth');
  zone=null;
  onlySaved=false;
  q('search').value='';
@@ -6036,7 +6120,13 @@ function reset(){
  goHome();
  sync();
 }
-function showMap(){document.body.classList.add('map-mode');setTimeout(()=>map.invalidateSize(),50)}
+function showMap(){
+ document.body.classList.add('map-mode');
+ requestAnimationFrame(()=>{
+  map.invalidateSize();
+  planetaryAtlas.invalidateSize();
+ });
+}
 function profileOptions(){q('profiles').innerHTML='<option value="">Perfiles guardados…</option>'+profiles.map((p,i)=>'<option value="'+i+'">'+escapeHTML(p.name)+'</option>').join('')}
 function parameterCoverage(){
  const sitesBySector=new Map(catalog.sites.flatMap(site=>site.sectorIds.map(sector=>[sector,site.id])));
@@ -6076,7 +6166,7 @@ q('task-picker').onchange=()=>{
  profile.tasks=Array.from(q('task-picker').querySelectorAll('input:checked'),input=>input.value);
  render();
 };
-q('criteria').oninput=e=>{const i=e.target.dataset.index,field=e.target.dataset.field;if(i==null)return;profile.criteria[i][field]=field==='required'?e.target.value==='yes':e.target.value;if(field==='required'){criteriaUI();q('criteria').querySelector('[data-index="'+i+'"][data-field="required"]')?.focus()}if(field==='weight')e.target.previousElementSibling.textContent=e.target.value;render()};
+q('criteria').oninput=e=>{const i=e.target.dataset.index,field=e.target.dataset.field;if(i==null)return;delete profile.criteria[i].missionPresetId;profile.criteria[i][field]=field==='required'?e.target.value==='yes':e.target.value;if(field==='required'){criteriaUI();q('criteria').querySelector('[data-index="'+i+'"][data-field="required"]')?.focus()}if(field==='weight')e.target.previousElementSibling.textContent=e.target.value;render()};
 q('search').oninput=render;q('sort').onchange=render;
 q('group-mode').onchange=()=>{profile.groups[0].mode=q('group-mode').value;render()};
 q('base').onchange=()=>switchBase(q('base').value);
@@ -6090,6 +6180,8 @@ document.addEventListener('click',e=>{
  }
  if('destination' in b.dataset){
   profile.planets=b.dataset.destination?[b.dataset.destination]:[];
+  delete profile.missionPresetId;
+  planetaryAtlas.syncPreset();
   syncDestination();
   render();
  }
@@ -6282,6 +6374,7 @@ function syncClimateView(){
 
 function showActiveClimateRanges(){
  const terms = activeClimateRanges();
+ q('climate-summary').textContent=terms.length===1?'1 filtro activo':terms.length?terms.length+' filtros activos':'';
  const holder = q('active-climate-filters');
  holder.hidden=!terms.length;
  holder.innerHTML=terms.map(([index,[min,max]])=>{
@@ -7217,7 +7310,7 @@ Object.assign(english,Object.fromEntries(inventoryProperties.map(([,label,,,tran
 let locale = 'es';
 const rememberedText = new WeakMap();
 const rememberedAttrs = new WeakMap();
-const localeAttributes = ['title','aria-label','placeholder','alt'];
+const localeAttributes = ['title','aria-label','placeholder','alt','label'];
 const dynamicLabels = [
  [/^([+✓]) (.+)$/,(_s,sign,label)=>sign+' '+translateLabel(label)],
  [/^(.+) \(([A-Za-z0-9µ°%/²³]+)\)$/,(_s,label,unit)=>translateLabel(label)+' ('+unit+')'],
@@ -7230,6 +7323,7 @@ const dynamicLabels = [
  [/^(\d+) fichas$/,'$1 records'],
  [/^(\d+) sitios cercanos$/,'$1 nearby sites'],
  [/^(\d+) activos$/,'$1 active'],
+ [/^(\d+) filtros activos$/,'$1 active filters'],
  [/^(\d+) de (\d+) criterios cumplidos$/,'$1 of $2 criteria met'],
  [/^(\d+) criterios? con datos publicados$/,'$1 with published data'],
  [/^(\d+) criterios? por aclarar$/,'$1 to clarify'],
@@ -7366,6 +7460,339 @@ function switchBase(next){
  }
 }
 const cartographyCredit='<a href="'+cartographySource+'" target="_blank" rel="noopener">Natural Earth</a>';
+
+
+function initializePlanetaryAtlas(){
+ const translate=(es,en)=>{
+  english[es]??=en;
+  return es;
+ };
+ const T=translate;
+ const GH='https://github.com/MartinWilckens/Coiponautas/blob/main/';
+ const TREK='https://trek.nasa.gov/tiles/';
+ const C=(label,labelEn,text,textEn)=>[T(label,labelEn),T(text,textEn)];
+ const commons=file=>'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(file)+'?width=800';
+ const ZONES=[
+  {id:'moon-gerlache',planet:'moon',code:'L1',name:'de Gerlache Rim 2',lat:-88.45,lng:-67.859,
+   region:T('Polo sur lunar · región candidata de Artemis','Lunar south pole · Artemis candidate region'),
+   task:T('Movilidad de rover o EVA con Sol rasante','Rover or EVA mobility under grazing sunlight'),
+   conditions:[
+    C('Iluminación','Illumination','Sol cerca del horizonte; sombras largas que cambian con el azimut solar','Sun near the horizon; long shadows that shift with solar azimuth'),
+    C('Ventana Sol y Tierra','Sun and Earth window','8 días (2026) y 20 días (2027) seguidos en el punto dGR2_K2023, según modelo','8 days (2026) and 20 days (2027) in a row at point dGR2_K2023, modelled'),
+    C('Temperatura','Temperature','≈200 K (−73 °C) en partes del verano en Connecting Ridge, punto C2','≈200 K (−73 °C) during parts of summer on Connecting Ridge, point C2'),
+    C('Ambiente','Environment','Vacío; gravedad ≈ 1/6 de la terrestre','Vacuum; gravity ≈ 1/6 of Earth’s')],
+   why:T('Permite medir cuántos obstáculos pierde un rover al pasar de luz a sombra antes de conducir junto a cráteres en sombra permanente.','It lets us measure how many obstacles a rover misses when moving from light to shadow before driving next to permanently shadowed craters.'),
+   related:['pali-aike','joaco-27','luna'],
+   sources:[['Wueller et al. 2026','https://doi.org/10.1029/2025JE009434'],['Williams et al. 2019','https://doi.org/10.1029/2019JE006028'],['neo.md',GH+'neo.md']],
+   preset:{label:T('Movilidad con Sol rasante','Grazing-sun mobility'),tasks:['mobility','geology'],criteria:[
+    {propertyId:'craterWallSlope',min:20,max:50,idealMin:35,idealMax:45},
+    {propertyId:'slope',min:5,max:25,idealMin:10,idealMax:22},
+    {propertyId:'craterDiameter',min:100,max:30000,idealMin:150,idealMax:1000}]}},
+  {id:'moon-haworth',planet:'moon',code:'L2',name:'Haworth',lat:-86.9,lng:-4.0,
+   region:T('Polo sur lunar · cráter en sombra permanente','Lunar south pole · permanently shadowed crater'),
+   task:T('Prospección de hielo y muestreo en sombra','Ice prospecting and sampling in shadow'),
+   conditions:[
+    C('Temperatura','Temperature','20–30 K en invierno y 30–45 K en verano en el fondo frío (Diviner)','20–30 K in winter and 30–45 K in summer on the cold floor (Diviner)'),
+    C('Acceso','Access','Desde HW10, acceso modelado a sombra permanente con máximas bajo 110 K','From HW10, modelled access to permanent shadow with maxima below 110 K'),
+    C('Hielo','Ice','Firmas de M³ compatibles con hielo expuesto (píxeles de ~280 m); cantidad y profundidad sin resolver','M³ signatures consistent with exposed ice (~280 m pixels); amount and depth unresolved'),
+    C('Referencia independiente','Independent reference','En Cabeus, no en Haworth, LCROSS estimó 5,6 ± 2,9 % de hielo en masa','At Cabeus, not Haworth, LCROSS estimated 5.6 ± 2.9 % ice by mass')],
+   why:T('Antes de contar con agua local hay que saber dónde perforar. Un detector que confunde una capa seca con hielo gasta energía y broca.','Before relying on local water we need to know where to drill. A detector that mistakes a dry layer for ice wastes energy and drill bits.'),
+   related:['chajnantor-b3','aucanquilcha','luna'],
+   sources:[['Williams et al. 2019','https://doi.org/10.1029/2019JE006028'],['Li et al. 2018','https://doi.org/10.1073/pnas.1802345115'],['Colaprete et al. 2010','https://doi.org/10.1126/science.1186986'],['neo.md',GH+'neo.md']],
+   preset:{label:T('Prospección de hielo','Ice prospecting'),tasks:['ice','drilling'],criteria:[
+    {propertyId:'iceFraction',min:5,max:80,idealMin:30,idealMax:70},
+    {propertyId:'soilTemp',min:-60,max:5,idealMin:-20,idealMax:0},
+    {propertyId:'ice',values:''}]}},
+  {id:'moon-malapert',planet:'moon',code:'L3',name:'Macizo Malapert',lat:-85.964,lng:-2.319,
+   region:T('Polo sur lunar · macizo elevado','Lunar south pole · elevated massif'),
+   task:T('Repetidor de comunicaciones y energía desde terreno elevado','Communications relay and power from high ground'),
+   conditions:[
+    C('Punto de referencia','Reference point','Aterrizaje hipotético cerca de la cumbre (85,964° S, 357,681° E) en un estudio de rutas geológicas','Hypothetical landing near the summit (85.964° S, 357.681° E) in a geological traverse study'),
+    C('Enlace','Link','La visibilidad a la Tierra depende de la posición, la altura de la antena y el horizonte','Visibility to Earth depends on position, antenna height and horizon'),
+    C('Relieve','Relief','Laderas y cráteres cercanos pueden ocultar un rover al repetidor','Nearby slopes and craters can hide a rover from the relay'),
+    C('Datos','Data','NASA publica topografía y pendientes para Site 23','NASA publishes topography and slopes for Site 23')],
+   why:T('Un nodo elevado puede mantener el enlace y la energía de un equipo que trabaja en depresiones oscuras.','A high node can keep the link and power for a team working in dark depressions.'),
+   related:['pali-aike','joaco-27','luna'],
+   sources:[['Estudio de rutas en Malapert, 2024','https://doi.org/10.1029/2024JE008905'],['NASA PGDA','https://pgda.gsfc.nasa.gov/products/78'],['neo.md',GH+'neo.md']],
+   preset:{label:T('Enlace desde relieve elevado','Link from high ground'),tasks:['mobility','human'],criteria:[
+    {propertyId:'slope',min:5,max:25,idealMin:8,idealMax:20}]}},
+  {id:'moon-tranquillitatis',planet:'moon',code:'L4',name:'Pozo de Mare Tranquillitatis',lat:8.3355,lng:33.222,
+   region:T('Cara visible · lavas basálticas','Near side · basaltic lavas'),
+   task:T('Cartografía de cavidades y enlace desde el exterior','Cave mapping and link from the surface'),
+   conditions:[
+    C('Geometría','Geometry','≈100 m de profundidad estimada por sombras; paredes abruptas y bloques en el fondo','≈100 m depth estimated from shadows; steep walls and blocks on the floor'),
+    C('Conducto','Conduit','El radar Mini-RF sugiere un conducto bajo el borde occidental','Mini-RF radar suggests a conduit under the western rim'),
+    C('Temperatura','Temperature','≈290 K (17 °C) en el interior sombreado de una cavidad modelada','≈290 K (17 °C) inside the shaded interior of a modelled cavity'),
+    C('Límite','Limit','Extensión, estabilidad y acceso del conducto por comprobar','Conduit extent, stability and access still to be confirmed')],
+   why:T('Una cavidad estable podría servir de refugio térmico y contra la radiación; primero hay que saber si el conducto existe y es estable.','A stable cavity could shelter against heat swings and radiation; first we need to know whether the conduit exists and is stable.'),
+   related:['joaco-26','joaco-35','joaco-43','joaco-44'],
+   sources:[['NASA, pozos lunares','https://science.nasa.gov/photojournal/new-views-of-lunar-pits/'],['Carrer et al. 2024','https://doi.org/10.1038/s41550-024-02302-y'],['Horvath et al. 2022','https://doi.org/10.1029/2022GL099710'],['neo.md',GH+'neo.md']],
+   preset:{label:T('Cuevas y tubos de lava','Caves and lava tubes'),tasks:['caves','mobility'],criteria:[
+    {propertyId:'surveyLength',min:0.1,max:'',idealMin:1,idealMax:10},
+    {propertyId:'caves',values:''}]}},
+  {id:'mars-arcadia',planet:'mars',code:'M1',name:'Arcadia–Amazonis (AP-1)',lat:39.8,lng:-157.9,
+   region:T('Llanuras del norte · candidato de aterrizaje AP-1','Northern plains · landing candidate AP-1'),
+   task:T('Detección y perforación de hielo bajo suelo','Detecting and drilling buried ice'),
+   conditions:[
+    C('Elevación','Elevation','≈ −3,9 km respecto al geoide MOLA','≈ −3.9 km relative to the MOLA geoid'),
+    C('Relieve','Relief','Polígonos con diámetro modal de 11,7 m; desnivel máximo de 31 m en la huella HiRISE','Polygons with a modal diameter of 11.7 m; maximum relief of 31 m in the HiRISE footprint'),
+    C('Hielo','Ice','~8–12 cm de profundidad inferida por polígonos; hielo expuesto a 50–60 cm en un cráter a ~23 km','~8–12 cm depth inferred from polygons; ice exposed at 50–60 cm in a crater ~23 km away'),
+    C('Índice SWIM','SWIM index','Combinado 0–1 m: 0,20; geomorfología: 0,63','Combined 0–1 m: 0.20; geomorphology: 0.63')],
+   why:T('Una llanura poco accidentada con indicios de hielo somero es donde un ensayo de detección y perforación tiene más sentido.','A smooth plain with signs of shallow ice is where a detection and drilling test makes most sense.'),
+   related:['saskylakh','chajnantor-b3','aucanquilcha','joaco-14'],
+   sources:[['Luzzi et al. 2025','https://doi.org/10.1029/2024JE008724'],['matydrox.md',GH+'matydrox.md']],
+   preset:{label:T('Hielo somero y polígonos','Shallow ice and polygons'),tasks:['ice','drilling','mobility'],criteria:[
+    {propertyId:'polygons',values:''},
+    {propertyId:'thawDepth',min:0.2,max:1.5,idealMin:0.5,idealMax:0.8},
+    {propertyId:'iceFraction',min:20,max:80,idealMin:40,idealMax:70},
+    {propertyId:'soilTemp',min:-25,max:3,idealMin:-5,idealMax:2}]}},
+  {id:'mars-jezero',planet:'mars',code:'M2',name:'Jezero',lat:18.38,lng:77.58,
+   region:T('Borde de Isidis · Mars 2020 Perseverance','Isidis rim · Mars 2020 Perseverance'),
+   task:T('Muestreo sedimentario en un delta y búsqueda de biofirmas','Sediment sampling in a delta and biosignature search'),
+   conditions:[
+    C('Cuenca','Basin','Cráter de ~45 km con delta occidental; Perseverance trabaja allí desde febrero de 2021','~45 km crater with a western delta; Perseverance has worked there since February 2021'),
+    C('Rocas','Rocks','Piso con rocas ígneas ricas en olivino; alteración por fluidos variable','Floor with olivine-rich igneous rocks; variable fluid alteration'),
+    C('Sales','Salts','Carbonatos, sulfatos y posibles percloratos o fosfatos en objetivos del abanico (SHERLOC)','Carbonates, sulfates and possible perchlorates or phosphates in fan targets (SHERLOC)'),
+    C('Clima','Climate','MEDA mide temperatura y polvo en el recorrido; no hay un máximo o mínimo único para todo Jezero','MEDA measures temperature and dust along the traverse; there is no single maximum or minimum for all of Jezero')],
+   why:T('Un delta con sedimentos finos permite ensayar dónde se preservan mejor posibles señales antiguas y cómo elegir muestras.','A delta with fine sediments lets us test where possible ancient signals are best preserved and how to choose samples.'),
+   related:['yamma','miscanti','joaco-18','joaco-63'],
+   sources:[['NASA Mars 2020','https://science.nasa.gov/mission/mars-2020-perseverance/'],['matydrox.md',GH+'matydrox.md']],
+   preset:{label:T('Deltas y lagos','Deltas and lakes'),tasks:['geology','drilling','astrobiology'],criteria:[
+    {propertyId:'water',values:'Presente, Permanente, Estacional'},
+    {propertyId:'waterDepth',min:1,max:30,idealMin:5,idealMax:15},
+    {propertyId:'pH',min:6.5,max:9.5,idealMin:7.5,idealMax:9},
+    {propertyId:'area',min:5,max:1200,idealMin:10,idealMax:900}]}},
+  {id:'mars-gale',planet:'mars',code:'M3',name:'Gale',lat:-5.4,lng:137.8,
+   region:T('Dicotomía ecuatorial · MSL Curiosity','Equatorial dichotomy · MSL Curiosity'),
+   task:T('Lectura estratigráfica, sales y elección del punto de perforación','Stratigraphic reading, salts and choosing where to drill'),
+   conditions:[
+    C('Cuenca','Basin','Cráter de ~154 km con Aeolis Mons (~5 km); Curiosity trabaja allí desde agosto de 2012','~154 km crater with Aeolis Mons (~5 km); Curiosity has worked there since August 2012'),
+    C('Secuencia','Sequence','Lutitas lacustres, transición arcillas–sulfatos e intervalos eólicos con humedecimiento','Lacustrine mudstones, clay–sulfate transition and aeolian intervals with wetting'),
+    C('Fluidos','Fluids','Señales de fluidos salinos posteriores al depósito en la transición arcillas–sulfatos','Signs of post-depositional saline fluids in the clay–sulfate transition'),
+    C('Clima','Climate','REMS mide el clima actual; hay que separarlo del clima antiguo inferido de las rocas','REMS measures present climate; it must be kept apart from the ancient climate inferred from rocks')],
+   why:T('Una sucesión de ambientes en un mismo lugar permite ensayar lectura de estratos y decidir dónde perforar.','A succession of environments in one place lets us test reading strata and deciding where to drill.'),
+   related:['williams','chiprana','joaco-16','joaco-18'],
+   sources:[['NASA MSL Curiosity','https://science.nasa.gov/mission/msl-curiosity/'],['matydrox.md',GH+'matydrox.md']],
+   preset:{label:T('Secuencias salinas y lacustres','Saline and lacustrine sequences'),tasks:['geology','astrobiology','drilling'],criteria:[
+    {propertyId:'salts',values:'Salmuera hipersalina'},
+    {propertyId:'water',values:'Permanente, Estacional'}]}},
+  {id:'mars-oxia',planet:'mars',code:'M4',name:'Oxia Planum',lat:18.275,lng:-24.632,
+   region:T('Borde oriental de Chryse · ExoMars Rosalind Franklin','Eastern Chryse rim · ExoMars Rosalind Franklin'),
+   task:T('Perforación en arcillas y distinción mineralógica','Drilling in clays and mineral discrimination'),
+   conditions:[
+    C('Estado','Status','Sin rover en superficie a noviembre de 2026; Rosalind Franklin tiene lanzamiento previsto en 2028','No rover on the surface as of November 2026; Rosalind Franklin launch planned for 2028'),
+    C('Arcillas','Clays','Filosilicatos extensos ligados a agua antigua; mineral y abundancia según afloramiento','Extensive phyllosilicates linked to ancient water; mineral and abundance vary by outcrop'),
+    C('Cartografía','Mapping','Mapa 1:30.000 con 15 unidades de roca en seis grupos (Fawdon et al. 2024)','1:30,000 map with 15 rock units in six groups (Fawdon et al. 2024)'),
+    C('Taladro','Drill','Hasta 2 m de profundidad: capacidad prevista, no una detección','Down to 2 m depth: planned capability, not a detection')],
+   why:T('Permite ensayar perforación en perfiles arcillosos y la distinción entre minerales antes de que llegue el rover.','It lets us test drilling in clay profiles and telling minerals apart before the rover arrives.'),
+   related:['bhallil','quinamavida','joaco-19'],
+   sources:[['ESA ExoMars','https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars'],['matydrox.md',GH+'matydrox.md']],
+   preset:{label:T('Arcillas y perfiles de alteración','Clays and weathering profiles'),tasks:['geology','drilling'],criteria:[
+    {propertyId:'minerals',values:'smectita, esmectita, clorita-smectita, saponita, montmorillonita-beidellita, zeolitas, Mordenita, Clinoptilolita'},
+    {propertyId:'profileDepth',min:2,max:25,idealMin:5,idealMax:15}]}}
+ ];
+ const PHOTOS={"moon-gerlache": {"file": "DeGerlacheCrater.jpg", "credit": "NASA", "license": "Dominio público", "page": "https://commons.wikimedia.org/wiki/File:DeGerlacheCrater.jpg"}, "moon-haworth": {"file": "Lunar south pole summer annotated.jpg", "credit": "NASA · contexto del polo sur", "license": "Dominio público", "page": "https://commons.wikimedia.org/wiki/File:Lunar_south_pole_summer_annotated.jpg"}, "moon-malapert": {"file": "463785main malapertregion 500.jpg", "credit": "NASA", "license": "Dominio público", "page": "https://commons.wikimedia.org/wiki/File:463785main_malapertregion_500.jpg"}, "moon-tranquillitatis": {"file": "Mare Tranquillitatis pit crater.jpg", "credit": "NASA/GSFC/Arizona State University", "license": "Dominio público", "page": "https://commons.wikimedia.org/wiki/File:Mare_Tranquillitatis_pit_crater.jpg"}, "mars-arcadia": {"file": "Arcadia Planitia.jpg", "credit": "NASA/JPL/Arizona State University · contexto regional", "license": "Dominio público", "page": "https://commons.wikimedia.org/wiki/File:Arcadia_Planitia.jpg"}, "mars-jezero": {"file": "Spanning the Delta of Jezero Crater on Mars (PIA25022).jpg", "credit": "NASA/JPL-Caltech/ASU/MSSS", "license": "Dominio público", "page": "https://commons.wikimedia.org/wiki/File:Spanning_the_Delta_of_Jezero_Crater_on_Mars_(PIA25022).jpg"}, "mars-gale": {"file": "MarsCuriosityRover-MountSharp-Sol 1100.jpg", "credit": "NASA/JPL-Caltech/MSSS", "license": "Dominio público", "page": "https://commons.wikimedia.org/wiki/File:MarsCuriosityRover-MountSharp-Sol_1100.jpg"}, "mars-oxia": {"file": "Oxia Planum near Coogoon Vallis by HiRise.jpg", "credit": "NASA", "license": "Dominio público", "page": "https://commons.wikimedia.org/wiki/File:Oxia_Planum_near_Coogoon_Vallis_by_HiRise.jpg"}};
+ const BASEMAPS={
+  moon:{url:TREK+'Moon/EQ/LRO_WAC_Mosaic_Global_303ppd_v02/1.0.0/default/default028mm/{z}/{y}/{x}.jpg',maxNativeZoom:8,attribution:'NASA/GSFC/Arizona State University · LRO WAC · <a href="https://trek.nasa.gov/moon/" target="_blank" rel="noopener">Moon Trek</a>'},
+  mars:{url:TREK+'Mars/EQ/Mars_Viking_MDIM21_ClrMosaic_global_232m/1.0.0/default/default028mm/{z}/{y}/{x}.jpg',maxNativeZoom:7,attribution:'NASA/JPL/USGS · Viking MDIM 2.1 · <a href="https://trek.nasa.gov/mars/" target="_blank" rel="noopener">Mars Trek</a>'}
+ };
+const names={earth:T('Tierra','Earth'),moon:T('Luna','Moon'),mars:T('Marte','Mars')};
+ const labels={
+  selectZone:T('Elige una zona de misión','Choose a mission zone'),
+  apply:T('Buscar análogos en la Tierra','Find analogues on Earth'),
+  conditions:T('Condiciones documentadas','Documented conditions'),
+  references:T('Análogos y fuentes','Analogues and sources'),
+  domain:T('Dominio público','Public domain'),
+  close:T('Cerrar zona','Close zone'),
+  offline:T('El mosaico no está disponible. Puedes abrir las zonas de misión.','The basemap is unavailable. You can still open the mission zones.')
+ };
+ Object.assign(english,{
+  'Presets de misión':'Mission presets',
+  'Preset de misión':'Mission preset',
+  'Aplicar':'Apply',
+  'Elige destino y tareas, y añade preferencias editables.':'Sets the destination and tasks and adds editable preferences.',
+  'Cuerpo del mapa':'Map body',
+  'Zona de misión':'Mission zone',
+  'Mapa planetario':'Planetary map',
+  '1 filtro activo':'1 active filter',
+  'Mínimo ideal':'Ideal minimum',
+  'Máximo ideal':'Ideal maximum',
+  'NASA · contexto del polo sur':'NASA · south pole context',
+  'NASA/JPL/Arizona State University · contexto regional':'NASA/JPL/Arizona State University · regional context'
+ });
+ const panel=q('map-panel');
+ const overlay=q('planet-map');
+ const zoneDetail=q('planet-detail');
+ const zoneSelect=q('planet-zone');
+ const presetSelect=q('mission-preset');
+ const applyButton=q('apply-mission-preset');
+ const mapButtons=Array.from(panel.querySelectorAll('.map-world-picker button'));
+ const globeBounds=[[-90,-180],[90,180]];
+ const zonesById=new Map(ZONES.map(zone=>[zone.id,zone]));
+ const markersById=new Map();
+ let world='earth';
+ let planetMap;
+ let tileLayer;
+ let markerLayer;
+
+ const zonesFor=planet=>ZONES.filter(zone=>zone.planet===planet);
+ const optionsFor=(zones,label)=>zones.map(zone=>'<option value="'+zone.id+'">'+escapeHTML(label(zone))+'</option>').join('');
+ ['moon','mars'].forEach(planet=>{
+  const group=document.createElement('optgroup');
+  group.label=names[planet];
+  group.innerHTML=optionsFor(zonesFor(planet),zone=>T(zone.name+' · '+zone.preset.label,zone.name+' · '+english[zone.preset.label]));
+  presetSelect.appendChild(group);
+ });
+ zoneSelect.addEventListener('change',()=>{
+  const zone=zonesById.get(zoneSelect.value);
+  if(zone)openZone(zone,true);
+  else closeZone();
+ });
+ presetSelect.addEventListener('change',()=>{applyButton.disabled=!presetSelect.value});
+ applyButton.addEventListener('click',()=>{
+  const zone=zonesById.get(presetSelect.value);
+  if(zone)applyPreset(zone);
+ });
+ mapButtons.forEach(button=>button.addEventListener('click',()=>showWorld(button.dataset.world)));
+
+ function syncPreset(){
+  const selectedPreset=zonesById.get(profile.missionPresetId);
+  presetSelect.value=selectedPreset?.id || '';
+  applyButton.disabled=!presetSelect.value;
+ }
+ function applyPreset(zone){
+  const previousCriteria=profile.criteria.filter(criterion=>!criterion.missionPresetId);
+  const existingProperties=new Set(previousCriteria.map(criterion=>criterion.propertyId));
+  const presetCriteria=zone.preset.criteria
+   .filter(criterion=>!existingProperties.has(criterion.propertyId) && properties.some(property=>property.id===criterion.propertyId))
+   .map(criterion=>({
+    group:'principal',required:false,weight:5,min:'',max:'',values:'',evidence:'',
+    ...criterion,missionPresetId:zone.id
+   }));
+  profile.planets=[zone.planet];
+  profile.tasks=[...zone.preset.tasks];
+  profile.criteria=[...previousCriteria,...presetCriteria];
+  profile.missionPresetId=zone.id;
+  showWorld('earth');
+  sync();
+  document.body.classList.remove('map-mode');
+  q('sidebar').scrollTop=0;
+  q('recommendation-title').focus({preventScroll:true});
+ }
+
+ function invalidateSize(){
+  if(world!=='earth')planetMap?.invalidateSize({pan:false});
+ }
+ function ensureMap(){
+  if(planetMap)return;
+  planetMap=L.map('planet-map-canvas',{
+   crs:L.CRS.EPSG4326,minZoom:0,maxZoom:8,zoomSnap:0.25,zoomDelta:0.75,zoomControl:false,
+   maxBounds:globeBounds,maxBoundsViscosity:1
+  }).setView([0,0],0);
+  L.control.zoom({position:'bottomleft'}).addTo(planetMap);
+ }
+ function drawWorld(planet){
+  ensureMap();
+  tileLayer?.remove();
+  markerLayer?.remove();
+  markersById.clear();
+  const status=q('planet-map-status');
+  status.textContent=labels.offline;
+  status.hidden=true;
+  const basemap=BASEMAPS[planet];
+  const layer=L.tileLayer(basemap.url,{
+   noWrap:true,bounds:globeBounds,maxNativeZoom:basemap.maxNativeZoom,maxZoom:8,attribution:basemap.attribution
+  });
+  let loaded=0;
+  let failed=0;
+  layer.on('loading',()=>{loaded=0;failed=0});
+  layer.on('tileload',()=>{loaded++;if(tileLayer===layer)status.hidden=true});
+  layer.on('tileerror',()=>{failed++});
+  layer.on('load',()=>{if(tileLayer===layer)status.hidden=loaded>0||failed===0});
+  tileLayer=layer;
+  layer.addTo(planetMap);
+  markerLayer=L.layerGroup().addTo(planetMap);
+  for(const zone of zonesFor(planet)){
+   const icon=L.divIcon({className:'planet-zone-pin',iconSize:[16,16]});
+   const marker=L.marker([zone.lat,zone.lng],{icon,title:zone.name,alt:zone.name,riseOnHover:true});
+   marker.bindTooltip(escapeHTML(zone.name),{direction:'top',offset:[0,-6]});
+   marker.on('click',()=>openZone(zone));
+   markersById.set(zone.id,marker);
+   marker.addTo(markerLayer);
+  }
+ }
+
+ function showWorld(next){
+  if(world===next)return;
+  world=next;
+  panel.dataset.world=world;
+  mapButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.world===world)));
+  const terrestrial=world==='earth';
+  overlay.hidden=terrestrial;
+  zoneSelect.hidden=terrestrial;
+  closeZone();
+  if(terrestrial){
+   requestAnimationFrame(()=>map.invalidateSize({pan:false}));
+   return;
+  }
+  zoneSelect.innerHTML='<option value="">'+labels.selectZone+'</option>'+optionsFor(zonesFor(world),zone=>zone.name);
+  drawWorld(world);
+  if(innerWidth<=760)showMap();
+  requestAnimationFrame(()=>{
+   if(world!==next)return;
+   invalidateSize();
+   planetMap.fitBounds(globeBounds,{paddingTopLeft:[10,50],paddingBottomRight:[10,10],animate:false});
+  });
+ }
+
+ function closeZone(){
+  zoneDetail.hidden=true;
+  zoneSelect.value='';
+  markersById.forEach(marker=>marker.getElement()?.classList.remove('active'));
+ }
+
+ function openZone(zone,center=false){
+  const photo=PHOTOS[zone.id];
+  const image=photo?'<figure class="comparison-figure"><div class="comparison-photo">'+
+   '<img loading="lazy" referrerpolicy="no-referrer" src="'+escapeHTML(commons(photo.file))+'" alt="'+escapeHTML(zone.name)+'">'+
+   '<span class="image-fallback" hidden>Imagen no disponible</span></div><figcaption>'+escapeHTML(photo.credit)+
+   ' · '+externalLink(photo.page,labels.domain)+'</figcaption></figure>':'';
+  const fields=zone.conditions.map(([label,description])=>'<li><strong>'+escapeHTML(label)+'</strong> '+escapeHTML(description)+'</li>').join('');
+  const referenceSites=zone.related.map(id=>catalog.sites.find(site=>site.id===id)).filter(Boolean);
+  const siteButtons=referenceSites.map(site=>'<button type="button" data-open="'+escapeHTML(site.id)+'">'+escapeHTML(site.name)+'</button>').join('');
+  const links=zone.sources.map(([title,url])=>'<li>'+externalLink(url,title)+'</li>').join('');
+  zoneDetail.innerHTML='<button type="button" class="close" aria-label="'+labels.close+'">×</button>'+
+   '<div class="country">'+names[zone.planet]+'</div><h2>'+escapeHTML(zone.name)+'</h2>'+
+   '<div class="zone-actions"><button type="button">'+labels.apply+'</button></div>'+
+   '<p>'+escapeHTML(zone.task)+'</p><p class="small">'+escapeHTML(zone.region)+' · '+formatCoordinate(zone.lat)+', '+formatCoordinate(zone.lng)+'</p>'+
+   image+'<h3>'+labels.conditions+'</h3><ul>'+fields+'</ul><p>'+escapeHTML(zone.why)+'</p>'+
+   '<details><summary>'+labels.references+'</summary><div class="zone-links">'+siteButtons+'</div><ul>'+links+'</ul></details>';
+  zoneDetail.hidden=false;
+  zoneDetail.scrollTop=0;
+  zoneDetail.querySelector('.close').addEventListener('click',closeZone);
+  zoneDetail.querySelector('.zone-actions button').addEventListener('click',()=>applyPreset(zone));
+  monitorImages(zoneDetail);
+  zoneSelect.value=zone.id;
+  markersById.forEach((marker,id)=>marker.getElement()?.classList.toggle('active',id===zone.id));
+  if(center){
+   planetMap.setView([zone.lat,zone.lng],zone.lat< -80?3:4,{animate:false});
+   if(innerWidth>760)planetMap.panBy([zoneDetail.offsetWidth/2,0],{animate:false});
+  }
+ }
+ function formatCoordinate(number){return number.toFixed(2).replace('-','−')+'°'}
+ return {showWorld,syncPreset,invalidateSize};
+}
+
+const planetaryAtlas=initializePlanetaryAtlas();
+const panelPreferences=readStore('coipo-atlas-panels',{});
+for(const id of ['mission-presets','site-criteria-panel','climate-panel']){
+ const panel=q(id);
+ if(typeof panelPreferences?.[id]==='boolean')panel.open=panelPreferences[id];
+ panel.addEventListener('toggle',()=>{
+  const preferences=readStore('coipo-atlas-panels',{});
+  try{localStorage.setItem('coipo-atlas-panels',JSON.stringify({...preferences,[id]:panel.open}))}catch{}
+ });
+}
 
 map.on('zoomend',()=>{renderMarkers();updateWaterLayer()});
 map.on('moveend',renderCartographicLabels);
