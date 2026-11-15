@@ -669,10 +669,15 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .jump-results{display:inline-block;margin-top:.5rem;font-size:.85rem;color:#31593f}
 .mission-panel h2,.climate-panel h2{font-size:1rem;margin:0 0 .5rem}
 .mission-panel,.climate-panel{padding:12px 0}
+.criterion-picker{display:flex;align-items:center;gap:6px}
+.criterion-picker select{min-width:0;flex:1}
+.criterion-picker button{white-space:nowrap}
+.criterion>summary{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px}
+.criterion>summary .criterion-value{margin-left:auto;font-weight:400}
+.criterion>summary::-webkit-details-marker{display:none}
+.criterion[open]>summary{margin-bottom:7px}
+.criterion-actions{display:flex;justify-content:flex-end;margin-top:8px}
 .intro h1{font-size:clamp(1.45rem,3vw,2rem);line-height:1.15;margin:0}
-.quick-criteria{display:flex;flex-wrap:wrap;gap:6px;margin:.5rem 0}
-.quick-criteria button{padding:5px 8px;border:1px solid #a2b9a6;border-radius:6px}
-.quick-criteria button[aria-pressed=true]{background:#e6f0df;color:#284530;opacity:1}
 .advanced{margin-top:.5rem}.advanced>summary{cursor:pointer;font-size:.8rem}
 .environment-picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:10px}
 .environment-picker button{padding:6px 4px;line-height:1.2;border:1px solid #a2b9a6;border-radius:6px}
@@ -717,12 +722,6 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .comparison-photo img[hidden],.image-fallback[hidden],.catalog-entry[hidden]{display:none}
 .parameter-evidence+.parameter-evidence{border-top:1px solid #ccd8cc;padding-top:6px;margin-top:6px}
 
-.parameter-browser{margin-top:9px;border-top:1px solid #cbd8cc;padding-top:8px}
-.parameter-browser h3{margin:0;font-size:.85rem}
-.parameter-browser .fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px}
-.parameter-options{display:flex;flex-wrap:wrap;gap:5px;max-height:154px;overflow:auto;padding:4px 2px;margin:5px 0}
-.parameter-chip small{display:inline-block;background:#e0ece0;color:#254332;border-radius:12px;padding:1px 5px;font-size:.65rem}
-.parameter-chip[aria-pressed=true]{border-color:#5a8268;background:#e4efdf;color:#24402b}
 .candidate-pin.map-reference:not(.selected) span{width:19px;height:19px;background:#e4f5f5;color:#28586a;border-color:#28586a;font-size:10px;box-shadow:0 0 0 2px #f6ffff}
 .candidate-pin.map-reference.pending span{border-style:dashed}
 .detail .comparison-photo,.detail .comparison-photo img{height:178px}
@@ -741,9 +740,6 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .criteria-heading h2{margin:0}
 .criteria-count{font-size:.73rem;background:#e7f0e3;border-radius:12px;color:#36543c;padding:3px 7px}
 .criteria-hint{font-size:.76rem;color:#3f5848;margin:6px 0}
-.parameter-browser summary{cursor:pointer;font-size:.8rem;font-weight:650;padding:3px 0}
-.parameter-browser[open] .fields{margin-top:6px}
-.parameter-browser .parameter-options{max-height:148px}
 .map-scope{display:inline-flex;padding:2px;gap:2px;border-radius:7px;background:#edf3ed}
 .map-scope button[aria-pressed=true]{background:#2c543e;color:#fff;border-color:#2c543e}
 .site-group-pin{background:none;border:0}
@@ -777,7 +773,13 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .destination-filter>small{display:block;margin-top:5px}
 .destination-tag{display:inline-flex;align-items:center;padding:2px 6px;border-radius:10px;background:#e7efe3;color:#31523b;font-size:.72rem;font-weight:700}
 .mission-recommendation{margin:12px 0;padding:10px 12px;background:#eef4ed;border-left:3px solid #507455;border-radius:9px}
-.mission-recommendation h2{font-size:.86rem;margin:0 0 5px;color:#264934}
+.mission-recommendation>summary{display:flex;align-items:baseline;gap:6px;cursor:pointer;color:#264934;font-size:.86rem;font-weight:750}
+.mission-recommendation>summary::-webkit-details-marker{display:none}
+.mission-recommendation>summary::before{content:'▸';flex:none}
+.mission-recommendation[open]>summary::before{content:'▾'}
+.mission-recommendation[open]>summary{margin-bottom:7px}
+.mission-recommendation[open] .recommendation-name{display:none}
+.recommendation-name{margin-left:auto;font-size:.78rem;color:#405849;text-align:right}
 .mission-recommendation p{margin:5px 0}
 .mission-recommendation .recommendation-site{display:flex;align-items:baseline;justify-content:space-between;gap:8px;width:100%;padding:0;border:0;background:none;color:#203d2a;text-align:left;white-space:normal}
 .mission-recommendation .recommendation-site span{color:#405849;font-size:.72rem;text-align:right}
@@ -846,10 +848,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
 </style></head><body>
 <header><a class="brand" href="#"><span class="brandmark">C</span><span>coiponautas<small>ATLAS DE ANÁLOGOS</small></span></a><nav><button id="saved">★ Guardados <span id="saved-count">0</span></button></nav><select id="atlas-language" aria-label="Idioma" title="Idioma"><option value="es">Español</option><option value="en">English</option></select><button id="download-html">Guardar copia HTML ↓</button></header>
 <main><aside id="sidebar"><div class="intro"><h1>Atlas de sitios análogos</h1>
-<section class="mission-recommendation" aria-labelledby="recommendation-title">
- <h2 id="recommendation-title" tabindex="-1">Candidato destacado</h2>
- <div id="recommendation-content" aria-live="polite" aria-atomic="true"></div>
-</section>
+<details class="mission-recommendation" open>
+  <summary id="recommendation-title"><span>Candidato destacado</span><span id="recommendation-name" class="recommendation-name" aria-live="polite"></span></summary>
+  <div id="recommendation-content" aria-live="polite" aria-atomic="true"></div>
+ </details>
 <div class="button-row catalog-entries-actions"><button id="open-catalog" type="button">Ver catálogo completo</button><button id="add-site" type="button">+ Añadir sitio</button></div></div>
 <div class="search"><span>⌕</span><input id="search" placeholder="Sitio, país, roca, entorno…" aria-label="Buscar lugares"></div>
 <fieldset class="mission-tasks destination-filter"><legend>Destino</legend><div class="destination-options">
@@ -866,25 +868,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
  <p class="small">Elige destino y tareas, y añade preferencias editables.</p>
 </details>
 <fieldset class="mission-tasks"><legend>Qué quieres probar</legend><div id="task-picker" class="task-picker"></div><small>Puedes elegir varias tareas.</small></fieldset>
-<details class="panel mission-panel atlas-disclosure" id="site-criteria-panel" open>
- <summary class="criteria-heading"><span id="mission-title">Qué debe tener el sitio</span><span id="filter-count" class="criteria-count"></span></summary>
- <div id="quick-criteria" class="quick-criteria"></div>
- <div id="criteria"></div>
- <details class="parameter-browser">
-  <summary>Buscar otro criterio <small id="parameter-coverage"></small></summary>
-  <div class="fields"><label>Nombre<input id="property-search" type="search" placeholder="Ej. profundidad"></label><label>Grupo<select id="property-family" aria-label="Grupo de criterios"></select></label></div>
-  <div id="families" class="parameter-options"></div>
- </details>
- <details class="advanced"><summary>Guardar y combinar filtros</summary>
-  <label>Si hay varios filtros<select id="group-mode"><option value="all">Cumplir todos</option><option value="any">Cumplir al menos uno</option></select></label>
-  <details class="advanced"><summary>Guardar o recuperar perfil</summary>
-   <label>Nombre<input id="profile-name"></label>
-   <div class="button-row"><button id="save-profile">Guardar</button><button id="duplicate">Duplicar</button></div>
-   <label>Recuperar búsqueda<select id="profiles"></select></label><button id="restore">Restaurar</button>
-  </details>
- </details>
-</details>
-<details class="panel climate-panel atlas-disclosure" id="climate-panel">
+<details class="panel climate-panel atlas-disclosure" id="climate-panel" open>
  <summary class="criteria-heading"><span id="climate-title">Capas ambientales</span><span id="climate-summary" class="criteria-count"></span></summary>
  <div class="environment-picker" role="group" aria-label="Variable del mapa">
   <button type="button" data-environment="2" aria-pressed="true">Temperatura</button>
@@ -906,6 +890,20 @@ svg.leaflet-image-layer.leaflet-interactive path {
  <p class="small" id="climate-scale"></p>
  </div>
  <div id="geography-details" class="small" hidden></div>
+</details>
+<details class="panel mission-panel atlas-disclosure" id="site-criteria-panel">
+ <summary class="criteria-heading"><span id="mission-title">Criterios avanzados</span><span id="filter-count" class="criteria-count"></span></summary>
+ <div class="criterion-picker">
+  <select id="criteria-property" aria-label="Propiedad del sitio"><option value="">Elige una propiedad</option></select>
+  <button id="add-site-criterion" type="button" disabled>Añadir criterio</button>
+ </div>
+ <div id="criteria"></div>
+ <details class="advanced"><summary>Perfiles y combinación de criterios</summary>
+  <label>Si hay varios filtros<select id="group-mode"><option value="all">Cumplir todos</option><option value="any">Cumplir al menos uno</option></select></label>
+  <label>Nombre<input id="profile-name"></label>
+  <div class="button-row"><button id="save-profile">Guardar</button><button id="duplicate">Duplicar</button></div>
+  <label>Recuperar búsqueda<select id="profiles"></select></label><button id="restore">Restaurar</button>
+ </details>
 </details>
 <div class="results-head" id="candidate-results"><h2><span id="count"></span> resultados</h2><select id="sort" aria-label="Ordenar"><option value="fit">Prioridad de misión</option><option value="evidence">Evidencia disponible</option><option value="name">Nombre</option><option value="country">País</option></select></div><p id="result-note" class="small"></p><div id="results"></div><footer class="sidebar-footer"><button id="reset">Restablecer</button><button id="export">Exportar JSON ↗</button></footer></aside>
 <section id="map-panel" aria-label="Mapa interactivo mundial" data-world="earth">
@@ -5622,7 +5620,6 @@ const inventorySource = {"id": "joaco-inventory", "title": "Inventario de Joaco 
 const paliAike = {id:'pali-aike',name:'Pali-Aike',country:'Chile',environment:'Terreno volcánico',description:'Aproximaciones al cono de Pali-Aike, candidato lunar propuesto por el equipo para navegación con luz rasante y sombras del relieve.',status:'Candidato del equipo · validación pendiente',sectorIds:['pali-aike-cono'],taskIds:['mobility','geology'],planetIds:['moon','mars'],sourceId:'neo-pilot',limitations:['El DEM GLO-30 representa el cráter con unas 5–6 celdas. Falta resolución para obstáculos a escala de rover.'],pending:["Delimitar la ruta, medir rugosidad, horizonte y contraste, y confirmar la autorización de CONAF para el ensayo."]};
 const paliObservations = [{id:'pali-slope',sectorId:'pali-aike-cono',propertyId:'slope',value:[10,22],unit:'°',evidence:'medida',quality:'publicada',method:'Caracterización geomorfológica publicada por Sernageomin',date:null,scale:'Pendientes hacia la base del cono',sourceId:'pali-sernageomin',locator:'Ficha Cono de Pali-Aike',uncertainty:null},{id:'pali-diameter',sectorId:'pali-aike-cono',propertyId:'craterDiameter',value:[160,180],unit:'m',evidence:'medida',quality:'publicada',method:'Caracterización geomorfológica publicada por Sernageomin',date:null,scale:'Cráter cartografiado',sourceId:'pali-sernageomin',locator:'Ficha Cono de Pali-Aike',uncertainty:null}];
 
-const families=['Ciencia','Instrumentos','Relieve','Geología','Agua y hielo','Clima','Cuevas','Biología','Operación','Acceso','Fuentes'];
 const numeric=(id,label,unit,family)=>({id,label,unit,family,type:'number'});
 const text=(id,label,family)=>({id,label,family,type:'text',unit:''});
 const properties=[
@@ -5782,7 +5779,6 @@ function geometryLayer(g,chosen=false){
   pointToLayer:(_feature,latlng)=>L.circleMarker(latlng,{pane:'candidates',radius:chosen?12:9,color:'#202b26',weight:3,fillColor:color,fillOpacity:g.role.startsWith('Punto de contexto') ? 0.45 : 1,dashArray:g.role.startsWith('Punto de contexto')?'4 3':null})
  });
 }
-const primaryCriteria = ['water','ice','slope','minerals','altitude','area','waterDepth','permafrost'];
 let catalogPreview = false;
 function evaluate(site){
  const evaluation = evaluateSite(site,profile,catalog,properties);
@@ -5923,6 +5919,9 @@ function render(){
  const best=ranked.find(result=>result.recommendation.recommendable);
  const missingData=ranked.some(result=>result.status==='pending' || (filters.climate && result.region.state!=='pass'));
  const initial=!search&&!destination&&!onlySaved&&!zone&&!filters.climate&&!profile.tasks.length&&!profile.criteria.length;
+ const recommendationName=q('recommendation-name');
+ const summary=best?.site.name || (invalid.length?'Intervalo inválido':missingData?'Datos pendientes':'Sin coincidencias');
+ if(recommendationName.textContent!==summary)recommendationName.textContent=summary;
  const card=q('recommendation-content');
  const cardContent=recommendationCard(best,initial,missingData,invalid.length);
  if(card.innerHTML!==cardContent)card.innerHTML=cardContent;
@@ -6051,25 +6050,42 @@ function openSite(id,fromCatalog=false){
  monitorImages(q('detail'));
  if(innerWidth<760)showMap();
 }
-function criteriaUI(){
- const counts=parameterCoverage();
- q('quick-criteria').innerHTML=primaryCriteria.map(id=>{
-  const property=properties.find(p=>p.id===id);
-  const active=profile.criteria.some(c=>c.propertyId===id);
-  return propertyButton(property,counts.get(id)||0,active);
- }).join('');
- q('criteria').innerHTML=profile.criteria.map((criterion,index)=>{
-  const property=properties.find(p=>p.id===criterion.propertyId);
+function criterionValue(criterion,property){
+ if(property.type==='text')return criterion.values || 'Con datos';
+ const bounds=[criterion.min,criterion.max].map(value=>value??'');
+ const unit=property.unit?' '+property.unit:'';
+ if(bounds[0]!=='' && bounds[1]!=='')return bounds.join('–')+unit;
+ if(bounds[0]!=='')return '≥ '+bounds[0]+unit;
+ if(bounds[1]!=='')return '≤ '+bounds[1]+unit;
+ return 'Con datos';
+}
+function criteriaUI(openProperty){
+ const holder=q('criteria');
+ const expanded=new Set(Array.from(holder.querySelectorAll('.criterion[open]'),item=>item.dataset.criterion));
+ if(openProperty)expanded.add(openProperty);
+ holder.innerHTML=profile.criteria.map((criterion,index)=>{
+  const property=properties.find(item=>item.id===criterion.propertyId);
   const binding=' data-index="'+index+'" data-field="';
-  const range='<div class="fields"><label>Mínimo ('+property.unit+')<input type="number" step="any"'+binding+'min" value="'+escapeHTML(criterion.min)+'"></label><label>Máximo ('+property.unit+')<input type="number" step="any"'+binding+'max" value="'+escapeHTML(criterion.max)+'"></label></div>';
-  const idealRange=property.type==='number'&&!criterion.required?
-   '<div class="fields"><label>Mínimo ideal ('+property.unit+')<input type="number" step="any"'+binding+'idealMin" value="'+escapeHTML(criterion.idealMin)+'"></label><label>Máximo ideal ('+property.unit+')<input type="number" step="any"'+binding+'idealMax" value="'+escapeHTML(criterion.idealMax)+'"></label></div>':'';
-  const accepted='<label>Valores aceptados (opcional)<input'+binding+'values" value="'+escapeHTML(criterion.values)+'" placeholder="Ej. Presente, estacional"></label><small>Escribe valores como aparecen en la ficha. Si lo dejas vacío basta con que haya evidencia.</small>';
-  return '<section class="criterion"><div class="criterion-head"><strong>'+escapeHTML(property.label)+'</strong><button data-remove="'+index+'" aria-label="Quitar '+escapeHTML(property.label)+'">Quitar</button></div>'+
-   '<label>Aplicar para<select'+binding+'required"><option value="no">Priorizar</option><option value="yes" '+(criterion.required?'selected':'')+' >Filtrar</option></select></label>'+(property.type==='number'?range:accepted)+
-   (criterion.required?'<small>Excluye incumplimientos documentados.</small>':'<small>Sube los sitios que cumplen en el orden de resultados.</small>')+
-   '<details class="advanced"><summary>Opciones del criterio</summary><label>Importancia de la preferencia <output>'+escapeHTML(criterion.weight)+'</output><input'+binding+'weight" type="range" min="0" max="10" value="'+escapeHTML(criterion.weight)+'"></label><label>Tipo de evidencia<select'+binding+'evidence">'+['','medida','inferida','modelada'].map(v=>'<option value="'+v+'" '+(criterion.evidence===v?'selected':'')+'>'+(v||'Cualquiera documentada')+'</option>').join('')+'</select></label>'+idealRange+'</details></section>';
- }).join('') || '<p class="criteria-hint">Toca un criterio para añadir un filtro. El número indica cuántos sitios tienen ese dato.</p>';
+  const unit=property.unit?' ('+escapeHTML(property.unit)+')':'';
+  const numericRange=(minField,maxField,minLabel,maxLabel)=>
+   '<div class="fields"><label>'+minLabel+unit+'<input type="number" step="any"'+binding+minField+'" value="'+escapeHTML(criterion[minField])+'"></label>'+
+   '<label>'+maxLabel+unit+'<input type="number" step="any"'+binding+maxField+'" value="'+escapeHTML(criterion[maxField])+'"></label></div>';
+  const valueInputs=property.type==='number'?numericRange('min','max','Mínimo','Máximo'):
+   '<label>Valores aceptados (opcional)<input'+binding+'values" value="'+escapeHTML(criterion.values)+'" placeholder="Ej. Presente, estacional"></label>';
+  const weight=criterion.weight??5;
+  const preferences=criterion.required?'':'<label>Importancia de la preferencia <output>'+escapeHTML(weight)+'</output>'+
+   '<input'+binding+'weight" type="range" min="0" max="10" value="'+escapeHTML(weight)+'"></label>'+
+   (property.type==='number'?numericRange('idealMin','idealMax','Mínimo ideal','Máximo ideal'):'');
+  const evidence=['','medida','inferida','modelada'].map(value=>'<option value="'+value+'" '+(criterion.evidence===value?'selected':'')+'>'+
+   (value||'Cualquiera documentada')+'</option>').join('');
+  return '<details class="criterion" data-criterion="'+escapeHTML(property.id)+'"'+(expanded.has(property.id)?' open':'')+'>'+
+   '<summary><strong>'+escapeHTML(property.label)+'</strong><span class="small">'+(criterion.required?'Obligatorio':'Preferencia')+'</span>'+
+   '<span class="small criterion-value">'+escapeHTML(criterionValue(criterion,property))+'</span></summary>'+
+   valueInputs+'<label>Aplicar para<select'+binding+'required"><option value="no">Priorizar</option><option value="yes" '+
+   (criterion.required?'selected':'')+'>Filtrar</option></select></label>'+
+   '<details class="advanced"><summary>Opciones del criterio</summary>'+preferences+'<label>Tipo de evidencia<select'+binding+'evidence">'+evidence+'</select></label></details>'+
+   '<div class="criterion-actions"><button type="button" data-remove="'+index+'" aria-label="Quitar '+escapeHTML(property.label)+'">Quitar</button></div></details>';
+ }).join('');
 }
 function updateDestinationCounts(){
  document.querySelectorAll('[data-destination-count]').forEach(label=>{
@@ -6139,34 +6155,42 @@ function parameterCoverage(){
  }
  return new Map(Array.from(perProperty,([id,sites])=>[id,sites.size]));
 }
-function propertyButton(property,count,active){
- return '<button type="button" class="parameter-chip" data-property="'+property.id+'" aria-pressed="'+active+'">'+
-  (active?'✓ ':'+ ')+escapeHTML(property.label)+' <small title="'+count+' sitios con datos">'+count+'</small></button>';
-}
 function propertyOptions(){
- const query=q('property-search').value.toLocaleLowerCase('es').trim();
- const family=q('property-family').value;
- const includeMissing=Boolean(query);
+ const select=q('criteria-property');
+ const selectedProperty=select.value;
  const counts=parameterCoverage();
- q('parameter-coverage').textContent='· '+counts.size+' con datos';
- const options=properties.filter(property=>
-  (family==='' || Number(family)===property.family) &&
-  (includeMissing || counts.has(property.id)) &&
-  (family!=='' || query || !primaryCriteria.includes(property.id)) &&
-  (property.label.toLocaleLowerCase('es').includes(query) || translateLabel(property.label).toLocaleLowerCase('en').includes(query))
- ).sort((a,b)=>(counts.get(b.id)||0)-(counts.get(a.id)||0)||a.label.localeCompare(b.label,'es'));
- q('families').innerHTML=options.map(property=>propertyButton(property,counts.get(property.id)||0,
-  profile.criteria.some(c=>c.propertyId===property.id))).join('') || '<p class="small">No hay parámetros con esos filtros.</p>';
+ const used=new Set(profile.criteria.map(criterion=>criterion.propertyId));
+ const options=properties.filter(property=>counts.has(property.id) && !used.has(property.id))
+  .sort((a,b)=>a.label.localeCompare(b.label,'es'));
+ select.innerHTML='<option value="">Elige una propiedad</option>'+options.map(property=>
+  '<option value="'+escapeHTML(property.id)+'">'+escapeHTML(property.label)+'</option>').join('');
+ if(options.some(property=>property.id===selectedProperty))select.value=selectedProperty;
+ q('add-site-criterion').disabled=!select.value;
 }
-q('property-family').innerHTML='<option value="">Todos</option>'+families.map((label,index)=>'<option value="'+index+'">'+label+'</option>').join('');
-q('property-family').onchange=propertyOptions;
-q('property-search').oninput=propertyOptions;
+q('criteria-property').onchange=event=>{q('add-site-criterion').disabled=!event.target.value};
 q('task-picker').innerHTML=taskCheckboxes('missionTask');
 q('task-picker').onchange=()=>{
  profile.tasks=Array.from(q('task-picker').querySelectorAll('input:checked'),input=>input.value);
  render();
 };
-q('criteria').oninput=e=>{const i=e.target.dataset.index,field=e.target.dataset.field;if(i==null)return;delete profile.criteria[i].missionPresetId;profile.criteria[i][field]=field==='required'?e.target.value==='yes':e.target.value;if(field==='required'){criteriaUI();q('criteria').querySelector('[data-index="'+i+'"][data-field="required"]')?.focus()}if(field==='weight')e.target.previousElementSibling.textContent=e.target.value;render()};
+q('criteria').oninput=event=>{
+ const input=event.target;
+ const {index,field}=input.dataset;
+ if(index==null)return;
+ const criterion=profile.criteria[index];
+ delete criterion.missionPresetId;
+ criterion[field]=field==='required'?input.value==='yes':input.value;
+ if(field==='required'){
+  criteriaUI();
+  q('criteria').querySelector('[data-index="'+index+'"][data-field="required"]')?.focus();
+ }
+ if(field==='weight')input.previousElementSibling.textContent=input.value;
+ if(['min','max','values'].includes(field)){
+  const property=properties.find(item=>item.id===criterion.propertyId);
+  input.closest('.criterion').querySelector('.criterion-value').textContent=criterionValue(criterion,property);
+ }
+ render();
+};
 q('search').oninput=render;q('sort').onchange=render;
 q('group-mode').onchange=()=>{profile.groups[0].mode=q('group-mode').value;render()};
 q('base').onchange=()=>switchBase(q('base').value);
@@ -6188,18 +6212,24 @@ document.addEventListener('click',e=>{
  if(b.dataset.open)openSite(b.dataset.open);
  if(b.dataset.save){saved.has(b.dataset.save)?saved.delete(b.dataset.save):saved.add(b.dataset.save);writeStore('coipo-favorites',[...saved]);render();message('Favoritos actualizados')}
  if(b.dataset.compare){const id=b.dataset.compare;if(compare.includes(id))compare=compare.filter(v=>v!==id);else if(compare.length<4)compare.push(id);else message('Puedes comparar hasta cuatro lugares.');render();if(b.closest('.catalog-entry'))b.textContent=compare.includes(id)?'✓ En comparación':'+ Comparar'}
- if(b.dataset.property){
-  const parent=b.closest('#quick-criteria') || b.closest('#families');
-  const id=b.dataset.property;
-  const index=profile.criteria.findIndex(c=>c.propertyId===id);
-  if(index>=0)profile.criteria.splice(index,1);
-  else profile.criteria.push({propertyId:id,group:'principal',required:true,weight:5,min:'',max:'',values:'',evidence:''});
-  criteriaUI();
+ if(b.id==='add-site-criterion'){
+  const selector=q('criteria-property');
+  const id=selector.value;
+  if(!id)return;
+  profile.criteria.push({propertyId:id,group:'principal',required:true,weight:5,min:'',max:'',values:'',evidence:''});
+  criteriaUI(id);
   propertyOptions();
-  parent?.querySelector('[data-property="'+id+'"]')?.focus();
+  q('criteria').querySelector('[data-criterion="'+CSS.escape(id)+'"] summary')?.focus();
   render();
  }
- if(b.dataset.remove!=null){profile.criteria.splice(Number(b.dataset.remove),1);criteriaUI();propertyOptions();render()}
+ if(b.dataset.remove!=null){
+  const index=Number(b.dataset.remove);
+  profile.criteria.splice(index,1);
+  criteriaUI();
+  propertyOptions();
+  q('criteria-property').focus();
+  render();
+ }
  if(b.id==='detail-close'){q('detail').hidden=true;highlight.clearLayers();selected=null;catalogPreview=false;render()}
  if(b.id==='compare-clear'){compare=[];render()}
  if(b.id==='compare-open'||b.id==='catalog-compare')showComparison();
@@ -7607,6 +7637,16 @@ const names={earth:T('Tierra','Earth'),moon:T('Luna','Moon'),mars:T('Marte','Mar
   offline:T('El mosaico no está disponible. Puedes abrir las zonas de misión.','The basemap is unavailable. You can still open the mission zones.')
  };
  Object.assign(english,{
+  'Criterios avanzados':'Advanced criteria',
+  'Propiedad del sitio':'Site property',
+  'Elige una propiedad':'Choose a property',
+  'Añadir criterio':'Add criterion',
+  'Perfiles y combinación de criterios':'Profiles and criterion matching',
+  'Obligatorio':'Required',
+  'Preferencia':'Preference',
+  'Con datos':'Data available',
+  'Intervalo inválido':'Invalid range',
+  'Sin coincidencias':'No matches',
   'Presets de misión':'Mission presets',
   'Preset de misión':'Mission preset',
   'Aplicar':'Apply',
