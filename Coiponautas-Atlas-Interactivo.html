@@ -7167,11 +7167,33 @@ const inventorySources = [
  {"id":"faltante-05c7ac21b579","title":"Coordenadas de contexto · Wikipedia, rev. 1385829382","url":"https://en.wikipedia.org/w/index.php?oldid=1385829382","kind":"context"},
  {"id":"faltante-f3d8d347244b","title":"Hinman et al. (2022)","url":"https://doi.org/10.3389/fspas.2021.797591"},
  {"id":"faltante-881d6fbc3047","title":"OeWF","url":"https://oewf.org/en/amadee-20/"},
- {"id":"faltante-b66d611bf3ff","title":"NASA · Final de CHAPEA 1","url":"https://www.nasa.gov/humans-in-space/chapea/chapea-mission-1/"}
+ {"id":"faltante-b66d611bf3ff","title":"NASA · Final de CHAPEA 1","url":"https://www.nasa.gov/humans-in-space/chapea/chapea-mission-1/"},
+ {"id":"map-reference-ana-te-pahu","title":"OpenStreetMap · Ana Te Pahu, Isla de Pascua","url":"https://www.openstreetmap.org/node/2307745811","kind":"context"},
+ {"id":"map-reference-joaco-7","title":"OpenStreetMap · Pueblo de Armash, provincia de Ararat","url":"https://www.openstreetmap.org/way/74370179","kind":"context"},
+ {"id":"map-reference-joaco-46","title":"OpenStreetMap · Cueva del Escalón, Arredondo","url":"https://www.openstreetmap.org/node/861256197","kind":"context"},
+ {"id":"map-reference-joaco-43","title":"OpenStreetMap · Valle de Lanaittu, Dorgali","url":"https://www.openstreetmap.org/way/375374012","kind":"context"},
+ {"id":"map-reference-joaco-50","title":"Wikipedia · Campus DLR / Centro Europeo de Astronautas, Colonia · rev. 1364631935","url":"https://en.wikipedia.org/w/index.php?oldid=1364631935","kind":"context"},
+ {"id":"map-reference-joaco-45","title":"Wikipedia · Cueva de los Verdes, Lanzarote (PANGAEA-X de ESA) · rev. 175160467","url":"https://es.wikipedia.org/w/index.php?oldid=175160467","kind":"context"},
+ {"id":"map-reference-joaco-22","title":"OpenStreetMap · Entrada de la Rieseneishöhle, Obertraun","url":"https://www.openstreetmap.org/node/2104789608","kind":"context"},
+ {"id":"map-reference-joaco-5","title":"Wikipedia · Marmul, Dhofar · rev. 1363057419","url":"https://en.wikipedia.org/w/index.php?oldid=1363057419","kind":"context"},
+ {"id":"map-reference-joaco-44","title":"OpenStreetMap · Entrada de Divaška jama, Divača","url":"https://www.openstreetmap.org/node/1180839140","kind":"context"},
+ {"id":"map-reference-joaco-41","title":"Wikipedia · Glaciar Athabasca, Alberta · rev. 1383589007","url":"https://en.wikipedia.org/w/index.php?oldid=1383589007","kind":"context"},
+ {"id":"map-reference-joaco-25","title":"OpenStreetMap · Hale Pōhaku, Mauna Kea","url":"https://www.openstreetmap.org/way/366906122","kind":"context"},
+ {"id":"map-reference-joaco-61","title":"OpenStreetMap · Edificio 7, Johnson Space Center, Houston","url":"https://www.openstreetmap.org/?mlat=29.55707&mlon=-95.08589#map=18/29.55707/-95.08589","kind":"context"},
+ {"id":"map-reference-joaco-33","title":"Wikipedia · Volcán Sverrefjell, Bockfjorden · rev. 1360740028","url":"https://en.wikipedia.org/w/index.php?oldid=1360740028","kind":"context"},
+ {"id":"map-reference-joaco-28","title":"Wikipedia · Campo de lava de Holuhraun · rev. 1378630405","url":"https://en.wikipedia.org/w/index.php?oldid=1378630405","kind":"context"},
+ {"id":"map-reference-joaco-15","title":"OpenStreetMap · Ciudad de Jinchang, Gansu","url":"https://www.openstreetmap.org/node/244080835","kind":"context"},
+ {"id":"map-reference-joaco-29","title":"OpenStreetMap · Isla de Flakstadøya, Lofoten","url":"https://www.openstreetmap.org/relation/4148172","kind":"context"},
+ {"id":"map-reference-joaco-34","title":"Wikipedia · Cráter Kilbourne Hole, campo volcánico de Potrillo · rev. 1316782507","url":"https://en.wikipedia.org/w/index.php?oldid=1316782507","kind":"context"},
+ {"id":"map-reference-joaco-42","title":"Wikipedia · Fortaleza Sasso San Gottardo, Airolo · rev. 261942841","url":"https://de.wikipedia.org/w/index.php?oldid=261942841","kind":"context"},
+ {"id":"map-reference-joaco-21","title":"Wikipedia · Glaciar de Kaunertal (Weißseeferner) · rev. 271563754","url":"https://de.wikipedia.org/w/index.php?oldid=271563754","kind":"context"}
 ];
 const inventorySectors = [
  {"id":"chiprana-ch1","siteId":"chiprana","name":"Pedón CH1 · terraza lacustre"},
- {"id":"chiprana-ch2","siteId":"chiprana","name":"Pedón CH2 · depósito eólico"}
+ {"id":"chiprana-ch2","siteId":"chiprana","name":"Pedón CH2 · depósito eólico"},
+ {"id":"joaco-45-context","siteId":"joaco-45","name":"Cueva de los Verdes, Lanzarote (PANGAEA-X de ESA)"},
+ {"id":"joaco-36-context","siteId":"joaco-36","name":"Cráter Haughton, isla Devon"},
+ {"id":"joaco-59-context","siteId":"joaco-59","name":"Universidad de Dakota del Norte, Grand Forks"}
 ];
 const inventoryGeometries = [
  {"id":"saskylakh-sector-context-1","sectorId":"saskylakh-sector","role":"Punto de contexto · Poblado de Saskylakh","precision":"Referencia del lugar general","sourceId":"faltante-d4a9e865a287","locator":null,"climate":true,"geometry":{"type":"Point","coordinates":[114.09222,71.96528]}},
@@ -7211,7 +7233,30 @@ const inventoryGeometries = [
  {"id":"joaco-8-sector-point-35","sectorId":"joaco-8-sector","role":"Sector de Hamar Laghdad","precision":"Precisión del dato publicado","sourceId":"faltante-4afd6ff0e5b4","locator":"Guía de campo · longitud oeste","climate":true,"geometry":{"type":"Point","coordinates":[-4.067,31.35]}},
  {"id":"quinamavida-sector-point-36","sectorId":"quinamavida-sector","role":"Cantera de la muestra · Formación Colbún","precision":"Precisión del dato publicado","sourceId":"faltante-e51b8fe87f7f","locator":"Coordenada publicada al minuto","climate":true,"geometry":{"type":"Point","coordinates":[-71.4333,-35.8]}},
  {"id":"chiprana-ch1-point-37","sectorId":"chiprana-ch1","role":"Pedón CH1 · terraza lacustre","precision":"Precisión del dato publicado","sourceId":"faltante-b5719827e104","locator":"§3","climate":true,"geometry":{"type":"Point","coordinates":[-0.17,41.24]}},
- {"id":"chiprana-ch2-point-38","sectorId":"chiprana-ch2","role":"Pedón CH2 · depósito eólico","precision":"Precisión del dato publicado","sourceId":"faltante-b5719827e104","locator":"§3","climate":true,"geometry":{"type":"Point","coordinates":[-0.18,41.23]}}
+ {"id":"chiprana-ch2-point-38","sectorId":"chiprana-ch2","role":"Pedón CH2 · depósito eólico","precision":"Precisión del dato publicado","sourceId":"faltante-b5719827e104","locator":"§3","climate":true,"geometry":{"type":"Point","coordinates":[-0.18,41.23]}},
+ // Referencias cartográficas de las 22 fichas pendientes (Apéndice E del inventario de trabajo).
+ {"id":"ana-te-pahu-map-reference","sectorId":"ana-te-pahu","role":"Punto de contexto · Ana Te Pahu, Isla de Pascua","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-ana-te-pahu","climate":true,"geometry":{"type":"Point","coordinates":[-109.4041,-27.11154]}},
+ {"id":"joaco-7-map-reference","sectorId":"joaco-7-sector","role":"Punto de contexto · Pueblo de Armash, provincia de Ararat","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-7","climate":true,"geometry":{"type":"Point","coordinates":[44.80748,39.76458]}},
+ {"id":"joaco-46-map-reference","sectorId":"joaco-46-sector","role":"Punto de contexto · Cueva del Escalón, Arredondo","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-46","climate":true,"geometry":{"type":"Point","coordinates":[-3.60932,43.25402]}},
+ {"id":"joaco-43-map-reference","sectorId":"joaco-43-sector","role":"Punto de contexto · Valle de Lanaittu, Dorgali","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-43","climate":true,"geometry":{"type":"Point","coordinates":[9.5047,40.26708]}},
+ {"id":"joaco-50-map-reference","sectorId":"joaco-50-sector","role":"Punto de contexto · Campus DLR / Centro Europeo de Astronautas, Colonia","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-50","climate":false,"geometry":{"type":"Point","coordinates":[7.13111,50.85194]}},
+ {"id":"joaco-45-map-reference","sectorId":"joaco-45-context","role":"Punto de contexto · Cueva de los Verdes, Lanzarote (PANGAEA-X de ESA)","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-45","climate":false,"geometry":{"type":"Point","coordinates":[-13.43869,29.16078]}},
+ {"id":"joaco-22-map-reference","sectorId":"joaco-22-sector","role":"Punto de contexto · Entrada de la Rieseneishöhle, Obertraun","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-22","climate":true,"geometry":{"type":"Point","coordinates":[13.71871,47.5349]}},
+ {"id":"joaco-5-map-reference","sectorId":"joaco-5-sector","role":"Punto de contexto · Marmul, Dhofar","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-5","climate":true,"geometry":{"type":"Point","coordinates":[55.17778,18.13889]}},
+ {"id":"joaco-36-map-reference","sectorId":"joaco-36-context","role":"Punto de contexto · Cráter Haughton, isla Devon","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"faltante-4f8fbd778a2e","climate":true,"geometry":{"type":"Point","coordinates":[-89.66667,75.38333]}},
+ {"id":"joaco-44-map-reference","sectorId":"joaco-44-sector","role":"Punto de contexto · Entrada de Divaška jama, Divača","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-44","climate":true,"geometry":{"type":"Point","coordinates":[13.95065,45.67523]}},
+ {"id":"joaco-60-map-reference","sectorId":"joaco-60-sector","role":"Punto de contexto · Junto a la sala LUNA, Colonia","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"luna-fdsn","climate":false,"geometry":{"type":"Point","coordinates":[7.13184,50.85142]},"locator":"Posición del sismómetro DL.LUNAF, dentro de LUNA; FLEXhab está junto a esa sala."},
+ {"id":"joaco-41-map-reference","sectorId":"joaco-41-sector","role":"Punto de contexto · Glaciar Athabasca, Alberta","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-41","climate":true,"geometry":{"type":"Point","coordinates":[-117.24361,52.19861]}},
+ {"id":"joaco-25-map-reference","sectorId":"joaco-25-sector","role":"Punto de contexto · Hale Pōhaku, Mauna Kea","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-25","climate":true,"geometry":{"type":"Point","coordinates":[-155.45573,19.76115]}},
+ {"id":"joaco-61-map-reference","sectorId":"joaco-61-sector","role":"Punto de contexto · Edificio 7, Johnson Space Center, Houston","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-61","climate":false,"geometry":{"type":"Point","coordinates":[-95.08589,29.55707]}},
+ {"id":"joaco-59-map-reference","sectorId":"joaco-59-context","role":"Punto de contexto · Universidad de Dakota del Norte, Grand Forks","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"faltante-dbaf6bbf3024","climate":false,"geometry":{"type":"Point","coordinates":[-97.0734,47.9222]}},
+ {"id":"joaco-33-map-reference","sectorId":"joaco-33-sector","role":"Punto de contexto · Volcán Sverrefjell, Bockfjorden","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-33","climate":true,"geometry":{"type":"Point","coordinates":[13.30498,79.43166]}},
+ {"id":"joaco-28-map-reference","sectorId":"joaco-28-sector","role":"Punto de contexto · Campo de lava de Holuhraun","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-28","climate":true,"geometry":{"type":"Point","coordinates":[-16.83,64.85]}},
+ {"id":"joaco-15-map-reference","sectorId":"joaco-15-sector","role":"Punto de contexto · Ciudad de Jinchang, Gansu","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-15","climate":false,"geometry":{"type":"Point","coordinates":[102.1811,38.52137]}},
+ {"id":"joaco-29-map-reference","sectorId":"joaco-29-sector","role":"Punto de contexto · Isla de Flakstadøya, Lofoten","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-29","climate":true,"geometry":{"type":"Point","coordinates":[13.37974,68.08424]}},
+ {"id":"joaco-34-map-reference","sectorId":"joaco-34-sector","role":"Punto de contexto · Cráter Kilbourne Hole, campo volcánico de Potrillo","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-34","climate":true,"geometry":{"type":"Point","coordinates":[-106.96472,31.97194]}},
+ {"id":"joaco-42-map-reference","sectorId":"joaco-42-sector","role":"Punto de contexto · Fortaleza Sasso San Gottardo, Airolo","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-42","climate":false,"geometry":{"type":"Point","coordinates":[8.56639,46.55861]}},
+ {"id":"joaco-21-map-reference","sectorId":"joaco-21-sector","role":"Punto de contexto · Glaciar de Kaunertal (Weißseeferner)","precision":"Referencia cartográfica del lugar; el sector del ensayo requiere confirmación","sourceId":"map-reference-joaco-21","climate":true,"geometry":{"type":"Point","coordinates":[10.71111,46.85833]}}
 ];
 const inventoryObservations = [
  {"id":"faltante-saskylakh-deformationRate-1","sectorId":"saskylakh-sector","propertyId":"deformationRate","value":[-49.73,45.97],"evidence":"medida","quality":"publicada","method":"InSAR","date":"01/06/2018–03/05/2019","scale":"Campo poligonal estudiado mediante InSAR","sourceId":"faltante-56d3fce93e54","locator":null,"uncertainty":null},
@@ -7359,6 +7404,8 @@ const dynamicLabels = [
  [/^(\d+) criterios? por aclarar$/,'$1 to clarify'],
  [/^(\d+) % de preferencias$/,'$1% preference match'],
  [/^Clima regional · (.+)$/,'Regional climate · $1'],
+ [/^Punto de contexto · (.+)$/,'Reference point · $1'],
+ [/^Referencia cartográfica del lugar; el sector del ensayo requiere confirmación$/,'Map reference for this location; the exact test sector still requires confirmation'],
  [/^(Temperatura|Humedad relativa|Presión superficial|Onda corta|Onda larga) ([-\d.,–]+ .+) ×$/,(_s,label,range)=>english[label]+' '+range+' ×'],
  [/^· (\d+) con datos$/,'· $1 with data'],
  [/^(\d+) sitios con datos$/,'$1 sites with data'],
