@@ -10,7 +10,7 @@ Aquí vemos a Neil Armstrong y Buzz Aldrin practicando geología en Texas, en 19
 
 Antes de despegar hacia la Luna, Neil había acumulado 959 horas de entrenamiento, para una misión de tan solo 2 días.
 
-Hoy, prepararnos para vivir en otros mundos también exige elegir dónde ensayar aquí, en la Tierra. y para no desperdiciar esas 959 horas de un astronauta importa que tan eficaces seamos al hacerlo.
+Hoy, las misiones continuan; el regreso a la Luna en 2028, los futuros amartizajes y nuevas fronteras por explorar. Sin embargo las bases análogas aún son excasas. Los desafios que implican las misiones y la dificultad de encontrar lugares en la tierra vuelve una necesidad que aún debemos resolver. 
 
 ---
 
