@@ -43,11 +43,45 @@
 - **Ficha por zona.** Mostrar qué se quiere ensayar, qué propiedad respalda la comparación, método y escala, fuente, historial de campañas y verificación pendiente. Etiquetar cada dato como medición de campo, estimación remota o hipótesis.
 - **Capas y viabilidad.** Usar Copernicus y Earthdata para el contexto terrestre y PDS/LRO para referencias planetarias. Mostrar acceso, transporte, costo, permisos por actividad, temporada, comunicaciones y evacuación. Para zonas cuyo historial quede pendiente, usar «candidata, historial de campañas por verificar». [Recursos del desafío reproducidos por HackAthlone](https://hackathlone.com/challenges/permanent-moon-base-locations-and-mars)
 
-## Resultados de las campañas análogas
+## Ensayos análogos · qué se probó y dónde se rompe la comparación
 
-- **TRIDENT.** Diseñado para llevar muestras del subsuelo lunar a la superficie y buscar volátiles. Probó suelo suelto en Atacama, ocho pozos en Haughton y seis en Bishop Tuff. En Bishop, retirar los residuos cada 2 cm en vez de 10 cm permitió seguir sin atascarse en un pozo. En la Luna, PRIME-1 quedó de lado. El taladro se desplegó y se comprobaron sus mecanismos, pero la broca no alcanzó el suelo. [Ensayos en Tierra](https://ntrs.nasa.gov/citations/20240000585) · [Resultados en vuelo](https://doi.org/10.3847/PSJ/ae0b51).
-- **ERNEST.** En California recorrió 26 km en 37 horas de conducción repartidas en siete días. El reporte da el total de la campaña, sin separar desempeño por iluminación. [JPL](https://www.jpl.nasa.gov/news/nasa-testing-advanced-capabilities-for-moon-mars-rovers/).
-- **CanMars.** Guardó ocho muestras en dos campañas en Utah. Se priorizaron limolitas. El laboratorio encontró los valores más altos de carbono orgánico en areniscas, aun por debajo de 0,03 % en masa. [Resultados de CanMars](https://doi.org/10.1016/j.pss.2019.04.004).
+En el XMind, un análogo representa una condición o tarea a una escala concreta. Las referencias planetarias de abajo relacionan cada ensayo con los sitios estudiados por el equipo.
+
+### TRIDENT · Hielo bajo suelo, Arcadia–Amazonis
+
+**Ensayo y resultado.** NASA Ames y Honeybee ensayaron la perforación en varios materiales terrestres. En Haughton, Canadá, hicieron ocho pozos en un terreno que incluía material congelado. En Bishop Tuff, California, retirar los recortes cada 2 cm en vez de 10 cm permitió avanzar sin atascarse en un pozo. Antes se había probado en suelo suelto en Atacama. [Resultados de campo de NASA Ames](https://ntrs.nasa.gov/citations/20240000585) · [Ensayos de Bishop Tuff](https://ntrs.nasa.gov/citations/20240000608)
+
+**Dónde se rompe.** Estos ensayos caracterizaron la broca en materiales terrestres. Arcadia–Amazonis es la referencia del equipo para la tarea de perforar hielo bajo suelo. El vuelo de TRIDENT fue lunar. Athena quedó de lado y la broca se accionó sin alcanzar el suelo, por lo que la extracción de regolito lunar quedó sin medir. [NASA, pruebas de PRIME‑1 en la Luna](https://www.nasa.gov/missions/artemis/nasas-lunar-drill-technology-passes-tests-on-the-moon/)
+
+### ERNEST · Movilidad con luz variable, polo sur lunar
+
+**Ensayo y resultado.** JPL probó movilidad y autonomía en terreno rocoso del desierto de Colorado, en California, al amanecer, al atardecer y de noche. Hubo pruebas con iluminadores. Publicó 26 km y 37 horas de conducción repartidas en siete días. De Gerlache Rim 2 es nuestra referencia para relacionar la tarea con el relieve y las sombras del polo. [Campaña ERNEST de JPL](https://www.jpl.nasa.gov/news/nasa-testing-advanced-capabilities-for-moon-mars-rovers/) · [Cartografía e iluminación polar](https://doi.org/10.1029/2025JE009434)
+
+**Dónde se rompe.** La atmósfera terrestre dispersa luz hacia las sombras. También cambian la gravedad y la interacción de las ruedas con el suelo. El reporte entrega el total de la campaña y deja sin cuantificar el desempeño por condición de luz. [NASA, entorno del polo sur lunar](https://www.nasa.gov/reference/moonbase-environment/) · [Campaña ERNEST de JPL](https://www.jpl.nasa.gov/news/nasa-testing-advanced-capabilities-for-moon-mars-rovers/)
+
+### CanMars · Selección de muestras, Jezero
+
+**Ensayo y resultado.** Cerca de Hanksville, Utah, un equipo remoto usó un rover para seleccionar muestras en afloramientos sedimentarios. Guardó ocho en las campañas de 2015 y 2016 y priorizó limolitas para retorno simulado. En el conjunto almacenado durante la simulación, las areniscas dieron los mayores valores de carbono orgánico total, con cifras bajo 0,03 % en masa. [Campaña CanMars](https://doi.org/10.1016/j.pss.2018.07.011) · [Selección y análisis de muestras](https://doi.org/10.1016/j.pss.2019.04.004) · [Validación de campo y laboratorio](https://www.sciencedirect.com/science/article/pii/S0032063318300655)
+
+**Dónde se rompe.** Utah permitió comprobar las decisiones del equipo contra análisis de laboratorio. La preservación de orgánicos depende de la historia geológica local. El resultado de esas muestras describe los sedimentos de Utah, mientras que la preservación en Jezero requiere sus propias observaciones. [Validación de campo y laboratorio](https://www.sciencedirect.com/science/article/pii/S0032063318300655)
+
+### Polar Explorer · Detección de hielo, Haworth
+
+**Ensayo y resultado.** En la instalación LUNA de Colonia, DLR enterró blancos de acrílico en simulante de regolito para representar el contraste dieléctrico del hielo con el suelo. La campaña usó radar de subsuelo y sísmica para localizar los blancos. El radar del rover y las imágenes de superficie permitieron construir una representación 3D. [DLR, campaña Polar Explorer](https://www.dlr.de/en/latest/news/2025/water-ice-on-the-moon-simulated-detection-in-the-luna-facility)
+
+**Dónde se rompe.** Los blancos tenían geometría conocida y simulaban el contraste instrumental. El acrílico deja fuera la distribución de hielo real mezclado con regolito y el frío de la sombra permanente de Haworth. [DLR, montaje](https://www.dlr.de/en/latest/news/2025/water-ice-on-the-moon-simulated-detection-in-the-luna-facility) · [Volátiles en Haworth](https://doi.org/10.3847/psj/abf3c5)
+
+### PANGAEA-X · Cartografía de túneles, Mare Tranquillitatis
+
+**Ensayo y resultado.** Durante la campaña de ESA en 2017, un equipo cartografió a pie parte de la Cueva de los Verdes, en Lanzarote, con un escáner portátil y otro fijo. Ambos produjeron un modelo 3D de un tramo de 1,3 km en menos de tres horas, desde el interior y sin señal de posicionamiento satelital. [ESA, cartografía 3D de la campaña](https://blogs.esa.int/caves/2018/03/13/the-bowels-of-earth-in-3d/)
+
+**Dónde se rompe.** El recorrido se hizo en una galería transitable a pie. El descenso por el pozo, el acceso desde el borde y el funcionamiento en vacío quedaron fuera de ese ensayo. La geometría del conducto lunar se infiere de radar orbital. [ESA, ensayo terrestre](https://blogs.esa.int/caves/2018/03/13/the-bowels-of-earth-in-3d/) · [Radar del pozo lunar](https://doi.org/10.1038/s41550-024-02302-y)
+
+### ExoFiT · Operación remota y análisis de muestras, Oxia Planum
+
+**Ensayo y resultado.** En Atacama, en 2019, se operó el rover de prueba Charlie desde el Reino Unido. La campaña ensayó la secuencia que va de la selección de un punto al muestreo. Con prototipos representativos del espectrómetro Raman de Rosalind Franklin, el equipo identificó minerales y señales orgánicas en muestras terrestres. [ESA, ensayo ExoFiT](https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars/Fit_for_Mars) · [Resultados Raman](https://doi.org/10.1038/s41598-021-81014-z)
+
+**Dónde se rompe.** Se ensayaron el flujo de trabajo y el análisis de muestras de un desierto terrestre con instrumentos representativos. La preservación de compuestos orgánicos de Oxia Planum y la operación de los instrumentos bajo presión y radiación marcianas quedan fuera de lo medido en esa campaña. [Resultados Raman](https://doi.org/10.1038/s41598-021-81014-z)
 
 ## Luna: condiciones de exploración y requisitos para análogos terrestres
 
@@ -95,23 +129,7 @@ Tres regiones polares cubren decisiones distintas de operación de una base: **m
 - **Temperatura y refugio.** Horvath et al. estimaron cerca de **290 K (17 °C)** en el interior siempre sombreado de una cavidad modelada, a partir de datos Diviner y simulación térmica. Esa estimación motiva estudiar el subsuelo como refugio térmico. Aplicarla a un diseño requiere comprobar la temperatura real, la geometría y el acceso. [Horvath et al., 2022](https://doi.org/10.1029/2022GL099710)
 - **Pregunta de ensayo.** ¿Puede un robot construir un mapa y volver a la entrada con visibilidad baja y sin posicionamiento externo? Usar un tramo terrestre con recodos, medir la fracción cartografiada, la deriva de posición, la telemetría y la posibilidad de retorno con enlace directo o repetidor. Para simular el descenso vertical hace falta un tramo o instalación cuya geometría permita ensayarlo. **Cueva de los Verdes, Lanzarote**, es el comparador conocido: PANGAEA-X ya probó navegación y mapeo robotizado dentro de su tubo. [ESA, ensayo del rover en PANGAEA-X](https://www.esa.int/ESA_Multimedia/Images/2018/08/Astronaut_and_rover_in_lava_tube)
 
-### 6. Aplicación al mapa web — piloto lunar en Pali-Aike
-
-**Selección del caso.** Escogí movilidad con luz rasante para la primera ficha porque tiene un comparador de campo de la misma tarea, un caso polar respaldado por LRO y una propiedad que puede cambiar si el usuario modifica la duración del ensayo. La hipótesis terrestre es el **cono de Pali-Aike, Magallanes**, en torno a **52,11222° S, 69,70750° O**, con foco en **aproximaciones de menor pendiente**. Sernageomin describe un cráter de **160–180 m** de ancho, paredes de **40–45°** y pendientes de **10–22°** hacia la base. Las paredes ayudan a plantear escenarios de sombra. La ruta debería escogerse con el límite longitudinal y transversal del rover, midiendo por separado las transiciones y los obstáculos. El área tiene valor geológico y patrimonial y está gestionada por CONAF. [Sernageomin, ficha Cono de Pali-Aike](https://geositiosdechile.sernageomin.cl/wp-content/uploads/sites/4/2024/05/Libro%20Geositios%20de%20Chile%202024.pdf) · [CONAF, Parque Nacional Pali Aike](https://www.conaf.cl/parque_nacionales/parque-nacional-pali-aike/)
-
-**Comprobación con elevación abierta.** Extraje una ventana de **17 × 17 celdas** alrededor de la coordenada de la ficha, de unos **485 × 525 m**. El modelo superficial Copernicus GLO-30 da **185,8–250,1 m** dentro de esa ventana. Para reproducirla en el GeoTIFF original, seleccionar filas **395–411** y columnas **694–710** incluidas, con índices desde cero. A esta latitud, la celda mide unos **28,5 × 30,9 m** y el ancho publicado del cráter ocupa del orden de **5–6 celdas**. Esto permite ubicar el relieve a escala de mapa. Los bloques, el perfil a escala del rover y una ruta apta requieren mayor resolución. [Baldosa Copernicus GLO-30 consultada](https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S53_00_W070_00_DEM/Copernicus_DSM_COG_10_S53_00_W070_00_DEM.tif) · [Ficha del producto Copernicus](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)
-
-**Cribado reproducible de duración.** Para esa latitud y horizonte ideal plano, el centro del Sol tarda aproximadamente **33 min en equinoccio**, **41 min en el solsticio de verano austral** y **46 min en el de invierno austral** en ascender de 0° a 5° de elevación. Los tiempos son por ventana, con un intervalo simétrico al atardecer en el modelo. El límite de 5° es un supuesto para probar la herramienta; el perfil real se deriva del sitio lunar y del ensayo. Relieve, nubosidad, refracción y horario de acceso pueden recortar o cambiar la ventana observable. Para repetir este cálculo, usar `H(h) = acos((sin(h) − sin(φ) sin(δ)) / (cos(φ) cos(δ)))` en grados y `4 × [H(0°) − H(5°)]` en minutos, con latitud `φ = −52,11222°` y declinación `δ = 0°, −23,44°, +23,44°`. [NASA, geometría solar del entorno polar lunar](https://www.nasa.gov/reference/moonbase-environment/)
-
-| Si el usuario pide… | Resultado que mostraría la ficha |
-| --- | --- |
-| Una pasada de 20 min con el Sol entre 0° y 5° | Pali-Aike pasa el cribado de duración ideal en los tres escenarios. Quedan por confirmar horizonte, dirección del Sol respecto del tramo, obstáculos, clima y acceso con CONAF. |
-| 60 min continuos con el Sol natural entre 0° y 5°, en uno de los tres escenarios calculados | Pali-Aike queda fuera por duración en la configuración modelada. Para una prueba larga con ángulo fijo se puede comparar una instalación con fuente controlada y programar otro ensayo de integración en campo. |
-| Obstáculos de 25 cm como criterio obligatorio de una pasada | **Pendiente.** Un DEM terrestre de decenas de metros sirve para ubicar el cono y trazar aproximaciones, pero la altura y la posición de los obstáculos se verifican con fotogrametría o levantamiento local. |
-
-**Comparador y prueba de valor.** Usar la campaña de ERNEST en el desierto de Colorado, California, como precedente de campo. Comparar recorridos con categorías equivalentes de pendiente y luz, usando la misma cámara, velocidad y método de validación. La ventaja que se buscaría en Pali-Aike es **más transiciones útiles de luz a sombra por cada 100 m de recorrido transitable** para un ensayo corto. Contar una transición solo si cumple el rango angular y de contraste del ensayo y ocurre en un tramo aceptado por el rover. Medir aparte cuántos obstáculos omite el sistema de detección y cuánto tarda en recuperarse. LUNA permite repetir a ángulo y contraste controlados. La comparación de desempeño, costos y acceso sigue pendiente. La búsqueda inicial tampoco establece cuántas campañas de esta tarea se han hecho allí. [NASA/JPL, campaña de ERNEST](https://www.jpl.nasa.gov/news/nasa-testing-advanced-capabilities-for-moon-mars-rovers/) · [DLR, LUNA](https://www.dlr.de/en/research-and-transfer/featured-topics/mission-moon/the-luna-moon-facility)
-
-### 7. Datos, límites y ficha común con Marte
+### 6. Datos, límites y ficha común con Marte
 
 | Variable | Producto o método | Límite clave |
 | --- | --- | --- |
@@ -122,9 +140,7 @@ Tres regiones polares cubren decisiones distintas de operación de una base: **m
 
 [NASA PDS, LRO](https://pds-geosciences.wustl.edu/missions/lro/) · [ESA, ficha Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM) · [NASA Earthdata Search](https://search.earthdata.nasa.gov/) · [NASA-STD-1008, ensayos de polvo](https://standards.nasa.gov/standard/nasa/nasa-std-1008) · [NASA, entorno del polo sur lunar](https://www.nasa.gov/reference/moonbase-environment/)
 
-**Ficha del prototipo.** Guardar tarea, región planetaria, polígono o tramo terrestre, criterio con unidad y umbral, dato y resolución, método, comparador, y resultado **cumple / descarta / pendiente** por criterio. La logística y los permisos también pueden determinar si la campaña es viable. La web puede cambiar la recomendación ante un requisito nuevo y mostrar la evidencia responsable del cambio. La misma ficha sirve para la duración de luz en Pali-Aike y la verificación de hielo bajo cobertura planteada por Matías para Arcadia–Amazonis. [Criterios y antecedentes](#estado-del-arte--calidad-de-un-análogo-lunar-o-marciano) · [Prospección terrestre en matydrox.md](matydrox.md#prospección-mundial-de-sitios-terrestres-para-analogías-marcianas)
-
-**Alcance del piloto.** Las cifras lunares vienen de estudios y productos publicados. El trabajo nuevo es la extracción local de elevaciones y el cribado geométrico de la ventana solar en Pali-Aike. Faltan el perfil de horizonte del corredor, la validación de obstáculos y contraste, la comparación de desempeño con el análogo de referencia y la comprobación del historial y acceso del sector.
+**Ficha del prototipo.** Guardar tarea, región planetaria, polígono o tramo terrestre, criterio con unidad y umbral, dato y resolución, método, comparador, y resultado **cumple / descarta / pendiente** por criterio. La logística y los permisos también pueden determinar si la campaña es viable. La web puede cambiar la recomendación ante un requisito nuevo y mostrar la evidencia responsable del cambio. [Criterios y antecedentes](#estado-del-arte--calidad-de-un-análogo-lunar-o-marciano) · [Prospección terrestre en matydrox.md](matydrox.md#prospección-mundial-de-sitios-terrestres-para-analogías-marcianas)
 
 ## Rama lunar para XMind
 
@@ -175,21 +191,10 @@ Copia el bloque en un archivo Markdown para importarlo en XMind.
 - Cavidad sombreada modelada cerca de 290 K. Estabilidad y acceso para una misión siguen por comprobar.
 - Ensayo terrestre → explorar una cavidad con robot, medir cobertura de mapa, deriva, enlace y retorno. Control conocido → PANGAEA-X, Cueva de los Verdes, Lanzarote.
 
-## Piloto para mostrar al jurado · Pali-Aike, Magallanes
-
-- Candidato → aproximaciones al cono de Pali-Aike. Sernageomin cartografió un cráter de 160–180 m y pendientes de 10–22° hacia la base.
-- Datos abiertos → Copernicus GLO-30 representa el cráter con unas 5–6 celdas de ancho. Para ubicar obstáculos del rover hace falta un levantamiento más fino.
-- Tarea → navegación robótica con Sol rasante y sombras de relieve. Comparador de campo → ERNEST de JPL en el desierto de Colorado, California.
-- Cribado → 33–46 min por ventana entre 0° y 5° en equinoccio y solsticios, con horizonte plano. Una pasada de 20 min pasa el cribado de duración. Con 60 min continuos queda fuera en esos escenarios.
-- Ventaja a comprobar → más transiciones útiles de luz a sombra por cada 100 m transitables frente al comparador.
-- Pendiente → horizonte, detalle de obstáculos, contraste y acceso con CONAF. Historial de campañas de la tarea por verificar.
-- Valor de la web → explicar qué requisito cambia la recomendación e indicar la próxima medición. La misma ficha se puede aplicar a la verificación de hielo bajo cobertura en Arcadia–Amazonis.
 ```
 
 
 ## Bitácora de la madrugada · 15 de noviembre de 2026
 
-- **Punto de partida (WhatsApp).** Buscar un sitio poco usado que permitiera repetir mejor una prueba real y ensayar algo pendiente. Empezamos por hielo bajo suelo y TRIDENT.
-- **TRIDENT.** En Haughton se hicieron ocho pozos. El vuelo fue a la Luna, donde Athena quedó de lado y el taladro se accionó sin perforar. Esa secuencia no da una razón para repetir el mismo ensayo en otro suelo.
-- **Pali-Aike.** Modelamos rutas de abastecimiento con Sol rasante. El oeste dio 30 min y el este 22 min en una fecha. Sirve para priorizar un tramo, pero queda por demostrar qué ventaja tendría frente a California. Pajonales quedó como candidato para extracción de agua de sulfatos.
-- **Qué cambió.** Partir por la decisión del ensayo y exigir evidencia para comprobarla. En el atlas, Saskylakh cumple por terreno poligonal y queda pendiente al exigir profundidad de hielo. NASA POWER ayuda a buscar regiones. El CSV de 2024 tiene latitud y longitud invertidas y presión en kPa rotulada como hPa.
+- **Punto de partida (WhatsApp, 00:35–00:39).** Propuse buscar otro terreno con suelo mixto y repetir la perforación. La idea partía de información imprecisa: confundí el vuelo lunar con uno a Marte y atribuí al taladro lo ocurrido durante el aterrizaje.
+- **Corrección.** TRIDENT ya se había probado varias veces y en materiales distintos. En la Luna, Athena quedó de lado y el taladro se accionó sin alcanzar el suelo. El vuelo verificó mecanismos y dejó la perforación pendiente. [NASA Ames, pruebas terrestres](https://ntrs.nasa.gov/citations/20240000585) · [NASA, resultado en la Luna](https://www.nasa.gov/missions/artemis/nasas-lunar-drill-technology-passes-tests-on-the-moon/)
