@@ -7,7 +7,16 @@ Queremos identificar sitios en la Tierra donde se puedan simular condiciones de 
 
 ## Estado actual
 
-Estamos en la etapa de investigación y definición de criterios. La idea que tenemos en el mapa de trabajo es una web donde se ingresen los requisitos de una misión y se muestren sitios terrestres candidatos según esos requisitos.
+La pregunta del XMind guía la selección. ¿Qué lugares terrestres menos utilizados podrían cubrir una necesidad específica de una misión análoga, y qué evidencia permite proponerlos? La propuesta es una web que muestre sitios candidatos según los requisitos de la misión. Para cada caso identificamos quién lo necesita, qué tarea quiere ensayar y cuál es su referencia lunar o marciana.
+
+Partimos de una tarea y un ensayo previo para definir requisitos medibles. Cruzamos las capas disponibles por tramo y fecha, indicamos si el sitio cumple, queda fuera o falta información, y verificamos el historial de ensayos, el acceso y las condiciones en terreno.
+
+### Casos preliminares y límites del análogo
+
+En el XMind, las ramas en rojo corresponden a propuestas preliminares que quedaron fuera de la selección por falta de valor adicional demostrado. **El punto donde se rompe la analogía sí va en la respuesta.** Para cada ensayo, indicar qué se reprodujo, qué condición se perdió y qué decisión queda pendiente para una base permanente.
+
+- **TRIDENT · Taladro.** Las pruebas terrestres abarcaron materiales distintos. Reunirlos en un solo sitio quedó fuera por falta de una mejora clara. En la Luna, el aterrizador Athena quedó de lado y el taladro se accionó sin alcanzar el suelo. El ensayo terrestre sirve para caracterizar el desempeño en los materiales probados. La extracción en regolito lunar quedó sin medir. [Pruebas terrestres](https://ntrs.nasa.gov/citations/20240000585) · [Resultado en la Luna](https://www.nasa.gov/missions/artemis/nasas-lunar-drill-technology-passes-tests-on-the-moon/)
+- **Polar Explorer · Prospección de hielo.** En LUNA, el radar y la sísmica localizaron acrílico enterrado en simulante. Ahí se pierde parte de la analogía con Haworth, donde interesan el hielo real distribuido en el suelo y el frío polar. Chajnantor quedó como hipótesis preliminar. Falta demostrar que ensayar allí la decisión de dónde perforar aporta valor y verificar zonas con y sin hielo, rutas y acceso. [Ensayo en LUNA](https://www.dlr.de/en/latest/news/2025/water-ice-on-the-moon-simulated-detection-in-the-luna-facility) · [Detalle en neo.md](neo.md)
 
 ### Preguntas abiertas
 
