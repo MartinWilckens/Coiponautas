@@ -16,13 +16,13 @@ Hoy, prepararnos para vivir en otros mundos también exige elegir dónde ensayar
 
 ## Opción de continuación
 
-### Imagen 1 — Importancia de elegir los lugares de ensayo
+### Imagen 1 — Importancia de elegir los lugares de ensayo (imagen generada con IA, despues cambiar)
 
 ![Importancia: paisaje marciano y base análoga terrestre](diapositiva-02-importancia.png)
 
 **Guion:** Por lo tanto, encontrar lugares que representen las condiciones de las misiones en la Luna o Marte es de suma importancia. Pero no basta con que se parezcan físicamente a esas superficies.
 
-### Imagen 2 — Datos que respalden la elección
+### Imagen 2 — Datos que respalden la elección (imagen generada con IA, despues cambiar)
 
 ![Importancia: temperatura, visibilidad y humedad](diapositiva-02-importancia-iconos.png)
 
