@@ -14,13 +14,7 @@ Hoy, las misiones continuan; el regreso a la Luna en 2028, los futuros amartizaj
 
 ---
 
-## Opción de continuación
-
-### Imagen 1 — Importancia de elegir los lugares de ensayo (imagen generada con IA, despues cambiar)
-
-![Importancia: paisaje marciano y base análoga terrestre](diapositiva-02-importancia.png)
-
-**Guion:** Por lo tanto, encontrar lugares que representen las condiciones de las misiones en la Luna o Marte es de suma importancia. Pero no basta con que se parezcan físicamente a esas superficies.
+**Guion:** Una base análoga en Islandia, en un tubo de lava reveló que el rover no podía entrar ni salir solo: la pendiente y las rocas bloqueaban el acceso. Mejor descubrirlo en la Tierra que en la Luna.
 
 
 
