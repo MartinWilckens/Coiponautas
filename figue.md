@@ -132,3 +132,85 @@ Un promedio espacial mezcla lugares diferentes; un promedio temporal resume la e
 - Pendientes: delimitar parcelas equivalentes y reunir estadísticas de elevación, pendiente y temperatura para cada una.
 - No se han calculado estadísticas nuevas ni se han inferido cifras a partir de colores de imágenes.
 - Antes de usar los resultados para diseño, comprobar incertidumbres, resolución, época, altura del observador y definición de cada indicador.
+
+
+---
+
+# NUEVO TEMA — Limitaciones de las bases análogas lunares y marcianas
+
+Fecha de incorporación: 14 de noviembre de 2026.
+
+## Objetivo y alcance
+
+Identificar qué condiciones se representan parcialmente en los análogos terrestres y qué oportunidades de mejora tienen respaldo científico. Una limitación de fidelidad no demuestra que una instalación funcione mal: debe evaluarse según su objetivo experimental. Las propuestas de mejora de esta sección son una síntesis para Coiponautas, no resultados validados de un nuevo experimento.
+
+## 1. Limitaciones respaldadas por fuentes
+
+| Condición | Qué no se reproduce completamente | Fuente y sección útil |
+| --- | --- | --- |
+| Aislamiento y separación de la Tierra | El confinamiento y el retraso de mensajes no reproducen por completo la distancia real, la imposibilidad de ayuda inmediata y sus efectos psicológicos. | [Revisión de fidelidad de análogos, 2025](https://doi.org/10.3389/frspt.2025.1505823), secciones 3–6. |
+| Gravedad y fisiología | Un hábitat terrestre conserva la gravedad terrestre; un sistema de suspensión o flotación representa aspectos del movimiento, sin reproducir toda la respuesta fisiológica ni la gravedad del entorno. | [Revisión de 2025](https://doi.org/10.3389/frspt.2025.1505823) y [DLR: sistema de descarga de peso de LUNA](https://www.dlr.de/en/research-and-transfer/featured-topics/mission-moon/the-luna-moon-facility). |
+| Entrenamiento submarino | La resistencia del agua cambia la dinámica y puede facilitar unas tareas y dificultar otras respecto al espacio. | [NASA: Goddard Engineers and Divers Multi-Task for Hubble](https://science.nasa.gov/missions/hubble/nasa-goddard-engineers-and-divers-multi-task-for-hubble/). Fuente histórica para una limitación física, no inventario actual de bases. |
+| Suelo del polo sur lunar | Faltan datos locales; muchos simulantes se basan en terrenos ecuatoriales. La selección del material debe depender del ensayo. | [NASA: Mobility Test Best Practices, 2025](https://ntrs.nasa.gov/api/citations/20250003470/downloads/Mobility%20Test%20Best%20Practices%20-%20STRIVES%20July2025.pdf?attachment=true), tabla 2. |
+| Interacción rueda–regolito en gravedad reducida | Reducir el peso sobre las ruedas no reproduce necesariamente cómo cambia el propio suelo con la gravedad. Persisten incertidumbres sobre los métodos de extrapolación. | Misma [tabla 2 de NASA](https://ntrs.nasa.gov/api/citations/20250003470/downloads/Mobility%20Test%20Best%20Practices%20-%20STRIVES%20July2025.pdf?attachment=true). |
+| Contaminación y desgaste por polvo | Sigue siendo necesario determinar mejor la influencia de las condiciones ambientales sobre el comportamiento del regolito y sus efectos en equipos. | [A comprehensive contamination assessment methodology for lunar regolith on spacecraft, 2025](https://doi.org/10.1016/j.ast.2025.111166). |
+| Contaminación biológica en Marte | Falta validación suficiente del desempeño de medidas de descontaminación en condiciones de campo relevantes para Marte; los ensayos de laboratorio aislados no bastan. | [Spry et al., 2024 — PDF](https://elib.dlr.de/203376/1/spry-et-al-2024-planetary-protection-knowledge-gap-closure-enabling-crewed-missions-to-mars.pdf), sección 5.3.4. |
+| Comparabilidad entre campañas | Diferencias de protocolos, composición de equipos y métricas limitan la generalización y comparación de resultados. | [Revisión y lista de recomendaciones del equipo temático ESA, 2024](https://doi.org/10.1038/s41526-024-00437-w). |
+
+**Vacío, radiación y extremos térmicos:** no se reproducen conjuntamente y de forma prolongada en una base terrestre habitada. Algunas condiciones se investigan mediante instalaciones y experimentos especializados. Esto exige combinar evidencias de distintos ensayos, sin asumir que un paisaje parecido valida todo el ambiente de destino. La revisión de fidelidad de 2025 discute la selección de plataformas según los riesgos y objetivos de investigación.
+
+## 2. Ejemplos de instalaciones y oportunidades de mejora
+
+Las siguientes son inferencias de diseño basadas en capacidades documentadas; no una auditoría que demuestre incumplimientos.
+
+| Instalación | Fortaleza | Límite de transferencia y mejora propuesta |
+| --- | --- | --- |
+| LUNA, Alemania — Luna | Regolito simulado, iluminación y operaciones con descarga mecánica de peso. | Conectar las tareas con ensayos ambientales de componentes; no extrapolar directamente la respuesta de todo el suelo a gravedad lunar. [DLR](https://www.dlr.de/en/research-and-transfer/featured-topics/mission-moon/the-luna-moon-facility). |
+| CHAPEA, Houston — Marte | Aislamiento prolongado, recursos limitados, carga de trabajo y fallas simuladas. | Integrar los resultados operativos con desgaste, terreno y presupuestos medidos de consumibles. No representa conjuntamente toda la física exterior marciana. [NASA](https://www.nasa.gov/humans-in-space/chapea/about-chapea/). |
+| MDRS, Utah — Marte | Hábitat y exploración exterior con campañas documentadas. | Mantener registros comparables de averías y desempeño entre campañas; no inferir efectos de años a partir de ensayos breves. [Reportes de 2026](https://reports.marssociety.org/2026/). |
+| FMARS, isla Devon — Marte | Remotidad, frío y logística de campo exigente. | Separar los efectos del ambiente ártico de las condiciones que se quieren representar de Marte. [Campaña de julio de 2026](https://www.marssociety.org/news/2026/07/30/mars-society-salutes-canada-u-s-volunteer-team-for-supporting-successful-flashline-crew-19-mission/). |
+| LunAres, Polonia — Luna/Marte | Aislamiento controlado; campañas estándar con 14 días de aislamiento. | Usar campañas más largas cuando la pregunta sea adaptación de larga duración y definir escenarios distintos para Luna y Marte. [Programa 2026–2027](https://lunares.space/apply/). |
+
+## 3. Posible análogo submarino: utilidad y límites
+
+NASA utiliza la flotabilidad para compensar el peso y ensayar operaciones lunares. [NASA: NBL Environments](https://www.nasa.gov/podcasts/houston-we-have-a-podcast/nbl-environments/).
+
+Una piscina o tanque controlado permitiría ajustar flotabilidad y lastre, colocar pendientes y obstáculos y variar iluminación. El mar añade corrientes, oleaje y turbidez, que deben registrarse como variables terrestres adicionales.
+
+- **Útil para:** procedimientos, coordinación, manipulación de herramientas, ergonomía y reconocimiento de obstáculos bajo las condiciones del ensayo.
+- **Parcial:** menor peso aparente. La flotabilidad no cambia la gravedad real y la resistencia del agua altera el movimiento.
+- **Poca luz:** puede ensayarse oscuridad operativa, pero absorción, dispersión y refracción en el agua difieren de la óptica del entorno lunar.
+- **No validaría por sí solo:** fisiología prolongada en gravedad parcial, tracción sobre regolito lunar, transporte de polvo en vacío o supervivencia térmica de equipos.
+
+La propuesta es combinar el ensayo submarino con pruebas terrestres y ambientales complementarias. La comparación debe medir el efecto del medio acuático, no asumir que una tarea realizada bajo el agua equivale a una tarea lunar.
+
+## 4. Mejoras que podríamos estudiar
+
+Estas son propuestas del equipo a validar, separadas de los resultados publicados:
+
+| Mejora | Ensayo propuesto | Indicadores |
+| --- | --- | --- |
+| Luz vinculada a energía y operaciones | Reproducir una secuencia de iluminación de un sitio lunar concreto y asociarla a baterías, rutas y tareas. | Energía consumida, tareas suspendidas, errores y autonomía durante oscuridad. |
+| Polvo y mantenimiento | Usar simulante caracterizado y registrar su ingreso y efectos acumulativos en componentes adecuados para el ensayo. | Tiempo de limpieza, degradación de sellos y pérdida de rendimiento de sensores. |
+| Autonomía de la tripulación | Introducir retrasos e interrupciones operativas sin canales de ayuda no previstos. | Tiempo de resolución, errores, carga de trabajo y dependencia del control de misión. |
+| Recursos y soporte vital | Medir entradas, pérdidas, reposiciones y mantenimiento. | Consumo por persona y tarea; distinguir racionamiento de reciclaje real. |
+| Comparación entre análogos | Repetir tareas y protocolos comunes, declarando diferencias ambientales. | Resultados reproducibles, incertidumbres y desviaciones del procedimiento. |
+
+## 5. Bibliografía de este tema
+
+1. [Increasing fidelity in lunar and martian analogs for behavioral health and performance research (2025)](https://doi.org/10.3389/frspt.2025.1505823).
+2. [Space Analogs and Behavioral Health Performance Research: review and recommendations checklist from ESA Topical Team (2024)](https://doi.org/10.1038/s41526-024-00437-w).
+3. [NASA — Mobility Test Best Practices (2025), tabla 2](https://ntrs.nasa.gov/api/citations/20250003470/downloads/Mobility%20Test%20Best%20Practices%20-%20STRIVES%20July2025.pdf?attachment=true).
+4. [NASA — Goddard Engineers and Divers Multi-Task for Hubble](https://science.nasa.gov/missions/hubble/nasa-goddard-engineers-and-divers-multi-task-for-hubble/).
+5. [NASA — NBL Environments](https://www.nasa.gov/podcasts/houston-we-have-a-podcast/nbl-environments/).
+6. [A comprehensive contamination assessment methodology for lunar regolith on spacecraft (2025)](https://doi.org/10.1016/j.ast.2025.111166).
+7. [Spry et al. (2024) — Planetary Protection Knowledge Gap Closure Enabling Crewed Missions to Mars](https://doi.org/10.1089/ast.2023.0092), [PDF abierto en DLR](https://elib.dlr.de/203376/1/spry-et-al-2024-planetary-protection-knowledge-gap-closure-enabling-crewed-missions-to-mars.pdf).
+8. [A review of existing analog habitats and lessons for future lunar and Martian habitats (2021)](https://www.sciencedirect.com/science/article/pii/S2352309321000018). Inventario histórico: no representa por sí solo el estado actual de todas las instalaciones.
+
+## 6. Qué falta validar
+
+- Elegir una misión y tareas concretas antes de definir fidelidad o seleccionar un lugar.
+- Cuantificar las diferencias físicas introducidas por cada medio de ensayo.
+- Verificar propiedades y representatividad del simulante de suelo.
+- Definir métricas y un protocolo repetible antes de comparar instalaciones.
+- Mantener separados los resultados científicos publicados de nuestras propuestas de mejora.
